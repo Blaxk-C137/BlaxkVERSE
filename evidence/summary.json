@@ -1,0 +1,50 @@
+[
+  {
+    "concept": "A",
+    "full": {
+      "desktop": 60,
+      "mobile": 60,
+      "low-end": 60
+    },
+    "reduced": {
+      "desktop": 60,
+      "mobile": 60,
+      "low-end": 60
+    },
+    "worstP95": 16.8,
+    "longTasks": 0,
+    "errors": 0
+  },
+  {
+    "concept": "B",
+    "full": {
+      "desktop": 55,
+      "mobile": 60,
+      "low-end": 58
+    },
+    "reduced": {
+      "desktop": 59,
+      "mobile": 60,
+      "low-end": 59
+    },
+    "worstP95": 33.3,
+    "longTasks": 0,
+    "errors": 0
+  },
+  {
+    "concept": "C",
+    "full": {
+      "desktop": 50,
+      "mobile": 60,
+      "low-end": 56
+    },
+    "reduced": {
+      "desktop": 59,
+      "mobile": 60,
+      "low-end": 59
+    },
+    "worstP95": 33.4,
+    "longTasks": 0,
+    "errors": 0
+  }
+]

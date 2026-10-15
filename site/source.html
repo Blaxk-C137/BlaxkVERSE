@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en" data-motion="full">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Source explorer — public repositories | BLAXK BYTE TECHNOLOGIES</title>
+<meta name="description" content="Every claim on this site traced to a public repository: featured repos, technology trace, and the repositories deliberately excluded with reasons.">
+<meta name="color-scheme" content="dark">
+<meta name="theme-color" content="#08090c">
+<meta property="og:title" content="Source explorer — public repositories | BLAXK BYTE TECHNOLOGIES">
+<meta property="og:description" content="Every claim on this site traced to a public repository: featured repos, technology trace, and the repositories deliberately excluded with reasons.">
+<meta property="og:type" content="website">
+<link rel="stylesheet" href="assets/css/blaxkverse.css">
+
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="nav">
+  <a class="nav-mark" href="index.html" aria-label="BLAXK BYTE — home">
+    <i aria-hidden="true"></i><b>BLAXK</b> <span>BYTE</span>
+  </a>
+  <nav class="nav-links" aria-label="Primary">
+        <a href="index.html" data-nav-current>Journey</a>
+        <a href="company.html" data-nav-current>Company</a>
+        <a href="work.html" data-nav-current>Work</a>
+        <a href="source.html" data-nav-current>Source</a>
+        <a href="lab.html" data-nav-current>Lab</a>
+        <a href="about.html" data-nav-current>About</a>
+        <a href="contact.html" data-nav-current>Contact</a>
+  </nav>
+  <div class="nav-right">
+    <button class="kbtn kbtn--kbd" type="button" data-open-palette aria-haspopup="dialog">
+      Search <kbd>⌘K</kbd>
+    </button>
+    <button class="motion-toggle" type="button" data-motion-toggle aria-label="Change motion level">motion: full</button>
+    <button class="kbtn nav-burger" type="button" data-open-sheet aria-expanded="false" aria-controls="mobile-sheet">Menu</button>
+  </div>
+</header>
+
+<div class="sheet" id="mobile-sheet" data-sheet hidden role="dialog" aria-modal="true" aria-label="Navigation">
+  <div class="sheet-head">
+    <span class="nav-mark"><i aria-hidden="true"></i><b>BLAXK</b> <span>BYTE</span></span>
+    <button class="close" type="button" data-close-sheet aria-label="Close navigation">✕</button>
+  </div>
+  <div class="sheet-body">
+    <ul class="sheet-nav">
+        <li><a href="index.html" data-nav-current><span class="t">Journey</span><span class="s">the overview</span></a></li>
+        <li><a href="company.html" data-nav-current><span class="t">Company</span><span class="s">what we build</span></a></li>
+        <li><a href="work.html" data-nav-current><span class="t">Work</span><span class="s">verified projects</span></a></li>
+        <li><a href="source.html" data-nav-current><span class="t">Source</span><span class="s">public code</span></a></li>
+        <li><a href="lab.html" data-nav-current><span class="t">Lab</span><span class="s">experiments</span></a></li>
+        <li><a href="about.html" data-nav-current><span class="t">About</span><span class="s">Blaxk</span></a></li>
+        <li><a href="contact.html" data-nav-current><span class="t">Contact</span><span class="s">start a project</span></a></li>
+    </ul>
+    <p class="label">Every destination is also in the command palette (<kbd>Ctrl</kbd>/<kbd>⌘</kbd>+<kbd>K</kbd>) and in the footer.</p>
+  </div>
+</div>
+
+<main id="main">
+  <section class="section section--tight" style="padding-top:calc(var(--nav-h) + 2.5rem)">
+    <div class="wrap">
+      <span class="label">Source · public repositories</span>
+      <h1 style="font-size:clamp(2rem,5vw,3.4rem);margin:.4rem 0 .8rem">The source explorer</h1>
+      <p class="lede">Everything on this site traces back to a public repository under
+        <a class="inline-link" href="https://github.com/Blaxk-C137" target="_blank" rel="noopener noreferrer">Blaxk-C137 ↗</a>.
+        This page records what is included, what is deliberately excluded and why, and how each technology
+        claim maps to real code.</p>
+      <div class="note mt-2">
+        <strong>On the older namespace.</strong> Earlier project links pointed at
+        <span class="mono">black999-ng</span>. That account and its portfolio URL
+        return HTTP 404 as of 2026-10-15, so nothing from that namespace is reproduced, claimed or
+        linked here. The canonical account is <span class="mono">Blaxk-C137</span>.
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:0">
+    <div class="wrap">
+      <h2 style="font-size:clamp(1.4rem,3vw,2rem)">Featured repositories</h2>
+      <p class="dim" style="max-width:70ch">All figures read from the GitHub API and the recursive git tree
+        on 2026-10-15. File counts include every tracked file, not just source files.</p>
+      <div class="panel mt-2" style="overflow-x:auto">
+        <table style="width:100%;border-collapse:collapse;font-size:.92rem">
+          <caption class="sr">Featured repositories with language, file count, size, last push and licence</caption>
+          <thead>
+            <tr style="text-align:left">
+              <th scope="col" style="padding:.7rem .9rem;border-bottom:1px solid var(--hairline)">Repository</th>
+              <th scope="col" style="padding:.7rem .9rem;border-bottom:1px solid var(--hairline)">Language</th>
+              <th scope="col" style="padding:.7rem .9rem;border-bottom:1px solid var(--hairline)">Files</th>
+              <th scope="col" style="padding:.7rem .9rem;border-bottom:1px solid var(--hairline)">Size</th>
+              <th scope="col" style="padding:.7rem .9rem;border-bottom:1px solid var(--hairline)">Last push</th>
+              <th scope="col" style="padding:.7rem .9rem;border-bottom:1px solid var(--hairline)">Licence</th>
+            </tr>
+          </thead>
+          <tbody><tr><td><a class="inline-link" href="https://github.com/Blaxk-C137/Blaxk-Housing" target="_blank" rel="noopener noreferrer">Blaxk-Housing</a></td><td>JavaScript</td><td class="mono">81</td><td class="mono">335 KB</td><td class="mono">2026-09-02</td><td>—</td></tr><tr><td><a class="inline-link" href="https://github.com/Blaxk-C137/EduBlaxk" target="_blank" rel="noopener noreferrer">EduBlaxk</a></td><td>TypeScript</td><td class="mono">51</td><td class="mono">1308 KB</td><td class="mono">2026-09-22</td><td>—</td></tr><tr><td><a class="inline-link" href="https://github.com/Blaxk-C137/SABI" target="_blank" rel="noopener noreferrer">SABI</a></td><td>TypeScript</td><td class="mono">119</td><td class="mono">716 KB</td><td class="mono">2026-10-12</td><td>—</td></tr><tr><td><a class="inline-link" href="https://github.com/Blaxk-C137/Blaxk-Xposer" target="_blank" rel="noopener noreferrer">Blaxk-Xposer</a></td><td>Python</td><td class="mono">70</td><td class="mono">472 KB</td><td class="mono">2026-10-15</td><td>—</td></tr><tr><td><a class="inline-link" href="https://github.com/Blaxk-C137/FORMA-" target="_blank" rel="noopener noreferrer">FORMA-</a></td><td>HTML / TypeScript / Python</td><td class="mono">146</td><td class="mono">4843 KB</td><td class="mono">2026-10-15</td><td>—</td></tr><tr><td><a class="inline-link" href="https://github.com/Blaxk-C137/Blaxk_Aggregator" target="_blank" rel="noopener noreferrer">Blaxk_Aggregator</a></td><td>TypeScript</td><td class="mono">32</td><td class="mono">243 KB</td><td class="mono">2026-10-10</td><td>MIT</td></tr><tr><td><a class="inline-link" href="https://github.com/Blaxk-C137/The_Migrator" target="_blank" rel="noopener noreferrer">The_Migrator</a></td><td>Python</td><td class="mono">1</td><td class="mono">28 KB</td><td class="mono">2026-09-02</td><td>—</td></tr><tr><td><a class="inline-link" href="https://github.com/Blaxk-C137/Gesture_Controls" target="_blank" rel="noopener noreferrer">Gesture_Controls</a></td><td>Python</td><td class="mono">12</td><td class="mono">22 KB</td><td class="mono">2026-05-20</td><td>MIT</td></tr></tbody>
+        </table>
+      </div>
+      <p class="count-note">Most of these repositories carry no licence file. That means, technically, all
+        rights reserved by the author — worth knowing before you reuse anything from them. Adding an explicit
+        licence to each project is recorded as an open item rather than quietly ignored.</p>
+    </div>
+  </section>
+
+  <section class="section" style="background:var(--void-2);border-top:1px solid var(--hairline)">
+    <div class="wrap">
+      <h2 style="font-size:clamp(1.4rem,3vw,2rem)">Technology trace</h2>
+      <p class="dim" style="max-width:70ch">Every capability claimed on this site, traced to the repository
+        where it is actually demonstrated. If a row could not be filled with a real repository, the row would
+        not exist.</p>
+      <div class="panel mt-2" style="overflow-x:auto">
+        <table style="width:100%;border-collapse:collapse;font-size:.92rem">
+          <caption class="sr">Technology and the projects that demonstrate it</caption>
+          <tbody><tr><td><strong>React</strong></td><td class="dim"><a class="inline-link" href="projects/blaxk-housing.html">BlaXk Housing</a> · <a class="inline-link" href="projects/edublaxk.html">EduBlaxk</a> · <a class="inline-link" href="projects/sabi.html">SABI</a> · <a class="inline-link" href="projects/forma.html">FORMA</a> · <a class="inline-link" href="projects/blaxk-aggregator.html">BlaXk Aggregator</a></td></tr><tr><td><strong>TypeScript</strong></td><td class="dim"><a class="inline-link" href="projects/edublaxk.html">EduBlaxk</a> · <a class="inline-link" href="projects/sabi.html">SABI</a> · <a class="inline-link" href="projects/blaxk-aggregator.html">BlaXk Aggregator</a></td></tr><tr><td><strong>JavaScript</strong></td><td class="dim"><a class="inline-link" href="projects/blaxk-housing.html">BlaXk Housing</a> · <a class="inline-link" href="projects/blaxk-xposer.html">Blaxk Xposer</a></td></tr><tr><td><strong>Python</strong></td><td class="dim"><a class="inline-link" href="projects/blaxk-xposer.html">Blaxk Xposer</a> · <a class="inline-link" href="projects/the-migrator.html">The Migrator</a> · <a class="inline-link" href="projects/gesture-controls.html">Gesture Controls</a></td></tr><tr><td><strong>Node.js / Express</strong></td><td class="dim"><a class="inline-link" href="projects/edublaxk.html">EduBlaxk</a> · <a class="inline-link" href="projects/forma.html">FORMA</a></td></tr><tr><td><strong>Django REST Framework</strong></td><td class="dim"><a class="inline-link" href="projects/blaxk-housing.html">BlaXk Housing</a></td></tr><tr><td><strong>FastAPI</strong></td><td class="dim"><a class="inline-link" href="projects/forma.html">FORMA</a></td></tr><tr><td><strong>Web Speech + local speech models</strong></td><td class="dim"><a class="inline-link" href="projects/sabi.html">SABI</a> · <a class="inline-link" href="projects/forma.html">FORMA</a></td></tr><tr><td><strong>MediaPipe / OpenCV</strong></td><td class="dim"><a class="inline-link" href="projects/gesture-controls.html">Gesture Controls</a></td></tr><tr><td><strong>Reverse proxy &amp; HTTP rewriting</strong></td><td class="dim"><a class="inline-link" href="projects/blaxk-xposer.html">Blaxk Xposer</a></td></tr><tr><td><strong>Local-first storage design</strong></td><td class="dim"><a class="inline-link" href="projects/edublaxk.html">EduBlaxk</a> · <a class="inline-link" href="projects/sabi.html">SABI</a></td></tr><tr><td><strong>GTK desktop interfaces</strong></td><td class="dim"><a class="inline-link" href="projects/blaxk-xposer.html">Blaxk Xposer</a></td></tr><tr><td><strong>Linux (Fedora) as a daily environment</strong></td><td class="dim"><a class="inline-link" href="projects/blaxk-xposer.html">Blaxk Xposer</a></td></tr><tr><td><strong>AI provider integration (Gemini, Claude, OpenAI)</strong></td><td class="dim"><a class="inline-link" href="projects/edublaxk.html">EduBlaxk</a> · <a class="inline-link" href="projects/sabi.html">SABI</a> · <a class="inline-link" href="projects/forma.html">FORMA</a></td></tr><tr><td><strong>Git</strong></td><td class="dim"><a class="inline-link" href="projects/blaxk-housing.html">BlaXk Housing</a> · <a class="inline-link" href="projects/edublaxk.html">EduBlaxk</a> · <a class="inline-link" href="projects/sabi.html">SABI</a> · <a class="inline-link" href="projects/blaxk-xposer.html">Blaxk Xposer</a> · <a class="inline-link" href="projects/forma.html">FORMA</a></td></tr></tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <h2 style="font-size:clamp(1.4rem,3vw,2rem)">Deliberate exclusions</h2>
+      <p class="dim" style="max-width:76ch">The account has 43 public
+        repositories. Eight are presented as work. The rest fall into two groups, and listing them is the
+        point: a portfolio that shows everything is not curating, and a portfolio that quietly omits things
+        is not being straight with you.</p>
+      <div class="panel mt-2" style="overflow-x:auto">
+        <table style="width:100%;border-collapse:collapse;font-size:.92rem">
+          <caption class="sr">Repositories excluded from the portfolio and the reason for each</caption>
+          <tbody><tr><td><a class="inline-link" href="https://github.com/Blaxk-C137/AsyncRAT-C-Sharp" target="_blank" rel="noopener noreferrer">AsyncRAT-C-Sharp</a></td><td>Third-party remote-administration tooling. Not appropriate to exhibit.</td></tr><tr><td><a class="inline-link" href="https://github.com/Blaxk-C137/Forked" target="_blank" rel="noopener noreferrer">Forked</a></td><td>A publicly documented decompression bomb. Retained as a reference only.</td></tr><tr><td><a class="inline-link" href="https://github.com/Blaxk-C137/rea-bx" target="_blank" rel="noopener noreferrer">rea-bx</a></td><td>Upstream fork — authorship belongs to the original project.</td></tr><tr><td><a class="inline-link" href="https://github.com/Blaxk-C137/Recordly" target="_blank" rel="noopener noreferrer">Recordly</a></td><td>Upstream fork.</td></tr><tr><td><a class="inline-link" href="https://github.com/Blaxk-C137/Signova-" target="_blank" rel="noopener noreferrer">Signova-</a></td><td>Upstream fork — a sign-language converter by another author.</td></tr><tr><td><a class="inline-link" href="https://github.com/Blaxk-C137/Blaxk3dsvg" target="_blank" rel="noopener noreferrer">Blaxk3dsvg</a></td><td>Upstream fork.</td></tr><tr><td><a class="inline-link" href="https://github.com/Blaxk-C137/moltbot" target="_blank" rel="noopener noreferrer">moltbot</a></td><td>Upstream fork.</td></tr><tr><td><a class="inline-link" href="https://github.com/Blaxk-C137/Call-of-Duty-Sol-Ultra" target="_blank" rel="noopener noreferrer">Call-of-Duty-Sol-Ultra</a></td><td>Upstream fork of a third-party game project.</td></tr><tr><td><a class="inline-link" href="https://github.com/Blaxk-C137/public-apis" target="_blank" rel="noopener noreferrer">public-apis</a></td><td>Upstream fork of a community list.</td></tr></tbody>
+        </table>
+      </div>
+      <p class="count-note">Two of those forks are excluded on judgement as well as authorship: they carry
+        third-party tooling or a proof-of-concept with destructive potential, and neither belongs on a page that
+        asks you to trust the person behind it. Those nine forks account for every unexhibited repository that
+        is not Blaxk's own work — the remaining twenty-six are all original, and none of them is a fork. One is
+        the account's profile repository, three are empty, and twenty-two are smaller tools and personal
+        utilities: a WhatsApp bot, a church programme display, a downloader, an encryptor. They are public and
+        they are real. They are not presented as case studies because they lack the README, screenshot and code
+        evidence a case study is built from — and padding the portfolio to make the number look larger would be
+        the same dishonesty in the other direction.</p>
+    </div>
+  </section>
+
+  <section class="section" style="background:var(--void-2);border-top:1px solid var(--hairline)">
+    <div class="wrap">
+      <h2 style="font-size:clamp(1.4rem,3vw,2rem)">How the ingestion is designed to work</h2>
+      <p class="dim" style="max-width:76ch">This site is static, and the pages you are reading were built
+        from a verification pass rather than fetched live in your browser. The designed production pipeline —
+        documented in full in the repository — is:</p>
+      <pre class="panel panel--pad mono" style="overflow-x:auto;font-size:.82rem;line-height:1.8;margin-top:1rem">GitHub API  →  server fetcher  →  repository allowlist  →  metadata normalisation
+            →  content cache  →  server-rendered pages  →  project visualisations</pre>
+      <ul class="tight mt-2" style="max-width:78ch">
+        <li>Only an explicit allowlist is ever published; a repository existing on GitHub is not a reason to show it.</li>
+        <li>Excerpts are pinned by commit SHA, path and line range, and pre-screened by a secrets and high-risk content filter before publication.</li>
+        <li>API responses are cached; a GitHub outage degrades to clearly-labelled stale data rather than an empty page or a broken layout.</li>
+        <li>"Updated" is shown with a timestamp. A single push is never described as "actively maintained".</li>
+        <li>Snippets are rendered as inert highlighted text. Nothing from a repository is ever executed in a visitor's browser.</li>
+      </ul>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <h4>BLAXK BYTE TECHNOLOGIES</h4>
+        <p class="dim" style="margin:0 0 .6rem">Software, automation and AI systems — built by Blaxk, documented in public.</p>
+        <p class="label" style="margin:0">Company registration status is not asserted on this site because it has not been verified as complete.</p>
+      </div>
+      <div>
+        <h4>Navigate</h4>
+        <ul>
+          <li><a href="company.html">Company &amp; services</a></li>
+          <li><a href="work.html">Work</a></li>
+          <li><a href="source.html">Source explorer</a></li>
+          <li><a href="lab.html">Lab</a></li>
+          <li><a href="about.html">About Blaxk</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Elsewhere</h4>
+        <ul>
+          <li><a href="https://github.com/Blaxk-C137" target="_blank" rel="noopener noreferrer">GitHub — Blaxk-C137 ↗</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="privacy.html">Privacy &amp; AI disclosure</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Accessibility</h4>
+        <ul>
+          <li><a href="?motion=on">Full motion</a></li>
+          <li><a href="?motion=reduced">Reduced motion</a></li>
+          <li><a href="?motion=off">Explore normally (no motion)</a></li>
+        </ul>
+        <p class="label" style="margin:.5rem 0 0">Press <kbd>M</kbd> to cycle motion levels.</p>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© <span data-year>2026</span> BLAXK BYTE TECHNOLOGIES</span>
+      <span>Content verified against the public record on 15 Oct 2026</span>
+      <span>Keyboard: <kbd>/</kbd> or <kbd>⌘K</kbd> search · <kbd>M</kbd> motion</span>
+      <a href="privacy.html" style="color:var(--steel);text-decoration:none">This site makes no analytics or tracking requests.</a>
+    </div>
+  </div>
+</footer>
+
+<button class="guide-launcher" type="button" data-guide-open aria-expanded="false" aria-controls="bx-guide">
+  <i aria-hidden="true"></i> Ask about this work
+</button>
+
+<section class="guide" id="bx-guide" data-guide hidden role="dialog" aria-modal="true" aria-label="BLAXK BYTE assistant">
+  <div class="guide-head">
+    <i aria-hidden="true" style="width:8px;height:8px;background:var(--red);display:block"></i>
+    <h2>BLAXK BYTE — verified answers</h2>
+    <button class="close" type="button" data-guide-close aria-label="Close assistant">✕</button>
+  </div>
+  <div class="guide-body">
+    <div class="guide-log" data-guide-log></div>
+    <div class="guide-q" data-guide-suggest></div>
+  </div>
+  <form class="guide-form" data-guide-form>
+    <label class="sr" for="guide-input">Your question</label>
+    <input id="guide-input" data-guide-input type="text" placeholder="Ask about a project, service or status…" autocomplete="off">
+    <button class="btn" type="submit">Ask</button>
+  </form>
+  <p class="guide-disclaimer">
+    This build ships a deterministic retriever over the verified project records — it is not a language model and it will not
+    answer beyond what is recorded. The intended production design is a server-side Gemini endpoint with retrieval over
+    approved content, schema-validated output, rate limits and a static fallback. See the privacy page for the full disclosure.
+  </p>
+</section>
+
+<script src="assets/js/bx-data.js"></script>
+<script src="assets/js/bx-excerpts.js"></script>
+<script src="assets/js/bx-core.js"></script>
+
+</body>
+</html>

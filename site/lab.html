@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en" data-motion="full">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lab — experiments, concepts and honest dead ends | BLAXK BYTE TECHNOLOGIES</title>
+<meta name="description" content="Concepts and experiments with their real state, the three experience prototypes behind this site, and why some promising ideas were deliberately left alone.">
+<meta name="color-scheme" content="dark">
+<meta name="theme-color" content="#08090c">
+<meta property="og:title" content="Lab — experiments, concepts and honest dead ends | BLAXK BYTE TECHNOLOGIES">
+<meta property="og:description" content="Concepts and experiments with their real state, the three experience prototypes behind this site, and why some promising ideas were deliberately left alone.">
+<meta property="og:type" content="website">
+<link rel="stylesheet" href="assets/css/blaxkverse.css">
+
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="nav">
+  <a class="nav-mark" href="index.html" aria-label="BLAXK BYTE — home">
+    <i aria-hidden="true"></i><b>BLAXK</b> <span>BYTE</span>
+  </a>
+  <nav class="nav-links" aria-label="Primary">
+        <a href="index.html" data-nav-current>Journey</a>
+        <a href="company.html" data-nav-current>Company</a>
+        <a href="work.html" data-nav-current>Work</a>
+        <a href="source.html" data-nav-current>Source</a>
+        <a href="lab.html" data-nav-current>Lab</a>
+        <a href="about.html" data-nav-current>About</a>
+        <a href="contact.html" data-nav-current>Contact</a>
+  </nav>
+  <div class="nav-right">
+    <button class="kbtn kbtn--kbd" type="button" data-open-palette aria-haspopup="dialog">
+      Search <kbd>⌘K</kbd>
+    </button>
+    <button class="motion-toggle" type="button" data-motion-toggle aria-label="Change motion level">motion: full</button>
+    <button class="kbtn nav-burger" type="button" data-open-sheet aria-expanded="false" aria-controls="mobile-sheet">Menu</button>
+  </div>
+</header>
+
+<div class="sheet" id="mobile-sheet" data-sheet hidden role="dialog" aria-modal="true" aria-label="Navigation">
+  <div class="sheet-head">
+    <span class="nav-mark"><i aria-hidden="true"></i><b>BLAXK</b> <span>BYTE</span></span>
+    <button class="close" type="button" data-close-sheet aria-label="Close navigation">✕</button>
+  </div>
+  <div class="sheet-body">
+    <ul class="sheet-nav">
+        <li><a href="index.html" data-nav-current><span class="t">Journey</span><span class="s">the overview</span></a></li>
+        <li><a href="company.html" data-nav-current><span class="t">Company</span><span class="s">what we build</span></a></li>
+        <li><a href="work.html" data-nav-current><span class="t">Work</span><span class="s">verified projects</span></a></li>
+        <li><a href="source.html" data-nav-current><span class="t">Source</span><span class="s">public code</span></a></li>
+        <li><a href="lab.html" data-nav-current><span class="t">Lab</span><span class="s">experiments</span></a></li>
+        <li><a href="about.html" data-nav-current><span class="t">About</span><span class="s">Blaxk</span></a></li>
+        <li><a href="contact.html" data-nav-current><span class="t">Contact</span><span class="s">start a project</span></a></li>
+    </ul>
+    <p class="label">Every destination is also in the command palette (<kbd>Ctrl</kbd>/<kbd>⌘</kbd>+<kbd>K</kbd>) and in the footer.</p>
+  </div>
+</div>
+
+<main id="main">
+  <section class="section section--tight" style="padding-top:calc(var(--nav-h) + 2.5rem)">
+    <div class="wrap">
+      <span class="label">Lab · experiments, concepts and honest dead ends</span>
+      <h1 style="font-size:clamp(2rem,5vw,3.4rem);margin:.4rem 0 .8rem">The lab</h1>
+      <p class="lede">Not everything worth showing is finished, and not everything finished is worth showing.
+        This page keeps the two apart. Every entry below states what was actually explored, what state it
+        reached, and — where it was left alone — why.</p>
+      <div class="note mt-2" style="max-width:80ch">
+        <strong>Rule for this page:</strong> an entry appears as a concept and stays a concept until there is
+        a repository with working code. No idea is promoted by enthusiasm, and nothing here is offered as a
+        service.
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:0">
+    <div class="wrap">
+      <div class="grid-2">
+      <article class="panel panel--pad" style="display:grid;gap:.7rem;align-content:start">
+        <div class="row-between">
+          <h3 style="margin:0;font-size:1.1rem">BlaXkVault</h3>
+          <span class="chip" data-status="concept">concept</span>
+        </div>
+        <div><span class="label">Direction</span><p class="dim" style="margin:.2rem 0 0;font-size:.92rem">A media discovery and management product: ingest, identify, organise and find again.</p></div>
+        <div><span class="label">Actual state</span><p class="dim" style="margin:.2rem 0 0;font-size:.92rem">Scoped as a product direction. No repository, no interface, no data model published.</p></div>
+        <div><span class="label">Why it is not in the work section</span><p class="dim" style="margin:.2rem 0 0;font-size:.92rem">Listed here as a concept so it is not silently presented as work in progress.</p></div>
+      </article>
+      <article class="panel panel--pad" style="display:grid;gap:.7rem;align-content:start">
+        <div class="row-between">
+          <h3 style="margin:0;font-size:1.1rem">NIPEX job-document matcher</h3>
+          <span class="chip" data-status="concept">concept</span>
+        </div>
+        <div><span class="label">Direction</span><p class="dim" style="margin:.2rem 0 0;font-size:.92rem">An automation that matches opportunities to the documents a person already has, and flags what is missing.</p></div>
+        <div><span class="label">Actual state</span><p class="dim" style="margin:.2rem 0 0;font-size:.92rem">Explored as a Python and n8n automation flow. Not built or published.</p></div>
+        <div><span class="label">Why it is not in the work section</span><p class="dim" style="margin:.2rem 0 0;font-size:.92rem">Automation of this kind touches personal documents, so it needs a privacy design before it needs a repository.</p></div>
+      </article>
+      <article class="panel panel--pad" style="display:grid;gap:.7rem;align-content:start">
+        <div class="row-between">
+          <h3 style="margin:0;font-size:1.1rem">Campus gigs marketplace (SkillMatch / Wema Campus Gigs)</h3>
+          <span class="chip" data-status="concept">concept</span>
+        </div>
+        <div><span class="label">Direction</span><p class="dim" style="margin:.2rem 0 0;font-size:.92rem">Several names were explored for one idea: matching short campus work to students who can do it.</p></div>
+        <div><span class="label">Actual state</span><p class="dim" style="margin:.2rem 0 0;font-size:.92rem">Names and scope explored only. Nothing launched, and no competing names are presented as brands.</p></div>
+        <div><span class="label">Why it is not in the work section</span><p class="dim" style="margin:.2rem 0 0;font-size:.92rem">Presenting one working name would imply a launch that did not happen.</p></div>
+      </article>
+      <article class="panel panel--pad" style="display:grid;gap:.7rem;align-content:start">
+        <div class="row-between">
+          <h3 style="margin:0;font-size:1.1rem">3D interactive site experiment</h3>
+          <span class="chip" data-status="concept">concept</span>
+        </div>
+        <div><span class="label">Direction</span><p class="dim" style="margin:.2rem 0 0;font-size:.92rem">A React and WebGL experiment exploring spatial navigation in the browser — which is where the constellation idea on this site came from.</p></div>
+        <div><span class="label">Actual state</span><p class="dim" style="margin:.2rem 0 0;font-size:.92rem">Technique explored and partially absorbed into BlaxkVERSE itself. The standalone project is not published.</p></div>
+        <div><span class="label">Why it is not in the work section</span><p class="dim" style="margin:.2rem 0 0;font-size:.92rem">Its visual language drew on third-party references. Anything derived from another work&#x27;s assets belongs in a sketchbook, not a portfolio.</p></div>
+      </article>
+      <article class="panel panel--pad" style="display:grid;gap:.7rem;align-content:start">
+        <div class="row-between">
+          <h3 style="margin:0;font-size:1.1rem">Wedding event web app</h3>
+          <span class="chip" data-status="prototype">prototype</span>
+        </div>
+        <div><span class="label">Direction</span><p class="dim" style="margin:.2rem 0 0;font-size:.92rem">An invitation and programme page built for a real family event, with a shareable digital invitation.</p></div>
+        <div><span class="label">Actual state</span><p class="dim" style="margin:.2rem 0 0;font-size:.92rem">Built as a real, used deliverable. The repository is not presented as a case study because the content is private to the family who commissioned it.</p></div>
+        <div><span class="label">Why it is not in the work section</span><p class="dim" style="margin:.2rem 0 0;font-size:.92rem">The people in the photographs never agreed to appear on a portfolio.</p></div>
+      </article>
+      <article class="panel panel--pad" style="display:grid;gap:.7rem;align-content:start">
+        <div class="row-between">
+          <h3 style="margin:0;font-size:1.1rem">Encryption and utility experiments</h3>
+          <span class="chip" data-status="prototype">prototype</span>
+        </div>
+        <div><span class="label">Direction</span><p class="dim" style="margin:.2rem 0 0;font-size:.92rem">Small single-purpose command-line utilities: text encryption, package inventory, audio feedback for git events, a download helper.</p></div>
+        <div><span class="label">Actual state</span><p class="dim" style="margin:.2rem 0 0;font-size:.92rem">Written and usable, kept as tools rather than products.</p></div>
+        <div><span class="label">Why it is not in the work section</span><p class="dim" style="margin:.2rem 0 0;font-size:.92rem">They are utilities for their author. Publishing a case study for a twenty-line script would pad the portfolio rather than strengthen it.</p></div>
+      </article></div>
+    </div>
+  </section>
+
+  <section class="section" style="background:var(--void-2);border-top:1px solid var(--hairline)">
+    <div class="wrap">
+      <h2 style="font-size:clamp(1.4rem,3vw,2rem)">The experience prototypes behind this site</h2>
+      <p class="dim" style="max-width:78ch">This site was not designed by picking a template. Before any
+        production code was written, three radically different navigation and scrolling concepts were built,
+        run on desktop and mobile, measured for frame rate and long tasks, scored against six weighted
+        criteria — and the loser of that contest is still here to read.</p>
+      <div class="grid-3 mt-2">
+        <div class="panel panel--pad">
+          <h3 style="font-size:1.05rem">Concept A — Spatial Constellation</h3>
+          <p class="dim" style="font-size:.92rem">Projects as a navigable field with a camera that travels.
+            The most original idea in the set, and the fastest after a measured compositing fix. Reused here
+            as the work field.</p>
+          <p class="label" style="margin:0">Scored 81/100</p>
+        </div>
+        <div class="panel panel--pad" style="border-color:rgba(240,68,69,.42)">
+          <h3 style="font-size:1.05rem">Concept B — Source Reactor</h3>
+          <p class="dim" style="font-size:.92rem">An engineering instrument: projects as modules, source as a
+            readable artifact on the same stage. Its navigation model won and now drives this site's rail,
+            palette and source chamber.</p>
+          <p class="label" style="margin:0">Scored 85/100 · runner-up by one point</p>
+        </div>
+        <div class="panel panel--pad" style="border-color:var(--red)">
+          <h3 style="font-size:1.05rem">Concept C — Infinite Signal</h3>
+          <p class="dim" style="font-size:.92rem">A cinematic editorial journey. Selected as the spine of
+            BlaxkVERSE because its story is carried by typography and real content — the most honest
+            substrate for a portfolio about evidence.</p>
+          <p class="label" style="margin:0">Scored 86/100 · selected</p>
+        </div>
+      </div>
+      <p class="count-note">Measurements, scores, screenshots of every state and the full rationale are
+        recorded in <span class="mono">docs/experience-decision.md</span> and
+        <span class="mono">docs/performance-report.md</span> in the project repository, alongside the
+        runnable prototypes themselves.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <h2 style="font-size:clamp(1.4rem,3vw,2rem)">What the lab is for</h2>
+      <div class="grid-2">
+        <p class="lede">Experiments exist to answer questions that a specification cannot. Can speech
+          recognition run locally fast enough to feel like conversation? Can a phone be handed a local dev
+          server without a tunnel? Can a device with no internet still be a decent tutor? Each shipped project
+          on this site started as one of those questions.</p>
+        <div class="panel panel--pad">
+          <h3 style="margin-bottom:.6rem">Bring a question to the lab</h3>
+          <p class="dim">If you have a problem that needs a prototype before it needs a product — a
+            feasibility check, a spike, a proof that a local-first approach can work — that is exactly the
+            kind of brief this page exists for.</p>
+          <div class="btn-row mt-2">
+            <a class="btn btn--red" href="contact.html">Start a conversation</a>
+            <a class="btn" href="work.html">See what shipped</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <h4>BLAXK BYTE TECHNOLOGIES</h4>
+        <p class="dim" style="margin:0 0 .6rem">Software, automation and AI systems — built by Blaxk, documented in public.</p>
+        <p class="label" style="margin:0">Company registration status is not asserted on this site because it has not been verified as complete.</p>
+      </div>
+      <div>
+        <h4>Navigate</h4>
+        <ul>
+          <li><a href="company.html">Company &amp; services</a></li>
+          <li><a href="work.html">Work</a></li>
+          <li><a href="source.html">Source explorer</a></li>
+          <li><a href="lab.html">Lab</a></li>
+          <li><a href="about.html">About Blaxk</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Elsewhere</h4>
+        <ul>
+          <li><a href="https://github.com/Blaxk-C137" target="_blank" rel="noopener noreferrer">GitHub — Blaxk-C137 ↗</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="privacy.html">Privacy &amp; AI disclosure</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Accessibility</h4>
+        <ul>
+          <li><a href="?motion=on">Full motion</a></li>
+          <li><a href="?motion=reduced">Reduced motion</a></li>
+          <li><a href="?motion=off">Explore normally (no motion)</a></li>
+        </ul>
+        <p class="label" style="margin:.5rem 0 0">Press <kbd>M</kbd> to cycle motion levels.</p>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© <span data-year>2026</span> BLAXK BYTE TECHNOLOGIES</span>
+      <span>Content verified against the public record on 15 Oct 2026</span>
+      <span>Keyboard: <kbd>/</kbd> or <kbd>⌘K</kbd> search · <kbd>M</kbd> motion</span>
+      <a href="privacy.html" style="color:var(--steel);text-decoration:none">This site makes no analytics or tracking requests.</a>
+    </div>
+  </div>
+</footer>
+
+<button class="guide-launcher" type="button" data-guide-open aria-expanded="false" aria-controls="bx-guide">
+  <i aria-hidden="true"></i> Ask about this work
+</button>
+
+<section class="guide" id="bx-guide" data-guide hidden role="dialog" aria-modal="true" aria-label="BLAXK BYTE assistant">
+  <div class="guide-head">
+    <i aria-hidden="true" style="width:8px;height:8px;background:var(--red);display:block"></i>
+    <h2>BLAXK BYTE — verified answers</h2>
+    <button class="close" type="button" data-guide-close aria-label="Close assistant">✕</button>
+  </div>
+  <div class="guide-body">
+    <div class="guide-log" data-guide-log></div>
+    <div class="guide-q" data-guide-suggest></div>
+  </div>
+  <form class="guide-form" data-guide-form>
+    <label class="sr" for="guide-input">Your question</label>
+    <input id="guide-input" data-guide-input type="text" placeholder="Ask about a project, service or status…" autocomplete="off">
+    <button class="btn" type="submit">Ask</button>
+  </form>
+  <p class="guide-disclaimer">
+    This build ships a deterministic retriever over the verified project records — it is not a language model and it will not
+    answer beyond what is recorded. The intended production design is a server-side Gemini endpoint with retrieval over
+    approved content, schema-validated output, rate limits and a static fallback. See the privacy page for the full disclosure.
+  </p>
+</section>
+
+<script src="assets/js/bx-data.js"></script>
+<script src="assets/js/bx-excerpts.js"></script>
+<script src="assets/js/bx-core.js"></script>
+
+</body>
+</html>

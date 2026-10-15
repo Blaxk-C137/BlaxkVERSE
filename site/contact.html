@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en" data-motion="full">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Contact — start a project | BLAXK BYTE TECHNOLOGIES</title>
+<meta name="description" content="Send the shape of the problem and get a written scope back. Services, the process, good fits and honest mismatches. No tracking, no analytics.">
+<meta name="color-scheme" content="dark">
+<meta name="theme-color" content="#08090c">
+<meta property="og:title" content="Contact — start a project | BLAXK BYTE TECHNOLOGIES">
+<meta property="og:description" content="Send the shape of the problem and get a written scope back. Services, the process, good fits and honest mismatches. No tracking, no analytics.">
+<meta property="og:type" content="website">
+<link rel="stylesheet" href="assets/css/blaxkverse.css">
+
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="nav">
+  <a class="nav-mark" href="index.html" aria-label="BLAXK BYTE — home">
+    <i aria-hidden="true"></i><b>BLAXK</b> <span>BYTE</span>
+  </a>
+  <nav class="nav-links" aria-label="Primary">
+        <a href="index.html" data-nav-current>Journey</a>
+        <a href="company.html" data-nav-current>Company</a>
+        <a href="work.html" data-nav-current>Work</a>
+        <a href="source.html" data-nav-current>Source</a>
+        <a href="lab.html" data-nav-current>Lab</a>
+        <a href="about.html" data-nav-current>About</a>
+        <a href="contact.html" data-nav-current>Contact</a>
+  </nav>
+  <div class="nav-right">
+    <button class="kbtn kbtn--kbd" type="button" data-open-palette aria-haspopup="dialog">
+      Search <kbd>⌘K</kbd>
+    </button>
+    <button class="motion-toggle" type="button" data-motion-toggle aria-label="Change motion level">motion: full</button>
+    <button class="kbtn nav-burger" type="button" data-open-sheet aria-expanded="false" aria-controls="mobile-sheet">Menu</button>
+  </div>
+</header>
+
+<div class="sheet" id="mobile-sheet" data-sheet hidden role="dialog" aria-modal="true" aria-label="Navigation">
+  <div class="sheet-head">
+    <span class="nav-mark"><i aria-hidden="true"></i><b>BLAXK</b> <span>BYTE</span></span>
+    <button class="close" type="button" data-close-sheet aria-label="Close navigation">✕</button>
+  </div>
+  <div class="sheet-body">
+    <ul class="sheet-nav">
+        <li><a href="index.html" data-nav-current><span class="t">Journey</span><span class="s">the overview</span></a></li>
+        <li><a href="company.html" data-nav-current><span class="t">Company</span><span class="s">what we build</span></a></li>
+        <li><a href="work.html" data-nav-current><span class="t">Work</span><span class="s">verified projects</span></a></li>
+        <li><a href="source.html" data-nav-current><span class="t">Source</span><span class="s">public code</span></a></li>
+        <li><a href="lab.html" data-nav-current><span class="t">Lab</span><span class="s">experiments</span></a></li>
+        <li><a href="about.html" data-nav-current><span class="t">About</span><span class="s">Blaxk</span></a></li>
+        <li><a href="contact.html" data-nav-current><span class="t">Contact</span><span class="s">start a project</span></a></li>
+    </ul>
+    <p class="label">Every destination is also in the command palette (<kbd>Ctrl</kbd>/<kbd>⌘</kbd>+<kbd>K</kbd>) and in the footer.</p>
+  </div>
+</div>
+
+<main id="main">
+  <section class="section section--tight" style="padding-top:calc(var(--nav-h) + 2.5rem)">
+    <div class="wrap">
+      <span class="label">Contact · transmission</span>
+      <h1 style="font-size:clamp(2rem,5vw,3.4rem);margin:.4rem 0 .8rem">Start a project</h1>
+      <p class="lede">Send the shape of the problem and a written scope comes back: what gets built, what it
+        costs, and what is explicitly out of range. A useful reply needs three things — what you are trying
+        to do, what exists today, and any real deadline.</p>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:0">
+    <div class="wrap">
+      <div class="grid-2" style="align-items:start">
+        <form class="form panel panel--pad" data-contact-form novalidate>
+          <h2 style="font-size:1.3rem;margin-bottom:.3rem">Project inquiry</h2>
+          <p class="label" style="margin-bottom:1rem">Fields marked required are the ones that make a real reply possible.</p>
+
+          <div class="field-row">
+            <label for="cf-name">Your name <span aria-hidden="true">*</span></label>
+            <input id="cf-name" name="name" type="text" autocomplete="name" required aria-required="true">
+          </div>
+          <div class="field-row">
+            <label for="cf-email">Email <span aria-hidden="true">*</span></label>
+            <input id="cf-email" name="email" type="email" autocomplete="email" required aria-required="true" aria-describedby="cf-email-hint">
+            <span class="field-hint" id="cf-email-hint">Used only to reply. Nothing is stored, sold or subscribed.</span>
+          </div>
+          <div class="field-row">
+            <label for="cf-kind">What kind of work</label>
+            <select id="cf-kind" name="kind">
+              <option>Web application</option>
+              <option>Automation or scripting</option>
+              <option>AI integration</option>
+              <option>Local-first or offline tooling</option>
+              <option>Systems or network tooling</option>
+              <option>Something else / not sure yet</option>
+            </select>
+          </div>
+          <div class="field-row">
+            <label for="cf-what">The problem <span aria-hidden="true">*</span></label>
+            <textarea id="cf-what" name="what" required aria-required="true" aria-describedby="cf-what-hint"></textarea>
+            <span class="field-hint" id="cf-what-hint">What are you trying to do, what exists today, and what would make this worth doing?</span>
+          </div>
+          <div class="field-row">
+            <label for="cf-deadline">Deadline, if one is real</label>
+            <input id="cf-deadline" name="deadline" type="text" placeholder="e.g. end of November, or none">
+          </div>
+
+          <div class="btn-row">
+            <button class="btn btn--red" type="submit">Transmit</button>
+            <a class="btn" href="https://github.com/Blaxk-C137" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+          </div>
+          <div class="trace" data-contact-trace aria-hidden="true"><i></i><b></b></div>
+          <p class="form-status" data-contact-status role="status" aria-live="polite">
+            Ready. Required fields are validated in the browser before anything is sent.
+          </p>
+          <p class="label" style="margin:0">
+            This build has no server, so submitting will tell you plainly that nothing was transmitted — see
+            the note opposite. That is deliberate: a form that pretends to send is worse than one that admits
+            it cannot.
+          </p>
+        </form>
+
+        <div style="display:grid;gap:1.2rem">
+          <div class="panel panel--pad">
+            <h2 style="font-size:1.2rem;margin-bottom:.6rem">What happens after you send this</h2>
+            <dl class="dl">
+              <div><dt>1 · A reply with questions</dt><dd>Usually the same day. If the brief is clear, the reply is a scope rather than a questionnaire.</dd></div>
+              <div><dt>2 · A written scope</dt><dd>Deliverables, timeline, price, and — importantly — what is not included.</dd></div>
+              <div><dt>3 · Work in your repository</dt><dd>Readable commits, not a reveal at the end.</dd></div>
+              <div><dt>4 · Handover documents</dt><dd>Setup, runbook and known limits, written for whoever maintains it next.</dd></div>
+            </dl>
+          </div>
+
+          <div class="panel panel--pad">
+            <h2 style="font-size:1.2rem;margin-bottom:.6rem">Direct channels</h2>
+            <ul class="tight">
+              <li><a class="inline-link" href="https://github.com/Blaxk-C137" target="_blank" rel="noopener noreferrer">GitHub — Blaxk-C137 ↗</a> — where all the work lives, and a legitimate way to start a conversation.</li>
+              <li><a class="inline-link" href="about.html">Read the capabilities first</a> if you want to judge fit before writing.</li>
+              <li><a class="inline-link" href="work.html">Read a case study</a> if you want to see how decisions get made.</li>
+            </ul>
+            <p class="label mt-2" style="margin-bottom:0">
+              No public telephone number or postal address is published, and the company registration
+              position is not asserted on this site. Both are available directly on request when a contract
+              requires them.
+            </p>
+          </div>
+
+          <div class="provenance">
+            <b>No tracking on this page.</b> There is no analytics script, no pixel, no cookie and no
+            third-party embed anywhere on this site. The assistant panel answers from local records and makes
+            no network request. Full details on the <a class="inline-link" href="privacy.html">privacy page</a>.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="background:var(--void-2);border-top:1px solid var(--hairline)">
+    <div class="wrap">
+      <h2 style="font-size:clamp(1.4rem,3vw,2rem)">Good fits and honest mismatches</h2>
+      <div class="grid-2">
+        <div class="panel panel--pad">
+          <h3 style="font-size:1.05rem">Usually a good fit</h3>
+          <ul class="tight">
+            <li>An application that needs to exist and be maintained, not a one-off page.</li>
+            <li>Automation where a person is currently the integration layer.</li>
+            <li>AI features that must keep keys server-side and behave sanely when the model is down.</li>
+            <li>Tooling that has to work offline, or on data that cannot leave the building.</li>
+            <li>A prototype whose job is to answer a feasibility question.</li>
+          </ul>
+        </div>
+        <div class="panel panel--pad">
+          <h3 style="font-size:1.05rem">Usually not a fit</h3>
+          <ul class="tight">
+            <li>Work that needs a large team or a certified compliance regime.</li>
+            <li>Anything requiring a claim that cannot be evidenced — inflated metrics, fake reviews, misleading product behaviour.</li>
+            <li>Security work framed as a certified penetration test.</li>
+            <li>Projects that need a price before anyone has read the requirements.</li>
+          </ul>
+          <p class="dim mt-1" style="margin-bottom:0">Being clear about this early saves both sides a
+            conversation that was never going to end well.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <h4>BLAXK BYTE TECHNOLOGIES</h4>
+        <p class="dim" style="margin:0 0 .6rem">Software, automation and AI systems — built by Blaxk, documented in public.</p>
+        <p class="label" style="margin:0">Company registration status is not asserted on this site because it has not been verified as complete.</p>
+      </div>
+      <div>
+        <h4>Navigate</h4>
+        <ul>
+          <li><a href="company.html">Company &amp; services</a></li>
+          <li><a href="work.html">Work</a></li>
+          <li><a href="source.html">Source explorer</a></li>
+          <li><a href="lab.html">Lab</a></li>
+          <li><a href="about.html">About Blaxk</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Elsewhere</h4>
+        <ul>
+          <li><a href="https://github.com/Blaxk-C137" target="_blank" rel="noopener noreferrer">GitHub — Blaxk-C137 ↗</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="privacy.html">Privacy &amp; AI disclosure</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Accessibility</h4>
+        <ul>
+          <li><a href="?motion=on">Full motion</a></li>
+          <li><a href="?motion=reduced">Reduced motion</a></li>
+          <li><a href="?motion=off">Explore normally (no motion)</a></li>
+        </ul>
+        <p class="label" style="margin:.5rem 0 0">Press <kbd>M</kbd> to cycle motion levels.</p>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© <span data-year>2026</span> BLAXK BYTE TECHNOLOGIES</span>
+      <span>Content verified against the public record on 15 Oct 2026</span>
+      <span>Keyboard: <kbd>/</kbd> or <kbd>⌘K</kbd> search · <kbd>M</kbd> motion</span>
+      <a href="privacy.html" style="color:var(--steel);text-decoration:none">This site makes no analytics or tracking requests.</a>
+    </div>
+  </div>
+</footer>
+
+<button class="guide-launcher" type="button" data-guide-open aria-expanded="false" aria-controls="bx-guide">
+  <i aria-hidden="true"></i> Ask about this work
+</button>
+
+<section class="guide" id="bx-guide" data-guide hidden role="dialog" aria-modal="true" aria-label="BLAXK BYTE assistant">
+  <div class="guide-head">
+    <i aria-hidden="true" style="width:8px;height:8px;background:var(--red);display:block"></i>
+    <h2>BLAXK BYTE — verified answers</h2>
+    <button class="close" type="button" data-guide-close aria-label="Close assistant">✕</button>
+  </div>
+  <div class="guide-body">
+    <div class="guide-log" data-guide-log></div>
+    <div class="guide-q" data-guide-suggest></div>
+  </div>
+  <form class="guide-form" data-guide-form>
+    <label class="sr" for="guide-input">Your question</label>
+    <input id="guide-input" data-guide-input type="text" placeholder="Ask about a project, service or status…" autocomplete="off">
+    <button class="btn" type="submit">Ask</button>
+  </form>
+  <p class="guide-disclaimer">
+    This build ships a deterministic retriever over the verified project records — it is not a language model and it will not
+    answer beyond what is recorded. The intended production design is a server-side Gemini endpoint with retrieval over
+    approved content, schema-validated output, rate limits and a static fallback. See the privacy page for the full disclosure.
+  </p>
+</section>
+
+<script src="assets/js/bx-data.js"></script>
+<script src="assets/js/bx-excerpts.js"></script>
+<script src="assets/js/bx-core.js"></script>
+
+</body>
+</html>

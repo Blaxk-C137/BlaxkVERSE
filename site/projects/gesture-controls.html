@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en" data-motion="full">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Gesture Controls — case study | BLAXK BYTE TECHNOLOGIES</title>
+<meta name="description" content="Hand-gesture recognition that drives interactive games, using a webcam as the controller. Prototype in a public repository: 12 files, Python, last pushed 2026-05-20.">
+<meta name="color-scheme" content="dark">
+<meta name="theme-color" content="#08090c">
+<meta property="og:title" content="Gesture Controls — case study | BLAXK BYTE TECHNOLOGIES">
+<meta property="og:description" content="Hand-gesture recognition that drives interactive games, using a webcam as the controller. Prototype in a public repository: 12 files, Python, last pushed 2026-05-20.">
+<meta property="og:type" content="website">
+<link rel="stylesheet" href="../assets/css/blaxkverse.css">
+
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="nav">
+  <a class="nav-mark" href="../index.html" aria-label="BLAXK BYTE — home">
+    <i aria-hidden="true"></i><b>BLAXK</b> <span>BYTE</span>
+  </a>
+  <nav class="nav-links" aria-label="Primary">
+        <a href="../index.html" data-nav-current>Journey</a>
+        <a href="../company.html" data-nav-current>Company</a>
+        <a href="../work.html" data-nav-current>Work</a>
+        <a href="../source.html" data-nav-current>Source</a>
+        <a href="../lab.html" data-nav-current>Lab</a>
+        <a href="../about.html" data-nav-current>About</a>
+        <a href="../contact.html" data-nav-current>Contact</a>
+  </nav>
+  <div class="nav-right">
+    <button class="kbtn kbtn--kbd" type="button" data-open-palette aria-haspopup="dialog">
+      Search <kbd>⌘K</kbd>
+    </button>
+    <button class="motion-toggle" type="button" data-motion-toggle aria-label="Change motion level">motion: full</button>
+    <button class="kbtn nav-burger" type="button" data-open-sheet aria-expanded="false" aria-controls="mobile-sheet">Menu</button>
+  </div>
+</header>
+
+<div class="sheet" id="mobile-sheet" data-sheet hidden role="dialog" aria-modal="true" aria-label="Navigation">
+  <div class="sheet-head">
+    <span class="nav-mark"><i aria-hidden="true"></i><b>BLAXK</b> <span>BYTE</span></span>
+    <button class="close" type="button" data-close-sheet aria-label="Close navigation">✕</button>
+  </div>
+  <div class="sheet-body">
+    <ul class="sheet-nav">
+        <li><a href="../index.html" data-nav-current><span class="t">Journey</span><span class="s">the overview</span></a></li>
+        <li><a href="../company.html" data-nav-current><span class="t">Company</span><span class="s">what we build</span></a></li>
+        <li><a href="../work.html" data-nav-current><span class="t">Work</span><span class="s">verified projects</span></a></li>
+        <li><a href="../source.html" data-nav-current><span class="t">Source</span><span class="s">public code</span></a></li>
+        <li><a href="../lab.html" data-nav-current><span class="t">Lab</span><span class="s">experiments</span></a></li>
+        <li><a href="../about.html" data-nav-current><span class="t">About</span><span class="s">Blaxk</span></a></li>
+        <li><a href="../contact.html" data-nav-current><span class="t">Contact</span><span class="s">start a project</span></a></li>
+    </ul>
+    <p class="label">Every destination is also in the command palette (<kbd>Ctrl</kbd>/<kbd>⌘</kbd>+<kbd>K</kbd>) and in the footer.</p>
+  </div>
+</div>
+
+<main id="main">
+  <article class="section" style="padding-top:calc(var(--nav-h) + 2.5rem)">
+    <div class="wrap case">
+      <div class="case-head">
+        <a class="label" href="../work.html" style="text-decoration:none">← All work</a>
+        <h1 style="font-size:clamp(2rem,5.4vw,3.6rem);margin:0">Gesture Controls</h1>
+        <p class="lede" style="font-size:1.15rem;margin:0">Hand tracking as an input device</p>
+        <div class="case-meta">
+          <span class="chip" data-status="prototype">prototype</span>
+          <span class="chip">Python</span>
+          <span class="chip">vision</span><span class="chip">experimental</span>
+        </div>
+      </div>
+
+      <dl class="case-facts"><div><dt>Status</dt><dd><span class="chip" data-status="prototype">prototype</span></dd></div><div><dt>Language</dt><dd>Python</dd></div><div><dt>Repository</dt><dd><a class="inline-link" href="https://github.com/Blaxk-C137/Gesture_Controls" target="_blank" rel="noopener noreferrer">Blaxk-C137/Gesture_Controls ↗</a></dd></div><div><dt>Last push</dt><dd>2026-05-20</dd></div><div><dt>Source size</dt><dd>12 files · 22 KB</dd></div><div><dt>Licence</dt><dd>MIT</dd></div></dl>
+
+      <div class="note note--plain">
+        <strong>Provenance.</strong> Every figure on this page was read from the public repository on
+        2026-10-15 — file counts and sizes from the recursive git tree, language and dates from the
+        GitHub API. No usage statistic, download count, user number or performance claim is made anywhere on
+        this page, because none of those has been measured.
+      </div>
+
+      <section id="brief">
+        <h2 style="font-size:clamp(1.4rem,3vw,2rem)">The brief</h2>
+        <div class="grid-2">
+          <div><h3 style="font-size:1.05rem">Problem</h3><p class="dim">Whether computer vision can be a usable input device rather than a demo is decided by latency and false positives, not by accuracy on a still image.</p></div>
+          <div><h3 style="font-size:1.05rem">Who it is for</h3><p class="dim">An experimental user — this is a testbed, not a product.</p></div>
+        </div>
+        <div class="mt-3">
+          <h3 style="font-size:1.05rem">Approach</h3>
+          <p class="dim" style="max-width:76ch">MediaPipe hand landmarks from the webcam feed are mapped to control events for a small game loop, with the frame budget treated as the constraint because the tracker and the renderer share one machine.</p>
+          <h3 class="mt-2" style="font-size:1.05rem">Personal contribution</h3>
+          <p class="dim" style="max-width:76ch">Sole author of the tracking-and-control loop.</p>
+        </div>
+      </section>
+
+      <section id="decisions">
+        <h2 style="font-size:clamp(1.4rem,3vw,2rem)">Decisions that mattered</h2>
+        <p class="dim" style="max-width:70ch">These are the choices that shaped the code — the ones worth
+          explaining, rather than a feature list.</p>
+        <div class="grid-2 mt-2">
+        <div class="field panel--pad" style="border:1px solid var(--hairline);background:var(--void-2)">
+          <h3 style="font-size:1.05rem;margin-bottom:.4rem">Landmarks instead of a trained classifier</h3>
+          <p class="dim" style="margin:0;font-size:.94rem">Fewer moving parts and no dataset to collect before the first run — appropriate for testing whether the interaction is viable at all.</p>
+        </div>
+        <div class="field panel--pad" style="border:1px solid var(--hairline);background:var(--void-2)">
+          <h3 style="font-size:1.05rem;margin-bottom:.4rem">A gesture must be stable across frames before it counts</h3>
+          <p class="dim" style="margin:0;font-size:.94rem">Single-frame triggers produced constant accidental input, which is the failure that makes gesture control feel broken rather than imprecise.</p>
+        </div></div>
+      </section>
+
+      <section id="limits">
+        <h2 style="font-size:clamp(1.4rem,3vw,2rem)">Limitations, stated plainly</h2>
+        <ul class="tight" style="max-width:76ch"><li>Sensitive to lighting and camera quality.</li><li>Prototype scope: a demo loop, not a general input framework.</li><li>MIT licensed.</li><li>A webcam application, so there is no deployment to visit.</li></ul>
+        <p class="dim mt-2" style="max-width:76ch"><strong>What this is not:</strong> there is no public
+          deployment for this project, so it should not be described as live, available, in production, or
+          used by anyone. Claims about scale or reliability would require measurements that do not exist.</p>
+      </section>
+
+      
+      <section class="section" id="screenshots" style="padding-top:0">
+        <h2 style="font-size:clamp(1.4rem,3vw,2rem)">Screenshots</h2>
+        <p class="note note--plain" style="max-width:76ch">The repository has no committed interface
+          screenshot, so none is shown. Re-creating one, or illustrating this page with unrelated imagery,
+          would misrepresent what exists — the source, the README and the file tree below are the evidence
+          available for this project.</p>
+      </section>
+
+      <section id="source" class="section" style="padding-top:0">
+        <h2 style="font-size:clamp(1.4rem,3vw,2rem)">Source chamber</h2>
+        <p class="dim" style="max-width:70ch">An excerpt recorded by repository, commit, path and line range —
+          so this page can be checked against the code it describes at any time. Selectable text, never
+          executed.</p>
+        <div class="mt-2">
+      <div class="code">
+        <div class="code-head"><span class="path">no excerpt reviewed</span><span class="spacer"></span><span>—</span></div>
+        <pre tabindex="0" aria-label="No excerpt available">// No pinned excerpt has been reviewed for this project yet.
+// The chamber shows an empty state rather than filling the space with
+// unrelated code or a mock-up. The repository is linked above.</pre>
+        <div class="code-foot">An empty chamber is the honest state. Nothing here is illustrative or invented.</div>
+      </div></div>
+        
+      </section>
+
+      <section id="lessons">
+        <h2 style="font-size:clamp(1.4rem,3vw,2rem)">What it taught</h2>
+        <p class="lede" style="max-width:76ch">Latency, not recognition accuracy, is what decides whether a gesture interface is usable.</p>
+      </section>
+
+      <section>
+        <h2 style="font-size:clamp(1.4rem,3vw,2rem)">Continue</h2>
+        <div class="project-rows"><a class="project-row" href="blaxk-housing.html"><span class="idx">01</span><span><span class="ttl">BlaXk Housing</span><span class="sub"> — Campus housing marketplace, role-split</span></span><span class="side"><span class="chip" data-status="prototype">prototype</span></span></a><a class="project-row" href="edublaxk.html"><span class="idx">02</span><span><span class="ttl">EduBlaxk</span><span class="sub"> — Local AI tutor &amp; assessment engine</span></span><span class="side"><span class="chip" data-status="prototype">prototype</span></span></a><a class="project-row" href="sabi.html"><span class="idx">03</span><span><span class="ttl">SABI</span><span class="sub"> — Voice-first tutor that runs on your device</span></span><span class="side"><span class="chip" data-status="prototype">prototype</span></span></a></div>
+        <div class="btn-row mt-2">
+          <a class="btn" href="../work.html">All work</a>
+          <a class="btn" href="../source.html">Source explorer</a>
+          <a class="btn btn--ghost" href="../contact.html">Start a project</a>
+        </div>
+      </section>
+    </div>
+  </article>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <h4>BLAXK BYTE TECHNOLOGIES</h4>
+        <p class="dim" style="margin:0 0 .6rem">Software, automation and AI systems — built by Blaxk, documented in public.</p>
+        <p class="label" style="margin:0">Company registration status is not asserted on this site because it has not been verified as complete.</p>
+      </div>
+      <div>
+        <h4>Navigate</h4>
+        <ul>
+          <li><a href="../company.html">Company &amp; services</a></li>
+          <li><a href="../work.html">Work</a></li>
+          <li><a href="../source.html">Source explorer</a></li>
+          <li><a href="../lab.html">Lab</a></li>
+          <li><a href="../about.html">About Blaxk</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Elsewhere</h4>
+        <ul>
+          <li><a href="https://github.com/Blaxk-C137" target="_blank" rel="noopener noreferrer">GitHub — Blaxk-C137 ↗</a></li>
+          <li><a href="../contact.html">Contact</a></li>
+          <li><a href="../privacy.html">Privacy &amp; AI disclosure</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Accessibility</h4>
+        <ul>
+          <li><a href="?motion=on">Full motion</a></li>
+          <li><a href="?motion=reduced">Reduced motion</a></li>
+          <li><a href="?motion=off">Explore normally (no motion)</a></li>
+        </ul>
+        <p class="label" style="margin:.5rem 0 0">Press <kbd>M</kbd> to cycle motion levels.</p>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© <span data-year>2026</span> BLAXK BYTE TECHNOLOGIES</span>
+      <span>Content verified against the public record on 15 Oct 2026</span>
+      <span>Keyboard: <kbd>/</kbd> or <kbd>⌘K</kbd> search · <kbd>M</kbd> motion</span>
+      <a href="../privacy.html" style="color:var(--steel);text-decoration:none">This site makes no analytics or tracking requests.</a>
+    </div>
+  </div>
+</footer>
+
+<button class="guide-launcher" type="button" data-guide-open aria-expanded="false" aria-controls="bx-guide">
+  <i aria-hidden="true"></i> Ask about this work
+</button>
+
+<section class="guide" id="bx-guide" data-guide hidden role="dialog" aria-modal="true" aria-label="BLAXK BYTE assistant">
+  <div class="guide-head">
+    <i aria-hidden="true" style="width:8px;height:8px;background:var(--red);display:block"></i>
+    <h2>BLAXK BYTE — verified answers</h2>
+    <button class="close" type="button" data-guide-close aria-label="Close assistant">✕</button>
+  </div>
+  <div class="guide-body">
+    <div class="guide-log" data-guide-log></div>
+    <div class="guide-q" data-guide-suggest></div>
+  </div>
+  <form class="guide-form" data-guide-form>
+    <label class="sr" for="guide-input">Your question</label>
+    <input id="guide-input" data-guide-input type="text" placeholder="Ask about a project, service or status…" autocomplete="off">
+    <button class="btn" type="submit">Ask</button>
+  </form>
+  <p class="guide-disclaimer">
+    This build ships a deterministic retriever over the verified project records — it is not a language model and it will not
+    answer beyond what is recorded. The intended production design is a server-side Gemini endpoint with retrieval over
+    approved content, schema-validated output, rate limits and a static fallback. See the privacy page for the full disclosure.
+  </p>
+</section>
+
+<script src="../assets/js/bx-data.js"></script>
+<script src="../assets/js/bx-excerpts.js"></script>
+<script src="../assets/js/bx-core.js"></script>
+
+</body>
+</html>

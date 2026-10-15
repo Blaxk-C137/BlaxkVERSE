@@ -1,0 +1,1411 @@
+{
+  "generatedAt": "2026-10-15T16:53:32.742Z",
+  "engine": "chromium (playwright-core)",
+  "note": "Frame statistics are gathered by BX.hud inside the page (rolling 180-frame window). They describe a headless container with 2 vCPU, which is a conservative stand-in for a modest laptop, not a benchmark of the user's device.",
+  "results": [
+    {
+      "concept": "A",
+      "conceptName": "Spatial Constellation",
+      "viewport": "desktop",
+      "viewportSize": "1440x900@1x",
+      "cpuThrottle": 1,
+      "mode": "full",
+      "wallMs": 15179,
+      "interactMs": 143,
+      "summary": {
+        "fps": 60,
+        "fpsMin": 60,
+        "fpsMax": 60,
+        "fpsSamples": [
+          60,
+          60,
+          60
+        ],
+        "p95": 16.8,
+        "worst": 16.8,
+        "longTasks": 0,
+        "passCount": 3
+      },
+      "passes": [
+        {
+          "fps": 60,
+          "p95": 16.8,
+          "worst": 16.8,
+          "longTasks": 0,
+          "samples": 180
+        },
+        {
+          "fps": 60,
+          "p95": 16.8,
+          "worst": 16.8,
+          "longTasks": 0,
+          "samples": 180
+        },
+        {
+          "fps": 60,
+          "p95": 16.8,
+          "worst": 16.8,
+          "longTasks": 0,
+          "samples": 180
+        }
+      ],
+      "errors": [],
+      "report": {
+        "url": "/prototypes/concept-a.html?motion=on",
+        "mode": "full",
+        "motionReason": "default",
+        "fps": 60,
+        "frameP95": 16.8,
+        "frameWorst": 16.8,
+        "frameSamples": 180,
+        "longTasks": 0,
+        "longTaskMax": 0,
+        "domNodes": 224,
+        "transferBytes": 32118,
+        "domContentLoaded": 70,
+        "viewport": "1440x900",
+        "dpr": 1
+      },
+      "navigation": {
+        "domInteractive": 69,
+        "loadEnd": 70,
+        "type": "navigate"
+      },
+      "a11y": {
+        "focusable": 39,
+        "h1": 1,
+        "landmarks": 1,
+        "lang": "en",
+        "skipLink": true,
+        "imagesWithoutAlt": 0,
+        "textNodes": 357
+      }
+    },
+    {
+      "concept": "A",
+      "conceptName": "Spatial Constellation",
+      "viewport": "desktop",
+      "viewportSize": "1440x900@1x",
+      "cpuThrottle": 1,
+      "mode": "reduced",
+      "wallMs": 15100,
+      "interactMs": 133,
+      "summary": {
+        "fps": 60,
+        "fpsMin": 60,
+        "fpsMax": 60,
+        "fpsSamples": [
+          60,
+          60,
+          60
+        ],
+        "p95": 16.7,
+        "worst": 16.8,
+        "longTasks": 0,
+        "passCount": 3
+      },
+      "passes": [
+        {
+          "fps": 60,
+          "p95": 16.7,
+          "worst": 16.8,
+          "longTasks": 0,
+          "samples": 180
+        },
+        {
+          "fps": 60,
+          "p95": 16.7,
+          "worst": 16.8,
+          "longTasks": 0,
+          "samples": 180
+        },
+        {
+          "fps": 60,
+          "p95": 16.8,
+          "worst": 16.8,
+          "longTasks": 0,
+          "samples": 180
+        }
+      ],
+      "errors": [],
+      "report": {
+        "url": "/prototypes/concept-a.html?motion=off",
+        "mode": "static",
+        "motionReason": "url-parameter",
+        "fps": 60,
+        "frameP95": 16.8,
+        "frameWorst": 16.8,
+        "frameSamples": 180,
+        "longTasks": 0,
+        "longTaskMax": 0,
+        "domNodes": 224,
+        "transferBytes": 32118,
+        "domContentLoaded": 52,
+        "viewport": "1440x900",
+        "dpr": 1
+      },
+      "navigation": {
+        "domInteractive": 51,
+        "loadEnd": 52,
+        "type": "navigate"
+      },
+      "a11y": {
+        "focusable": 39,
+        "h1": 1,
+        "landmarks": 1,
+        "lang": "en",
+        "skipLink": true,
+        "imagesWithoutAlt": 0,
+        "textNodes": 357
+      }
+    },
+    {
+      "concept": "A",
+      "conceptName": "Spatial Constellation",
+      "viewport": "mobile",
+      "viewportSize": "390x844@3x",
+      "cpuThrottle": 1,
+      "mode": "full",
+      "wallMs": 15183,
+      "interactMs": 141,
+      "summary": {
+        "fps": 60,
+        "fpsMin": 60,
+        "fpsMax": 60,
+        "fpsSamples": [
+          60,
+          60,
+          60
+        ],
+        "p95": 16.8,
+        "worst": 16.8,
+        "longTasks": 0,
+        "passCount": 3
+      },
+      "passes": [
+        {
+          "fps": 60,
+          "p95": 16.8,
+          "worst": 16.8,
+          "longTasks": 0,
+          "samples": 180
+        },
+        {
+          "fps": 60,
+          "p95": 16.7,
+          "worst": 16.8,
+          "longTasks": 0,
+          "samples": 180
+        },
+        {
+          "fps": 60,
+          "p95": 16.8,
+          "worst": 16.8,
+          "longTasks": 0,
+          "samples": 180
+        }
+      ],
+      "errors": [],
+      "report": {
+        "url": "/prototypes/concept-a.html?motion=on",
+        "mode": "full",
+        "motionReason": "default",
+        "fps": 60,
+        "frameP95": 16.8,
+        "frameWorst": 16.8,
+        "frameSamples": 180,
+        "longTasks": 0,
+        "longTaskMax": 0,
+        "domNodes": 224,
+        "transferBytes": 32118,
+        "domContentLoaded": 60,
+        "viewport": "390x844",
+        "dpr": 3
+      },
+      "navigation": {
+        "domInteractive": 60,
+        "loadEnd": 60,
+        "type": "navigate"
+      },
+      "a11y": {
+        "focusable": 39,
+        "h1": 1,
+        "landmarks": 1,
+        "lang": "en",
+        "skipLink": true,
+        "imagesWithoutAlt": 0,
+        "textNodes": 357
+      }
+    },
+    {
+      "concept": "A",
+      "conceptName": "Spatial Constellation",
+      "viewport": "mobile",
+      "viewportSize": "390x844@3x",
+      "cpuThrottle": 1,
+      "mode": "reduced",
+      "wallMs": 15087,
+      "interactMs": 133,
+      "summary": {
+        "fps": 60,
+        "fpsMin": 60,
+        "fpsMax": 60,
+        "fpsSamples": [
+          60,
+          60,
+          60
+        ],
+        "p95": 16.7,
+        "worst": 16.8,
+        "longTasks": 0,
+        "passCount": 3
+      },
+      "passes": [
+        {
+          "fps": 60,
+          "p95": 16.8,
+          "worst": 16.8,
+          "longTasks": 0,
+          "samples": 180
+        },
+        {
+          "fps": 60,
+          "p95": 16.7,
+          "worst": 16.8,
+          "longTasks": 0,
+          "samples": 180
+        },
+        {
+          "fps": 60,
+          "p95": 16.7,
+          "worst": 16.8,
+          "longTasks": 0,
+          "samples": 180
+        }
+      ],
+      "errors": [],
+      "report": {
+        "url": "/prototypes/concept-a.html?motion=off",
+        "mode": "static",
+        "motionReason": "url-parameter",
+        "fps": 60,
+        "frameP95": 16.7,
+        "frameWorst": 16.8,
+        "frameSamples": 180,
+        "longTasks": 0,
+        "longTaskMax": 0,
+        "domNodes": 225,
+        "transferBytes": 32118,
+        "domContentLoaded": 68,
+        "viewport": "390x844",
+        "dpr": 3
+      },
+      "navigation": {
+        "domInteractive": 68,
+        "loadEnd": 68,
+        "type": "navigate"
+      },
+      "a11y": {
+        "focusable": 39,
+        "h1": 1,
+        "landmarks": 1,
+        "lang": "en",
+        "skipLink": true,
+        "imagesWithoutAlt": 0,
+        "textNodes": 373
+      }
+    },
+    {
+      "concept": "A",
+      "conceptName": "Spatial Constellation",
+      "viewport": "low-end",
+      "viewportSize": "1280x720@1x",
+      "cpuThrottle": 6,
+      "mode": "full",
+      "wallMs": 16262,
+      "interactMs": 149,
+      "summary": {
+        "fps": 60,
+        "fpsMin": 60,
+        "fpsMax": 60,
+        "fpsSamples": [
+          60,
+          60,
+          60
+        ],
+        "p95": 16.7,
+        "worst": 33.3,
+        "longTasks": 0,
+        "passCount": 3
+      },
+      "passes": [
+        {
+          "fps": 60,
+          "p95": 16.8,
+          "worst": 33.3,
+          "longTasks": 0,
+          "samples": 180
+        },
+        {
+          "fps": 60,
+          "p95": 16.7,
+          "worst": 16.8,
+          "longTasks": 0,
+          "samples": 180
+        },
+        {
+          "fps": 60,
+          "p95": 16.7,
+          "worst": 16.8,
+          "longTasks": 0,
+          "samples": 180
+        }
+      ],
+      "errors": [],
+      "report": {
+        "url": "/prototypes/concept-a.html?motion=on",
+        "mode": "full",
+        "motionReason": "default",
+        "fps": 60,
+        "frameP95": 16.7,
+        "frameWorst": 16.8,
+        "frameSamples": 180,
+        "longTasks": 0,
+        "longTaskMax": 0,
+        "domNodes": 224,
+        "transferBytes": 32118,
+        "domContentLoaded": 276,
+        "viewport": "1280x720",
+        "dpr": 1
+      },
+      "navigation": {
+        "domInteractive": 275,
+        "loadEnd": 276,
+        "type": "navigate"
+      },
+      "a11y": {
+        "focusable": 39,
+        "h1": 1,
+        "landmarks": 1,
+        "lang": "en",
+        "skipLink": true,
+        "imagesWithoutAlt": 0,
+        "textNodes": 357
+      }
+    },
+    {
+      "concept": "A",
+      "conceptName": "Spatial Constellation",
+      "viewport": "low-end",
+      "viewportSize": "1280x720@1x",
+      "cpuThrottle": 6,
+      "mode": "reduced",
+      "wallMs": 15664,
+      "interactMs": 130,
+      "summary": {
+        "fps": 60,
+        "fpsMin": 60,
+        "fpsMax": 60,
+        "fpsSamples": [
+          60,
+          60,
+          60
+        ],
+        "p95": 16.8,
+        "worst": 33.4,
+        "longTasks": 0,
+        "passCount": 3
+      },
+      "passes": [
+        {
+          "fps": 60,
+          "p95": 16.8,
+          "worst": 16.8,
+          "longTasks": 0,
+          "samples": 180
+        },
+        {
+          "fps": 60,
+          "p95": 16.7,
+          "worst": 33.4,
+          "longTasks": 0,
+          "samples": 180
+        },
+        {
+          "fps": 60,
+          "p95": 16.8,
+          "worst": 16.8,
+          "longTasks": 0,
+          "samples": 180
+        }
+      ],
+      "errors": [],
+      "report": {
+        "url": "/prototypes/concept-a.html?motion=off",
+        "mode": "static",
+        "motionReason": "url-parameter",
+        "fps": 60,
+        "frameP95": 16.8,
+        "frameWorst": 16.8,
+        "frameSamples": 180,
+        "longTasks": 0,
+        "longTaskMax": 0,
+        "domNodes": 224,
+        "transferBytes": 32118,
+        "domContentLoaded": 255,
+        "viewport": "1280x720",
+        "dpr": 1
+      },
+      "navigation": {
+        "domInteractive": 255,
+        "loadEnd": 255,
+        "type": "navigate"
+      },
+      "a11y": {
+        "focusable": 39,
+        "h1": 1,
+        "landmarks": 1,
+        "lang": "en",
+        "skipLink": true,
+        "imagesWithoutAlt": 0,
+        "textNodes": 357
+      }
+    },
+    {
+      "concept": "B",
+      "conceptName": "Source Reactor",
+      "viewport": "desktop",
+      "viewportSize": "1440x900@1x",
+      "cpuThrottle": 1,
+      "mode": "full",
+      "wallMs": 15102,
+      "interactMs": 137,
+      "summary": {
+        "fps": 55,
+        "fpsMin": 54,
+        "fpsMax": 56,
+        "fpsSamples": [
+          54,
+          56,
+          55
+        ],
+        "p95": 33.3,
+        "worst": 50.1,
+        "longTasks": 0,
+        "passCount": 3
+      },
+      "passes": [
+        {
+          "fps": 54,
+          "p95": 33.3,
+          "worst": 50.1,
+          "longTasks": 0,
+          "samples": 165
+        },
+        {
+          "fps": 56,
+          "p95": 33.4,
+          "worst": 33.4,
+          "longTasks": 0,
+          "samples": 172
+        },
+        {
+          "fps": 55,
+          "p95": 33.3,
+          "worst": 33.4,
+          "longTasks": 0,
+          "samples": 168
+        }
+      ],
+      "errors": [],
+      "report": {
+        "url": "/prototypes/concept-b.html?motion=on",
+        "mode": "full",
+        "motionReason": "default",
+        "fps": 55,
+        "frameP95": 33.3,
+        "frameWorst": 33.4,
+        "frameSamples": 168,
+        "longTasks": 0,
+        "longTaskMax": 0,
+        "domNodes": 273,
+        "transferBytes": 32118,
+        "domContentLoaded": 76,
+        "viewport": "1440x900",
+        "dpr": 1
+      },
+      "navigation": {
+        "domInteractive": 76,
+        "loadEnd": 77,
+        "type": "navigate"
+      },
+      "a11y": {
+        "focusable": 29,
+        "h1": 1,
+        "landmarks": 3,
+        "lang": "en",
+        "skipLink": true,
+        "imagesWithoutAlt": 0,
+        "textNodes": 440
+      }
+    },
+    {
+      "concept": "B",
+      "conceptName": "Source Reactor",
+      "viewport": "desktop",
+      "viewportSize": "1440x900@1x",
+      "cpuThrottle": 1,
+      "mode": "reduced",
+      "wallMs": 15072,
+      "interactMs": 136,
+      "summary": {
+        "fps": 59,
+        "fpsMin": 59,
+        "fpsMax": 59,
+        "fpsSamples": [
+          59,
+          59,
+          59
+        ],
+        "p95": 16.8,
+        "worst": 33.4,
+        "longTasks": 0,
+        "passCount": 3
+      },
+      "passes": [
+        {
+          "fps": 59,
+          "p95": 16.8,
+          "worst": 33.4,
+          "longTasks": 0,
+          "samples": 180
+        },
+        {
+          "fps": 59,
+          "p95": 16.7,
+          "worst": 33.3,
+          "longTasks": 0,
+          "samples": 180
+        },
+        {
+          "fps": 59,
+          "p95": 16.8,
+          "worst": 33.4,
+          "longTasks": 0,
+          "samples": 180
+        }
+      ],
+      "errors": [],
+      "report": {
+        "url": "/prototypes/concept-b.html?motion=off",
+        "mode": "static",
+        "motionReason": "url-parameter",
+        "fps": 59,
+        "frameP95": 16.8,
+        "frameWorst": 33.4,
+        "frameSamples": 180,
+        "longTasks": 0,
+        "longTaskMax": 0,
+        "domNodes": 273,
+        "transferBytes": 32118,
+        "domContentLoaded": 55,
+        "viewport": "1440x900",
+        "dpr": 1
+      },
+      "navigation": {
+        "domInteractive": 55,
+        "loadEnd": 55,
+        "type": "navigate"
+      },
+      "a11y": {
+        "focusable": 29,
+        "h1": 1,
+        "landmarks": 3,
+        "lang": "en",
+        "skipLink": true,
+        "imagesWithoutAlt": 0,
+        "textNodes": 440
+      }
+    },
+    {
+      "concept": "B",
+      "conceptName": "Source Reactor",
+      "viewport": "mobile",
+      "viewportSize": "390x844@3x",
+      "cpuThrottle": 1,
+      "mode": "full",
+      "wallMs": 15066,
+      "interactMs": 135,
+      "summary": {
+        "fps": 60,
+        "fpsMin": 60,
+        "fpsMax": 60,
+        "fpsSamples": [
+          60,
+          60,
+          60
+        ],
+        "p95": 16.8,
+        "worst": 16.8,
+        "longTasks": 0,
+        "passCount": 3
+      },
+      "passes": [
+        {
+          "fps": 60,
+          "p95": 16.8,
+          "worst": 16.8,
+          "longTasks": 0,
+          "samples": 180
+        },
+        {
+          "fps": 60,
+          "p95": 16.8,
+          "worst": 16.8,
+          "longTasks": 0,
+          "samples": 180
+        },
+        {
+          "fps": 60,
+          "p95": 16.8,
+          "worst": 16.8,
+          "longTasks": 0,
+          "samples": 180
+        }
+      ],
+      "errors": [],
+      "report": {
+        "url": "/prototypes/concept-b.html?motion=on",
+        "mode": "full",
+        "motionReason": "default",
+        "fps": 60,
+        "frameP95": 16.8,
+        "frameWorst": 16.8,
+        "frameSamples": 180,
+        "longTasks": 0,
+        "longTaskMax": 0,
+        "domNodes": 273,
+        "transferBytes": 32118,
+        "domContentLoaded": 50,
+        "viewport": "390x844",
+        "dpr": 3
+      },
+      "navigation": {
+        "domInteractive": 50,
+        "loadEnd": 51,
+        "type": "navigate"
+      },
+      "a11y": {
+        "focusable": 29,
+        "h1": 1,
+        "landmarks": 3,
+        "lang": "en",
+        "skipLink": true,
+        "imagesWithoutAlt": 0,
+        "textNodes": 423
+      }
+    },
+    {
+      "concept": "B",
+      "conceptName": "Source Reactor",
+      "viewport": "mobile",
+      "viewportSize": "390x844@3x",
+      "cpuThrottle": 1,
+      "mode": "reduced",
+      "wallMs": 15078,
+      "interactMs": 129,
+      "summary": {
+        "fps": 60,
+        "fpsMin": 60,
+        "fpsMax": 60,
+        "fpsSamples": [
+          60,
+          60,
+          60
+        ],
+        "p95": 16.7,
+        "worst": 16.8,
+        "longTasks": 0,
+        "passCount": 3
+      },
+      "passes": [
+        {
+          "fps": 60,
+          "p95": 16.8,
+          "worst": 16.8,
+          "longTasks": 0,
+          "samples": 180
+        },
+        {
+          "fps": 60,
+          "p95": 16.7,
+          "worst": 16.8,
+          "longTasks": 0,
+          "samples": 180
+        },
+        {
+          "fps": 60,
+          "p95": 16.7,
+          "worst": 16.8,
+          "longTasks": 0,
+          "samples": 180
+        }
+      ],
+      "errors": [],
+      "report": {
+        "url": "/prototypes/concept-b.html?motion=off",
+        "mode": "static",
+        "motionReason": "url-parameter",
+        "fps": 60,
+        "frameP95": 16.7,
+        "frameWorst": 16.8,
+        "frameSamples": 180,
+        "longTasks": 0,
+        "longTaskMax": 0,
+        "domNodes": 273,
+        "transferBytes": 32118,
+        "domContentLoaded": 56,
+        "viewport": "390x844",
+        "dpr": 3
+      },
+      "navigation": {
+        "domInteractive": 56,
+        "loadEnd": 56,
+        "type": "navigate"
+      },
+      "a11y": {
+        "focusable": 29,
+        "h1": 1,
+        "landmarks": 3,
+        "lang": "en",
+        "skipLink": true,
+        "imagesWithoutAlt": 0,
+        "textNodes": 423
+      }
+    },
+    {
+      "concept": "B",
+      "conceptName": "Source Reactor",
+      "viewport": "low-end",
+      "viewportSize": "1280x720@1x",
+      "cpuThrottle": 6,
+      "mode": "full",
+      "wallMs": 15600,
+      "interactMs": 135,
+      "summary": {
+        "fps": 58,
+        "fpsMin": 57,
+        "fpsMax": 58,
+        "fpsSamples": [
+          58,
+          58,
+          57
+        ],
+        "p95": 16.8,
+        "worst": 50,
+        "longTasks": 0,
+        "passCount": 3
+      },
+      "passes": [
+        {
+          "fps": 58,
+          "p95": 16.8,
+          "worst": 50,
+          "longTasks": 0,
+          "samples": 180
+        },
+        {
+          "fps": 58,
+          "p95": 16.8,
+          "worst": 33.4,
+          "longTasks": 0,
+          "samples": 180
+        },
+        {
+          "fps": 57,
+          "p95": 16.8,
+          "worst": 50,
+          "longTasks": 0,
+          "samples": 180
+        }
+      ],
+      "errors": [],
+      "report": {
+        "url": "/prototypes/concept-b.html?motion=on",
+        "mode": "full",
+        "motionReason": "default",
+        "fps": 57,
+        "frameP95": 16.8,
+        "frameWorst": 50,
+        "frameSamples": 180,
+        "longTasks": 0,
+        "longTaskMax": 0,
+        "domNodes": 273,
+        "transferBytes": 32118,
+        "domContentLoaded": 250,
+        "viewport": "1280x720",
+        "dpr": 1
+      },
+      "navigation": {
+        "domInteractive": 250,
+        "loadEnd": 250,
+        "type": "navigate"
+      },
+      "a11y": {
+        "focusable": 29,
+        "h1": 1,
+        "landmarks": 3,
+        "lang": "en",
+        "skipLink": true,
+        "imagesWithoutAlt": 0,
+        "textNodes": 440
+      }
+    },
+    {
+      "concept": "B",
+      "conceptName": "Source Reactor",
+      "viewport": "low-end",
+      "viewportSize": "1280x720@1x",
+      "cpuThrottle": 6,
+      "mode": "reduced",
+      "wallMs": 15572,
+      "interactMs": 138,
+      "summary": {
+        "fps": 59,
+        "fpsMin": 59,
+        "fpsMax": 59,
+        "fpsSamples": [
+          59,
+          59,
+          59
+        ],
+        "p95": 16.8,
+        "worst": 33.4,
+        "longTasks": 0,
+        "passCount": 3
+      },
+      "passes": [
+        {
+          "fps": 59,
+          "p95": 16.8,
+          "worst": 33.4,
+          "longTasks": 0,
+          "samples": 180
+        },
+        {
+          "fps": 59,
+          "p95": 16.8,
+          "worst": 33.3,
+          "longTasks": 0,
+          "samples": 180
+        },
+        {
+          "fps": 59,
+          "p95": 16.8,
+          "worst": 33.4,
+          "longTasks": 0,
+          "samples": 180
+        }
+      ],
+      "errors": [],
+      "report": {
+        "url": "/prototypes/concept-b.html?motion=off",
+        "mode": "static",
+        "motionReason": "url-parameter",
+        "fps": 59,
+        "frameP95": 16.8,
+        "frameWorst": 33.4,
+        "frameSamples": 180,
+        "longTasks": 0,
+        "longTaskMax": 0,
+        "domNodes": 273,
+        "transferBytes": 32118,
+        "domContentLoaded": 217,
+        "viewport": "1280x720",
+        "dpr": 1
+      },
+      "navigation": {
+        "domInteractive": 217,
+        "loadEnd": 218,
+        "type": "navigate"
+      },
+      "a11y": {
+        "focusable": 29,
+        "h1": 1,
+        "landmarks": 3,
+        "lang": "en",
+        "skipLink": true,
+        "imagesWithoutAlt": 0,
+        "textNodes": 440
+      }
+    },
+    {
+      "concept": "C",
+      "conceptName": "Infinite Signal",
+      "viewport": "desktop",
+      "viewportSize": "1440x900@1x",
+      "cpuThrottle": 1,
+      "mode": "full",
+      "wallMs": 15103,
+      "interactMs": 137,
+      "summary": {
+        "fps": 50,
+        "fpsMin": 48,
+        "fpsMax": 51,
+        "fpsSamples": [
+          51,
+          50,
+          48
+        ],
+        "p95": 33.4,
+        "worst": 50.1,
+        "longTasks": 0,
+        "passCount": 3
+      },
+      "passes": [
+        {
+          "fps": 51,
+          "p95": 33.4,
+          "worst": 50.1,
+          "longTasks": 0,
+          "samples": 155
+        },
+        {
+          "fps": 50,
+          "p95": 33.4,
+          "worst": 50.1,
+          "longTasks": 0,
+          "samples": 152
+        },
+        {
+          "fps": 48,
+          "p95": 33.4,
+          "worst": 50,
+          "longTasks": 0,
+          "samples": 147
+        }
+      ],
+      "errors": [],
+      "report": {
+        "url": "/prototypes/concept-c.html?motion=on",
+        "mode": "full",
+        "motionReason": "default",
+        "fps": 48,
+        "frameP95": 33.4,
+        "frameWorst": 50,
+        "frameSamples": 147,
+        "longTasks": 0,
+        "longTaskMax": 0,
+        "domNodes": 260,
+        "transferBytes": 32118,
+        "domContentLoaded": 47,
+        "viewport": "1440x900",
+        "dpr": 1
+      },
+      "navigation": {
+        "domInteractive": 47,
+        "loadEnd": 48,
+        "type": "navigate"
+      },
+      "a11y": {
+        "focusable": 29,
+        "h1": 1,
+        "landmarks": 3,
+        "lang": "en",
+        "skipLink": true,
+        "imagesWithoutAlt": 0,
+        "textNodes": 528
+      }
+    },
+    {
+      "concept": "C",
+      "conceptName": "Infinite Signal",
+      "viewport": "desktop",
+      "viewportSize": "1440x900@1x",
+      "cpuThrottle": 1,
+      "mode": "reduced",
+      "wallMs": 15060,
+      "interactMs": 124,
+      "summary": {
+        "fps": 59,
+        "fpsMin": 58,
+        "fpsMax": 59,
+        "fpsSamples": [
+          58,
+          59,
+          59
+        ],
+        "p95": 16.8,
+        "worst": 66.7,
+        "longTasks": 0,
+        "passCount": 3
+      },
+      "passes": [
+        {
+          "fps": 58,
+          "p95": 16.8,
+          "worst": 66.7,
+          "longTasks": 0,
+          "samples": 179
+        },
+        {
+          "fps": 59,
+          "p95": 16.8,
+          "worst": 33.4,
+          "longTasks": 0,
+          "samples": 180
+        },
+        {
+          "fps": 59,
+          "p95": 16.8,
+          "worst": 33.4,
+          "longTasks": 0,
+          "samples": 180
+        }
+      ],
+      "errors": [],
+      "report": {
+        "url": "/prototypes/concept-c.html?motion=off",
+        "mode": "static",
+        "motionReason": "url-parameter",
+        "fps": 59,
+        "frameP95": 16.8,
+        "frameWorst": 33.4,
+        "frameSamples": 180,
+        "longTasks": 0,
+        "longTaskMax": 0,
+        "domNodes": 260,
+        "transferBytes": 32118,
+        "domContentLoaded": 48,
+        "viewport": "1440x900",
+        "dpr": 1
+      },
+      "navigation": {
+        "domInteractive": 48,
+        "loadEnd": 49,
+        "type": "navigate"
+      },
+      "a11y": {
+        "focusable": 29,
+        "h1": 1,
+        "landmarks": 3,
+        "lang": "en",
+        "skipLink": true,
+        "imagesWithoutAlt": 0,
+        "textNodes": 528
+      }
+    },
+    {
+      "concept": "C",
+      "conceptName": "Infinite Signal",
+      "viewport": "mobile",
+      "viewportSize": "390x844@3x",
+      "cpuThrottle": 1,
+      "mode": "full",
+      "wallMs": 15032,
+      "interactMs": 139,
+      "summary": {
+        "fps": 60,
+        "fpsMin": 60,
+        "fpsMax": 60,
+        "fpsSamples": [
+          60,
+          60,
+          60
+        ],
+        "p95": 16.8,
+        "worst": 16.8,
+        "longTasks": 0,
+        "passCount": 3
+      },
+      "passes": [
+        {
+          "fps": 60,
+          "p95": 16.8,
+          "worst": 16.8,
+          "longTasks": 0,
+          "samples": 180
+        },
+        {
+          "fps": 60,
+          "p95": 16.8,
+          "worst": 16.8,
+          "longTasks": 0,
+          "samples": 180
+        },
+        {
+          "fps": 60,
+          "p95": 16.7,
+          "worst": 16.8,
+          "longTasks": 0,
+          "samples": 180
+        }
+      ],
+      "errors": [],
+      "report": {
+        "url": "/prototypes/concept-c.html?motion=on",
+        "mode": "full",
+        "motionReason": "default",
+        "fps": 60,
+        "frameP95": 16.7,
+        "frameWorst": 16.8,
+        "frameSamples": 180,
+        "longTasks": 0,
+        "longTaskMax": 0,
+        "domNodes": 260,
+        "transferBytes": 32118,
+        "domContentLoaded": 37,
+        "viewport": "390x844",
+        "dpr": 3
+      },
+      "navigation": {
+        "domInteractive": 37,
+        "loadEnd": 37,
+        "type": "navigate"
+      },
+      "a11y": {
+        "focusable": 29,
+        "h1": 1,
+        "landmarks": 3,
+        "lang": "en",
+        "skipLink": true,
+        "imagesWithoutAlt": 0,
+        "textNodes": 517
+      }
+    },
+    {
+      "concept": "C",
+      "conceptName": "Infinite Signal",
+      "viewport": "mobile",
+      "viewportSize": "390x844@3x",
+      "cpuThrottle": 1,
+      "mode": "reduced",
+      "wallMs": 15043,
+      "interactMs": 128,
+      "summary": {
+        "fps": 60,
+        "fpsMin": 60,
+        "fpsMax": 60,
+        "fpsSamples": [
+          60,
+          60,
+          60
+        ],
+        "p95": 16.7,
+        "worst": 16.8,
+        "longTasks": 0,
+        "passCount": 3
+      },
+      "passes": [
+        {
+          "fps": 60,
+          "p95": 16.7,
+          "worst": 16.8,
+          "longTasks": 0,
+          "samples": 180
+        },
+        {
+          "fps": 60,
+          "p95": 16.7,
+          "worst": 16.8,
+          "longTasks": 0,
+          "samples": 180
+        },
+        {
+          "fps": 60,
+          "p95": 16.8,
+          "worst": 16.8,
+          "longTasks": 0,
+          "samples": 180
+        }
+      ],
+      "errors": [],
+      "report": {
+        "url": "/prototypes/concept-c.html?motion=off",
+        "mode": "static",
+        "motionReason": "url-parameter",
+        "fps": 60,
+        "frameP95": 16.8,
+        "frameWorst": 16.8,
+        "frameSamples": 180,
+        "longTasks": 0,
+        "longTaskMax": 0,
+        "domNodes": 260,
+        "transferBytes": 32118,
+        "domContentLoaded": 39,
+        "viewport": "390x844",
+        "dpr": 3
+      },
+      "navigation": {
+        "domInteractive": 39,
+        "loadEnd": 39,
+        "type": "navigate"
+      },
+      "a11y": {
+        "focusable": 29,
+        "h1": 1,
+        "landmarks": 3,
+        "lang": "en",
+        "skipLink": true,
+        "imagesWithoutAlt": 0,
+        "textNodes": 517
+      }
+    },
+    {
+      "concept": "C",
+      "conceptName": "Infinite Signal",
+      "viewport": "low-end",
+      "viewportSize": "1280x720@1x",
+      "cpuThrottle": 6,
+      "mode": "full",
+      "wallMs": 15953,
+      "interactMs": 141,
+      "summary": {
+        "fps": 56,
+        "fpsMin": 55,
+        "fpsMax": 56,
+        "fpsSamples": [
+          55,
+          56,
+          56
+        ],
+        "p95": 33.3,
+        "worst": 50,
+        "longTasks": 0,
+        "passCount": 3
+      },
+      "passes": [
+        {
+          "fps": 55,
+          "p95": 33.3,
+          "worst": 50,
+          "longTasks": 0,
+          "samples": 177
+        },
+        {
+          "fps": 56,
+          "p95": 33.3,
+          "worst": 49.9,
+          "longTasks": 0,
+          "samples": 180
+        },
+        {
+          "fps": 56,
+          "p95": 33.3,
+          "worst": 33.4,
+          "longTasks": 0,
+          "samples": 180
+        }
+      ],
+      "errors": [],
+      "report": {
+        "url": "/prototypes/concept-c.html?motion=on",
+        "mode": "full",
+        "motionReason": "default",
+        "fps": 56,
+        "frameP95": 33.3,
+        "frameWorst": 33.4,
+        "frameSamples": 180,
+        "longTasks": 0,
+        "longTaskMax": 0,
+        "domNodes": 260,
+        "transferBytes": 32118,
+        "domContentLoaded": 387,
+        "viewport": "1280x720",
+        "dpr": 1
+      },
+      "navigation": {
+        "domInteractive": 380,
+        "loadEnd": 389,
+        "type": "navigate"
+      },
+      "a11y": {
+        "focusable": 29,
+        "h1": 1,
+        "landmarks": 3,
+        "lang": "en",
+        "skipLink": true,
+        "imagesWithoutAlt": 0,
+        "textNodes": 528
+      }
+    },
+    {
+      "concept": "C",
+      "conceptName": "Infinite Signal",
+      "viewport": "low-end",
+      "viewportSize": "1280x720@1x",
+      "cpuThrottle": 6,
+      "mode": "reduced",
+      "wallMs": 15593,
+      "interactMs": 136,
+      "summary": {
+        "fps": 59,
+        "fpsMin": 59,
+        "fpsMax": 60,
+        "fpsSamples": [
+          59,
+          59,
+          60
+        ],
+        "p95": 16.8,
+        "worst": 49.9,
+        "longTasks": 0,
+        "passCount": 3
+      },
+      "passes": [
+        {
+          "fps": 59,
+          "p95": 16.8,
+          "worst": 49.9,
+          "longTasks": 0,
+          "samples": 180
+        },
+        {
+          "fps": 59,
+          "p95": 16.8,
+          "worst": 33.4,
+          "longTasks": 0,
+          "samples": 180
+        },
+        {
+          "fps": 60,
+          "p95": 16.7,
+          "worst": 16.8,
+          "longTasks": 0,
+          "samples": 180
+        }
+      ],
+      "errors": [],
+      "report": {
+        "url": "/prototypes/concept-c.html?motion=off",
+        "mode": "static",
+        "motionReason": "url-parameter",
+        "fps": 60,
+        "frameP95": 16.7,
+        "frameWorst": 16.8,
+        "frameSamples": 180,
+        "longTasks": 0,
+        "longTaskMax": 0,
+        "domNodes": 260,
+        "transferBytes": 32118,
+        "domContentLoaded": 286,
+        "viewport": "1280x720",
+        "dpr": 1
+      },
+      "navigation": {
+        "domInteractive": 284,
+        "loadEnd": 286,
+        "type": "navigate"
+      },
+      "a11y": {
+        "focusable": 29,
+        "h1": 1,
+        "landmarks": 3,
+        "lang": "en",
+        "skipLink": true,
+        "imagesWithoutAlt": 0,
+        "textNodes": 528
+      }
+    }
+  ]
+}

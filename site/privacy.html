@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en" data-motion="full">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Privacy &amp; AI disclosure | BLAXK BYTE TECHNOLOGIES</title>
+<meta name="description" content="Exactly what this site does with your data: no analytics, no cookies, no third-party requests. The assistant is a deterministic retriever with no model connected, and says so.">
+<meta name="color-scheme" content="dark">
+<meta name="theme-color" content="#08090c">
+<meta property="og:title" content="Privacy &amp; AI disclosure | BLAXK BYTE TECHNOLOGIES">
+<meta property="og:description" content="Exactly what this site does with your data: no analytics, no cookies, no third-party requests. The assistant is a deterministic retriever with no model connected, and says so.">
+<meta property="og:type" content="website">
+<link rel="stylesheet" href="assets/css/blaxkverse.css">
+
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="nav">
+  <a class="nav-mark" href="index.html" aria-label="BLAXK BYTE — home">
+    <i aria-hidden="true"></i><b>BLAXK</b> <span>BYTE</span>
+  </a>
+  <nav class="nav-links" aria-label="Primary">
+        <a href="index.html" data-nav-current>Journey</a>
+        <a href="company.html" data-nav-current>Company</a>
+        <a href="work.html" data-nav-current>Work</a>
+        <a href="source.html" data-nav-current>Source</a>
+        <a href="lab.html" data-nav-current>Lab</a>
+        <a href="about.html" data-nav-current>About</a>
+        <a href="contact.html" data-nav-current>Contact</a>
+  </nav>
+  <div class="nav-right">
+    <button class="kbtn kbtn--kbd" type="button" data-open-palette aria-haspopup="dialog">
+      Search <kbd>⌘K</kbd>
+    </button>
+    <button class="motion-toggle" type="button" data-motion-toggle aria-label="Change motion level">motion: full</button>
+    <button class="kbtn nav-burger" type="button" data-open-sheet aria-expanded="false" aria-controls="mobile-sheet">Menu</button>
+  </div>
+</header>
+
+<div class="sheet" id="mobile-sheet" data-sheet hidden role="dialog" aria-modal="true" aria-label="Navigation">
+  <div class="sheet-head">
+    <span class="nav-mark"><i aria-hidden="true"></i><b>BLAXK</b> <span>BYTE</span></span>
+    <button class="close" type="button" data-close-sheet aria-label="Close navigation">✕</button>
+  </div>
+  <div class="sheet-body">
+    <ul class="sheet-nav">
+        <li><a href="index.html" data-nav-current><span class="t">Journey</span><span class="s">the overview</span></a></li>
+        <li><a href="company.html" data-nav-current><span class="t">Company</span><span class="s">what we build</span></a></li>
+        <li><a href="work.html" data-nav-current><span class="t">Work</span><span class="s">verified projects</span></a></li>
+        <li><a href="source.html" data-nav-current><span class="t">Source</span><span class="s">public code</span></a></li>
+        <li><a href="lab.html" data-nav-current><span class="t">Lab</span><span class="s">experiments</span></a></li>
+        <li><a href="about.html" data-nav-current><span class="t">About</span><span class="s">Blaxk</span></a></li>
+        <li><a href="contact.html" data-nav-current><span class="t">Contact</span><span class="s">start a project</span></a></li>
+    </ul>
+    <p class="label">Every destination is also in the command palette (<kbd>Ctrl</kbd>/<kbd>⌘</kbd>+<kbd>K</kbd>) and in the footer.</p>
+  </div>
+</div>
+
+<main id="main">
+  <section class="section section--tight" style="padding-top:calc(var(--nav-h) + 2.5rem)">
+    <div class="wrap">
+      <span class="label">Privacy &amp; AI disclosure</span>
+      <h1 style="font-size:clamp(2rem,5vw,3.4rem);margin:.4rem 0 .8rem">What this site does with your data</h1>
+      <p class="lede">The short version: almost nothing, because it asks for almost nothing. This page
+        documents that precisely rather than reassuringly.</p>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:0">
+    <div class="wrap" style="display:grid;gap:2rem">
+      <div class="panel panel--pad">
+        <h2 style="font-size:1.3rem">1 · Data this site collects</h2>
+        <p class="dim">None that identifies you.</p>
+        <ul class="tight">
+          <li><strong>No analytics.</strong> No Google Analytics, Plausible, Umami, Fathom or similar. No counting script of any kind.</li>
+          <li><strong>No cookies.</strong> None are set, which is why there is no cookie banner — a banner for cookies that do not exist would be theatre.</li>
+          <li><strong>No third-party requests.</strong> No CDN, no webfonts, no embedded video, no social widgets, no tracking pixels. Every asset is served from this site.</li>
+          <li><strong>No fingerprinting.</strong> Nothing reads your canvas signature, device list or fonts for identification.</li>
+          <li><strong>No persistent storage of your activity.</strong> Motion preference is carried in the URL, not written to your device.</li>
+        </ul>
+      </div>
+
+      <div class="panel panel--pad">
+        <h2 style="font-size:1.3rem">2 · The assistant panel</h2>
+        <p class="dim">This is the part most sites are vague about, so here it is exactly.</p>
+        <ul class="tight">
+          <li><strong>No language model is connected in this build.</strong> The panel is a deterministic
+            retriever over a fixed set of verified records that ship with the site. It matches your question
+            against keywords and returns the matching record.</li>
+          <li><strong>Nothing you type leaves your browser.</strong> There is no request to any API, ours or
+            anyone else's. Open your browser's network tab and confirm it — that is the point of building it
+            this way first.</li>
+          <li><strong>No conversation is stored.</strong> The log lives in the page and disappears when you
+            close or reload it.</li>
+          <li><strong>It will not answer beyond its records.</strong> If your question is not covered, it says
+            so and offers the contact route instead of improvising.</li>
+          <li><strong>Its answers cite the record used</strong>, so you can check the claim against the page
+            it came from.</li>
+        </ul>
+        <h3 class="mt-2" style="font-size:1.05rem">The designed production behaviour</h3>
+        <p class="dim">The intended production version replaces keyword matching with retrieval over approved
+          content plus a Gemini call, with these rules fixed in advance:</p>
+        <ul class="tight">
+          <li>The API key stays server-side and is never exposed to the browser through a public environment variable.</li>
+          <li>Input length, content type and output schema are validated; responses are structured and schema-checked before rendering.</li>
+          <li>Per-session and per-IP rate limits, token ceilings and spend ceilings, with abuse controls and observability.</li>
+          <li>Repository text, READMEs and issue comments are treated as untrusted input. Prompt injection is assumed, not hoped against, and the assistant has no tools and no write access.</li>
+          <li>No persistent chat history by default. If retention is ever enabled, it will be disclosed here before it is switched on.</li>
+          <li>Popular answers cached; a deterministic static answer always available when the model fails or the budget is exhausted.</li>
+          <li>Every AI answer is labelled and links to the source it used. The assistant never claims to have read a whole repository when only excerpts were provided.</li>
+        </ul>
+      </div>
+
+      <div class="panel panel--pad">
+        <h2 style="font-size:1.3rem">3 · The contact form</h2>
+        <p class="dim">This build has no server, so the form validates your input in the browser and then
+          tells you plainly that nothing was transmitted. It does not silently drop your message and it does
+          not pretend to have sent it.</p>
+        <p class="dim">In production the form posts to a server-side handler that validates and rate-limits
+          the input, sends the message, and stores nothing beyond what is needed to reply. Retention would be
+          stated here before that endpoint is switched on.</p>
+      </div>
+
+      <div class="panel panel--pad">
+        <h2 style="font-size:1.3rem">4 · Motion, accessibility and your preferences</h2>
+        <ul class="tight">
+          <li>Your system's reduced-motion preference is honoured automatically, and can be overridden with the motion control in the navigation or the <kbd>M</kbd> key.</li>
+          <li>The chosen motion level is stored in the URL (<span class="mono">?motion=off</span>) so a reduced-motion link can be shared — and so nothing is written to your device.</li>
+          <li>Content is identical in every motion mode. The reduced route removes movement, never information.</li>
+        </ul>
+      </div>
+
+      <div class="panel panel--pad">
+        <h2 style="font-size:1.3rem">5 · Code shown on this site</h2>
+        <ul class="tight">
+          <li>Excerpts come from public repositories and are pinned to a commit SHA, path and line range.</li>
+          <li>They are screened for credentials, secrets, personal data and internal endpoints before publication.</li>
+          <li>They are rendered as inert, selectable text. Nothing from a repository is ever executed in your browser.</li>
+          <li>Third-party forks are credited to their authors and excluded from the portfolio rather than exhibited.</li>
+        </ul>
+      </div>
+
+      <div class="panel panel--pad">
+        <h2 style="font-size:1.3rem">6 · Contact for privacy questions</h2>
+        <p class="dim">Use the <a class="inline-link" href="contact.html">contact page</a>. If you believe
+          something on this site misrepresents a fact, a project or a person, say so — corrections to the
+          record take priority over presentation.</p>
+      </div>
+
+      <p class="label">Last reviewed: 2026-10-15 · This disclosure describes what the code in this
+        build actually does, and is updated when the code changes.</p>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <h4>BLAXK BYTE TECHNOLOGIES</h4>
+        <p class="dim" style="margin:0 0 .6rem">Software, automation and AI systems — built by Blaxk, documented in public.</p>
+        <p class="label" style="margin:0">Company registration status is not asserted on this site because it has not been verified as complete.</p>
+      </div>
+      <div>
+        <h4>Navigate</h4>
+        <ul>
+          <li><a href="company.html">Company &amp; services</a></li>
+          <li><a href="work.html">Work</a></li>
+          <li><a href="source.html">Source explorer</a></li>
+          <li><a href="lab.html">Lab</a></li>
+          <li><a href="about.html">About Blaxk</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Elsewhere</h4>
+        <ul>
+          <li><a href="https://github.com/Blaxk-C137" target="_blank" rel="noopener noreferrer">GitHub — Blaxk-C137 ↗</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="privacy.html">Privacy &amp; AI disclosure</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Accessibility</h4>
+        <ul>
+          <li><a href="?motion=on">Full motion</a></li>
+          <li><a href="?motion=reduced">Reduced motion</a></li>
+          <li><a href="?motion=off">Explore normally (no motion)</a></li>
+        </ul>
+        <p class="label" style="margin:.5rem 0 0">Press <kbd>M</kbd> to cycle motion levels.</p>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© <span data-year>2026</span> BLAXK BYTE TECHNOLOGIES</span>
+      <span>Content verified against the public record on 15 Oct 2026</span>
+      <span>Keyboard: <kbd>/</kbd> or <kbd>⌘K</kbd> search · <kbd>M</kbd> motion</span>
+      <a href="privacy.html" style="color:var(--steel);text-decoration:none">This site makes no analytics or tracking requests.</a>
+    </div>
+  </div>
+</footer>
+
+<button class="guide-launcher" type="button" data-guide-open aria-expanded="false" aria-controls="bx-guide">
+  <i aria-hidden="true"></i> Ask about this work
+</button>
+
+<section class="guide" id="bx-guide" data-guide hidden role="dialog" aria-modal="true" aria-label="BLAXK BYTE assistant">
+  <div class="guide-head">
+    <i aria-hidden="true" style="width:8px;height:8px;background:var(--red);display:block"></i>
+    <h2>BLAXK BYTE — verified answers</h2>
+    <button class="close" type="button" data-guide-close aria-label="Close assistant">✕</button>
+  </div>
+  <div class="guide-body">
+    <div class="guide-log" data-guide-log></div>
+    <div class="guide-q" data-guide-suggest></div>
+  </div>
+  <form class="guide-form" data-guide-form>
+    <label class="sr" for="guide-input">Your question</label>
+    <input id="guide-input" data-guide-input type="text" placeholder="Ask about a project, service or status…" autocomplete="off">
+    <button class="btn" type="submit">Ask</button>
+  </form>
+  <p class="guide-disclaimer">
+    This build ships a deterministic retriever over the verified project records — it is not a language model and it will not
+    answer beyond what is recorded. The intended production design is a server-side Gemini endpoint with retrieval over
+    approved content, schema-validated output, rate limits and a static fallback. See the privacy page for the full disclosure.
+  </p>
+</section>
+
+<script src="assets/js/bx-data.js"></script>
+<script src="assets/js/bx-excerpts.js"></script>
+<script src="assets/js/bx-core.js"></script>
+
+</body>
+</html>

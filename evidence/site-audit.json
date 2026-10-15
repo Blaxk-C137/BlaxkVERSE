@@ -1,0 +1,2763 @@
+{
+  "generatedAt": "2026-10-15T17:18:42.359Z",
+  "pagesAudited": 16,
+  "httpFailures": [],
+  "pagesWithErrors": [],
+  "pagesWithFailedRequests": [],
+  "accessibility": [
+    {
+      "path": "/about.html",
+      "lang": "en",
+      "h1": 1,
+      "landmarks": 4,
+      "skipLink": true,
+      "imgsMissingAlt": 0,
+      "focusable": 83,
+      "smallTargets": 45
+    },
+    {
+      "path": "/company.html",
+      "lang": "en",
+      "h1": 1,
+      "landmarks": 4,
+      "skipLink": true,
+      "imgsMissingAlt": 0,
+      "focusable": 45,
+      "smallTargets": 11
+    },
+    {
+      "path": "/contact.html",
+      "lang": "en",
+      "h1": 1,
+      "landmarks": 4,
+      "skipLink": true,
+      "imgsMissingAlt": 0,
+      "focusable": 54,
+      "smallTargets": 15
+    },
+    {
+      "path": "/index.html",
+      "lang": "en",
+      "h1": 1,
+      "landmarks": 4,
+      "skipLink": true,
+      "imgsMissingAlt": 0,
+      "focusable": 60,
+      "smallTargets": 11
+    },
+    {
+      "path": "/lab.html",
+      "lang": "en",
+      "h1": 1,
+      "landmarks": 4,
+      "skipLink": true,
+      "imgsMissingAlt": 0,
+      "focusable": 45,
+      "smallTargets": 11
+    },
+    {
+      "path": "/privacy.html",
+      "lang": "en",
+      "h1": 1,
+      "landmarks": 4,
+      "skipLink": true,
+      "imgsMissingAlt": 0,
+      "focusable": 44,
+      "smallTargets": 12
+    },
+    {
+      "path": "/projects/blaxk-aggregator.html",
+      "lang": "en",
+      "h1": 1,
+      "landmarks": 4,
+      "skipLink": true,
+      "imgsMissingAlt": 0,
+      "focusable": 52,
+      "smallTargets": 12
+    },
+    {
+      "path": "/projects/blaxk-housing.html",
+      "lang": "en",
+      "h1": 1,
+      "landmarks": 4,
+      "skipLink": true,
+      "imgsMissingAlt": 0,
+      "focusable": 53,
+      "smallTargets": 12
+    },
+    {
+      "path": "/projects/blaxk-xposer.html",
+      "lang": "en",
+      "h1": 1,
+      "landmarks": 4,
+      "skipLink": true,
+      "imgsMissingAlt": 0,
+      "focusable": 53,
+      "smallTargets": 12
+    },
+    {
+      "path": "/projects/edublaxk.html",
+      "lang": "en",
+      "h1": 1,
+      "landmarks": 4,
+      "skipLink": true,
+      "imgsMissingAlt": 0,
+      "focusable": 59,
+      "smallTargets": 18
+    },
+    {
+      "path": "/projects/forma.html",
+      "lang": "en",
+      "h1": 1,
+      "landmarks": 4,
+      "skipLink": true,
+      "imgsMissingAlt": 0,
+      "focusable": 58,
+      "smallTargets": 18
+    },
+    {
+      "path": "/projects/gesture-controls.html",
+      "lang": "en",
+      "h1": 1,
+      "landmarks": 4,
+      "skipLink": true,
+      "imgsMissingAlt": 0,
+      "focusable": 52,
+      "smallTargets": 12
+    },
+    {
+      "path": "/projects/sabi.html",
+      "lang": "en",
+      "h1": 1,
+      "landmarks": 4,
+      "skipLink": true,
+      "imgsMissingAlt": 0,
+      "focusable": 53,
+      "smallTargets": 13
+    },
+    {
+      "path": "/projects/the-migrator.html",
+      "lang": "en",
+      "h1": 1,
+      "landmarks": 4,
+      "skipLink": true,
+      "imgsMissingAlt": 0,
+      "focusable": 52,
+      "smallTargets": 12
+    },
+    {
+      "path": "/source.html",
+      "lang": "en",
+      "h1": 1,
+      "landmarks": 4,
+      "skipLink": true,
+      "imgsMissingAlt": 0,
+      "focusable": 94,
+      "smallTargets": 62
+    },
+    {
+      "path": "/work.html",
+      "lang": "en",
+      "h1": 1,
+      "landmarks": 4,
+      "skipLink": true,
+      "imgsMissingAlt": 0,
+      "focusable": 79,
+      "smallTargets": 11
+    }
+  ],
+  "motionModes": [
+    {
+      "path": "/about.html",
+      "modes": [
+        {
+          "query": "?motion=on",
+          "mode": "full",
+          "words": 751,
+          "h1": 1,
+          "canvasVisible": false
+        },
+        {
+          "query": "?motion=reduced",
+          "mode": "full",
+          "words": 751,
+          "h1": 1,
+          "canvasVisible": false
+        },
+        {
+          "query": "?motion=off",
+          "mode": "static",
+          "words": 751,
+          "h1": 1,
+          "canvasVisible": false
+        }
+      ]
+    },
+    {
+      "path": "/company.html",
+      "modes": [
+        {
+          "query": "?motion=on",
+          "mode": "full",
+          "words": 944,
+          "h1": 1,
+          "canvasVisible": false
+        },
+        {
+          "query": "?motion=reduced",
+          "mode": "full",
+          "words": 944,
+          "h1": 1,
+          "canvasVisible": false
+        },
+        {
+          "query": "?motion=off",
+          "mode": "static",
+          "words": 944,
+          "h1": 1,
+          "canvasVisible": false
+        }
+      ]
+    },
+    {
+      "path": "/contact.html",
+      "modes": [
+        {
+          "query": "?motion=on",
+          "mode": "full",
+          "words": 627,
+          "h1": 1,
+          "canvasVisible": false
+        },
+        {
+          "query": "?motion=reduced",
+          "mode": "full",
+          "words": 627,
+          "h1": 1,
+          "canvasVisible": false
+        },
+        {
+          "query": "?motion=off",
+          "mode": "static",
+          "words": 627,
+          "h1": 1,
+          "canvasVisible": false
+        }
+      ]
+    },
+    {
+      "path": "/index.html",
+      "modes": [
+        {
+          "query": "?motion=on",
+          "mode": "full",
+          "words": 1130,
+          "h1": 1,
+          "canvasVisible": true
+        },
+        {
+          "query": "?motion=reduced",
+          "mode": "full",
+          "words": 1130,
+          "h1": 1,
+          "canvasVisible": true
+        },
+        {
+          "query": "?motion=off",
+          "mode": "static",
+          "words": 1130,
+          "h1": 1,
+          "canvasVisible": false
+        }
+      ]
+    },
+    {
+      "path": "/lab.html",
+      "modes": [
+        {
+          "query": "?motion=on",
+          "mode": "full",
+          "words": 903,
+          "h1": 1,
+          "canvasVisible": false
+        },
+        {
+          "query": "?motion=reduced",
+          "mode": "full",
+          "words": 903,
+          "h1": 1,
+          "canvasVisible": false
+        },
+        {
+          "query": "?motion=off",
+          "mode": "static",
+          "words": 903,
+          "h1": 1,
+          "canvasVisible": false
+        }
+      ]
+    },
+    {
+      "path": "/privacy.html",
+      "modes": [
+        {
+          "query": "?motion=on",
+          "mode": "full",
+          "words": 850,
+          "h1": 1,
+          "canvasVisible": false
+        },
+        {
+          "query": "?motion=reduced",
+          "mode": "full",
+          "words": 850,
+          "h1": 1,
+          "canvasVisible": false
+        },
+        {
+          "query": "?motion=off",
+          "mode": "static",
+          "words": 850,
+          "h1": 1,
+          "canvasVisible": false
+        }
+      ]
+    },
+    {
+      "path": "/projects/blaxk-aggregator.html",
+      "modes": [
+        {
+          "query": "?motion=on",
+          "mode": "full",
+          "words": 676,
+          "h1": 1,
+          "canvasVisible": false
+        },
+        {
+          "query": "?motion=reduced",
+          "mode": "full",
+          "words": 676,
+          "h1": 1,
+          "canvasVisible": false
+        },
+        {
+          "query": "?motion=off",
+          "mode": "static",
+          "words": 676,
+          "h1": 1,
+          "canvasVisible": false
+        }
+      ]
+    },
+    {
+      "path": "/projects/blaxk-housing.html",
+      "modes": [
+        {
+          "query": "?motion=on",
+          "mode": "full",
+          "words": 955,
+          "h1": 1,
+          "canvasVisible": false
+        },
+        {
+          "query": "?motion=reduced",
+          "mode": "full",
+          "words": 955,
+          "h1": 1,
+          "canvasVisible": false
+        },
+        {
+          "query": "?motion=off",
+          "mode": "static",
+          "words": 955,
+          "h1": 1,
+          "canvasVisible": false
+        }
+      ]
+    },
+    {
+      "path": "/projects/blaxk-xposer.html",
+      "modes": [
+        {
+          "query": "?motion=on",
+          "mode": "full",
+          "words": 1050,
+          "h1": 1,
+          "canvasVisible": false
+        },
+        {
+          "query": "?motion=reduced",
+          "mode": "full",
+          "words": 1050,
+          "h1": 1,
+          "canvasVisible": false
+        },
+        {
+          "query": "?motion=off",
+          "mode": "static",
+          "words": 1050,
+          "h1": 1,
+          "canvasVisible": false
+        }
+      ]
+    },
+    {
+      "path": "/projects/edublaxk.html",
+      "modes": [
+        {
+          "query": "?motion=on",
+          "mode": "full",
+          "words": 1073,
+          "h1": 1,
+          "canvasVisible": false
+        },
+        {
+          "query": "?motion=reduced",
+          "mode": "full",
+          "words": 1073,
+          "h1": 1,
+          "canvasVisible": false
+        },
+        {
+          "query": "?motion=off",
+          "mode": "static",
+          "words": 1073,
+          "h1": 1,
+          "canvasVisible": false
+        }
+      ]
+    },
+    {
+      "path": "/projects/forma.html",
+      "modes": [
+        {
+          "query": "?motion=on",
+          "mode": "full",
+          "words": 828,
+          "h1": 1,
+          "canvasVisible": false
+        },
+        {
+          "query": "?motion=reduced",
+          "mode": "full",
+          "words": 828,
+          "h1": 1,
+          "canvasVisible": false
+        },
+        {
+          "query": "?motion=off",
+          "mode": "static",
+          "words": 828,
+          "h1": 1,
+          "canvasVisible": false
+        }
+      ]
+    },
+    {
+      "path": "/projects/gesture-controls.html",
+      "modes": [
+        {
+          "query": "?motion=on",
+          "mode": "full",
+          "words": 622,
+          "h1": 1,
+          "canvasVisible": false
+        },
+        {
+          "query": "?motion=reduced",
+          "mode": "full",
+          "words": 622,
+          "h1": 1,
+          "canvasVisible": false
+        },
+        {
+          "query": "?motion=off",
+          "mode": "static",
+          "words": 622,
+          "h1": 1,
+          "canvasVisible": false
+        }
+      ]
+    },
+    {
+      "path": "/projects/sabi.html",
+      "modes": [
+        {
+          "query": "?motion=on",
+          "mode": "full",
+          "words": 1010,
+          "h1": 1,
+          "canvasVisible": false
+        },
+        {
+          "query": "?motion=reduced",
+          "mode": "full",
+          "words": 1010,
+          "h1": 1,
+          "canvasVisible": false
+        },
+        {
+          "query": "?motion=off",
+          "mode": "static",
+          "words": 1010,
+          "h1": 1,
+          "canvasVisible": false
+        }
+      ]
+    },
+    {
+      "path": "/projects/the-migrator.html",
+      "modes": [
+        {
+          "query": "?motion=on",
+          "mode": "full",
+          "words": 577,
+          "h1": 1,
+          "canvasVisible": false
+        },
+        {
+          "query": "?motion=reduced",
+          "mode": "full",
+          "words": 577,
+          "h1": 1,
+          "canvasVisible": false
+        },
+        {
+          "query": "?motion=off",
+          "mode": "static",
+          "words": 577,
+          "h1": 1,
+          "canvasVisible": false
+        }
+      ]
+    },
+    {
+      "path": "/source.html",
+      "modes": [
+        {
+          "query": "?motion=on",
+          "mode": "full",
+          "words": 821,
+          "h1": 1,
+          "canvasVisible": false
+        },
+        {
+          "query": "?motion=reduced",
+          "mode": "full",
+          "words": 821,
+          "h1": 1,
+          "canvasVisible": false
+        },
+        {
+          "query": "?motion=off",
+          "mode": "static",
+          "words": 821,
+          "h1": 1,
+          "canvasVisible": false
+        }
+      ]
+    },
+    {
+      "path": "/work.html",
+      "modes": [
+        {
+          "query": "?motion=on",
+          "mode": "full",
+          "words": 773,
+          "h1": 1,
+          "canvasVisible": true
+        },
+        {
+          "query": "?motion=reduced",
+          "mode": "full",
+          "words": 773,
+          "h1": 1,
+          "canvasVisible": true
+        },
+        {
+          "query": "?motion=off",
+          "mode": "static",
+          "words": 773,
+          "h1": 1,
+          "canvasVisible": true
+        }
+      ]
+    }
+  ],
+  "keyboardPalette": [
+    {
+      "path": "/about.html",
+      "opened": {
+        "visible": true,
+        "focused": "INPUT"
+      },
+      "searchOptions": 9,
+      "searchSample": "GO\nESC\nPROJECT\nEduBlaxk\nprototype\nCODE\nEduBlaxk — source\nBlaxk-C137/EduBlaxk\nTECH\nReact\nus",
+      "closed": {
+        "hidden": true,
+        "bodyOverflow": "hidden auto"
+      }
+    },
+    {
+      "path": "/company.html",
+      "opened": {
+        "visible": true,
+        "focused": "INPUT"
+      },
+      "searchOptions": 9,
+      "searchSample": "GO\nESC\nPROJECT\nEduBlaxk\nprototype\nCODE\nEduBlaxk — source\nBlaxk-C137/EduBlaxk\nTECH\nReact\nus",
+      "closed": {
+        "hidden": true,
+        "bodyOverflow": "hidden auto"
+      }
+    },
+    {
+      "path": "/contact.html",
+      "opened": {
+        "visible": true,
+        "focused": "INPUT"
+      },
+      "searchOptions": 9,
+      "searchSample": "GO\nESC\nPROJECT\nEduBlaxk\nprototype\nCODE\nEduBlaxk — source\nBlaxk-C137/EduBlaxk\nTECH\nReact\nus",
+      "closed": {
+        "hidden": true,
+        "bodyOverflow": "hidden auto"
+      }
+    },
+    {
+      "path": "/index.html",
+      "opened": {
+        "visible": true,
+        "focused": "INPUT"
+      },
+      "searchOptions": 9,
+      "searchSample": "GO\nESC\nPROJECT\nEduBlaxk\nprototype\nCODE\nEduBlaxk — source\nBlaxk-C137/EduBlaxk\nTECH\nReact\nus",
+      "closed": {
+        "hidden": true,
+        "bodyOverflow": "hidden auto"
+      }
+    },
+    {
+      "path": "/lab.html",
+      "opened": {
+        "visible": true,
+        "focused": "INPUT"
+      },
+      "searchOptions": 9,
+      "searchSample": "GO\nESC\nPROJECT\nEduBlaxk\nprototype\nCODE\nEduBlaxk — source\nBlaxk-C137/EduBlaxk\nTECH\nReact\nus",
+      "closed": {
+        "hidden": true,
+        "bodyOverflow": "hidden auto"
+      }
+    },
+    {
+      "path": "/privacy.html",
+      "opened": {
+        "visible": true,
+        "focused": "INPUT"
+      },
+      "searchOptions": 9,
+      "searchSample": "GO\nESC\nPROJECT\nEduBlaxk\nprototype\nCODE\nEduBlaxk — source\nBlaxk-C137/EduBlaxk\nTECH\nReact\nus",
+      "closed": {
+        "hidden": true,
+        "bodyOverflow": "hidden auto"
+      }
+    },
+    {
+      "path": "/projects/blaxk-aggregator.html",
+      "opened": {
+        "visible": true,
+        "focused": "INPUT"
+      },
+      "searchOptions": 9,
+      "searchSample": "GO\nESC\nPROJECT\nEduBlaxk\nprototype\nCODE\nEduBlaxk — source\nBlaxk-C137/EduBlaxk\nTECH\nReact\nus",
+      "closed": {
+        "hidden": true,
+        "bodyOverflow": "hidden auto"
+      }
+    },
+    {
+      "path": "/projects/blaxk-housing.html",
+      "opened": {
+        "visible": true,
+        "focused": "INPUT"
+      },
+      "searchOptions": 9,
+      "searchSample": "GO\nESC\nPROJECT\nEduBlaxk\nprototype\nCODE\nEduBlaxk — source\nBlaxk-C137/EduBlaxk\nTECH\nReact\nus",
+      "closed": {
+        "hidden": true,
+        "bodyOverflow": "hidden auto"
+      }
+    },
+    {
+      "path": "/projects/blaxk-xposer.html",
+      "opened": {
+        "visible": true,
+        "focused": "INPUT"
+      },
+      "searchOptions": 9,
+      "searchSample": "GO\nESC\nPROJECT\nEduBlaxk\nprototype\nCODE\nEduBlaxk — source\nBlaxk-C137/EduBlaxk\nTECH\nReact\nus",
+      "closed": {
+        "hidden": true,
+        "bodyOverflow": "hidden auto"
+      }
+    },
+    {
+      "path": "/projects/edublaxk.html",
+      "opened": {
+        "visible": true,
+        "focused": "INPUT"
+      },
+      "searchOptions": 9,
+      "searchSample": "GO\nESC\nPROJECT\nEduBlaxk\nprototype\nCODE\nEduBlaxk — source\nBlaxk-C137/EduBlaxk\nTECH\nReact\nus",
+      "closed": {
+        "hidden": true,
+        "bodyOverflow": "hidden auto"
+      }
+    },
+    {
+      "path": "/projects/forma.html",
+      "opened": {
+        "visible": true,
+        "focused": "INPUT"
+      },
+      "searchOptions": 9,
+      "searchSample": "GO\nESC\nPROJECT\nEduBlaxk\nprototype\nCODE\nEduBlaxk — source\nBlaxk-C137/EduBlaxk\nTECH\nReact\nus",
+      "closed": {
+        "hidden": true,
+        "bodyOverflow": "hidden auto"
+      }
+    },
+    {
+      "path": "/projects/gesture-controls.html",
+      "opened": {
+        "visible": true,
+        "focused": "INPUT"
+      },
+      "searchOptions": 9,
+      "searchSample": "GO\nESC\nPROJECT\nEduBlaxk\nprototype\nCODE\nEduBlaxk — source\nBlaxk-C137/EduBlaxk\nTECH\nReact\nus",
+      "closed": {
+        "hidden": true,
+        "bodyOverflow": "hidden auto"
+      }
+    },
+    {
+      "path": "/projects/sabi.html",
+      "opened": {
+        "visible": true,
+        "focused": "INPUT"
+      },
+      "searchOptions": 9,
+      "searchSample": "GO\nESC\nPROJECT\nEduBlaxk\nprototype\nCODE\nEduBlaxk — source\nBlaxk-C137/EduBlaxk\nTECH\nReact\nus",
+      "closed": {
+        "hidden": true,
+        "bodyOverflow": "hidden auto"
+      }
+    },
+    {
+      "path": "/projects/the-migrator.html",
+      "opened": {
+        "visible": true,
+        "focused": "INPUT"
+      },
+      "searchOptions": 9,
+      "searchSample": "GO\nESC\nPROJECT\nEduBlaxk\nprototype\nCODE\nEduBlaxk — source\nBlaxk-C137/EduBlaxk\nTECH\nReact\nus",
+      "closed": {
+        "hidden": true,
+        "bodyOverflow": "hidden auto"
+      }
+    },
+    {
+      "path": "/source.html",
+      "opened": {
+        "visible": true,
+        "focused": "INPUT"
+      },
+      "searchOptions": 9,
+      "searchSample": "GO\nESC\nPROJECT\nEduBlaxk\nprototype\nCODE\nEduBlaxk — source\nBlaxk-C137/EduBlaxk\nTECH\nReact\nus",
+      "closed": {
+        "hidden": true,
+        "bodyOverflow": "hidden auto"
+      }
+    },
+    {
+      "path": "/work.html",
+      "opened": {
+        "visible": true,
+        "focused": "INPUT"
+      },
+      "searchOptions": 9,
+      "searchSample": "GO\nESC\nPROJECT\nEduBlaxk\nprototype\nCODE\nEduBlaxk — source\nBlaxk-C137/EduBlaxk\nTECH\nReact\nus",
+      "closed": {
+        "hidden": true,
+        "bodyOverflow": "hidden auto"
+      }
+    }
+  ],
+  "assistant": [
+    {
+      "path": "/about.html",
+      "visible": true,
+      "messages": 3,
+      "hasCitation": true,
+      "text": "This panel answers questions about BLAXK BYTE and the work on this site — services, projects, how each one is built and what state it is in. Every answer comes from the verified records behind these pages and cites the record it used.\n\nIt is deliberately not a",
+      "closedByEscape": true
+    },
+    {
+      "path": "/company.html",
+      "visible": true,
+      "messages": 3,
+      "hasCitation": true,
+      "text": "This panel answers questions about BLAXK BYTE and the work on this site — services, projects, how each one is built and what state it is in. Every answer comes from the verified records behind these pages and cites the record it used.\n\nIt is deliberately not a",
+      "closedByEscape": true
+    },
+    {
+      "path": "/contact.html",
+      "visible": true,
+      "messages": 3,
+      "hasCitation": true,
+      "text": "This panel answers questions about BLAXK BYTE and the work on this site — services, projects, how each one is built and what state it is in. Every answer comes from the verified records behind these pages and cites the record it used.\n\nIt is deliberately not a",
+      "closedByEscape": true
+    },
+    {
+      "path": "/index.html",
+      "visible": true,
+      "messages": 3,
+      "hasCitation": true,
+      "text": "This panel answers questions about BLAXK BYTE and the work on this site — services, projects, how each one is built and what state it is in. Every answer comes from the verified records behind these pages and cites the record it used.\n\nIt is deliberately not a",
+      "closedByEscape": true
+    },
+    {
+      "path": "/lab.html",
+      "visible": true,
+      "messages": 3,
+      "hasCitation": true,
+      "text": "This panel answers questions about BLAXK BYTE and the work on this site — services, projects, how each one is built and what state it is in. Every answer comes from the verified records behind these pages and cites the record it used.\n\nIt is deliberately not a",
+      "closedByEscape": true
+    },
+    {
+      "path": "/privacy.html",
+      "visible": true,
+      "messages": 3,
+      "hasCitation": true,
+      "text": "This panel answers questions about BLAXK BYTE and the work on this site — services, projects, how each one is built and what state it is in. Every answer comes from the verified records behind these pages and cites the record it used.\n\nIt is deliberately not a",
+      "closedByEscape": true
+    },
+    {
+      "path": "/projects/blaxk-aggregator.html",
+      "visible": true,
+      "messages": 3,
+      "hasCitation": true,
+      "text": "This panel answers questions about BLAXK BYTE and the work on this site — services, projects, how each one is built and what state it is in. Every answer comes from the verified records behind these pages and cites the record it used.\n\nIt is deliberately not a",
+      "closedByEscape": true
+    },
+    {
+      "path": "/projects/blaxk-housing.html",
+      "visible": true,
+      "messages": 3,
+      "hasCitation": true,
+      "text": "This panel answers questions about BLAXK BYTE and the work on this site — services, projects, how each one is built and what state it is in. Every answer comes from the verified records behind these pages and cites the record it used.\n\nIt is deliberately not a",
+      "closedByEscape": true
+    },
+    {
+      "path": "/projects/blaxk-xposer.html",
+      "visible": true,
+      "messages": 3,
+      "hasCitation": true,
+      "text": "This panel answers questions about BLAXK BYTE and the work on this site — services, projects, how each one is built and what state it is in. Every answer comes from the verified records behind these pages and cites the record it used.\n\nIt is deliberately not a",
+      "closedByEscape": true
+    },
+    {
+      "path": "/projects/edublaxk.html",
+      "visible": true,
+      "messages": 3,
+      "hasCitation": true,
+      "text": "This panel answers questions about BLAXK BYTE and the work on this site — services, projects, how each one is built and what state it is in. Every answer comes from the verified records behind these pages and cites the record it used.\n\nIt is deliberately not a",
+      "closedByEscape": true
+    },
+    {
+      "path": "/projects/forma.html",
+      "visible": true,
+      "messages": 3,
+      "hasCitation": true,
+      "text": "This panel answers questions about BLAXK BYTE and the work on this site — services, projects, how each one is built and what state it is in. Every answer comes from the verified records behind these pages and cites the record it used.\n\nIt is deliberately not a",
+      "closedByEscape": true
+    },
+    {
+      "path": "/projects/gesture-controls.html",
+      "visible": true,
+      "messages": 3,
+      "hasCitation": true,
+      "text": "This panel answers questions about BLAXK BYTE and the work on this site — services, projects, how each one is built and what state it is in. Every answer comes from the verified records behind these pages and cites the record it used.\n\nIt is deliberately not a",
+      "closedByEscape": true
+    },
+    {
+      "path": "/projects/sabi.html",
+      "visible": true,
+      "messages": 3,
+      "hasCitation": true,
+      "text": "This panel answers questions about BLAXK BYTE and the work on this site — services, projects, how each one is built and what state it is in. Every answer comes from the verified records behind these pages and cites the record it used.\n\nIt is deliberately not a",
+      "closedByEscape": true
+    },
+    {
+      "path": "/projects/the-migrator.html",
+      "visible": true,
+      "messages": 3,
+      "hasCitation": true,
+      "text": "This panel answers questions about BLAXK BYTE and the work on this site — services, projects, how each one is built and what state it is in. Every answer comes from the verified records behind these pages and cites the record it used.\n\nIt is deliberately not a",
+      "closedByEscape": true
+    },
+    {
+      "path": "/source.html",
+      "visible": true,
+      "messages": 3,
+      "hasCitation": true,
+      "text": "This panel answers questions about BLAXK BYTE and the work on this site — services, projects, how each one is built and what state it is in. Every answer comes from the verified records behind these pages and cites the record it used.\n\nIt is deliberately not a",
+      "closedByEscape": true
+    },
+    {
+      "path": "/work.html",
+      "visible": true,
+      "messages": 3,
+      "hasCitation": true,
+      "text": "This panel answers questions about BLAXK BYTE and the work on this site — services, projects, how each one is built and what state it is in. Every answer comes from the verified records behind these pages and cites the record it used.\n\nIt is deliberately not a",
+      "closedByEscape": true
+    }
+  ],
+  "contact": {
+    "path": "/contact.html",
+    "emptySubmit": {
+      "errs": 3,
+      "status": "3 fields need attention before this can be sent.",
+      "ariaInvalid": 3
+    },
+    "filledSubmit": {
+      "state": "ok",
+      "text": "Your details are still in this browser — this build has no server, so nothing was transmitted and nothing was stored. The production build posts this form to a validated, rate-limited endpoint. Point the form at that endpoint (or email dire"
+    }
+  },
+  "internalLinkTargets": [
+    "/about.html",
+    "/company.html",
+    "/contact.html",
+    "/index.html",
+    "/lab.html",
+    "/privacy.html",
+    "/projects/blaxk-aggregator.html",
+    "/projects/blaxk-housing.html",
+    "/projects/blaxk-xposer.html",
+    "/projects/edublaxk.html",
+    "/projects/forma.html",
+    "/projects/gesture-controls.html",
+    "/projects/sabi.html",
+    "/projects/the-migrator.html",
+    "/source.html",
+    "/work.html"
+  ],
+  "brokenLinks": [],
+  "detail": [
+    {
+      "path": "/about.html",
+      "status": 200,
+      "errors": [],
+      "failedRequests": [],
+      "struct": {
+        "title": "About Blaxk — capabilities, each with evidence | BLAXK BYTE TECHNOLOGIES",
+        "lang": "en",
+        "h1": 1,
+        "h1Text": "BLAXK",
+        "h2": 4,
+        "landmarks": 4,
+        "skipLink": true,
+        "imgsTotal": 0,
+        "imgsMissingAlt": 0,
+        "imgSrcs": [],
+        "links": [
+          "#main",
+          "index.html",
+          "index.html",
+          "company.html",
+          "work.html",
+          "source.html",
+          "lab.html",
+          "about.html",
+          "contact.html",
+          "index.html",
+          "company.html",
+          "work.html",
+          "source.html",
+          "lab.html",
+          "about.html",
+          "contact.html",
+          "https://github.com/Blaxk-C137",
+          "projects/blaxk-housing.html",
+          "projects/edublaxk.html",
+          "projects/sabi.html",
+          "projects/forma.html",
+          "projects/blaxk-aggregator.html",
+          "projects/edublaxk.html",
+          "projects/sabi.html",
+          "projects/blaxk-aggregator.html",
+          "projects/blaxk-housing.html",
+          "projects/blaxk-xposer.html",
+          "projects/blaxk-xposer.html",
+          "projects/the-migrator.html",
+          "projects/gesture-controls.html",
+          "projects/edublaxk.html",
+          "projects/forma.html",
+          "projects/blaxk-housing.html",
+          "projects/forma.html",
+          "projects/sabi.html",
+          "projects/forma.html",
+          "projects/gesture-controls.html",
+          "projects/blaxk-xposer.html",
+          "projects/edublaxk.html",
+          "projects/sabi.html",
+          "projects/blaxk-xposer.html",
+          "projects/blaxk-xposer.html",
+          "projects/edublaxk.html",
+          "projects/sabi.html",
+          "projects/forma.html",
+          "projects/blaxk-housing.html",
+          "projects/edublaxk.html",
+          "projects/sabi.html",
+          "projects/blaxk-xposer.html",
+          "projects/forma.html",
+          "contact.html",
+          "work.html",
+          "projects/edublaxk.html#source",
+          "projects/blaxk-xposer.html#source",
+          "projects/blaxk-housing.html#source",
+          "projects/sabi.html#source",
+          "company.html",
+          "work.html",
+          "source.html",
+          "lab.html",
+          "about.html",
+          "https://github.com/Blaxk-C137",
+          "contact.html",
+          "privacy.html",
+          "?motion=on",
+          "?motion=reduced",
+          "?motion=off",
+          "privacy.html"
+        ],
+        "focusable": 83,
+        "smallTargets": 45,
+        "words": 751,
+        "motion": "full",
+        "nosecript": false,
+        "aiDisclaimer": true,
+        "provenance": true
+      },
+      "keyboard": {
+        "opened": {
+          "visible": true,
+          "focused": "INPUT"
+        },
+        "searchOptions": 9,
+        "searchSample": "GO\nESC\nPROJECT\nEduBlaxk\nprototype\nCODE\nEduBlaxk — source\nBlaxk-C137/EduBlaxk\nTECH\nReact\nus",
+        "closed": {
+          "hidden": true,
+          "bodyOverflow": "hidden auto"
+        }
+      },
+      "assistant": {
+        "visible": true,
+        "messages": 3,
+        "hasCitation": true,
+        "text": "This panel answers questions about BLAXK BYTE and the work on this site — services, projects, how each one is built and what state it is in. Every answer comes from the verified records behind these pages and cites the record it used.\n\nIt is deliberately not a",
+        "closedByEscape": true
+      },
+      "contact": null,
+      "modes": [
+        {
+          "query": "?motion=on",
+          "mode": "full",
+          "words": 751,
+          "h1": 1,
+          "canvasVisible": false
+        },
+        {
+          "query": "?motion=reduced",
+          "mode": "full",
+          "words": 751,
+          "h1": 1,
+          "canvasVisible": false
+        },
+        {
+          "query": "?motion=off",
+          "mode": "static",
+          "words": 751,
+          "h1": 1,
+          "canvasVisible": false
+        }
+      ]
+    },
+    {
+      "path": "/company.html",
+      "status": 200,
+      "errors": [],
+      "failedRequests": [],
+      "struct": {
+        "title": "Company & services | BLAXK BYTE TECHNOLOGIES",
+        "lang": "en",
+        "h1": 1,
+        "h1Text": "BLAXK BYTE TECHNOLOGIES",
+        "h2": 4,
+        "landmarks": 4,
+        "skipLink": true,
+        "imgsTotal": 0,
+        "imgsMissingAlt": 0,
+        "imgSrcs": [],
+        "links": [
+          "#main",
+          "index.html",
+          "index.html",
+          "company.html",
+          "work.html",
+          "source.html",
+          "lab.html",
+          "about.html",
+          "contact.html",
+          "index.html",
+          "company.html",
+          "work.html",
+          "source.html",
+          "lab.html",
+          "about.html",
+          "contact.html",
+          "contact.html",
+          "work.html",
+          "company.html",
+          "work.html",
+          "source.html",
+          "lab.html",
+          "about.html",
+          "https://github.com/Blaxk-C137",
+          "contact.html",
+          "privacy.html",
+          "?motion=on",
+          "?motion=reduced",
+          "?motion=off",
+          "privacy.html"
+        ],
+        "focusable": 45,
+        "smallTargets": 11,
+        "words": 944,
+        "motion": "full",
+        "nosecript": false,
+        "aiDisclaimer": true,
+        "provenance": true
+      },
+      "keyboard": {
+        "opened": {
+          "visible": true,
+          "focused": "INPUT"
+        },
+        "searchOptions": 9,
+        "searchSample": "GO\nESC\nPROJECT\nEduBlaxk\nprototype\nCODE\nEduBlaxk — source\nBlaxk-C137/EduBlaxk\nTECH\nReact\nus",
+        "closed": {
+          "hidden": true,
+          "bodyOverflow": "hidden auto"
+        }
+      },
+      "assistant": {
+        "visible": true,
+        "messages": 3,
+        "hasCitation": true,
+        "text": "This panel answers questions about BLAXK BYTE and the work on this site — services, projects, how each one is built and what state it is in. Every answer comes from the verified records behind these pages and cites the record it used.\n\nIt is deliberately not a",
+        "closedByEscape": true
+      },
+      "contact": null,
+      "modes": [
+        {
+          "query": "?motion=on",
+          "mode": "full",
+          "words": 944,
+          "h1": 1,
+          "canvasVisible": false
+        },
+        {
+          "query": "?motion=reduced",
+          "mode": "full",
+          "words": 944,
+          "h1": 1,
+          "canvasVisible": false
+        },
+        {
+          "query": "?motion=off",
+          "mode": "static",
+          "words": 944,
+          "h1": 1,
+          "canvasVisible": false
+        }
+      ]
+    },
+    {
+      "path": "/contact.html",
+      "status": 200,
+      "errors": [],
+      "failedRequests": [],
+      "struct": {
+        "title": "Contact — start a project | BLAXK BYTE TECHNOLOGIES",
+        "lang": "en",
+        "h1": 1,
+        "h1Text": "START A PROJECT",
+        "h2": 5,
+        "landmarks": 4,
+        "skipLink": true,
+        "imgsTotal": 0,
+        "imgsMissingAlt": 0,
+        "imgSrcs": [],
+        "links": [
+          "#main",
+          "index.html",
+          "index.html",
+          "company.html",
+          "work.html",
+          "source.html",
+          "lab.html",
+          "about.html",
+          "contact.html",
+          "index.html",
+          "company.html",
+          "work.html",
+          "source.html",
+          "lab.html",
+          "about.html",
+          "contact.html",
+          "https://github.com/Blaxk-C137",
+          "https://github.com/Blaxk-C137",
+          "about.html",
+          "work.html",
+          "privacy.html",
+          "company.html",
+          "work.html",
+          "source.html",
+          "lab.html",
+          "about.html",
+          "https://github.com/Blaxk-C137",
+          "contact.html",
+          "privacy.html",
+          "?motion=on",
+          "?motion=reduced",
+          "?motion=off",
+          "privacy.html"
+        ],
+        "focusable": 54,
+        "smallTargets": 15,
+        "words": 627,
+        "motion": "full",
+        "nosecript": false,
+        "aiDisclaimer": true,
+        "provenance": true
+      },
+      "keyboard": {
+        "opened": {
+          "visible": true,
+          "focused": "INPUT"
+        },
+        "searchOptions": 9,
+        "searchSample": "GO\nESC\nPROJECT\nEduBlaxk\nprototype\nCODE\nEduBlaxk — source\nBlaxk-C137/EduBlaxk\nTECH\nReact\nus",
+        "closed": {
+          "hidden": true,
+          "bodyOverflow": "hidden auto"
+        }
+      },
+      "assistant": {
+        "visible": true,
+        "messages": 3,
+        "hasCitation": true,
+        "text": "This panel answers questions about BLAXK BYTE and the work on this site — services, projects, how each one is built and what state it is in. Every answer comes from the verified records behind these pages and cites the record it used.\n\nIt is deliberately not a",
+        "closedByEscape": true
+      },
+      "contact": null,
+      "modes": [
+        {
+          "query": "?motion=on",
+          "mode": "full",
+          "words": 627,
+          "h1": 1,
+          "canvasVisible": false
+        },
+        {
+          "query": "?motion=reduced",
+          "mode": "full",
+          "words": 627,
+          "h1": 1,
+          "canvasVisible": false
+        },
+        {
+          "query": "?motion=off",
+          "mode": "static",
+          "words": 627,
+          "h1": 1,
+          "canvasVisible": false
+        }
+      ]
+    },
+    {
+      "path": "/index.html",
+      "status": 200,
+      "errors": [],
+      "failedRequests": [],
+      "struct": {
+        "title": "BLAXK BYTE TECHNOLOGIES — Building what's next | BlaxkVERSE",
+        "lang": "en",
+        "h1": 1,
+        "h1Text": "BLAXK BYTE\nBUILDING WHAT’S NEXT.",
+        "h2": 7,
+        "landmarks": 4,
+        "skipLink": true,
+        "imgsTotal": 0,
+        "imgsMissingAlt": 0,
+        "imgSrcs": [],
+        "links": [
+          "#main",
+          "index.html",
+          "index.html",
+          "company.html",
+          "work.html",
+          "source.html",
+          "lab.html",
+          "about.html",
+          "contact.html",
+          "index.html",
+          "company.html",
+          "work.html",
+          "source.html",
+          "lab.html",
+          "about.html",
+          "contact.html",
+          "work.html",
+          "contact.html",
+          "?motion=off",
+          "company.html",
+          "projects/blaxk-housing.html",
+          "projects/edublaxk.html",
+          "projects/sabi.html",
+          "projects/blaxk-xposer.html",
+          "projects/forma.html",
+          "work.html",
+          "source.html",
+          "projects/edublaxk.html#source",
+          "projects/blaxk-xposer.html#source",
+          "about.html",
+          "lab.html",
+          "contact.html",
+          "https://github.com/Blaxk-C137",
+          "company.html",
+          "work.html",
+          "source.html",
+          "lab.html",
+          "about.html",
+          "https://github.com/Blaxk-C137",
+          "contact.html",
+          "privacy.html",
+          "?motion=on",
+          "?motion=reduced",
+          "?motion=off",
+          "privacy.html"
+        ],
+        "focusable": 60,
+        "smallTargets": 11,
+        "words": 1130,
+        "motion": "full",
+        "nosecript": false,
+        "aiDisclaimer": true,
+        "provenance": true
+      },
+      "keyboard": {
+        "opened": {
+          "visible": true,
+          "focused": "INPUT"
+        },
+        "searchOptions": 9,
+        "searchSample": "GO\nESC\nPROJECT\nEduBlaxk\nprototype\nCODE\nEduBlaxk — source\nBlaxk-C137/EduBlaxk\nTECH\nReact\nus",
+        "closed": {
+          "hidden": true,
+          "bodyOverflow": "hidden auto"
+        }
+      },
+      "assistant": {
+        "visible": true,
+        "messages": 3,
+        "hasCitation": true,
+        "text": "This panel answers questions about BLAXK BYTE and the work on this site — services, projects, how each one is built and what state it is in. Every answer comes from the verified records behind these pages and cites the record it used.\n\nIt is deliberately not a",
+        "closedByEscape": true
+      },
+      "contact": null,
+      "modes": [
+        {
+          "query": "?motion=on",
+          "mode": "full",
+          "words": 1130,
+          "h1": 1,
+          "canvasVisible": true
+        },
+        {
+          "query": "?motion=reduced",
+          "mode": "full",
+          "words": 1130,
+          "h1": 1,
+          "canvasVisible": true
+        },
+        {
+          "query": "?motion=off",
+          "mode": "static",
+          "words": 1130,
+          "h1": 1,
+          "canvasVisible": false
+        }
+      ]
+    },
+    {
+      "path": "/lab.html",
+      "status": 200,
+      "errors": [],
+      "failedRequests": [],
+      "struct": {
+        "title": "Lab — experiments, concepts and honest dead ends | BLAXK BYTE TECHNOLOGIES",
+        "lang": "en",
+        "h1": 1,
+        "h1Text": "THE LAB",
+        "h2": 3,
+        "landmarks": 4,
+        "skipLink": true,
+        "imgsTotal": 0,
+        "imgsMissingAlt": 0,
+        "imgSrcs": [],
+        "links": [
+          "#main",
+          "index.html",
+          "index.html",
+          "company.html",
+          "work.html",
+          "source.html",
+          "lab.html",
+          "about.html",
+          "contact.html",
+          "index.html",
+          "company.html",
+          "work.html",
+          "source.html",
+          "lab.html",
+          "about.html",
+          "contact.html",
+          "contact.html",
+          "work.html",
+          "company.html",
+          "work.html",
+          "source.html",
+          "lab.html",
+          "about.html",
+          "https://github.com/Blaxk-C137",
+          "contact.html",
+          "privacy.html",
+          "?motion=on",
+          "?motion=reduced",
+          "?motion=off",
+          "privacy.html"
+        ],
+        "focusable": 45,
+        "smallTargets": 11,
+        "words": 903,
+        "motion": "full",
+        "nosecript": false,
+        "aiDisclaimer": true,
+        "provenance": true
+      },
+      "keyboard": {
+        "opened": {
+          "visible": true,
+          "focused": "INPUT"
+        },
+        "searchOptions": 9,
+        "searchSample": "GO\nESC\nPROJECT\nEduBlaxk\nprototype\nCODE\nEduBlaxk — source\nBlaxk-C137/EduBlaxk\nTECH\nReact\nus",
+        "closed": {
+          "hidden": true,
+          "bodyOverflow": "hidden auto"
+        }
+      },
+      "assistant": {
+        "visible": true,
+        "messages": 3,
+        "hasCitation": true,
+        "text": "This panel answers questions about BLAXK BYTE and the work on this site — services, projects, how each one is built and what state it is in. Every answer comes from the verified records behind these pages and cites the record it used.\n\nIt is deliberately not a",
+        "closedByEscape": true
+      },
+      "contact": null,
+      "modes": [
+        {
+          "query": "?motion=on",
+          "mode": "full",
+          "words": 903,
+          "h1": 1,
+          "canvasVisible": false
+        },
+        {
+          "query": "?motion=reduced",
+          "mode": "full",
+          "words": 903,
+          "h1": 1,
+          "canvasVisible": false
+        },
+        {
+          "query": "?motion=off",
+          "mode": "static",
+          "words": 903,
+          "h1": 1,
+          "canvasVisible": false
+        }
+      ]
+    },
+    {
+      "path": "/privacy.html",
+      "status": 200,
+      "errors": [],
+      "failedRequests": [],
+      "struct": {
+        "title": "Privacy & AI disclosure | BLAXK BYTE TECHNOLOGIES",
+        "lang": "en",
+        "h1": 1,
+        "h1Text": "WHAT THIS SITE DOES WITH YOUR DATA",
+        "h2": 7,
+        "landmarks": 4,
+        "skipLink": true,
+        "imgsTotal": 0,
+        "imgsMissingAlt": 0,
+        "imgSrcs": [],
+        "links": [
+          "#main",
+          "index.html",
+          "index.html",
+          "company.html",
+          "work.html",
+          "source.html",
+          "lab.html",
+          "about.html",
+          "contact.html",
+          "index.html",
+          "company.html",
+          "work.html",
+          "source.html",
+          "lab.html",
+          "about.html",
+          "contact.html",
+          "contact.html",
+          "company.html",
+          "work.html",
+          "source.html",
+          "lab.html",
+          "about.html",
+          "https://github.com/Blaxk-C137",
+          "contact.html",
+          "privacy.html",
+          "?motion=on",
+          "?motion=reduced",
+          "?motion=off",
+          "privacy.html"
+        ],
+        "focusable": 44,
+        "smallTargets": 12,
+        "words": 850,
+        "motion": "full",
+        "nosecript": false,
+        "aiDisclaimer": true,
+        "provenance": true
+      },
+      "keyboard": {
+        "opened": {
+          "visible": true,
+          "focused": "INPUT"
+        },
+        "searchOptions": 9,
+        "searchSample": "GO\nESC\nPROJECT\nEduBlaxk\nprototype\nCODE\nEduBlaxk — source\nBlaxk-C137/EduBlaxk\nTECH\nReact\nus",
+        "closed": {
+          "hidden": true,
+          "bodyOverflow": "hidden auto"
+        }
+      },
+      "assistant": {
+        "visible": true,
+        "messages": 3,
+        "hasCitation": true,
+        "text": "This panel answers questions about BLAXK BYTE and the work on this site — services, projects, how each one is built and what state it is in. Every answer comes from the verified records behind these pages and cites the record it used.\n\nIt is deliberately not a",
+        "closedByEscape": true
+      },
+      "contact": null,
+      "modes": [
+        {
+          "query": "?motion=on",
+          "mode": "full",
+          "words": 850,
+          "h1": 1,
+          "canvasVisible": false
+        },
+        {
+          "query": "?motion=reduced",
+          "mode": "full",
+          "words": 850,
+          "h1": 1,
+          "canvasVisible": false
+        },
+        {
+          "query": "?motion=off",
+          "mode": "static",
+          "words": 850,
+          "h1": 1,
+          "canvasVisible": false
+        }
+      ]
+    },
+    {
+      "path": "/projects/blaxk-aggregator.html",
+      "status": 200,
+      "errors": [],
+      "failedRequests": [],
+      "struct": {
+        "title": "BlaXk Aggregator — case study | BLAXK BYTE TECHNOLOGIES",
+        "lang": "en",
+        "h1": 1,
+        "h1Text": "BLAXK AGGREGATOR",
+        "h2": 8,
+        "landmarks": 4,
+        "skipLink": true,
+        "imgsTotal": 0,
+        "imgsMissingAlt": 0,
+        "imgSrcs": [],
+        "links": [
+          "#main",
+          "../index.html",
+          "../../index.html",
+          "../../company.html",
+          "../../work.html",
+          "../../source.html",
+          "../../lab.html",
+          "../../about.html",
+          "../../contact.html",
+          "../../index.html",
+          "../../company.html",
+          "../../work.html",
+          "../../source.html",
+          "../../lab.html",
+          "../../about.html",
+          "../../contact.html",
+          "../work.html",
+          "https://github.com/Blaxk-C137/Blaxk_Aggregator",
+          "blaxk-housing.html",
+          "edublaxk.html",
+          "sabi.html",
+          "../work.html",
+          "../source.html",
+          "../contact.html",
+          "../company.html",
+          "../work.html",
+          "../source.html",
+          "../lab.html",
+          "../about.html",
+          "https://github.com/Blaxk-C137",
+          "../contact.html",
+          "../privacy.html",
+          "?motion=on",
+          "?motion=reduced",
+          "?motion=off",
+          "../privacy.html"
+        ],
+        "focusable": 52,
+        "smallTargets": 12,
+        "words": 676,
+        "motion": "full",
+        "nosecript": false,
+        "aiDisclaimer": true,
+        "provenance": true
+      },
+      "keyboard": {
+        "opened": {
+          "visible": true,
+          "focused": "INPUT"
+        },
+        "searchOptions": 9,
+        "searchSample": "GO\nESC\nPROJECT\nEduBlaxk\nprototype\nCODE\nEduBlaxk — source\nBlaxk-C137/EduBlaxk\nTECH\nReact\nus",
+        "closed": {
+          "hidden": true,
+          "bodyOverflow": "hidden auto"
+        }
+      },
+      "assistant": {
+        "visible": true,
+        "messages": 3,
+        "hasCitation": true,
+        "text": "This panel answers questions about BLAXK BYTE and the work on this site — services, projects, how each one is built and what state it is in. Every answer comes from the verified records behind these pages and cites the record it used.\n\nIt is deliberately not a",
+        "closedByEscape": true
+      },
+      "contact": null,
+      "modes": [
+        {
+          "query": "?motion=on",
+          "mode": "full",
+          "words": 676,
+          "h1": 1,
+          "canvasVisible": false
+        },
+        {
+          "query": "?motion=reduced",
+          "mode": "full",
+          "words": 676,
+          "h1": 1,
+          "canvasVisible": false
+        },
+        {
+          "query": "?motion=off",
+          "mode": "static",
+          "words": 676,
+          "h1": 1,
+          "canvasVisible": false
+        }
+      ]
+    },
+    {
+      "path": "/projects/blaxk-housing.html",
+      "status": 200,
+      "errors": [],
+      "failedRequests": [],
+      "struct": {
+        "title": "BlaXk Housing — case study | BLAXK BYTE TECHNOLOGIES",
+        "lang": "en",
+        "h1": 1,
+        "h1Text": "BLAXK HOUSING",
+        "h2": 8,
+        "landmarks": 4,
+        "skipLink": true,
+        "imgsTotal": 0,
+        "imgsMissingAlt": 0,
+        "imgSrcs": [],
+        "links": [
+          "#main",
+          "../index.html",
+          "../../index.html",
+          "../../company.html",
+          "../../work.html",
+          "../../source.html",
+          "../../lab.html",
+          "../../about.html",
+          "../../contact.html",
+          "../../index.html",
+          "../../company.html",
+          "../../work.html",
+          "../../source.html",
+          "../../lab.html",
+          "../../about.html",
+          "../../contact.html",
+          "../work.html",
+          "https://github.com/Blaxk-C137/Blaxk-Housing",
+          "https://github.com/Blaxk-C137/Blaxk-Housing/blob/d83ed7f7f6/backend/listings/views.py#L112-L141",
+          "edublaxk.html",
+          "sabi.html",
+          "blaxk-xposer.html",
+          "../work.html",
+          "../source.html",
+          "../contact.html",
+          "../company.html",
+          "../work.html",
+          "../source.html",
+          "../lab.html",
+          "../about.html",
+          "https://github.com/Blaxk-C137",
+          "../contact.html",
+          "../privacy.html",
+          "?motion=on",
+          "?motion=reduced",
+          "?motion=off",
+          "../privacy.html"
+        ],
+        "focusable": 53,
+        "smallTargets": 12,
+        "words": 955,
+        "motion": "full",
+        "nosecript": false,
+        "aiDisclaimer": true,
+        "provenance": true
+      },
+      "keyboard": {
+        "opened": {
+          "visible": true,
+          "focused": "INPUT"
+        },
+        "searchOptions": 9,
+        "searchSample": "GO\nESC\nPROJECT\nEduBlaxk\nprototype\nCODE\nEduBlaxk — source\nBlaxk-C137/EduBlaxk\nTECH\nReact\nus",
+        "closed": {
+          "hidden": true,
+          "bodyOverflow": "hidden auto"
+        }
+      },
+      "assistant": {
+        "visible": true,
+        "messages": 3,
+        "hasCitation": true,
+        "text": "This panel answers questions about BLAXK BYTE and the work on this site — services, projects, how each one is built and what state it is in. Every answer comes from the verified records behind these pages and cites the record it used.\n\nIt is deliberately not a",
+        "closedByEscape": true
+      },
+      "contact": null,
+      "modes": [
+        {
+          "query": "?motion=on",
+          "mode": "full",
+          "words": 955,
+          "h1": 1,
+          "canvasVisible": false
+        },
+        {
+          "query": "?motion=reduced",
+          "mode": "full",
+          "words": 955,
+          "h1": 1,
+          "canvasVisible": false
+        },
+        {
+          "query": "?motion=off",
+          "mode": "static",
+          "words": 955,
+          "h1": 1,
+          "canvasVisible": false
+        }
+      ]
+    },
+    {
+      "path": "/projects/blaxk-xposer.html",
+      "status": 200,
+      "errors": [],
+      "failedRequests": [],
+      "struct": {
+        "title": "Blaxk Xposer — case study | BLAXK BYTE TECHNOLOGIES",
+        "lang": "en",
+        "h1": 1,
+        "h1Text": "BLAXK XPOSER",
+        "h2": 8,
+        "landmarks": 4,
+        "skipLink": true,
+        "imgsTotal": 0,
+        "imgsMissingAlt": 0,
+        "imgSrcs": [],
+        "links": [
+          "#main",
+          "../index.html",
+          "../../index.html",
+          "../../company.html",
+          "../../work.html",
+          "../../source.html",
+          "../../lab.html",
+          "../../about.html",
+          "../../contact.html",
+          "../../index.html",
+          "../../company.html",
+          "../../work.html",
+          "../../source.html",
+          "../../lab.html",
+          "../../about.html",
+          "../../contact.html",
+          "../work.html",
+          "https://github.com/Blaxk-C137/Blaxk-Xposer",
+          "https://github.com/Blaxk-C137/Blaxk-Xposer/blob/5ccb12dc62/services/http_rewriter.py#L1-L30",
+          "blaxk-housing.html",
+          "edublaxk.html",
+          "sabi.html",
+          "../work.html",
+          "../source.html",
+          "../contact.html",
+          "../company.html",
+          "../work.html",
+          "../source.html",
+          "../lab.html",
+          "../about.html",
+          "https://github.com/Blaxk-C137",
+          "../contact.html",
+          "../privacy.html",
+          "?motion=on",
+          "?motion=reduced",
+          "?motion=off",
+          "../privacy.html"
+        ],
+        "focusable": 53,
+        "smallTargets": 12,
+        "words": 1050,
+        "motion": "full",
+        "nosecript": false,
+        "aiDisclaimer": true,
+        "provenance": true
+      },
+      "keyboard": {
+        "opened": {
+          "visible": true,
+          "focused": "INPUT"
+        },
+        "searchOptions": 9,
+        "searchSample": "GO\nESC\nPROJECT\nEduBlaxk\nprototype\nCODE\nEduBlaxk — source\nBlaxk-C137/EduBlaxk\nTECH\nReact\nus",
+        "closed": {
+          "hidden": true,
+          "bodyOverflow": "hidden auto"
+        }
+      },
+      "assistant": {
+        "visible": true,
+        "messages": 3,
+        "hasCitation": true,
+        "text": "This panel answers questions about BLAXK BYTE and the work on this site — services, projects, how each one is built and what state it is in. Every answer comes from the verified records behind these pages and cites the record it used.\n\nIt is deliberately not a",
+        "closedByEscape": true
+      },
+      "contact": null,
+      "modes": [
+        {
+          "query": "?motion=on",
+          "mode": "full",
+          "words": 1050,
+          "h1": 1,
+          "canvasVisible": false
+        },
+        {
+          "query": "?motion=reduced",
+          "mode": "full",
+          "words": 1050,
+          "h1": 1,
+          "canvasVisible": false
+        },
+        {
+          "query": "?motion=off",
+          "mode": "static",
+          "words": 1050,
+          "h1": 1,
+          "canvasVisible": false
+        }
+      ]
+    },
+    {
+      "path": "/projects/edublaxk.html",
+      "status": 200,
+      "errors": [],
+      "failedRequests": [],
+      "struct": {
+        "title": "EduBlaxk — case study | BLAXK BYTE TECHNOLOGIES",
+        "lang": "en",
+        "h1": 1,
+        "h1Text": "EDUBLAXK",
+        "h2": 8,
+        "landmarks": 4,
+        "skipLink": true,
+        "imgsTotal": 6,
+        "imgsMissingAlt": 0,
+        "imgSrcs": [
+          "../assets/img/edublaxk-09-dark-theme.jpg",
+          "../assets/img/edublaxk-04-quiz-player.jpg",
+          "../assets/img/edublaxk-05-results.jpg",
+          "../assets/img/edublaxk-08-ask-tutor.jpg",
+          "../assets/img/edublaxk-06-history-vault.jpg",
+          "../assets/img/edublaxk-01-setup-wizard.jpg"
+        ],
+        "links": [
+          "#main",
+          "../index.html",
+          "../../index.html",
+          "../../company.html",
+          "../../work.html",
+          "../../source.html",
+          "../../lab.html",
+          "../../about.html",
+          "../../contact.html",
+          "../../index.html",
+          "../../company.html",
+          "../../work.html",
+          "../../source.html",
+          "../../lab.html",
+          "../../about.html",
+          "../../contact.html",
+          "../work.html",
+          "https://github.com/Blaxk-C137/EduBlaxk",
+          "https://github.com/Blaxk-C137/EduBlaxk",
+          "https://github.com/Blaxk-C137/EduBlaxk",
+          "https://github.com/Blaxk-C137/EduBlaxk",
+          "https://github.com/Blaxk-C137/EduBlaxk",
+          "https://github.com/Blaxk-C137/EduBlaxk",
+          "https://github.com/Blaxk-C137/EduBlaxk",
+          "https://github.com/Blaxk-C137/EduBlaxk/blob/5c1445d651/server.ts#L22-L59",
+          "blaxk-housing.html",
+          "sabi.html",
+          "blaxk-xposer.html",
+          "../work.html",
+          "../source.html",
+          "../contact.html",
+          "../company.html",
+          "../work.html",
+          "../source.html",
+          "../lab.html",
+          "../about.html",
+          "https://github.com/Blaxk-C137",
+          "../contact.html",
+          "../privacy.html",
+          "?motion=on",
+          "?motion=reduced",
+          "?motion=off",
+          "../privacy.html"
+        ],
+        "focusable": 59,
+        "smallTargets": 18,
+        "words": 1073,
+        "motion": "full",
+        "nosecript": false,
+        "aiDisclaimer": true,
+        "provenance": true
+      },
+      "keyboard": {
+        "opened": {
+          "visible": true,
+          "focused": "INPUT"
+        },
+        "searchOptions": 9,
+        "searchSample": "GO\nESC\nPROJECT\nEduBlaxk\nprototype\nCODE\nEduBlaxk — source\nBlaxk-C137/EduBlaxk\nTECH\nReact\nus",
+        "closed": {
+          "hidden": true,
+          "bodyOverflow": "hidden auto"
+        }
+      },
+      "assistant": {
+        "visible": true,
+        "messages": 3,
+        "hasCitation": true,
+        "text": "This panel answers questions about BLAXK BYTE and the work on this site — services, projects, how each one is built and what state it is in. Every answer comes from the verified records behind these pages and cites the record it used.\n\nIt is deliberately not a",
+        "closedByEscape": true
+      },
+      "contact": null,
+      "modes": [
+        {
+          "query": "?motion=on",
+          "mode": "full",
+          "words": 1073,
+          "h1": 1,
+          "canvasVisible": false
+        },
+        {
+          "query": "?motion=reduced",
+          "mode": "full",
+          "words": 1073,
+          "h1": 1,
+          "canvasVisible": false
+        },
+        {
+          "query": "?motion=off",
+          "mode": "static",
+          "words": 1073,
+          "h1": 1,
+          "canvasVisible": false
+        }
+      ]
+    },
+    {
+      "path": "/projects/forma.html",
+      "status": 200,
+      "errors": [],
+      "failedRequests": [],
+      "struct": {
+        "title": "FORMA — case study | BLAXK BYTE TECHNOLOGIES",
+        "lang": "en",
+        "h1": 1,
+        "h1Text": "FORMA",
+        "h2": 8,
+        "landmarks": 4,
+        "skipLink": true,
+        "imgsTotal": 5,
+        "imgsMissingAlt": 0,
+        "imgSrcs": [
+          "../assets/img/forma-08-desktop.jpg",
+          "../assets/img/forma-02-studio.jpg",
+          "../assets/img/forma-07-real-ml.jpg",
+          "../assets/img/forma-05-wave-live.jpg",
+          "../assets/img/forma-09-mobile.jpg"
+        ],
+        "links": [
+          "#main",
+          "../index.html",
+          "../../index.html",
+          "../../company.html",
+          "../../work.html",
+          "../../source.html",
+          "../../lab.html",
+          "../../about.html",
+          "../../contact.html",
+          "../../index.html",
+          "../../company.html",
+          "../../work.html",
+          "../../source.html",
+          "../../lab.html",
+          "../../about.html",
+          "../../contact.html",
+          "../work.html",
+          "https://github.com/Blaxk-C137/FORMA-",
+          "https://github.com/Blaxk-C137/FORMA-",
+          "https://github.com/Blaxk-C137/FORMA-",
+          "https://github.com/Blaxk-C137/FORMA-",
+          "https://github.com/Blaxk-C137/FORMA-",
+          "https://github.com/Blaxk-C137/FORMA-",
+          "https://github.com/Blaxk-C137/FORMA-/blob/2dc3f6d129/backend/gemini.py",
+          "blaxk-housing.html",
+          "edublaxk.html",
+          "sabi.html",
+          "../work.html",
+          "../source.html",
+          "../contact.html",
+          "../company.html",
+          "../work.html",
+          "../source.html",
+          "../lab.html",
+          "../about.html",
+          "https://github.com/Blaxk-C137",
+          "../contact.html",
+          "../privacy.html",
+          "?motion=on",
+          "?motion=reduced",
+          "?motion=off",
+          "../privacy.html"
+        ],
+        "focusable": 58,
+        "smallTargets": 18,
+        "words": 828,
+        "motion": "full",
+        "nosecript": false,
+        "aiDisclaimer": true,
+        "provenance": true
+      },
+      "keyboard": {
+        "opened": {
+          "visible": true,
+          "focused": "INPUT"
+        },
+        "searchOptions": 9,
+        "searchSample": "GO\nESC\nPROJECT\nEduBlaxk\nprototype\nCODE\nEduBlaxk — source\nBlaxk-C137/EduBlaxk\nTECH\nReact\nus",
+        "closed": {
+          "hidden": true,
+          "bodyOverflow": "hidden auto"
+        }
+      },
+      "assistant": {
+        "visible": true,
+        "messages": 3,
+        "hasCitation": true,
+        "text": "This panel answers questions about BLAXK BYTE and the work on this site — services, projects, how each one is built and what state it is in. Every answer comes from the verified records behind these pages and cites the record it used.\n\nIt is deliberately not a",
+        "closedByEscape": true
+      },
+      "contact": null,
+      "modes": [
+        {
+          "query": "?motion=on",
+          "mode": "full",
+          "words": 828,
+          "h1": 1,
+          "canvasVisible": false
+        },
+        {
+          "query": "?motion=reduced",
+          "mode": "full",
+          "words": 828,
+          "h1": 1,
+          "canvasVisible": false
+        },
+        {
+          "query": "?motion=off",
+          "mode": "static",
+          "words": 828,
+          "h1": 1,
+          "canvasVisible": false
+        }
+      ]
+    },
+    {
+      "path": "/projects/gesture-controls.html",
+      "status": 200,
+      "errors": [],
+      "failedRequests": [],
+      "struct": {
+        "title": "Gesture Controls — case study | BLAXK BYTE TECHNOLOGIES",
+        "lang": "en",
+        "h1": 1,
+        "h1Text": "GESTURE CONTROLS",
+        "h2": 8,
+        "landmarks": 4,
+        "skipLink": true,
+        "imgsTotal": 0,
+        "imgsMissingAlt": 0,
+        "imgSrcs": [],
+        "links": [
+          "#main",
+          "../index.html",
+          "../../index.html",
+          "../../company.html",
+          "../../work.html",
+          "../../source.html",
+          "../../lab.html",
+          "../../about.html",
+          "../../contact.html",
+          "../../index.html",
+          "../../company.html",
+          "../../work.html",
+          "../../source.html",
+          "../../lab.html",
+          "../../about.html",
+          "../../contact.html",
+          "../work.html",
+          "https://github.com/Blaxk-C137/Gesture_Controls",
+          "blaxk-housing.html",
+          "edublaxk.html",
+          "sabi.html",
+          "../work.html",
+          "../source.html",
+          "../contact.html",
+          "../company.html",
+          "../work.html",
+          "../source.html",
+          "../lab.html",
+          "../about.html",
+          "https://github.com/Blaxk-C137",
+          "../contact.html",
+          "../privacy.html",
+          "?motion=on",
+          "?motion=reduced",
+          "?motion=off",
+          "../privacy.html"
+        ],
+        "focusable": 52,
+        "smallTargets": 12,
+        "words": 622,
+        "motion": "full",
+        "nosecript": false,
+        "aiDisclaimer": true,
+        "provenance": true
+      },
+      "keyboard": {
+        "opened": {
+          "visible": true,
+          "focused": "INPUT"
+        },
+        "searchOptions": 9,
+        "searchSample": "GO\nESC\nPROJECT\nEduBlaxk\nprototype\nCODE\nEduBlaxk — source\nBlaxk-C137/EduBlaxk\nTECH\nReact\nus",
+        "closed": {
+          "hidden": true,
+          "bodyOverflow": "hidden auto"
+        }
+      },
+      "assistant": {
+        "visible": true,
+        "messages": 3,
+        "hasCitation": true,
+        "text": "This panel answers questions about BLAXK BYTE and the work on this site — services, projects, how each one is built and what state it is in. Every answer comes from the verified records behind these pages and cites the record it used.\n\nIt is deliberately not a",
+        "closedByEscape": true
+      },
+      "contact": null,
+      "modes": [
+        {
+          "query": "?motion=on",
+          "mode": "full",
+          "words": 622,
+          "h1": 1,
+          "canvasVisible": false
+        },
+        {
+          "query": "?motion=reduced",
+          "mode": "full",
+          "words": 622,
+          "h1": 1,
+          "canvasVisible": false
+        },
+        {
+          "query": "?motion=off",
+          "mode": "static",
+          "words": 622,
+          "h1": 1,
+          "canvasVisible": false
+        }
+      ]
+    },
+    {
+      "path": "/projects/sabi.html",
+      "status": 200,
+      "errors": [],
+      "failedRequests": [],
+      "struct": {
+        "title": "SABI — case study | BLAXK BYTE TECHNOLOGIES",
+        "lang": "en",
+        "h1": 1,
+        "h1Text": "SABI",
+        "h2": 8,
+        "landmarks": 4,
+        "skipLink": true,
+        "imgsTotal": 0,
+        "imgsMissingAlt": 0,
+        "imgSrcs": [],
+        "links": [
+          "#main",
+          "../index.html",
+          "../../index.html",
+          "../../company.html",
+          "../../work.html",
+          "../../source.html",
+          "../../lab.html",
+          "../../about.html",
+          "../../contact.html",
+          "../../index.html",
+          "../../company.html",
+          "../../work.html",
+          "../../source.html",
+          "../../lab.html",
+          "../../about.html",
+          "../../contact.html",
+          "../work.html",
+          "https://github.com/Blaxk-C137/SABI",
+          "https://github.com/Blaxk-C137/SABI/blob/9ff8827f93/src/lib/voice/tutor-speak.ts#L5-L22",
+          "blaxk-housing.html",
+          "edublaxk.html",
+          "blaxk-xposer.html",
+          "../work.html",
+          "../source.html",
+          "../contact.html",
+          "../company.html",
+          "../work.html",
+          "../source.html",
+          "../lab.html",
+          "../about.html",
+          "https://github.com/Blaxk-C137",
+          "../contact.html",
+          "../privacy.html",
+          "?motion=on",
+          "?motion=reduced",
+          "?motion=off",
+          "../privacy.html"
+        ],
+        "focusable": 53,
+        "smallTargets": 13,
+        "words": 1010,
+        "motion": "full",
+        "nosecript": false,
+        "aiDisclaimer": true,
+        "provenance": true
+      },
+      "keyboard": {
+        "opened": {
+          "visible": true,
+          "focused": "INPUT"
+        },
+        "searchOptions": 9,
+        "searchSample": "GO\nESC\nPROJECT\nEduBlaxk\nprototype\nCODE\nEduBlaxk — source\nBlaxk-C137/EduBlaxk\nTECH\nReact\nus",
+        "closed": {
+          "hidden": true,
+          "bodyOverflow": "hidden auto"
+        }
+      },
+      "assistant": {
+        "visible": true,
+        "messages": 3,
+        "hasCitation": true,
+        "text": "This panel answers questions about BLAXK BYTE and the work on this site — services, projects, how each one is built and what state it is in. Every answer comes from the verified records behind these pages and cites the record it used.\n\nIt is deliberately not a",
+        "closedByEscape": true
+      },
+      "contact": null,
+      "modes": [
+        {
+          "query": "?motion=on",
+          "mode": "full",
+          "words": 1010,
+          "h1": 1,
+          "canvasVisible": false
+        },
+        {
+          "query": "?motion=reduced",
+          "mode": "full",
+          "words": 1010,
+          "h1": 1,
+          "canvasVisible": false
+        },
+        {
+          "query": "?motion=off",
+          "mode": "static",
+          "words": 1010,
+          "h1": 1,
+          "canvasVisible": false
+        }
+      ]
+    },
+    {
+      "path": "/projects/the-migrator.html",
+      "status": 200,
+      "errors": [],
+      "failedRequests": [],
+      "struct": {
+        "title": "The Migrator — case study | BLAXK BYTE TECHNOLOGIES",
+        "lang": "en",
+        "h1": 1,
+        "h1Text": "THE MIGRATOR",
+        "h2": 8,
+        "landmarks": 4,
+        "skipLink": true,
+        "imgsTotal": 0,
+        "imgsMissingAlt": 0,
+        "imgSrcs": [],
+        "links": [
+          "#main",
+          "../index.html",
+          "../../index.html",
+          "../../company.html",
+          "../../work.html",
+          "../../source.html",
+          "../../lab.html",
+          "../../about.html",
+          "../../contact.html",
+          "../../index.html",
+          "../../company.html",
+          "../../work.html",
+          "../../source.html",
+          "../../lab.html",
+          "../../about.html",
+          "../../contact.html",
+          "../work.html",
+          "https://github.com/Blaxk-C137/The_Migrator",
+          "blaxk-housing.html",
+          "edublaxk.html",
+          "sabi.html",
+          "../work.html",
+          "../source.html",
+          "../contact.html",
+          "../company.html",
+          "../work.html",
+          "../source.html",
+          "../lab.html",
+          "../about.html",
+          "https://github.com/Blaxk-C137",
+          "../contact.html",
+          "../privacy.html",
+          "?motion=on",
+          "?motion=reduced",
+          "?motion=off",
+          "../privacy.html"
+        ],
+        "focusable": 52,
+        "smallTargets": 12,
+        "words": 577,
+        "motion": "full",
+        "nosecript": false,
+        "aiDisclaimer": true,
+        "provenance": true
+      },
+      "keyboard": {
+        "opened": {
+          "visible": true,
+          "focused": "INPUT"
+        },
+        "searchOptions": 9,
+        "searchSample": "GO\nESC\nPROJECT\nEduBlaxk\nprototype\nCODE\nEduBlaxk — source\nBlaxk-C137/EduBlaxk\nTECH\nReact\nus",
+        "closed": {
+          "hidden": true,
+          "bodyOverflow": "hidden auto"
+        }
+      },
+      "assistant": {
+        "visible": true,
+        "messages": 3,
+        "hasCitation": true,
+        "text": "This panel answers questions about BLAXK BYTE and the work on this site — services, projects, how each one is built and what state it is in. Every answer comes from the verified records behind these pages and cites the record it used.\n\nIt is deliberately not a",
+        "closedByEscape": true
+      },
+      "contact": null,
+      "modes": [
+        {
+          "query": "?motion=on",
+          "mode": "full",
+          "words": 577,
+          "h1": 1,
+          "canvasVisible": false
+        },
+        {
+          "query": "?motion=reduced",
+          "mode": "full",
+          "words": 577,
+          "h1": 1,
+          "canvasVisible": false
+        },
+        {
+          "query": "?motion=off",
+          "mode": "static",
+          "words": 577,
+          "h1": 1,
+          "canvasVisible": false
+        }
+      ]
+    },
+    {
+      "path": "/source.html",
+      "status": 200,
+      "errors": [],
+      "failedRequests": [],
+      "struct": {
+        "title": "Source explorer — public repositories | BLAXK BYTE TECHNOLOGIES",
+        "lang": "en",
+        "h1": 1,
+        "h1Text": "THE SOURCE EXPLORER",
+        "h2": 5,
+        "landmarks": 4,
+        "skipLink": true,
+        "imgsTotal": 0,
+        "imgsMissingAlt": 0,
+        "imgSrcs": [],
+        "links": [
+          "#main",
+          "index.html",
+          "index.html",
+          "company.html",
+          "work.html",
+          "source.html",
+          "lab.html",
+          "about.html",
+          "contact.html",
+          "index.html",
+          "company.html",
+          "work.html",
+          "source.html",
+          "lab.html",
+          "about.html",
+          "contact.html",
+          "https://github.com/Blaxk-C137",
+          "https://github.com/Blaxk-C137/Blaxk-Housing",
+          "https://github.com/Blaxk-C137/EduBlaxk",
+          "https://github.com/Blaxk-C137/SABI",
+          "https://github.com/Blaxk-C137/Blaxk-Xposer",
+          "https://github.com/Blaxk-C137/FORMA-",
+          "https://github.com/Blaxk-C137/Blaxk_Aggregator",
+          "https://github.com/Blaxk-C137/The_Migrator",
+          "https://github.com/Blaxk-C137/Gesture_Controls",
+          "projects/blaxk-housing.html",
+          "projects/edublaxk.html",
+          "projects/sabi.html",
+          "projects/forma.html",
+          "projects/blaxk-aggregator.html",
+          "projects/edublaxk.html",
+          "projects/sabi.html",
+          "projects/blaxk-aggregator.html",
+          "projects/blaxk-housing.html",
+          "projects/blaxk-xposer.html",
+          "projects/blaxk-xposer.html",
+          "projects/the-migrator.html",
+          "projects/gesture-controls.html",
+          "projects/edublaxk.html",
+          "projects/forma.html",
+          "projects/blaxk-housing.html",
+          "projects/forma.html",
+          "projects/sabi.html",
+          "projects/forma.html",
+          "projects/gesture-controls.html",
+          "projects/blaxk-xposer.html",
+          "projects/edublaxk.html",
+          "projects/sabi.html",
+          "projects/blaxk-xposer.html",
+          "projects/blaxk-xposer.html",
+          "projects/edublaxk.html",
+          "projects/sabi.html",
+          "projects/forma.html",
+          "projects/blaxk-housing.html",
+          "projects/edublaxk.html",
+          "projects/sabi.html",
+          "projects/blaxk-xposer.html",
+          "projects/forma.html",
+          "https://github.com/Blaxk-C137/AsyncRAT-C-Sharp",
+          "https://github.com/Blaxk-C137/Forked",
+          "https://github.com/Blaxk-C137/rea-bx",
+          "https://github.com/Blaxk-C137/Recordly",
+          "https://github.com/Blaxk-C137/Signova-",
+          "https://github.com/Blaxk-C137/Blaxk3dsvg",
+          "https://github.com/Blaxk-C137/moltbot",
+          "https://github.com/Blaxk-C137/Call-of-Duty-Sol-Ultra",
+          "https://github.com/Blaxk-C137/public-apis",
+          "company.html",
+          "work.html",
+          "source.html",
+          "lab.html",
+          "about.html",
+          "https://github.com/Blaxk-C137",
+          "contact.html",
+          "privacy.html",
+          "?motion=on",
+          "?motion=reduced",
+          "?motion=off",
+          "privacy.html"
+        ],
+        "focusable": 94,
+        "smallTargets": 62,
+        "words": 821,
+        "motion": "full",
+        "nosecript": false,
+        "aiDisclaimer": true,
+        "provenance": true
+      },
+      "keyboard": {
+        "opened": {
+          "visible": true,
+          "focused": "INPUT"
+        },
+        "searchOptions": 9,
+        "searchSample": "GO\nESC\nPROJECT\nEduBlaxk\nprototype\nCODE\nEduBlaxk — source\nBlaxk-C137/EduBlaxk\nTECH\nReact\nus",
+        "closed": {
+          "hidden": true,
+          "bodyOverflow": "hidden auto"
+        }
+      },
+      "assistant": {
+        "visible": true,
+        "messages": 3,
+        "hasCitation": true,
+        "text": "This panel answers questions about BLAXK BYTE and the work on this site — services, projects, how each one is built and what state it is in. Every answer comes from the verified records behind these pages and cites the record it used.\n\nIt is deliberately not a",
+        "closedByEscape": true
+      },
+      "contact": null,
+      "modes": [
+        {
+          "query": "?motion=on",
+          "mode": "full",
+          "words": 821,
+          "h1": 1,
+          "canvasVisible": false
+        },
+        {
+          "query": "?motion=reduced",
+          "mode": "full",
+          "words": 821,
+          "h1": 1,
+          "canvasVisible": false
+        },
+        {
+          "query": "?motion=off",
+          "mode": "static",
+          "words": 821,
+          "h1": 1,
+          "canvasVisible": false
+        }
+      ]
+    },
+    {
+      "path": "/work.html",
+      "status": 200,
+      "errors": [],
+      "failedRequests": [],
+      "struct": {
+        "title": "Work — 8 verified projects | BLAXK BYTE TECHNOLOGIES",
+        "lang": "en",
+        "h1": 1,
+        "h1Text": "THE WORK",
+        "h2": 3,
+        "landmarks": 4,
+        "skipLink": true,
+        "imgsTotal": 0,
+        "imgsMissingAlt": 0,
+        "imgSrcs": [],
+        "links": [
+          "#main",
+          "index.html",
+          "index.html",
+          "company.html",
+          "work.html",
+          "source.html",
+          "lab.html",
+          "about.html",
+          "contact.html",
+          "index.html",
+          "company.html",
+          "work.html",
+          "source.html",
+          "lab.html",
+          "about.html",
+          "contact.html",
+          "projects/blaxk-housing.html",
+          "projects/edublaxk.html",
+          "projects/sabi.html",
+          "projects/blaxk-xposer.html",
+          "projects/forma.html",
+          "projects/blaxk-aggregator.html",
+          "projects/the-migrator.html",
+          "projects/gesture-controls.html",
+          "projects/blaxk-housing.html",
+          "https://github.com/Blaxk-C137/Blaxk-Housing",
+          "projects/edublaxk.html",
+          "https://github.com/Blaxk-C137/EduBlaxk",
+          "projects/sabi.html",
+          "https://github.com/Blaxk-C137/SABI",
+          "projects/blaxk-xposer.html",
+          "https://github.com/Blaxk-C137/Blaxk-Xposer",
+          "projects/forma.html",
+          "https://github.com/Blaxk-C137/FORMA-",
+          "projects/blaxk-aggregator.html",
+          "https://github.com/Blaxk-C137/Blaxk_Aggregator",
+          "projects/the-migrator.html",
+          "https://github.com/Blaxk-C137/The_Migrator",
+          "projects/gesture-controls.html",
+          "https://github.com/Blaxk-C137/Gesture_Controls",
+          "company.html",
+          "work.html",
+          "source.html",
+          "lab.html",
+          "about.html",
+          "https://github.com/Blaxk-C137",
+          "contact.html",
+          "privacy.html",
+          "?motion=on",
+          "?motion=reduced",
+          "?motion=off",
+          "privacy.html"
+        ],
+        "focusable": 79,
+        "smallTargets": 11,
+        "words": 773,
+        "motion": "full",
+        "nosecript": true,
+        "aiDisclaimer": true,
+        "provenance": true
+      },
+      "keyboard": {
+        "opened": {
+          "visible": true,
+          "focused": "INPUT"
+        },
+        "searchOptions": 9,
+        "searchSample": "GO\nESC\nPROJECT\nEduBlaxk\nprototype\nCODE\nEduBlaxk — source\nBlaxk-C137/EduBlaxk\nTECH\nReact\nus",
+        "closed": {
+          "hidden": true,
+          "bodyOverflow": "hidden auto"
+        }
+      },
+      "assistant": {
+        "visible": true,
+        "messages": 3,
+        "hasCitation": true,
+        "text": "This panel answers questions about BLAXK BYTE and the work on this site — services, projects, how each one is built and what state it is in. Every answer comes from the verified records behind these pages and cites the record it used.\n\nIt is deliberately not a",
+        "closedByEscape": true
+      },
+      "contact": null,
+      "modes": [
+        {
+          "query": "?motion=on",
+          "mode": "full",
+          "words": 773,
+          "h1": 1,
+          "canvasVisible": true
+        },
+        {
+          "query": "?motion=reduced",
+          "mode": "full",
+          "words": 773,
+          "h1": 1,
+          "canvasVisible": true
+        },
+        {
+          "query": "?motion=off",
+          "mode": "static",
+          "words": 773,
+          "h1": 1,
+          "canvasVisible": true
+        }
+      ]
+    }
+  ]
+}

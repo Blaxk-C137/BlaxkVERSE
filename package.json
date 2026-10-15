@@ -1,0 +1,29 @@
+{
+  "name": "blaxkverse",
+  "version": "1.0.0",
+  "description": "BlaxkVERSE — the immersive red/black portfolio and company site for BLAXK BYTE TECHNOLOGIES. Static build with zero runtime dependencies.",
+  "private": true,
+  "license": "UNLICENSED",
+  "type": "module",
+  "scripts": {
+    "build": "python3 tools/extract-excerpts.py && python3 tools/build-content.py",
+    "build:excerpts": "python3 tools/extract-excerpts.py",
+    "build:pages": "python3 tools/build-content.py",
+    "serve": "python3 -m http.server 4321 --bind 0.0.0.0 --directory site",
+    "verify:content": "node tools/verify-content.mjs",
+    "verify:content:offline": "node tools/verify-content.mjs --offline",
+    "audit": "node tools/audit.mjs",
+    "perf": "node tools/perf-site.mjs",
+    "shots": "node shots.mjs",
+    "overflow": "node overflow.mjs",
+    "prototypes:measure": "node tools/measure.mjs",
+    "prototypes:report": "node tools/report.mjs",
+    "capture": "node tools/capture.mjs"
+  },
+  "devDependencies": {
+    "playwright-core": "^1.64.1"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

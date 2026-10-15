@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en" data-motion="full">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>BlaxkVERSE — Concept C · Infinite Signal</title>
+<meta name="description" content="Prototype C of the BlaxkVERSE experience competition: a cinematic editorial journey through chapters, driven by native vertical scroll.">
+<link rel="stylesheet" href="shared/tokens.css">
+<style>
+  /* ---------------- Concept C: Infinite Signal ---------------- */
+  body { background: #07080b; }
+
+  /* Wordmark + always-available conventional nav (never replaced by the dial) */
+  .topbar {
+    position: fixed; inset: 0 0 auto 0; z-index: 40;
+    display: flex; align-items: center; gap: 16px;
+    padding: 14px clamp(14px, 3vw, 32px);
+    mix-blend-mode: normal;
+  }
+  .mark { font-family: var(--bx-font-display); font-weight: 700; letter-spacing: -.02em; font-size: 15px; text-decoration: none; }
+  .mark span { color: var(--bx-red); }
+  .topbar nav { margin-left: auto; display: flex; gap: 4px; font-family: var(--bx-font-mono); font-size: 10.5px; letter-spacing: .14em; text-transform: uppercase; }
+  .topbar nav a { padding: 9px 10px; color: var(--bx-muted); text-decoration: none; }
+  .topbar nav a:hover { color: var(--bx-white); }
+  .progress-line { position: fixed; top: 0; left: 0; height: 2px; background: var(--bx-red); z-index: 41; width: 0; box-shadow: 0 0 10px var(--bx-red-glow); }
+
+  /* ---- The film: sticky viewport, horizontally translated track ---- */
+  .film-wrap { position: relative; }
+  .film {
+    position: sticky; top: 0; height: 100svh; overflow: hidden;
+    background: radial-gradient(90% 70% at 15% 20%, rgba(240,68,69,.07), transparent 60%), #07080b;
+  }
+  .film-track {
+    display: flex; height: 100%; will-change: transform;
+  }
+  .chapter {
+    flex: none; width: 100vw; height: 100%;
+    padding: clamp(74px, 12vh, 140px) clamp(20px, 6vw, 90px) clamp(64px, 10vh, 110px);
+    display: flex; flex-direction: column; justify-content: center;
+    position: relative; overflow: hidden;
+  }
+  .chapter[hidden] { display: none; }
+
+  .ch-num {
+    position: absolute; top: clamp(64px, 11vh, 120px); right: clamp(20px, 5vw, 70px);
+    font-family: var(--bx-font-display); font-size: clamp(60px, 12vw, 190px); font-weight: 700;
+    line-height: .8; letter-spacing: -.05em; color: rgba(244,244,242,.045); pointer-events: none; user-select: none;
+  }
+  .ch-label { display: flex; align-items: center; gap: 12px; margin-bottom: 18px; }
+  .ch-label .bar { width: 40px; height: 1px; background: var(--bx-red); }
+  h1, h2 { font-family: var(--bx-font-display); letter-spacing: -.04em; line-height: .94; margin: 0 0 20px; font-weight: 700; }
+  h1 { font-size: clamp(44px, 11vw, 148px); text-transform: uppercase; }
+  h2 { font-size: clamp(32px, 6.6vw, 86px); }
+  .ch-body { max-width: 62ch; color: var(--bx-white-dim); font-size: clamp(15px, 1.55vw, 18px); }
+  .sig { color: var(--bx-red); }
+  .rule { height: 1px; background: var(--bx-hairline); margin: 26px 0; max-width: 900px; }
+
+  .chapter-inner { max-width: 1220px; width: 100%; }
+
+  /* Reveal masks — the "camera cut". Pure CSS transitions toggled by class. */
+  .mask { display: block; overflow: hidden; }
+  .mask > * { display: block; transform: translateY(105%); transition: transform 900ms var(--bx-ease-out); }
+  .chapter[data-in="true"] .mask > * { transform: none; }
+  .chapter[data-in="true"] .mask:nth-child(2) > * { transition-delay: 70ms; }
+  .chapter[data-in="true"] .mask:nth-child(3) > * { transition-delay: 140ms; }
+  .chapter[data-in="true"] .mask:nth-child(4) > * { transition-delay: 210ms; }
+
+  .cta-row { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 30px; }
+  .btn {
+    display: inline-flex; align-items: center; gap: 9px; min-height: 44px;
+    padding: 13px 22px; border: 1px solid var(--bx-hairline); background: rgba(20,23,29,.7);
+    color: var(--bx-white); text-decoration: none; cursor: pointer;
+    font-family: var(--bx-font-mono); font-size: 11px; letter-spacing: .14em; text-transform: uppercase;
+    transition: border-color var(--bx-t-quick) var(--bx-ease), background var(--bx-t-quick) var(--bx-ease), transform var(--bx-t-quick) var(--bx-ease);
+  }
+  .btn:hover { border-color: var(--bx-red); background: rgba(240,68,69,.1); transform: translateY(-2px); }
+  .btn--red { background: var(--bx-red); border-color: var(--bx-red); color: #fff; }
+
+  /* Evidence: real screenshot + pinned excerpt */
+  .evidence { display: grid; gap: 22px; grid-template-columns: minmax(0, 1.05fr) minmax(0, .95fr); align-items: start; margin-top: 8px; }
+  .shot { border: 1px solid var(--bx-hairline); background: #050609; overflow: hidden; }
+  .shot img { width: 100%; height: auto; display: block; opacity: .96; }
+  .shot figcaption { padding: 10px 12px; border-top: 1px solid var(--bx-hairline); font-family: var(--bx-font-mono); font-size: 10.5px; color: var(--bx-muted); display: flex; gap: 10px; flex-wrap: wrap; }
+  .shot figcaption a { color: var(--bx-red); text-decoration: none; margin-left: auto; }
+  .code { border: 1px solid var(--bx-hairline); background: #050609; font-family: var(--bx-font-mono); font-size: 12.2px; line-height: 1.7; }
+  .code-head { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; padding: 9px 12px; border-bottom: 1px solid var(--bx-hairline); background: rgba(20,23,29,.6); font-size: 10.5px; letter-spacing: .1em; text-transform: uppercase; color: var(--bx-muted); }
+  .code-head .path { color: var(--bx-white); text-transform: none; letter-spacing: 0; }
+  .code-head a { margin-left: auto; color: var(--bx-red); text-decoration: none; }
+  .code pre { margin: 0; padding: 13px 0; overflow-x: auto; }
+  .code .ln { display: block; white-space: pre; padding: 0 13px; }
+  .code .n { display: inline-block; width: 38px; color: #454b56; user-select: none; text-align: right; padding-right: 13px; }
+  .code .k { color: #f04445; } .code .s { color: #d7c789; } .code .c { color: #5b6673; font-style: italic; }
+  .code .attrib { padding: 10px 12px; border-top: 1px solid var(--bx-hairline); color: var(--bx-muted); font-size: 10.5px; }
+
+  .metrics { display: flex; flex-wrap: wrap; gap: 34px; margin-top: 28px; }
+  .metric b { display: block; font-family: var(--bx-font-display); font-size: clamp(26px, 3.4vw, 42px); letter-spacing: -.03em; }
+  .metric span { font-family: var(--bx-font-mono); font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: var(--bx-muted); }
+
+  .stackline { font-family: var(--bx-font-mono); font-size: 11.5px; color: var(--bx-steel); margin-top: 14px; }
+
+  /* ---- Signal dial ---- */
+  .dial { position: fixed; right: clamp(14px, 3vw, 32px); bottom: clamp(38px, 6vh, 60px); z-index: 42; }
+  .dial-btn {
+    width: 66px; height: 66px; border-radius: 50%; cursor: pointer;
+    background: rgba(12,14,18,.9); border: 1px solid var(--bx-hairline);
+    display: grid; place-items: center; position: relative;
+  }
+  .dial-btn:hover { border-color: var(--bx-red); }
+  .dial-btn svg { width: 40px; height: 40px; overflow: visible; }
+  .dial-btn .tick { stroke: var(--bx-steel); stroke-width: 1.4; }
+  .dial-btn .tick.on { stroke: var(--bx-red); }
+  .dial-btn .hand { stroke: var(--bx-red); stroke-width: 1.8; transition: transform 620ms var(--bx-ease-out); transform-origin: 20px 20px; }
+  .dial-panel {
+    position: fixed; right: clamp(14px, 3vw, 32px); bottom: clamp(112px, 15vh, 142px); z-index: 42;
+    width: min(360px, calc(100vw - 28px));
+    background: rgba(9,10,14,.97); border: 1px solid var(--bx-hairline); padding: 16px;
+  }
+  .dial-panel[hidden] { display: none; }
+  .dial-panel ol { list-style: none; margin: 12px 0 0; padding: 0; display: grid; gap: 2px; }
+  .dial-panel a { display: flex; gap: 12px; align-items: baseline; padding: 11px 10px; text-decoration: none; border-bottom: 1px solid var(--bx-hairline-soft); }
+  .dial-panel a:hover { background: rgba(240,68,69,.08); }
+  .dial-panel a[aria-current="true"] { color: var(--bx-red); }
+  .dial-panel .n { font-family: var(--bx-font-mono); font-size: 10.5px; color: var(--bx-steel); }
+  .dial-panel .t { font-family: var(--bx-font-display); font-size: 16px; letter-spacing: -.01em; }
+
+  .hint { position: fixed; left: clamp(14px, 3vw, 32px); bottom: clamp(38px, 6vh, 60px); z-index: 42;
+    font-family: var(--bx-font-mono); font-size: 10px; color: var(--bx-steel); letter-spacing: .14em; text-transform: uppercase; }
+  .hint b { color: var(--bx-white-dim); font-weight: 400; }
+
+  /* ---- Static / vertical fallback ---- */
+  html[data-motion="static"] .film, html[data-motion="reduced"] .film { position: static; height: auto; }
+  html[data-motion="static"] .film-track, html[data-motion="reduced"] .film-track { display: block; transform: none !important; }
+  html[data-motion="static"] .chapter, html[data-motion="reduced"] .chapter { width: 100%; height: auto; min-height: 0; padding-top: clamp(70px, 10vh, 110px); }
+  html[data-motion="static"] .mask > *, html[data-motion="reduced"] .mask > * { transform: none; }
+  html[data-motion="static"] .film-wrap, html[data-motion="reduced"] .film-wrap { height: auto !important; }
+
+  @media (max-width: 620px) {
+    .topbar { padding: 12px 14px; gap: 10px; }
+    .topbar nav { font-size: 9px; letter-spacing: .08em; gap: 0; }
+    .topbar nav a { padding: 8px 6px; }
+    .mark { font-size: 14px; }
+  }
+
+  @media (max-width: 960px) {
+    .film { position: static; height: auto; }
+    .film-track { display: block; transform: none !important; }
+    .chapter { width: 100%; height: auto; padding: 88px 20px 64px; }
+    .evidence { grid-template-columns: 1fr; }
+    .dial { bottom: 32px; }
+    .hint { display: none; }
+    .film-wrap { height: auto !important; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .mask > * { transform: none !important; }
+  }
+</style>
+</head>
+<body>
+<a class="bx-skip" href="#ch-1">Skip to content</a>
+<div class="bx-grain" aria-hidden="true"></div>
+<div class="progress-line" id="pline" aria-hidden="true"></div>
+
+<header class="topbar">
+  <a class="mark" href="#ch-1">BLAXK<span>BYTE</span></a>
+  <nav aria-label="Chapters">
+    <a href="#ch-1"><span class="nav-full">01 Signal</span><span class="nav-short" hidden>01</span></a>
+    <a href="#ch-3"><span class="nav-full">02 Work</span><span class="nav-short" hidden>02</span></a>
+    <a href="#ch-4"><span class="nav-full">03 Evidence</span><span class="nav-short" hidden>03</span></a>
+    <a href="#ch-5"><span class="nav-full">04 Contact</span><span class="nav-short" hidden>04</span></a>
+  </nav>
+</header>
+
+<main class="film-wrap" id="filmwrap">
+  <div class="film" id="film">
+    <div class="film-track" id="track">
+
+      <!-- ============ 01 SIGNAL ============ -->
+      <section class="chapter" id="ch-1" data-ch="1" aria-labelledby="h-1">
+        <span class="ch-num" aria-hidden="true">01</span>
+        <div class="chapter-inner">
+          <div class="ch-label"><span class="bar"></span><span class="bx-label">BlaxkVERSE · Chapter 01 · Signal</span></div>
+          <h1 id="h-1"><span class="mask"><span>BLAXK BYTE</span></span><span class="mask"><span class="sig">Building what&rsquo;s next.</span></span></h1>
+          <div class="ch-body">
+            <span class="mask"><span>Software, automation and AI systems — built by <strong style="color:var(--bx-white)">Blaxk</strong>,
+            and documented in public. Every project below links to a real repository, a pinned commit and code you can read.</span></span>
+          </div>
+          <div class="cta-row">
+            <a class="btn btn--red" href="#ch-3">See the work →</a>
+            <a class="btn" href="#ch-5">Start a project</a>
+            <button class="btn" type="button" id="explore-normally">Explore normally</button>
+          </div>
+          <div class="metrics">
+            <div class="metric"><b>8</b><span>verified projects</span></div>
+            <div class="metric"><b>43</b><span>public repositories</span></div>
+            <div class="metric"><b>0</b><span>invented metrics</span></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ 02 BUILDER ============ -->
+      <section class="chapter" id="ch-2" data-ch="2" aria-labelledby="h-2">
+        <span class="ch-num" aria-hidden="true">02</span>
+        <div class="chapter-inner">
+          <div class="ch-label"><span class="bar"></span><span class="bx-label">Chapter 02 · The builder</span></div>
+          <h2 id="h-2"><span class="mask"><span>One person,</span></span><span class="mask"><span>a wide machine shop.</span></span></h2>
+          <div class="ch-body">
+            <p><span class="mask"><span><strong style="color:var(--bx-white)">Blaxk</strong> is a developer and automation builder, and a
+            mechatronics engineering student — which is why the work here keeps crossing from software into
+            hardware-adjacent territory: computer vision, local speech models, network tooling, robotics-adjacent
+            interfaces.</span></span></p>
+            <p style="margin-top:14px"><span class="mask"><span>The through-line is not a framework. It is a preference:
+            build the version that runs on your own machine, understand the whole stack, and publish the evidence.</span></span></p>
+          </div>
+          <div class="rule"></div>
+          <p class="stackline">Works in: React · Node &amp; Express · Django REST · Python · TypeScript · Supabase · MongoDB · Playwright · Linux</p>
+        </div>
+      </section>
+
+      <!-- ============ 03 WORK ============ -->
+      <section class="chapter" id="ch-3" data-ch="3" aria-labelledby="h-3">
+        <span class="ch-num" aria-hidden="true">03</span>
+        <div class="chapter-inner">
+          <div class="ch-label"><span class="bar"></span><span class="bx-label">Chapter 03 · Work · transition 01</span></div>
+          <h2 id="h-3"><span class="mask"><span>Teaching machines</span></span><span class="mask"><span>that stay on your desk.</span></span></h2>
+          <div class="ch-body">
+            <p><span class="mask"><span><strong style="color:var(--bx-white)">EduBlaxk</strong> turns a lecture PDF into diagnostic
+            questions and grades theory against a rubric. <strong style="color:var(--bx-white)">SABI</strong> is the spoken half:
+            you talk to it, it answers from your own slides, and the listening and speaking happen on your device —
+            Whisper and on-device voices, never a cloud speech API.</span></span></p>
+          </div>
+          <div class="rule"></div>
+          <div class="ch-body">
+            <p><span class="mask"><span><strong style="color:var(--bx-white)">Blaxk Xposer</strong> takes the opposite tack and
+            moves your localhost outward instead: one QR code puts a dev server that is already running on your laptop
+            in the hands of every phone on the Wi-Fi, rewriting headers and bodies so the dev server never notices
+            it moved.</span></span></p>
+          </div>
+          <div class="cta-row">
+            <a class="btn" href="https://github.com/Blaxk-C137/EduBlaxk" target="_blank" rel="noopener noreferrer">EduBlaxk ↗</a>
+            <a class="btn" href="https://github.com/Blaxk-C137/SABI" target="_blank" rel="noopener noreferrer">SABI ↗</a>
+            <a class="btn" href="https://github.com/Blaxk-C137/Blaxk-Xposer" target="_blank" rel="noopener noreferrer">Xposer ↗</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ 04 EVIDENCE ============ -->
+      <section class="chapter" id="ch-4" data-ch="4" aria-labelledby="h-4">
+        <span class="ch-num" aria-hidden="true">04</span>
+        <div class="chapter-inner">
+          <div class="ch-label"><span class="bar"></span><span class="bx-label">Chapter 04 · Evidence · transition 02</span></div>
+          <h2 id="h-4" style="font-size:clamp(28px,4.6vw,58px)"><span class="mask"><span>Claims cost nothing. Here is the code.</span></span></h2>
+          <div class="evidence">
+            <figure class="shot">
+              <img src="data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='960' height='600'%3E%3Crect width='960' height='600' fill='%230a0c10'/%3E%3Crect x='0' y='0' width='960' height='46' fill='%23141719'/%3E%3Ccircle cx='24' cy='23' r='5' fill='%23f04445'/%3E%3Ctext x='46' y='28' fill='%23f4f4f2' font-family='monospace' font-size='13'%3EEduBlaxk — screenshot pending export%3C/text%3E%3Cg fill='%231a1e25'%3E%3Crect x='0' y='46' width='200' height='554'/%3E%3C/g%3E%3Cg fill='%23f04445'%3E%3Crect x='24' y='90' width='92' height='9' rx='2'/%3E%3C/g%3E%3Cg fill='%23262b35'%3E%3Crect x='24' y='120' width='140' height='7' rx='2'/%3E%3Crect x='24' y='140' width='118' height='7' rx='2'/%3E%3Crect x='24' y='160' width='150' height='7' rx='2'/%3E%3Crect x='236' y='86' width='380' height='12' rx='3'/%3E%3Crect x='236' y='120' width='560' height='7' rx='2'/%3E%3Crect x='236' y='138' width='520' height='7' rx='2'/%3E%3Crect x='236' y='190' width='680' height='150' rx='4'/%3E%3Crect x='236' y='362' width='680' height='150' rx='4'/%3E%3C/g%3E%3Ctext x='252' y='220' fill='%237d838e' font-family='monospace' font-size='12'%3ESOURCE MATERIALS%3C/text%3E%3Ctext x='252' y='392' fill='%237d838e' font-family='monospace' font-size='12'%3EPARAMETERS%3C/text%3E%3C/svg%3E"
+                   width="960" height="600" alt="EduBlaxk dark-theme assessment builder interface — screenshot from the public repository.">
+              <figcaption>
+                EduBlaxk · dark theme, assessment builder
+                <a href="https://github.com/Blaxk-C137/EduBlaxk" target="_blank" rel="noopener noreferrer">source ↗</a>
+              </figcaption>
+            </figure>
+            <div class="code">
+              <div class="code-head">
+                <span class="path">server.ts</span>
+                <span>lines 43–58</span>
+                <a href="https://github.com/Blaxk-C137/EduBlaxk" target="_blank" rel="noopener noreferrer">Open on GitHub ↗</a>
+              </div>
+              <pre tabindex="0" aria-label="Pinned source excerpt from EduBlaxk"><span class="ln"><span class="n">43</span><span class="c">// API: Client config (which providers are usable — never the keys)</span></span>
+<span class="ln"><span class="n">44</span><span class="k">app</span>.get(<span class="s">"/api/config"</span>, (_req, res) =&gt; {</span>
+<span class="ln"><span class="n">45</span>  <span class="k">const</span> keys = loadKeys();</span>
+<span class="ln"><span class="n">46</span>  res.json({ activeModel: keys.activeModel,</span>
+<span class="ln"><span class="n">47</span>             providers: providerKeyStatus() });</span>
+<span class="ln"><span class="n">48</span>});</span>
+<span class="ln"><span class="n">49</span></span>
+<span class="ln"><span class="n">50</span><span class="c">// API: Save (and validate) a provider key</span></span>
+<span class="ln"><span class="n">51</span><span class="k">app</span>.post(<span class="s">"/api/keys"</span>, <span class="k">async</span> (req, res) =&gt; {</span>
+<span class="ln"><span class="n">52</span>  <span class="k">const</span> { provider, apiKey, model } = req.body ?? {};</span>
+<span class="ln"><span class="n">53</span>  <span class="k">if</span> (!PROVIDERS.includes(provider)) {</span>
+<span class="ln"><span class="n">54</span>    res.status(400).json({ error: <span class="s">`Unknown provider "${provider}".`</span> });</span>
+<span class="ln"><span class="n">55</span>    <span class="k">return</span>;</span>
+<span class="ln"><span class="n">56</span>  }</span>
+<span class="ln"><span class="n">57</span>  <span class="k">await</span> validateProviderKey(provider, apiKey.trim());</span>
+<span class="ln"><span class="n">58</span>  setProviderKey(provider, apiKey.trim());</span></span></pre>
+              <div class="attrib">Blaxk-C137/EduBlaxk · server.ts @ 5c1445d651 · excerpt shown as inert text, never executed</div>
+            </div>
+          </div>
+          <p class="bx-label" style="margin-top:22px">
+            Screenshots in this prototype are illustrative placeholders. The production build ships the real
+            repository screenshots (nine exist for EduBlaxk, ten for FORMA), served locally and captioned with their source.
+          </p>
+        </div>
+      </section>
+
+      <!-- ============ 05 CONTACT ============ -->
+      <section class="chapter" id="ch-5" data-ch="5" aria-labelledby="h-5">
+        <span class="ch-num" aria-hidden="true">05</span>
+        <div class="chapter-inner">
+          <div class="ch-label"><span class="bar"></span><span class="bx-label">Chapter 05 · Contact · exit</span></div>
+          <h2 id="h-5"><span class="mask"><span>Signal back.</span></span></h2>
+          <div class="ch-body">
+            <p><span class="mask"><span>Tell me the problem and you get a written scope: what gets built, what it
+            costs, and what is explicitly out of range. No fabricated client roster, no invented delivery dates.</span></span></p>
+          </div>
+          <div class="cta-row">
+            <a class="btn btn--red" href="#">Start a project</a>
+            <a class="btn" href="#" >Email</a>
+            <a class="btn" href="https://github.com/Blaxk-C137" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+            <a class="btn" href="#ch-1">Back to the signal ↑</a>
+          </div>
+          <p class="bx-label" style="margin-top:34px">Concept C · Infinite Signal · prototype for evaluation</p>
+        </div>
+      </section>
+
+    </div>
+  </div>
+</main>
+
+<!-- Scroll dial: the minimal nav instrument. The top bar above is the
+     conventional fallback and is never hidden. -->
+<div class="dial">
+  <button class="dial-btn" type="button" id="dial-btn" aria-expanded="false" aria-controls="dial-panel" aria-label="Open chapter dial">
+    <svg viewBox="0 0 40 40" aria-hidden="true">
+      <g id="ticks"></g>
+      <line class="hand" id="hand" x1="20" y1="20" x2="20" y2="7"></line>
+      <circle cx="20" cy="20" r="2.1" fill="#f04445"></circle>
+    </svg>
+  </button>
+</div>
+<div class="dial-panel" id="dial-panel" hidden role="dialog" aria-label="Chapters" aria-modal="false">
+  <div class="bx-label">Chapter dial</div>
+  <ol id="dial-list"></ol>
+  <p class="bx-label" style="margin:12px 0 0">The nav bar above and these links stay keyboard-operable.</p>
+</div>
+<p class="hint">scroll <b>→ chapter</b> · <b>esc</b> closes dial</p>
+
+<script src="shared/verified-projects.js"></script>
+<script>
+(function () {
+  "use strict";
+  var P = BX.data.projects;
+  var wrap = document.getElementById("filmwrap");
+  var track = document.getElementById("track");
+  var chapters = Array.prototype.slice.call(document.querySelectorAll(".chapter"));
+  var N = chapters.length;
+  var current = 0;
+
+  var CHAPTERS = [
+    { id: "ch-1", n: "01", t: "Signal" },
+    { id: "ch-2", n: "02", t: "Builder" },
+    { id: "ch-3", n: "03", t: "Work" },
+    { id: "ch-4", n: "04", t: "Evidence" },
+    { id: "ch-5", n: "05", t: "Contact" }
+  ];
+
+  /* Below 620px the chapter names are replaced by their numbers so the nav
+     never clips; the dial panel still carries the full names. */
+  function labelMode() {
+    var short = window.innerWidth <= 620;
+    document.querySelectorAll(".nav-full").forEach(function (n) { n.hidden = short; });
+    document.querySelectorAll(".nav-short").forEach(function (n) { n.hidden = !short; });
+  }
+
+  var wide = function () { return window.innerWidth > 960; };
+  var cinematic = function () { return BX.motion.enabled() && wide(); };
+
+  /* In cinematic mode the wrap must be tall enough that horizontal travel is
+     produced by ordinary vertical scrolling. In the fallback it collapses. */
+  function sizeWrap() {
+    if (cinematic()) {
+      var scrollPerChapter = Math.max(window.innerHeight * 0.85, 520);
+      wrap.style.height = (scrollPerChapter * N + window.innerHeight) + "px";
+    } else {
+      wrap.style.height = "auto";
+      track.style.transform = "none";
+    }
+  }
+
+  function onScroll() {
+    var max = wrap.offsetHeight - window.innerHeight;
+    var progress = max > 0 && cinematic() ? Math.min(1, Math.max(0, -wrap.getBoundingClientRect().top / max)) : 0;
+    var lit = 0;
+
+    if (cinematic()) {
+      /* Move the track, not the page. transform only — no layout work per frame. */
+      var x = -progress * (N - 1) * window.innerWidth;
+      track.style.transform = "translate3d(" + x.toFixed(1) + "px,0,0)";
+      lit = Math.min(N - 1, Math.round(progress * (N - 1)));
+    } else {
+      /* Fallback: a plain vertical reading. Whichever chapter is nearest the
+         top of the viewport is the current one. */
+      var best = 0, bestD = Infinity;
+      chapters.forEach(function (c, i) {
+        var d = Math.abs(c.getBoundingClientRect().top - 90);
+        if (d < bestD) { bestD = d; best = i; }
+      });
+      lit = best;
+    }
+
+    if (lit !== current) setCurrent(lit);
+
+    var docMax = document.documentElement.scrollHeight - window.innerHeight;
+    document.getElementById("pline").style.width = (docMax > 0 ? (window.scrollY / docMax) * 100 : 0).toFixed(2) + "%";
+  }
+
+  function setCurrent(i) {
+    current = i;
+    chapters.forEach(function (c, ci) { c.setAttribute("data-in", ci === i ? "true" : "false"); });
+    var hand = document.getElementById("hand");
+    if (hand) hand.style.transform = "rotate(" + (i * (360 / N)) + "deg)";
+    Array.prototype.forEach.call(document.querySelectorAll("#ticks .tick"), function (t, ti) {
+      t.classList.toggle("on", ti <= i);
+    });
+    Array.prototype.forEach.call(document.querySelectorAll("#dial-list a"), function (a, ai) {
+      a.setAttribute("aria-current", ai === i ? "true" : "false");
+    });
+  }
+
+  /* The camera-cut reveal fires the first time a chapter becomes current, so
+     text is present (and readable) before any animation runs. */
+  chapters.forEach(function (c, i) { if (i === 0) c.setAttribute("data-in", "true"); });
+
+  /* ---- Dial ---- */
+  (function () {
+    var ticks = document.getElementById("ticks");
+    for (var i = 0; i < N; i++) {
+      var a = (i * (360 / N) - 90) * Math.PI / 180;
+      var line = document.createElementNS("http://www.w3.org/2000/svg", "line");
+      line.setAttribute("class", "tick");
+      line.setAttribute("x1", String(20 + Math.cos(a) * 14));
+      line.setAttribute("y1", String(20 + Math.sin(a) * 14));
+      line.setAttribute("x2", String(20 + Math.cos(a) * 18));
+      line.setAttribute("y2", String(20 + Math.sin(a) * 18));
+      ticks.appendChild(line);
+    }
+    var list = document.getElementById("dial-list");
+    CHAPTERS.forEach(function (c) {
+      var a = BX.el("a", { href: "#" + c.id, "data-ch-link": c.id },
+        [BX.el("span", { class: "n", text: c.n }), BX.el("span", { class: "t", text: c.t })]);
+      list.appendChild(BX.el("li", null, [a]));
+    });
+    var panel = document.getElementById("dial-panel");
+    var btn = document.getElementById("dial-btn");
+    var release = null;
+    function open() {
+      panel.hidden = false;
+      btn.setAttribute("aria-expanded", "true");
+      release = BX.trapFocus(panel, btn);
+    }
+    function close() {
+      panel.hidden = true;
+      btn.setAttribute("aria-expanded", "false");
+      if (release) { release(); release = null; } else btn.focus();
+    }
+    btn.addEventListener("click", function () { panel.hidden ? open() : close(); });
+    panel.addEventListener("click", function (e) { if (e.target.closest("[data-ch-link]")) close(); });
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape" && !panel.hidden) close();
+      if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === "k") {
+        e.preventDefault();
+        panel.hidden ? open() : close();
+      }
+    });
+  })();
+
+  /* ---- Explore normally: one click to the honest reading mode ---- */
+  document.getElementById("explore-normally").addEventListener("click", function () {
+    var url = new URL(location.href);
+    url.searchParams.set("motion", "off");
+    location.href = url.toString();
+  });
+
+  /* ---- Boot ---- */
+  function boot() {
+    labelMode();
+    sizeWrap();
+    if (!cinematic()) {
+      /* Ensure nothing is left mid-transform when leaving cinematic mode. */
+      track.style.transform = "none";
+    }
+    onScroll();
+  }
+
+  var raf = null;
+  function schedule() {
+    if (raf) return;
+    raf = requestAnimationFrame(function () { raf = null; onScroll(); });
+  }
+
+  window.addEventListener("scroll", schedule, { passive: true });
+  window.addEventListener("resize", function () { boot(); }, { passive: true });
+  BX.motion.onChange(function () { boot(); });
+  boot();
+
+  BX.hud.mount({ title: "Concept C · Infinite Signal", index: "index.html", alt: { href: "index.html", label: "compare all →" } });
+  window.__bxReport = function () { return BX.hud.report(); };
+})();
+</script>
+</body>
+</html>

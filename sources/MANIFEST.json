@@ -1,0 +1,39 @@
+{
+  "note": "Cached source files pinned to an exact commit SHA. Excerpt bodies are sliced from these by tools/extract-excerpts.py. Hashes are checked on every extraction so a modified cache fails loudly instead of publishing something untrue.",
+  "fetchedFrom": "raw.githubusercontent.com",
+  "fetchedOn": "2026-10-15",
+  "files": [
+    {
+      "repo": "Blaxk-C137/Blaxk-Housing",
+      "file": "Blaxk-Housing__backend__listings__views.py",
+      "path": "backend/listings/views.py",
+      "sha": "d83ed7f7f6",
+      "sha256": "3d17971e75d1ce5c9a3d88f20947aeecd2a75984e6d6ebe7d9e4aae13176cef8",
+      "bytes": 9130
+    },
+    {
+      "repo": "Blaxk-C137/EduBlaxk",
+      "file": "EduBlaxk__server.ts",
+      "path": "server.ts",
+      "sha": "5c1445d651",
+      "sha256": "efa9a1cacbfc89179ec0f9dd29a76da97a02259851932fa89cfa914156ef45cb",
+      "bytes": 13854
+    },
+    {
+      "repo": "Blaxk-C137/SABI",
+      "file": "SABI__src__lib__voice__tutor-speak.ts",
+      "path": "src/lib/voice/tutor-speak.ts",
+      "sha": "9ff8827f93",
+      "sha256": "46a7394f757db702cbb264c7adb51d12af3b9e943346014e094c52717c71497f",
+      "bytes": 13258
+    },
+    {
+      "repo": "Blaxk-C137/Blaxk-Xposer",
+      "file": "Blaxk-Xposer__services__http_rewriter.py",
+      "path": "services/http_rewriter.py",
+      "sha": "5ccb12dc62",
+      "sha256": "c24b856df09a6007d4c29b686ff93c8469d38115133e2613c547a79b91a60f7a",
+      "bytes": 25061
+    }
+  ]
+}

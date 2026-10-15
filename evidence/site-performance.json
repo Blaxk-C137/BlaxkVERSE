@@ -1,0 +1,4602 @@
+{
+  "generatedAt": "2026-10-15T17:12:57.146Z",
+  "note": "LCP and CLS are collected with PerformanceObserver in Chromium (headless shell, software rasterisation, 2 vCPU). CLS is accumulated during a scripted scroll of the entire page, which is the scenario that exposes shifts on a scroll-driven site. INP is not measured directly; the long-task total and TBT proxy are reported instead.",
+  "budgets": {
+    "lcp": 2500,
+    "cls": 0.1,
+    "inp": 200
+  },
+  "worst": {
+    "lcp": 424,
+    "cls": 0.0069,
+    "longTaskMax": 236,
+    "tbtProxy": 186,
+    "transferKB": 567,
+    "domNodes": 431
+  },
+  "medians": {
+    "desktop/full": {
+      "lcp": 72,
+      "cls": 0,
+      "tbtProxy": 0
+    },
+    "desktop/reduced": {
+      "lcp": 72,
+      "cls": 0.0001,
+      "tbtProxy": 0
+    },
+    "desktop/static": {
+      "lcp": 68,
+      "cls": 0,
+      "tbtProxy": 0
+    },
+    "mobile/full": {
+      "lcp": 184,
+      "cls": 0,
+      "tbtProxy": 33
+    },
+    "mobile/reduced": {
+      "lcp": 160,
+      "cls": 0,
+      "tbtProxy": 28
+    },
+    "mobile/static": {
+      "lcp": 172,
+      "cls": 0,
+      "tbtProxy": 25
+    },
+    "modest-laptop/full": {
+      "lcp": 284,
+      "cls": 0,
+      "tbtProxy": 111
+    },
+    "modest-laptop/reduced": {
+      "lcp": 276,
+      "cls": 0.0001,
+      "tbtProxy": 99
+    },
+    "modest-laptop/static": {
+      "lcp": 268,
+      "cls": 0,
+      "tbtProxy": 99
+    }
+  },
+  "results": [
+    {
+      "path": "/index.html",
+      "viewport": "desktop",
+      "cpuThrottle": 1,
+      "mode": "full",
+      "scrollMs": 1341,
+      "errors": [],
+      "lcp": 96,
+      "cls": 0,
+      "worstShift": 0,
+      "shiftCount": 0,
+      "longTaskCount": 0,
+      "longTaskTotal": 0,
+      "longTaskMax": 0,
+      "tbtProxy": 0,
+      "domNodes": 397,
+      "transferBytes": 135692,
+      "requests": 5,
+      "byType": {
+        "link": {
+          "count": 1,
+          "bytes": 33450
+        },
+        "script": {
+          "count": 3,
+          "bytes": 102242
+        }
+      },
+      "domContentLoaded": 71,
+      "loadEvent": 71
+    },
+    {
+      "path": "/work.html",
+      "viewport": "desktop",
+      "cpuThrottle": 1,
+      "mode": "full",
+      "scrollMs": 1342,
+      "errors": [],
+      "lcp": 72,
+      "cls": 0.0069,
+      "worstShift": 0.00690649112654321,
+      "shiftCount": 1,
+      "longTaskCount": 0,
+      "longTaskTotal": 0,
+      "longTaskMax": 0,
+      "tbtProxy": 0,
+      "domNodes": 431,
+      "transferBytes": 135692,
+      "requests": 5,
+      "byType": {
+        "link": {
+          "count": 1,
+          "bytes": 33450
+        },
+        "script": {
+          "count": 3,
+          "bytes": 102242
+        }
+      },
+      "domContentLoaded": 47,
+      "loadEvent": 48
+    },
+    {
+      "path": "/source.html",
+      "viewport": "desktop",
+      "cpuThrottle": 1,
+      "mode": "full",
+      "scrollMs": 1340,
+      "errors": [],
+      "lcp": 64,
+      "cls": 0,
+      "worstShift": 0,
+      "shiftCount": 0,
+      "longTaskCount": 0,
+      "longTaskTotal": 0,
+      "longTaskMax": 0,
+      "tbtProxy": 0,
+      "domNodes": 403,
+      "transferBytes": 135692,
+      "requests": 5,
+      "byType": {
+        "link": {
+          "count": 1,
+          "bytes": 33450
+        },
+        "script": {
+          "count": 3,
+          "bytes": 102242
+        }
+      },
+      "domContentLoaded": 43,
+      "loadEvent": 44
+    },
+    {
+      "path": "/company.html",
+      "viewport": "desktop",
+      "cpuThrottle": 1,
+      "mode": "full",
+      "scrollMs": 1332,
+      "errors": [],
+      "lcp": 76,
+      "cls": 0,
+      "worstShift": 0,
+      "shiftCount": 0,
+      "longTaskCount": 0,
+      "longTaskTotal": 0,
+      "longTaskMax": 0,
+      "tbtProxy": 0,
+      "domNodes": 314,
+      "transferBytes": 135692,
+      "requests": 5,
+      "byType": {
+        "link": {
+          "count": 1,
+          "bytes": 33450
+        },
+        "script": {
+          "count": 3,
+          "bytes": 102242
+        }
+      },
+      "domContentLoaded": 55,
+      "loadEvent": 56
+    },
+    {
+      "path": "/about.html",
+      "viewport": "desktop",
+      "cpuThrottle": 1,
+      "mode": "full",
+      "scrollMs": 1327,
+      "errors": [],
+      "lcp": 68,
+      "cls": 0,
+      "worstShift": 0,
+      "shiftCount": 0,
+      "longTaskCount": 0,
+      "longTaskTotal": 0,
+      "longTaskMax": 0,
+      "tbtProxy": 0,
+      "domNodes": 331,
+      "transferBytes": 135692,
+      "requests": 5,
+      "byType": {
+        "link": {
+          "count": 1,
+          "bytes": 33450
+        },
+        "script": {
+          "count": 3,
+          "bytes": 102242
+        }
+      },
+      "domContentLoaded": 50,
+      "loadEvent": 51
+    },
+    {
+      "path": "/lab.html",
+      "viewport": "desktop",
+      "cpuThrottle": 1,
+      "mode": "full",
+      "scrollMs": 1354,
+      "errors": [],
+      "lcp": 68,
+      "cls": 0,
+      "worstShift": 0,
+      "shiftCount": 0,
+      "longTaskCount": 0,
+      "longTaskTotal": 0,
+      "longTaskMax": 0,
+      "tbtProxy": 0,
+      "domNodes": 274,
+      "transferBytes": 135692,
+      "requests": 5,
+      "byType": {
+        "link": {
+          "count": 1,
+          "bytes": 33450
+        },
+        "script": {
+          "count": 3,
+          "bytes": 102242
+        }
+      },
+      "domContentLoaded": 50,
+      "loadEvent": 51
+    },
+    {
+      "path": "/contact.html",
+      "viewport": "desktop",
+      "cpuThrottle": 1,
+      "mode": "full",
+      "scrollMs": 1324,
+      "errors": [],
+      "lcp": 68,
+      "cls": 0,
+      "worstShift": 0,
+      "shiftCount": 0,
+      "longTaskCount": 0,
+      "longTaskTotal": 0,
+      "longTaskMax": 0,
+      "tbtProxy": 0,
+      "domNodes": 249,
+      "transferBytes": 135692,
+      "requests": 5,
+      "byType": {
+        "link": {
+          "count": 1,
+          "bytes": 33450
+        },
+        "script": {
+          "count": 3,
+          "bytes": 102242
+        }
+      },
+      "domContentLoaded": 43,
+      "loadEvent": 44
+    },
+    {
+      "path": "/privacy.html",
+      "viewport": "desktop",
+      "cpuThrottle": 1,
+      "mode": "full",
+      "scrollMs": 1330,
+      "errors": [],
+      "lcp": 72,
+      "cls": 0,
+      "worstShift": 0,
+      "shiftCount": 0,
+      "longTaskCount": 0,
+      "longTaskTotal": 0,
+      "longTaskMax": 0,
+      "tbtProxy": 0,
+      "domNodes": 224,
+      "transferBytes": 135692,
+      "requests": 5,
+      "byType": {
+        "link": {
+          "count": 1,
+          "bytes": 33450
+        },
+        "script": {
+          "count": 3,
+          "bytes": 102242
+        }
+      },
+      "domContentLoaded": 51,
+      "loadEvent": 51
+    },
+    {
+      "path": "/projects/edublaxk.html",
+      "viewport": "desktop",
+      "cpuThrottle": 1,
+      "mode": "full",
+      "scrollMs": 1339,
+      "errors": [],
+      "lcp": 72,
+      "cls": 0,
+      "worstShift": 0,
+      "shiftCount": 0,
+      "longTaskCount": 0,
+      "longTaskTotal": 0,
+      "longTaskMax": 0,
+      "tbtProxy": 0,
+      "domNodes": 382,
+      "transferBytes": 503095,
+      "requests": 11,
+      "byType": {
+        "link": {
+          "count": 1,
+          "bytes": 33450
+        },
+        "script": {
+          "count": 3,
+          "bytes": 102242
+        },
+        "img": {
+          "count": 6,
+          "bytes": 367403
+        }
+      },
+      "domContentLoaded": 46,
+      "loadEvent": 47
+    },
+    {
+      "path": "/projects/blaxk-housing.html",
+      "viewport": "desktop",
+      "cpuThrottle": 1,
+      "mode": "full",
+      "scrollMs": 1326,
+      "errors": [],
+      "lcp": 104,
+      "cls": 0,
+      "worstShift": 0,
+      "shiftCount": 0,
+      "longTaskCount": 0,
+      "longTaskTotal": 0,
+      "longTaskMax": 0,
+      "tbtProxy": 0,
+      "domNodes": 338,
+      "transferBytes": 135692,
+      "requests": 5,
+      "byType": {
+        "link": {
+          "count": 1,
+          "bytes": 33450
+        },
+        "script": {
+          "count": 3,
+          "bytes": 102242
+        }
+      },
+      "domContentLoaded": 73,
+      "loadEvent": 73
+    },
+    {
+      "path": "/projects/sabi.html",
+      "viewport": "desktop",
+      "cpuThrottle": 1,
+      "mode": "full",
+      "scrollMs": 1332,
+      "errors": [],
+      "lcp": 100,
+      "cls": 0,
+      "worstShift": 0,
+      "shiftCount": 0,
+      "longTaskCount": 0,
+      "longTaskTotal": 0,
+      "longTaskMax": 0,
+      "tbtProxy": 0,
+      "domNodes": 318,
+      "transferBytes": 135692,
+      "requests": 5,
+      "byType": {
+        "link": {
+          "count": 1,
+          "bytes": 33450
+        },
+        "script": {
+          "count": 3,
+          "bytes": 102242
+        }
+      },
+      "domContentLoaded": 65,
+      "loadEvent": 65
+    },
+    {
+      "path": "/projects/blaxk-xposer.html",
+      "viewport": "desktop",
+      "cpuThrottle": 1,
+      "mode": "full",
+      "scrollMs": 1323,
+      "errors": [],
+      "lcp": 72,
+      "cls": 0,
+      "worstShift": 0,
+      "shiftCount": 0,
+      "longTaskCount": 0,
+      "longTaskTotal": 0,
+      "longTaskMax": 0,
+      "tbtProxy": 0,
+      "domNodes": 341,
+      "transferBytes": 135692,
+      "requests": 5,
+      "byType": {
+        "link": {
+          "count": 1,
+          "bytes": 33450
+        },
+        "script": {
+          "count": 3,
+          "bytes": 102242
+        }
+      },
+      "domContentLoaded": 49,
+      "loadEvent": 50
+    },
+    {
+      "path": "/projects/forma.html",
+      "viewport": "desktop",
+      "cpuThrottle": 1,
+      "mode": "full",
+      "scrollMs": 1331,
+      "errors": [],
+      "lcp": 84,
+      "cls": 0,
+      "worstShift": 0,
+      "shiftCount": 0,
+      "longTaskCount": 0,
+      "longTaskTotal": 0,
+      "longTaskMax": 0,
+      "tbtProxy": 0,
+      "domNodes": 295,
+      "transferBytes": 580629,
+      "requests": 10,
+      "byType": {
+        "link": {
+          "count": 1,
+          "bytes": 33450
+        },
+        "script": {
+          "count": 3,
+          "bytes": 102242
+        },
+        "img": {
+          "count": 5,
+          "bytes": 444937
+        }
+      },
+      "domContentLoaded": 62,
+      "loadEvent": 63
+    },
+    {
+      "path": "/projects/blaxk-aggregator.html",
+      "viewport": "desktop",
+      "cpuThrottle": 1,
+      "mode": "full",
+      "scrollMs": 1336,
+      "errors": [],
+      "lcp": 72,
+      "cls": 0,
+      "worstShift": 0,
+      "shiftCount": 0,
+      "longTaskCount": 0,
+      "longTaskTotal": 0,
+      "longTaskMax": 0,
+      "tbtProxy": 0,
+      "domNodes": 268,
+      "transferBytes": 135692,
+      "requests": 5,
+      "byType": {
+        "link": {
+          "count": 1,
+          "bytes": 33450
+        },
+        "script": {
+          "count": 3,
+          "bytes": 102242
+        }
+      },
+      "domContentLoaded": 64,
+      "loadEvent": 65
+    },
+    {
+      "path": "/projects/the-migrator.html",
+      "viewport": "desktop",
+      "cpuThrottle": 1,
+      "mode": "full",
+      "scrollMs": 1328,
+      "errors": [],
+      "lcp": 68,
+      "cls": 0,
+      "worstShift": 0,
+      "shiftCount": 0,
+      "longTaskCount": 0,
+      "longTaskTotal": 0,
+      "longTaskMax": 0,
+      "tbtProxy": 0,
+      "domNodes": 262,
+      "transferBytes": 135692,
+      "requests": 5,
+      "byType": {
+        "link": {
+          "count": 1,
+          "bytes": 33450
+        },
+        "script": {
+          "count": 3,
+          "bytes": 102242
+        }
+      },
+      "domContentLoaded": 47,
+      "loadEvent": 47
+    },
+    {
+      "path": "/projects/gesture-controls.html",
+      "viewport": "desktop",
+      "cpuThrottle": 1,
+      "mode": "full",
+      "scrollMs": 1332,
+      "errors": [],
+      "lcp": 64,
+      "cls": 0,
+      "worstShift": 0,
+      "shiftCount": 0,
+      "longTaskCount": 0,
+      "longTaskTotal": 0,
+      "longTaskMax": 0,
+      "tbtProxy": 0,
+      "domNodes": 267,
+      "transferBytes": 135692,
+      "requests": 5,
+      "byType": {
+        "link": {
+          "count": 1,
+          "bytes": 33450
+        },
+        "script": {
+          "count": 3,
+          "bytes": 102242
+        }
+      },
+      "domContentLoaded": 49,
+      "loadEvent": 50
+    },
+    {
+      "path": "/index.html",
+      "viewport": "desktop",
+      "cpuThrottle": 1,
+      "mode": "reduced",
+      "scrollMs": 1235,
+      "errors": [],
+      "lcp": 68,
+      "cls": 0.0001,
+      "worstShift": 0.00010814525462962963,
+      "shiftCount": 0,
+      "longTaskCount": 0,
+      "longTaskTotal": 0,
+      "longTaskMax": 0,
+      "tbtProxy": 0,
+      "domNodes": 397,
+      "transferBytes": 135692,
+      "requests": 5,
+      "byType": {
+        "link": {
+          "count": 1,
+          "bytes": 33450
+        },
+        "script": {
+          "count": 3,
+          "bytes": 102242
+        }
+      },
+      "domContentLoaded": 68,
+      "loadEvent": 69
+    },
+    {
+      "path": "/work.html",
+      "viewport": "desktop",
+      "cpuThrottle": 1,
+      "mode": "reduced",
+      "scrollMs": 1326,
+      "errors": [],
+      "lcp": 68,
+      "cls": 0.0069,
+      "worstShift": 0.00690649112654321,
+      "shiftCount": 1,
+      "longTaskCount": 0,
+      "longTaskTotal": 0,
+      "longTaskMax": 0,
+      "tbtProxy": 0,
+      "domNodes": 431,
+      "transferBytes": 135692,
+      "requests": 5,
+      "byType": {
+        "link": {
+          "count": 1,
+          "bytes": 33450
+        },
+        "script": {
+          "count": 3,
+          "bytes": 102242
+        }
+      },
+      "domContentLoaded": 59,
+      "loadEvent": 61
+    },
+    {
+      "path": "/source.html",
+      "viewport": "desktop",
+      "cpuThrottle": 1,
+      "mode": "reduced",
+      "scrollMs": 1315,
+      "errors": [],
+      "lcp": 72,
+      "cls": 0.0001,
+      "worstShift": 0.00010814525462962963,
+      "shiftCount": 0,
+      "longTaskCount": 0,
+      "longTaskTotal": 0,
+      "longTaskMax": 0,
+      "tbtProxy": 0,
+      "domNodes": 403,
+      "transferBytes": 135692,
+      "requests": 5,
+      "byType": {
+        "link": {
+          "count": 1,
+          "bytes": 33450
+        },
+        "script": {
+          "count": 3,
+          "bytes": 102242
+        }
+      },
+      "domContentLoaded": 54,
+      "loadEvent": 55
+    },
+    {
+      "path": "/company.html",
+      "viewport": "desktop",
+      "cpuThrottle": 1,
+      "mode": "reduced",
+      "scrollMs": 1270,
+      "errors": [],
+      "lcp": 72,
+      "cls": 0.0001,
+      "worstShift": 0.00010814525462962963,
+      "shiftCount": 0,
+      "longTaskCount": 0,
+      "longTaskTotal": 0,
+      "longTaskMax": 0,
+      "tbtProxy": 0,
+      "domNodes": 314,
+      "transferBytes": 135692,
+      "requests": 5,
+      "byType": {
+        "link": {
+          "count": 1,
+          "bytes": 33450
+        },
+        "script": {
+          "count": 3,
+          "bytes": 102242
+        }
+      },
+      "domContentLoaded": 61,
+      "loadEvent": 62
+    },
+    {
+      "path": "/about.html",
+      "viewport": "desktop",
+      "cpuThrottle": 1,
+      "mode": "reduced",
+      "scrollMs": 1268,
+      "errors": [],
+      "lcp": 68,
+      "cls": 0.0001,
+      "worstShift": 0.00010814525462962963,
+      "shiftCount": 0,
+      "longTaskCount": 0,
+      "longTaskTotal": 0,
+      "longTaskMax": 0,
+      "tbtProxy": 0,
+      "domNodes": 331,
+      "transferBytes": 135692,
+      "requests": 5,
+      "byType": {
+        "link": {
+          "count": 1,
+          "bytes": 33450
+        },
+        "script": {
+          "count": 3,
+          "bytes": 102242
+        }
+      },
+      "domContentLoaded": 50,
+      "loadEvent": 50
+    },
+    {
+      "path": "/lab.html",
+      "viewport": "desktop",
+      "cpuThrottle": 1,
+      "mode": "reduced",
+      "scrollMs": 1318,
+      "errors": [],
+      "lcp": 84,
+      "cls": 0,
+      "worstShift": 0,
+      "shiftCount": 0,
+      "longTaskCount": 0,
+      "longTaskTotal": 0,
+      "longTaskMax": 0,
+      "tbtProxy": 0,
+      "domNodes": 274,
+      "transferBytes": 135692,
+      "requests": 5,
+      "byType": {
+        "link": {
+          "count": 1,
+          "bytes": 33450
+        },
+        "script": {
+          "count": 3,
+          "bytes": 102242
+        }
+      },
+      "domContentLoaded": 57,
+      "loadEvent": 57
+    },
+    {
+      "path": "/contact.html",
+      "viewport": "desktop",
+      "cpuThrottle": 1,
+      "mode": "reduced",
+      "scrollMs": 1321,
+      "errors": [],
+      "lcp": 60,
+      "cls": 0.0001,
+      "worstShift": 0.00010814525462962963,
+      "shiftCount": 0,
+      "longTaskCount": 0,
+      "longTaskTotal": 0,
+      "longTaskMax": 0,
+      "tbtProxy": 0,
+      "domNodes": 249,
+      "transferBytes": 135692,
+      "requests": 5,
+      "byType": {
+        "link": {
+          "count": 1,
+          "bytes": 33450
+        },
+        "script": {
+          "count": 3,
+          "bytes": 102242
+        }
+      },
+      "domContentLoaded": 46,
+      "loadEvent": 46
+    },
+    {
+      "path": "/privacy.html",
+      "viewport": "desktop",
+      "cpuThrottle": 1,
+      "mode": "reduced",
+      "scrollMs": 1250,
+      "errors": [],
+      "lcp": 96,
+      "cls": 0.0001,
+      "worstShift": 0.00010814525462962963,
+      "shiftCount": 0,
+      "longTaskCount": 0,
+      "longTaskTotal": 0,
+      "longTaskMax": 0,
+      "tbtProxy": 0,
+      "domNodes": 224,
+      "transferBytes": 135692,
+      "requests": 5,
+      "byType": {
+        "link": {
+          "count": 1,
+          "bytes": 33450
+        },
+        "script": {
+          "count": 3,
+          "bytes": 102242
+        }
+      },
+      "domContentLoaded": 73,
+      "loadEvent": 74
+    },
+    {
+      "path": "/projects/edublaxk.html",
+      "viewport": "desktop",
+      "cpuThrottle": 1,
+      "mode": "reduced",
+      "scrollMs": 1268,
+      "errors": [],
+      "lcp": 88,
+      "cls": 0.0001,
+      "worstShift": 0.00010814525462962963,
+      "shiftCount": 0,
+      "longTaskCount": 0,
+      "longTaskTotal": 0,
+      "longTaskMax": 0,
+      "tbtProxy": 0,
+      "domNodes": 382,
+      "transferBytes": 503095,
+      "requests": 11,
+      "byType": {
+        "link": {
+          "count": 1,
+          "bytes": 33450
+        },
+        "script": {
+          "count": 3,
+          "bytes": 102242
+        },
+        "img": {
+          "count": 6,
+          "bytes": 367403
+        }
+      },
+      "domContentLoaded": 77,
+      "loadEvent": 77
+    },
+    {
+      "path": "/projects/blaxk-housing.html",
+      "viewport": "desktop",
+      "cpuThrottle": 1,
+      "mode": "reduced",
+      "scrollMs": 1276,
+      "errors": [],
+      "lcp": 64,
+      "cls": 0.0001,
+      "worstShift": 0.00010814525462962963,
+      "shiftCount": 0,
+      "longTaskCount": 0,
+      "longTaskTotal": 0,
+      "longTaskMax": 0,
+      "tbtProxy": 0,
+      "domNodes": 338,
+      "transferBytes": 135692,
+      "requests": 5,
+      "byType": {
+        "link": {
+          "count": 1,
+          "bytes": 33450
+        },
+        "script": {
+          "count": 3,
+          "bytes": 102242
+        }
+      },
+      "domContentLoaded": 50,
+      "loadEvent": 50
+    },
+    {
+      "path": "/projects/sabi.html",
+      "viewport": "desktop",
+      "cpuThrottle": 1,
+      "mode": "reduced",
+      "scrollMs": 1327,
+      "errors": [],
+      "lcp": 72,
+      "cls": 0.0001,
+      "worstShift": 0.00010814525462962963,
+      "shiftCount": 0,
+      "longTaskCount": 0,
+      "longTaskTotal": 0,
+      "longTaskMax": 0,
+      "tbtProxy": 0,
+      "domNodes": 318,
+      "transferBytes": 135692,
+      "requests": 5,
+      "byType": {
+        "link": {
+          "count": 1,
+          "bytes": 33450
+        },
+        "script": {
+          "count": 3,
+          "bytes": 102242
+        }
+      },
+      "domContentLoaded": 57,
+      "loadEvent": 57
+    },
+    {
+      "path": "/projects/blaxk-xposer.html",
+      "viewport": "desktop",
+      "cpuThrottle": 1,
+      "mode": "reduced",
+      "scrollMs": 1294,
+      "errors": [],
+      "lcp": 72,
+      "cls": 0.0001,
+      "worstShift": 0.00010814525462962963,
+      "shiftCount": 0,
+      "longTaskCount": 0,
+      "longTaskTotal": 0,
+      "longTaskMax": 0,
+      "tbtProxy": 0,
+      "domNodes": 341,
+      "transferBytes": 135692,
+      "requests": 5,
+      "byType": {
+        "link": {
+          "count": 1,
+          "bytes": 33450
+        },
+        "script": {
+          "count": 3,
+          "bytes": 102242
+        }
+      },
+      "domContentLoaded": 55,
+      "loadEvent": 56
+    },
+    {
+      "path": "/projects/forma.html",
+      "viewport": "desktop",
+      "cpuThrottle": 1,
+      "mode": "reduced",
+      "scrollMs": 1277,
+      "errors": [],
+      "lcp": 80,
+      "cls": 0.0001,
+      "worstShift": 0.00010814525462962963,
+      "shiftCount": 0,
+      "longTaskCount": 0,
+      "longTaskTotal": 0,
+      "longTaskMax": 0,
+      "tbtProxy": 0,
+      "domNodes": 295,
+      "transferBytes": 580629,
+      "requests": 10,
+      "byType": {
+        "link": {
+          "count": 1,
+          "bytes": 33450
+        },
+        "script": {
+          "count": 3,
+          "bytes": 102242
+        },
+        "img": {
+          "count": 5,
+          "bytes": 444937
+        }
+      },
+      "domContentLoaded": 69,
+      "loadEvent": 69
+    },
+    {
+      "path": "/projects/blaxk-aggregator.html",
+      "viewport": "desktop",
+      "cpuThrottle": 1,
+      "mode": "reduced",
+      "scrollMs": 1297,
+      "errors": [],
+      "lcp": 64,
+      "cls": 0.0001,
+      "worstShift": 0.00010814525462962963,
+      "shiftCount": 0,
+      "longTaskCount": 0,
+      "longTaskTotal": 0,
+      "longTaskMax": 0,
+      "tbtProxy": 0,
+      "domNodes": 268,
+      "transferBytes": 135692,
+      "requests": 5,
+      "byType": {
+        "link": {
+          "count": 1,
+          "bytes": 33450
+        },
+        "script": {
+          "count": 3,
+          "bytes": 102242
+        }
+      },
+      "domContentLoaded": 50,
+      "loadEvent": 50
+    },
+    {
+      "path": "/projects/the-migrator.html",
+      "viewport": "desktop",
+      "cpuThrottle": 1,
+      "mode": "reduced",
+      "scrollMs": 1325,
+      "errors": [],
+      "lcp": 84,
+      "cls": 0.0001,
+      "worstShift": 0.00010814525462962963,
+      "shiftCount": 0,
+      "longTaskCount": 0,
+      "longTaskTotal": 0,
+      "longTaskMax": 0,
+      "tbtProxy": 0,
+      "domNodes": 262,
+      "transferBytes": 135692,
+      "requests": 5,
+      "byType": {
+        "link": {
+          "count": 1,
+          "bytes": 33450
+        },
+        "script": {
+          "count": 3,
+          "bytes": 102242
+        }
+      },
+      "domContentLoaded": 69,
+      "loadEvent": 70
+    },
+    {
+      "path": "/projects/gesture-controls.html",
+      "viewport": "desktop",
+      "cpuThrottle": 1,
+      "mode": "reduced",
+      "scrollMs": 1329,
+      "errors": [],
+      "lcp": 68,
+      "cls": 0.0001,
+      "worstShift": 0.00010814525462962963,
+      "shiftCount": 0,
+      "longTaskCount": 0,
+      "longTaskTotal": 0,
+      "longTaskMax": 0,
+      "tbtProxy": 0,
+      "domNodes": 267,
+      "transferBytes": 135692,
+      "requests": 5,
+      "byType": {
+        "link": {
+          "count": 1,
+          "bytes": 33450
+        },
+        "script": {
+          "count": 3,
+          "bytes": 102242
+        }
+      },
+      "domContentLoaded": 52,
+      "loadEvent": 52
+    },
+    {
+      "path": "/index.html",
+      "viewport": "desktop",
+      "cpuThrottle": 1,
+      "mode": "static",
+      "scrollMs": 1328,
+      "errors": [],
+      "lcp": 72,
+      "cls": 0,
+      "worstShift": 0.000032894181616512343,
+      "shiftCount": 0,
+      "longTaskCount": 0,
+      "longTaskTotal": 0,
+      "longTaskMax": 0,
+      "tbtProxy": 0,
+      "domNodes": 397,
+      "transferBytes": 135692,
+      "requests": 5,
+      "byType": {
+        "link": {
+          "count": 1,
+          "bytes": 33450
+        },
+        "script": {
+          "count": 3,
+          "bytes": 102242
+        }
+      },
+      "domContentLoaded": 65,
+      "loadEvent": 65
+    },
+    {
+      "path": "/work.html",
+      "viewport": "desktop",
+      "cpuThrottle": 1,
+      "mode": "static",
+      "scrollMs": 1338,
+      "errors": [],
+      "lcp": 80,
+      "cls": 0,
+      "worstShift": 0,
+      "shiftCount": 0,
+      "longTaskCount": 0,
+      "longTaskTotal": 0,
+      "longTaskMax": 0,
+      "tbtProxy": 0,
+      "domNodes": 431,
+      "transferBytes": 135692,
+      "requests": 5,
+      "byType": {
+        "link": {
+          "count": 1,
+          "bytes": 33450
+        },
+        "script": {
+          "count": 3,
+          "bytes": 102242
+        }
+      },
+      "domContentLoaded": 47,
+      "loadEvent": 48
+    },
+    {
+      "path": "/source.html",
+      "viewport": "desktop",
+      "cpuThrottle": 1,
+      "mode": "static",
+      "scrollMs": 1331,
+      "errors": [],
+      "lcp": 64,
+      "cls": 0,
+      "worstShift": 0.000032894181616512343,
+      "shiftCount": 0,
+      "longTaskCount": 0,
+      "longTaskTotal": 0,
+      "longTaskMax": 0,
+      "tbtProxy": 0,
+      "domNodes": 403,
+      "transferBytes": 135692,
+      "requests": 5,
+      "byType": {
+        "link": {
+          "count": 1,
+          "bytes": 33450
+        },
+        "script": {
+          "count": 3,
+          "bytes": 102242
+        }
+      },
+      "domContentLoaded": 47,
+      "loadEvent": 48
+    },
+    {
+      "path": "/company.html",
+      "viewport": "desktop",
+      "cpuThrottle": 1,
+      "mode": "static",
+      "scrollMs": 1327,
+      "errors": [],
+      "lcp": 68,
+      "cls": 0,
+      "worstShift": 0.000032894181616512343,
+      "shiftCount": 0,
+      "longTaskCount": 0,
+      "longTaskTotal": 0,
+      "longTaskMax": 0,
+      "tbtProxy": 0,
+      "domNodes": 314,
+      "transferBytes": 135692,
+      "requests": 5,
+      "byType": {
+        "link": {
+          "count": 1,
+          "bytes": 33450
+        },
+        "script": {
+          "count": 3,
+          "bytes": 102242
+        }
+      },
+      "domContentLoaded": 50,
+      "loadEvent": 50
+    },
+    {
+      "path": "/about.html",
+      "viewport": "desktop",
+      "cpuThrottle": 1,
+      "mode": "static",
+      "scrollMs": 1325,
+      "errors": [],
+      "lcp": 68,
+      "cls": 0,
+      "worstShift": 0,
+      "shiftCount": 0,
+      "longTaskCount": 0,
+      "longTaskTotal": 0,
+      "longTaskMax": 0,
+      "tbtProxy": 0,
+      "domNodes": 331,
+      "transferBytes": 135692,
+      "requests": 5,
+      "byType": {
+        "link": {
+          "count": 1,
+          "bytes": 33450
+        },
+        "script": {
+          "count": 3,
+          "bytes": 102242
+        }
+      },
+      "domContentLoaded": 45,
+      "loadEvent": 45
+    },
+    {
+      "path": "/lab.html",
+      "viewport": "desktop",
+      "cpuThrottle": 1,
+      "mode": "static",
+      "scrollMs": 1339,
+      "errors": [],
+      "lcp": 68,
+      "cls": 0,
+      "worstShift": 0,
+      "shiftCount": 0,
+      "longTaskCount": 0,
+      "longTaskTotal": 0,
+      "longTaskMax": 0,
+      "tbtProxy": 0,
+      "domNodes": 274,
+      "transferBytes": 135692,
+      "requests": 5,
+      "byType": {
+        "link": {
+          "count": 1,
+          "bytes": 33450
+        },
+        "script": {
+          "count": 3,
+          "bytes": 102242
+        }
+      },
+      "domContentLoaded": 50,
+      "loadEvent": 50
+    },
+    {
+      "path": "/contact.html",
+      "viewport": "desktop",
+      "cpuThrottle": 1,
+      "mode": "static",
+      "scrollMs": 1337,
+      "errors": [],
+      "lcp": 68,
+      "cls": 0,
+      "worstShift": 0,
+      "shiftCount": 0,
+      "longTaskCount": 0,
+      "longTaskTotal": 0,
+      "longTaskMax": 0,
+      "tbtProxy": 0,
+      "domNodes": 249,
+      "transferBytes": 135692,
+      "requests": 5,
+      "byType": {
+        "link": {
+          "count": 1,
+          "bytes": 33450
+        },
+        "script": {
+          "count": 3,
+          "bytes": 102242
+        }
+      },
+      "domContentLoaded": 50,
+      "loadEvent": 51
+    },
+    {
+      "path": "/privacy.html",
+      "viewport": "desktop",
+      "cpuThrottle": 1,
+      "mode": "static",
+      "scrollMs": 1329,
+      "errors": [],
+      "lcp": 64,
+      "cls": 0,
+      "worstShift": 0.000032894181616512343,
+      "shiftCount": 0,
+      "longTaskCount": 0,
+      "longTaskTotal": 0,
+      "longTaskMax": 0,
+      "tbtProxy": 0,
+      "domNodes": 224,
+      "transferBytes": 135692,
+      "requests": 5,
+      "byType": {
+        "link": {
+          "count": 1,
+          "bytes": 33450
+        },
+        "script": {
+          "count": 3,
+          "bytes": 102242
+        }
+      },
+      "domContentLoaded": 43,
+      "loadEvent": 45
+    },
+    {
+      "path": "/projects/edublaxk.html",
+      "viewport": "desktop",
+      "cpuThrottle": 1,
+      "mode": "static",
+      "scrollMs": 1336,
+      "errors": [],
+      "lcp": 80,
+      "cls": 0,
+      "worstShift": 0.000032894181616512343,
+      "shiftCount": 0,
+      "longTaskCount": 0,
+      "longTaskTotal": 0,
+      "longTaskMax": 0,
+      "tbtProxy": 0,
+      "domNodes": 382,
+      "transferBytes": 503095,
+      "requests": 11,
+      "byType": {
+        "link": {
+          "count": 1,
+          "bytes": 33450
+        },
+        "script": {
+          "count": 3,
+          "bytes": 102242
+        },
+        "img": {
+          "count": 6,
+          "bytes": 367403
+        }
+      },
+      "domContentLoaded": 68,
+      "loadEvent": 68
+    },
+    {
+      "path": "/projects/blaxk-housing.html",
+      "viewport": "desktop",
+      "cpuThrottle": 1,
+      "mode": "static",
+      "scrollMs": 1325,
+      "errors": [],
+      "lcp": 72,
+      "cls": 0,
+      "worstShift": 0.000032894181616512343,
+      "shiftCount": 0,
+      "longTaskCount": 0,
+      "longTaskTotal": 0,
+      "longTaskMax": 0,
+      "tbtProxy": 0,
+      "domNodes": 338,
+      "transferBytes": 135692,
+      "requests": 5,
+      "byType": {
+        "link": {
+          "count": 1,
+          "bytes": 33450
+        },
+        "script": {
+          "count": 3,
+          "bytes": 102242
+        }
+      },
+      "domContentLoaded": 54,
+      "loadEvent": 54
+    },
+    {
+      "path": "/projects/sabi.html",
+      "viewport": "desktop",
+      "cpuThrottle": 1,
+      "mode": "static",
+      "scrollMs": 1335,
+      "errors": [],
+      "lcp": 72,
+      "cls": 0,
+      "worstShift": 0.000032894181616512343,
+      "shiftCount": 0,
+      "longTaskCount": 0,
+      "longTaskTotal": 0,
+      "longTaskMax": 0,
+      "tbtProxy": 0,
+      "domNodes": 318,
+      "transferBytes": 135692,
+      "requests": 5,
+      "byType": {
+        "link": {
+          "count": 1,
+          "bytes": 33450
+        },
+        "script": {
+          "count": 3,
+          "bytes": 102242
+        }
+      },
+      "domContentLoaded": 65,
+      "loadEvent": 65
+    },
+    {
+      "path": "/projects/blaxk-xposer.html",
+      "viewport": "desktop",
+      "cpuThrottle": 1,
+      "mode": "static",
+      "scrollMs": 1353,
+      "errors": [],
+      "lcp": 60,
+      "cls": 0,
+      "worstShift": 0.000032894181616512343,
+      "shiftCount": 0,
+      "longTaskCount": 0,
+      "longTaskTotal": 0,
+      "longTaskMax": 0,
+      "tbtProxy": 0,
+      "domNodes": 341,
+      "transferBytes": 135692,
+      "requests": 5,
+      "byType": {
+        "link": {
+          "count": 1,
+          "bytes": 33450
+        },
+        "script": {
+          "count": 3,
+          "bytes": 102242
+        }
+      },
+      "domContentLoaded": 49,
+      "loadEvent": 50
+    },
+    {
+      "path": "/projects/forma.html",
+      "viewport": "desktop",
+      "cpuThrottle": 1,
+      "mode": "static",
+      "scrollMs": 1339,
+      "errors": [],
+      "lcp": 80,
+      "cls": 0,
+      "worstShift": 0,
+      "shiftCount": 0,
+      "longTaskCount": 0,
+      "longTaskTotal": 0,
+      "longTaskMax": 0,
+      "tbtProxy": 0,
+      "domNodes": 295,
+      "transferBytes": 580629,
+      "requests": 10,
+      "byType": {
+        "link": {
+          "count": 1,
+          "bytes": 33450
+        },
+        "script": {
+          "count": 3,
+          "bytes": 102242
+        },
+        "img": {
+          "count": 5,
+          "bytes": 444937
+        }
+      },
+      "domContentLoaded": 57,
+      "loadEvent": 57
+    },
+    {
+      "path": "/projects/blaxk-aggregator.html",
+      "viewport": "desktop",
+      "cpuThrottle": 1,
+      "mode": "static",
+      "scrollMs": 1334,
+      "errors": [],
+      "lcp": 64,
+      "cls": 0,
+      "worstShift": 0.000032894181616512343,
+      "shiftCount": 0,
+      "longTaskCount": 0,
+      "longTaskTotal": 0,
+      "longTaskMax": 0,
+      "tbtProxy": 0,
+      "domNodes": 268,
+      "transferBytes": 135692,
+      "requests": 5,
+      "byType": {
+        "link": {
+          "count": 1,
+          "bytes": 33450
+        },
+        "script": {
+          "count": 3,
+          "bytes": 102242
+        }
+      },
+      "domContentLoaded": 54,
+      "loadEvent": 54
+    },
+    {
+      "path": "/projects/the-migrator.html",
+      "viewport": "desktop",
+      "cpuThrottle": 1,
+      "mode": "static",
+      "scrollMs": 1331,
+      "errors": [],
+      "lcp": 68,
+      "cls": 0,
+      "worstShift": 0.000032894181616512343,
+      "shiftCount": 0,
+      "longTaskCount": 0,
+      "longTaskTotal": 0,
+      "longTaskMax": 0,
+      "tbtProxy": 0,
+      "domNodes": 262,
+      "transferBytes": 135692,
+      "requests": 5,
+      "byType": {
+        "link": {
+          "count": 1,
+          "bytes": 33450
+        },
+        "script": {
+          "count": 3,
+          "bytes": 102242
+        }
+      },
+      "domContentLoaded": 57,
+      "loadEvent": 59
+    },
+    {
+      "path": "/projects/gesture-controls.html",
+      "viewport": "desktop",
+      "cpuThrottle": 1,
+      "mode": "static",
+      "scrollMs": 1339,
+      "errors": [],
+      "lcp": 80,
+      "cls": 0,
+      "worstShift": 0.000032894181616512343,
+      "shiftCount": 0,
+      "longTaskCount": 0,
+      "longTaskTotal": 0,
+      "longTaskMax": 0,
+      "tbtProxy": 0,
+      "domNodes": 267,
+      "transferBytes": 135692,
+      "requests": 5,
+      "byType": {
+        "link": {
+          "count": 1,
+          "bytes": 33450
+        },
+        "script": {
+          "count": 3,
+          "bytes": 102242
+        }
+      },
+      "domContentLoaded": 56,
+      "loadEvent": 57
+    },
+    {
+      "path": "/index.html",
+      "viewport": "mobile",
+      "cpuThrottle": 4,
+      "mode": "full",
+      "scrollMs": 1361,
+      "errors": [],
+      "lcp": 224,
+      "cls": 0,
+      "worstShift": 0,
+      "shiftCount": 0,
+      "longTaskCount": 1,
+      "longTaskTotal": 98,
+      "longTaskMax": 98,
+      "tbtProxy": 48,
+      "domNodes": 397,
+      "transferBytes": 135692,
+      "requests": 5,
+      "byType": {
+        "link": {
+          "count": 1,
+          "bytes": 33450
+        },
+        "script": {
+          "count": 3,
+          "bytes": 102242
+        }
+      },
+      "domContentLoaded": 233,
+      "loadEvent": 233
+    },
+    {
+      "path": "/work.html",
+      "viewport": "mobile",
+      "cpuThrottle": 4,
+      "mode": "full",
+      "scrollMs": 1338,
+      "errors": [],
+      "lcp": 164,
+      "cls": 0,
+      "worstShift": 0,
+      "shiftCount": 0,
+      "longTaskCount": 1,
+      "longTaskTotal": 60,
+      "longTaskMax": 60,
+      "tbtProxy": 10,
+      "domNodes": 431,
+      "transferBytes": 135692,
+      "requests": 5,
+      "byType": {
+        "link": {
+          "count": 1,
+          "bytes": 33450
+        },
+        "script": {
+          "count": 3,
+          "bytes": 102242
+        }
+      },
+      "domContentLoaded": 166,
+      "loadEvent": 170
+    },
+    {
+      "path": "/source.html",
+      "viewport": "mobile",
+      "cpuThrottle": 4,
+      "mode": "full",
+      "scrollMs": 1340,
+      "errors": [],
+      "lcp": 172,
+      "cls": 0,
+      "worstShift": 0,
+      "shiftCount": 0,
+      "longTaskCount": 1,
+      "longTaskTotal": 70,
+      "longTaskMax": 70,
+      "tbtProxy": 20,
+      "domNodes": 403,
+      "transferBytes": 135692,
+      "requests": 5,
+      "byType": {
+        "link": {
+          "count": 1,
+          "bytes": 33450
+        },
+        "script": {
+          "count": 3,
+          "bytes": 102242
+        }
+      },
+      "domContentLoaded": 154,
+      "loadEvent": 155
+    },
+    {
+      "path": "/company.html",
+      "viewport": "mobile",
+      "cpuThrottle": 4,
+      "mode": "full",
+      "scrollMs": 1338,
+      "errors": [],
+      "lcp": 156,
+      "cls": 0,
+      "worstShift": 0,
+      "shiftCount": 0,
+      "longTaskCount": 1,
+      "longTaskTotal": 83,
+      "longTaskMax": 83,
+      "tbtProxy": 33,
+      "domNodes": 314,
+      "transferBytes": 135692,
+      "requests": 5,
+      "byType": {
+        "link": {
+          "count": 1,
+          "bytes": 33450
+        },
+        "script": {
+          "count": 3,
+          "bytes": 102242
+        }
+      },
+      "domContentLoaded": 147,
+      "loadEvent": 147
+    },
+    {
+      "path": "/about.html",
+      "viewport": "mobile",
+      "cpuThrottle": 4,
+      "mode": "full",
+      "scrollMs": 1343,
+      "errors": [],
+      "lcp": 188,
+      "cls": 0,
+      "worstShift": 0,
+      "shiftCount": 0,
+      "longTaskCount": 1,
+      "longTaskTotal": 80,
+      "longTaskMax": 80,
+      "tbtProxy": 30,
+      "domNodes": 331,
+      "transferBytes": 135692,
+      "requests": 5,
+      "byType": {
+        "link": {
+          "count": 1,
+          "bytes": 33450
+        },
+        "script": {
+          "count": 3,
+          "bytes": 102242
+        }
+      },
+      "domContentLoaded": 183,
+      "loadEvent": 183
+    },
+    {
+      "path": "/lab.html",
+      "viewport": "mobile",
+      "cpuThrottle": 4,
+      "mode": "full",
+      "scrollMs": 1346,
+      "errors": [],
+      "lcp": 160,
+      "cls": 0,
+      "worstShift": 0,
+      "shiftCount": 0,
+      "longTaskCount": 1,
+      "longTaskTotal": 64,
+      "longTaskMax": 64,
+      "tbtProxy": 14,
+      "domNodes": 274,
+      "transferBytes": 135692,
+      "requests": 5,
+      "byType": {
+        "link": {
+          "count": 1,
+          "bytes": 33450
+        },
+        "script": {
+          "count": 3,
+          "bytes": 102242
+        }
+      },
+      "domContentLoaded": 142,
+      "loadEvent": 143
+    },
+    {
+      "path": "/contact.html",
+      "viewport": "mobile",
+      "cpuThrottle": 4,
+      "mode": "full",
+      "scrollMs": 1343,
+      "errors": [],
+      "lcp": 172,
+      "cls": 0,
+      "worstShift": 0,
+      "shiftCount": 0,
+      "longTaskCount": 1,
+      "longTaskTotal": 55,
+      "longTaskMax": 55,
+      "tbtProxy": 5,
+      "domNodes": 249,
+      "transferBytes": 135692,
+      "requests": 5,
+      "byType": {
+        "link": {
+          "count": 1,
+          "bytes": 33450
+        },
+        "script": {
+          "count": 3,
+          "bytes": 102242
+        }
+      },
+      "domContentLoaded": 174,
+      "loadEvent": 174
+    },
+    {
+      "path": "/privacy.html",
+      "viewport": "mobile",
+      "cpuThrottle": 4,
+      "mode": "full",
+      "scrollMs": 1346,
+      "errors": [],
+      "lcp": 144,
+      "cls": 0,
+      "worstShift": 0,
+      "shiftCount": 0,
+      "longTaskCount": 1,
+      "longTaskTotal": 57,
+      "longTaskMax": 57,
+      "tbtProxy": 7,
+      "domNodes": 224,
+      "transferBytes": 135692,
+      "requests": 5,
+      "byType": {
+        "link": {
+          "count": 1,
+          "bytes": 33450
+        },
+        "script": {
+          "count": 3,
+          "bytes": 102242
+        }
+      },
+      "domContentLoaded": 141,
+      "loadEvent": 141
+    },
+    {
+      "path": "/projects/edublaxk.html",
+      "viewport": "mobile",
+      "cpuThrottle": 4,
+      "mode": "full",
+      "scrollMs": 1328,
+      "errors": [],
+      "lcp": 220,
+      "cls": 0,
+      "worstShift": 0,
+      "shiftCount": 0,
+      "longTaskCount": 1,
+      "longTaskTotal": 134,
+      "longTaskMax": 134,
+      "tbtProxy": 84,
+      "domNodes": 382,
+      "transferBytes": 354083,
+      "requests": 8,
+      "byType": {
+        "link": {
+          "count": 1,
+          "bytes": 33450
+        },
+        "script": {
+          "count": 3,
+          "bytes": 102242
+        },
+        "img": {
+          "count": 3,
+          "bytes": 218391
+        }
+      },
+      "domContentLoaded": 245,
+      "loadEvent": 245
+    },
+    {
+      "path": "/projects/blaxk-housing.html",
+      "viewport": "mobile",
+      "cpuThrottle": 4,
+      "mode": "full",
+      "scrollMs": 1362,
+      "errors": [],
+      "lcp": 216,
+      "cls": 0,
+      "worstShift": 0,
+      "shiftCount": 0,
+      "longTaskCount": 1,
+      "longTaskTotal": 100,
+      "longTaskMax": 100,
+      "tbtProxy": 50,
+      "domNodes": 338,
+      "transferBytes": 135692,
+      "requests": 5,
+      "byType": {
+        "link": {
+          "count": 1,
+          "bytes": 33450
+        },
+        "script": {
+          "count": 3,
+          "bytes": 102242
+        }
+      },
+      "domContentLoaded": 202,
+      "loadEvent": 203
+    },
+    {
+      "path": "/projects/sabi.html",
+      "viewport": "mobile",
+      "cpuThrottle": 4,
+      "mode": "full",
+      "scrollMs": 1332,
+      "errors": [],
+      "lcp": 188,
+      "cls": 0,
+      "worstShift": 0,
+      "shiftCount": 0,
+      "longTaskCount": 1,
+      "longTaskTotal": 90,
+      "longTaskMax": 90,
+      "tbtProxy": 40,
+      "domNodes": 318,
+      "transferBytes": 135692,
+      "requests": 5,
+      "byType": {
+        "link": {
+          "count": 1,
+          "bytes": 33450
+        },
+        "script": {
+          "count": 3,
+          "bytes": 102242
+        }
+      },
+      "domContentLoaded": 184,
+      "loadEvent": 184
+    },
+    {
+      "path": "/projects/blaxk-xposer.html",
+      "viewport": "mobile",
+      "cpuThrottle": 4,
+      "mode": "full",
+      "scrollMs": 1343,
+      "errors": [],
+      "lcp": 220,
+      "cls": 0,
+      "worstShift": 0,
+      "shiftCount": 0,
+      "longTaskCount": 1,
+      "longTaskTotal": 107,
+      "longTaskMax": 107,
+      "tbtProxy": 57,
+      "domNodes": 341,
+      "transferBytes": 135692,
+      "requests": 5,
+      "byType": {
+        "link": {
+          "count": 1,
+          "bytes": 33450
+        },
+        "script": {
+          "count": 3,
+          "bytes": 102242
+        }
+      },
+      "domContentLoaded": 216,
+      "loadEvent": 216
+    },
+    {
+      "path": "/projects/forma.html",
+      "viewport": "mobile",
+      "cpuThrottle": 4,
+      "mode": "full",
+      "scrollMs": 1341,
+      "errors": [],
+      "lcp": 180,
+      "cls": 0,
+      "worstShift": 0,
+      "shiftCount": 0,
+      "longTaskCount": 1,
+      "longTaskTotal": 116,
+      "longTaskMax": 116,
+      "tbtProxy": 66,
+      "domNodes": 295,
+      "transferBytes": 580629,
+      "requests": 10,
+      "byType": {
+        "link": {
+          "count": 1,
+          "bytes": 33450
+        },
+        "script": {
+          "count": 3,
+          "bytes": 102242
+        },
+        "img": {
+          "count": 5,
+          "bytes": 444937
+        }
+      },
+      "domContentLoaded": 207,
+      "loadEvent": 207
+    },
+    {
+      "path": "/projects/blaxk-aggregator.html",
+      "viewport": "mobile",
+      "cpuThrottle": 4,
+      "mode": "full",
+      "scrollMs": 1332,
+      "errors": [],
+      "lcp": 184,
+      "cls": 0,
+      "worstShift": 0,
+      "shiftCount": 0,
+      "longTaskCount": 1,
+      "longTaskTotal": 81,
+      "longTaskMax": 81,
+      "tbtProxy": 31,
+      "domNodes": 268,
+      "transferBytes": 135692,
+      "requests": 5,
+      "byType": {
+        "link": {
+          "count": 1,
+          "bytes": 33450
+        },
+        "script": {
+          "count": 3,
+          "bytes": 102242
+        }
+      },
+      "domContentLoaded": 180,
+      "loadEvent": 181
+    },
+    {
+      "path": "/projects/the-migrator.html",
+      "viewport": "mobile",
+      "cpuThrottle": 4,
+      "mode": "full",
+      "scrollMs": 1329,
+      "errors": [],
+      "lcp": 152,
+      "cls": 0,
+      "worstShift": 0,
+      "shiftCount": 0,
+      "longTaskCount": 1,
+      "longTaskTotal": 71,
+      "longTaskMax": 71,
+      "tbtProxy": 21,
+      "domNodes": 262,
+      "transferBytes": 135692,
+      "requests": 5,
+      "byType": {
+        "link": {
+          "count": 1,
+          "bytes": 33450
+        },
+        "script": {
+          "count": 3,
+          "bytes": 102242
+        }
+      },
+      "domContentLoaded": 150,
+      "loadEvent": 150
+    },
+    {
+      "path": "/projects/gesture-controls.html",
+      "viewport": "mobile",
+      "cpuThrottle": 4,
+      "mode": "full",
+      "scrollMs": 1338,
+      "errors": [],
+      "lcp": 192,
+      "cls": 0,
+      "worstShift": 0,
+      "shiftCount": 0,
+      "longTaskCount": 1,
+      "longTaskTotal": 90,
+      "longTaskMax": 90,
+      "tbtProxy": 40,
+      "domNodes": 267,
+      "transferBytes": 135692,
+      "requests": 5,
+      "byType": {
+        "link": {
+          "count": 1,
+          "bytes": 33450
+        },
+        "script": {
+          "count": 3,
+          "bytes": 102242
+        }
+      },
+      "domContentLoaded": 184,
+      "loadEvent": 184
+    },
+    {
+      "path": "/index.html",
+      "viewport": "mobile",
+      "cpuThrottle": 4,
+      "mode": "reduced",
+      "scrollMs": 1320,
+      "errors": [],
+      "lcp": 200,
+      "cls": 0,
+      "worstShift": 0,
+      "shiftCount": 0,
+      "longTaskCount": 1,
+      "longTaskTotal": 88,
+      "longTaskMax": 88,
+      "tbtProxy": 38,
+      "domNodes": 397,
+      "transferBytes": 135692,
+      "requests": 5,
+      "byType": {
+        "link": {
+          "count": 1,
+          "bytes": 33450
+        },
+        "script": {
+          "count": 3,
+          "bytes": 102242
+        }
+      },
+      "domContentLoaded": 191,
+      "loadEvent": 194
+    },
+    {
+      "path": "/work.html",
+      "viewport": "mobile",
+      "cpuThrottle": 4,
+      "mode": "reduced",
+      "scrollMs": 1322,
+      "errors": [],
+      "lcp": 132,
+      "cls": 0,
+      "worstShift": 0,
+      "shiftCount": 0,
+      "longTaskCount": 1,
+      "longTaskTotal": 63,
+      "longTaskMax": 63,
+      "tbtProxy": 13,
+      "domNodes": 431,
+      "transferBytes": 135692,
+      "requests": 5,
+      "byType": {
+        "link": {
+          "count": 1,
+          "bytes": 33450
+        },
+        "script": {
+          "count": 3,
+          "bytes": 102242
+        }
+      },
+      "domContentLoaded": 145,
+      "loadEvent": 147
+    },
+    {
+      "path": "/source.html",
+      "viewport": "mobile",
+      "cpuThrottle": 4,
+      "mode": "reduced",
+      "scrollMs": 1330,
+      "errors": [],
+      "lcp": 156,
+      "cls": 0,
+      "worstShift": 0,
+      "shiftCount": 0,
+      "longTaskCount": 1,
+      "longTaskTotal": 69,
+      "longTaskMax": 69,
+      "tbtProxy": 19,
+      "domNodes": 403,
+      "transferBytes": 135692,
+      "requests": 5,
+      "byType": {
+        "link": {
+          "count": 1,
+          "bytes": 33450
+        },
+        "script": {
+          "count": 3,
+          "bytes": 102242
+        }
+      },
+      "domContentLoaded": 151,
+      "loadEvent": 152
+    },
+    {
+      "path": "/company.html",
+      "viewport": "mobile",
+      "cpuThrottle": 4,
+      "mode": "reduced",
+      "scrollMs": 1331,
+      "errors": [],
+      "lcp": 148,
+      "cls": 0,
+      "worstShift": 0,
+      "shiftCount": 0,
+      "longTaskCount": 1,
+      "longTaskTotal": 75,
+      "longTaskMax": 75,
+      "tbtProxy": 25,
+      "domNodes": 314,
+      "transferBytes": 135692,
+      "requests": 5,
+      "byType": {
+        "link": {
+          "count": 1,
+          "bytes": 33450
+        },
+        "script": {
+          "count": 3,
+          "bytes": 102242
+        }
+      },
+      "domContentLoaded": 158,
+      "loadEvent": 158
+    },
+    {
+      "path": "/about.html",
+      "viewport": "mobile",
+      "cpuThrottle": 4,
+      "mode": "reduced",
+      "scrollMs": 1331,
+      "errors": [],
+      "lcp": 204,
+      "cls": 0,
+      "worstShift": 0,
+      "shiftCount": 0,
+      "longTaskCount": 1,
+      "longTaskTotal": 96,
+      "longTaskMax": 96,
+      "tbtProxy": 46,
+      "domNodes": 331,
+      "transferBytes": 135692,
+      "requests": 5,
+      "byType": {
+        "link": {
+          "count": 1,
+          "bytes": 33450
+        },
+        "script": {
+          "count": 3,
+          "bytes": 102242
+        }
+      },
+      "domContentLoaded": 225,
+      "loadEvent": 226
+    },
+    {
+      "path": "/lab.html",
+      "viewport": "mobile",
+      "cpuThrottle": 4,
+      "mode": "reduced",
+      "scrollMs": 1323,
+      "errors": [],
+      "lcp": 156,
+      "cls": 0,
+      "worstShift": 0,
+      "shiftCount": 0,
+      "longTaskCount": 1,
+      "longTaskTotal": 68,
+      "longTaskMax": 68,
+      "tbtProxy": 18,
+      "domNodes": 274,
+      "transferBytes": 135692,
+      "requests": 5,
+      "byType": {
+        "link": {
+          "count": 1,
+          "bytes": 33450
+        },
+        "script": {
+          "count": 3,
+          "bytes": 102242
+        }
+      },
+      "domContentLoaded": 134,
+      "loadEvent": 135
+    },
+    {
+      "path": "/contact.html",
+      "viewport": "mobile",
+      "cpuThrottle": 4,
+      "mode": "reduced",
+      "scrollMs": 1340,
+      "errors": [],
+      "lcp": 156,
+      "cls": 0,
+      "worstShift": 0,
+      "shiftCount": 0,
+      "longTaskCount": 1,
+      "longTaskTotal": 77,
+      "longTaskMax": 77,
+      "tbtProxy": 27,
+      "domNodes": 249,
+      "transferBytes": 135692,
+      "requests": 5,
+      "byType": {
+        "link": {
+          "count": 1,
+          "bytes": 33450
+        },
+        "script": {
+          "count": 3,
+          "bytes": 102242
+        }
+      },
+      "domContentLoaded": 193,
+      "loadEvent": 193
+    },
+    {
+      "path": "/privacy.html",
+      "viewport": "mobile",
+      "cpuThrottle": 4,
+      "mode": "reduced",
+      "scrollMs": 1331,
+      "errors": [],
+      "lcp": 184,
+      "cls": 0,
+      "worstShift": 0,
+      "shiftCount": 0,
+      "longTaskCount": 1,
+      "longTaskTotal": 78,
+      "longTaskMax": 78,
+      "tbtProxy": 28,
+      "domNodes": 224,
+      "transferBytes": 135692,
+      "requests": 5,
+      "byType": {
+        "link": {
+          "count": 1,
+          "bytes": 33450
+        },
+        "script": {
+          "count": 3,
+          "bytes": 102242
+        }
+      },
+      "domContentLoaded": 175,
+      "loadEvent": 176
+    },
+    {
+      "path": "/projects/edublaxk.html",
+      "viewport": "mobile",
+      "cpuThrottle": 4,
+      "mode": "reduced",
+      "scrollMs": 1313,
+      "errors": [],
+      "lcp": 236,
+      "cls": 0,
+      "worstShift": 0,
+      "shiftCount": 0,
+      "longTaskCount": 1,
+      "longTaskTotal": 147,
+      "longTaskMax": 147,
+      "tbtProxy": 97,
+      "domNodes": 382,
+      "transferBytes": 503095,
+      "requests": 11,
+      "byType": {
+        "link": {
+          "count": 1,
+          "bytes": 33450
+        },
+        "script": {
+          "count": 3,
+          "bytes": 102242
+        },
+        "img": {
+          "count": 6,
+          "bytes": 367403
+        }
+      },
+      "domContentLoaded": 248,
+      "loadEvent": 252
+    },
+    {
+      "path": "/projects/blaxk-housing.html",
+      "viewport": "mobile",
+      "cpuThrottle": 4,
+      "mode": "reduced",
+      "scrollMs": 1323,
+      "errors": [],
+      "lcp": 216,
+      "cls": 0,
+      "worstShift": 0,
+      "shiftCount": 0,
+      "longTaskCount": 1,
+      "longTaskTotal": 110,
+      "longTaskMax": 110,
+      "tbtProxy": 60,
+      "domNodes": 338,
+      "transferBytes": 135692,
+      "requests": 5,
+      "byType": {
+        "link": {
+          "count": 1,
+          "bytes": 33450
+        },
+        "script": {
+          "count": 3,
+          "bytes": 102242
+        }
+      },
+      "domContentLoaded": 226,
+      "loadEvent": 227
+    },
+    {
+      "path": "/projects/sabi.html",
+      "viewport": "mobile",
+      "cpuThrottle": 4,
+      "mode": "reduced",
+      "scrollMs": 1334,
+      "errors": [],
+      "lcp": 208,
+      "cls": 0,
+      "worstShift": 0,
+      "shiftCount": 0,
+      "longTaskCount": 1,
+      "longTaskTotal": 91,
+      "longTaskMax": 91,
+      "tbtProxy": 41,
+      "domNodes": 318,
+      "transferBytes": 135692,
+      "requests": 5,
+      "byType": {
+        "link": {
+          "count": 1,
+          "bytes": 33450
+        },
+        "script": {
+          "count": 3,
+          "bytes": 102242
+        }
+      },
+      "domContentLoaded": 216,
+      "loadEvent": 216
+    },
+    {
+      "path": "/projects/blaxk-xposer.html",
+      "viewport": "mobile",
+      "cpuThrottle": 4,
+      "mode": "reduced",
+      "scrollMs": 1349,
+      "errors": [],
+      "lcp": 168,
+      "cls": 0,
+      "worstShift": 0,
+      "shiftCount": 0,
+      "longTaskCount": 1,
+      "longTaskTotal": 88,
+      "longTaskMax": 88,
+      "tbtProxy": 38,
+      "domNodes": 341,
+      "transferBytes": 135692,
+      "requests": 5,
+      "byType": {
+        "link": {
+          "count": 1,
+          "bytes": 33450
+        },
+        "script": {
+          "count": 3,
+          "bytes": 102242
+        }
+      },
+      "domContentLoaded": 162,
+      "loadEvent": 162
+    },
+    {
+      "path": "/projects/forma.html",
+      "viewport": "mobile",
+      "cpuThrottle": 4,
+      "mode": "reduced",
+      "scrollMs": 1327,
+      "errors": [],
+      "lcp": 160,
+      "cls": 0,
+      "worstShift": 0,
+      "shiftCount": 0,
+      "longTaskCount": 1,
+      "longTaskTotal": 85,
+      "longTaskMax": 85,
+      "tbtProxy": 35,
+      "domNodes": 295,
+      "transferBytes": 580629,
+      "requests": 10,
+      "byType": {
+        "link": {
+          "count": 1,
+          "bytes": 33450
+        },
+        "script": {
+          "count": 3,
+          "bytes": 102242
+        },
+        "img": {
+          "count": 5,
+          "bytes": 444937
+        }
+      },
+      "domContentLoaded": 175,
+      "loadEvent": 176
+    },
+    {
+      "path": "/projects/blaxk-aggregator.html",
+      "viewport": "mobile",
+      "cpuThrottle": 4,
+      "mode": "reduced",
+      "scrollMs": 1319,
+      "errors": [],
+      "lcp": 148,
+      "cls": 0,
+      "worstShift": 0,
+      "shiftCount": 0,
+      "longTaskCount": 1,
+      "longTaskTotal": 73,
+      "longTaskMax": 73,
+      "tbtProxy": 23,
+      "domNodes": 268,
+      "transferBytes": 135692,
+      "requests": 5,
+      "byType": {
+        "link": {
+          "count": 1,
+          "bytes": 33450
+        },
+        "script": {
+          "count": 3,
+          "bytes": 102242
+        }
+      },
+      "domContentLoaded": 157,
+      "loadEvent": 157
+    },
+    {
+      "path": "/projects/the-migrator.html",
+      "viewport": "mobile",
+      "cpuThrottle": 4,
+      "mode": "reduced",
+      "scrollMs": 1330,
+      "errors": [],
+      "lcp": 136,
+      "cls": 0,
+      "worstShift": 0,
+      "shiftCount": 0,
+      "longTaskCount": 1,
+      "longTaskTotal": 76,
+      "longTaskMax": 76,
+      "tbtProxy": 26,
+      "domNodes": 262,
+      "transferBytes": 135692,
+      "requests": 5,
+      "byType": {
+        "link": {
+          "count": 1,
+          "bytes": 33450
+        },
+        "script": {
+          "count": 3,
+          "bytes": 102242
+        }
+      },
+      "domContentLoaded": 151,
+      "loadEvent": 151
+    },
+    {
+      "path": "/projects/gesture-controls.html",
+      "viewport": "mobile",
+      "cpuThrottle": 4,
+      "mode": "reduced",
+      "scrollMs": 1321,
+      "errors": [],
+      "lcp": 152,
+      "cls": 0,
+      "worstShift": 0,
+      "shiftCount": 0,
+      "longTaskCount": 1,
+      "longTaskTotal": 67,
+      "longTaskMax": 67,
+      "tbtProxy": 17,
+      "domNodes": 267,
+      "transferBytes": 135692,
+      "requests": 5,
+      "byType": {
+        "link": {
+          "count": 1,
+          "bytes": 33450
+        },
+        "script": {
+          "count": 3,
+          "bytes": 102242
+        }
+      },
+      "domContentLoaded": 130,
+      "loadEvent": 130
+    },
+    {
+      "path": "/index.html",
+      "viewport": "mobile",
+      "cpuThrottle": 4,
+      "mode": "static",
+      "scrollMs": 1331,
+      "errors": [],
+      "lcp": 212,
+      "cls": 0,
+      "worstShift": 0,
+      "shiftCount": 0,
+      "longTaskCount": 1,
+      "longTaskTotal": 85,
+      "longTaskMax": 85,
+      "tbtProxy": 35,
+      "domNodes": 397,
+      "transferBytes": 135692,
+      "requests": 5,
+      "byType": {
+        "link": {
+          "count": 1,
+          "bytes": 33450
+        },
+        "script": {
+          "count": 3,
+          "bytes": 102242
+        }
+      },
+      "domContentLoaded": 224,
+      "loadEvent": 228
+    },
+    {
+      "path": "/work.html",
+      "viewport": "mobile",
+      "cpuThrottle": 4,
+      "mode": "static",
+      "scrollMs": 1338,
+      "errors": [],
+      "lcp": 140,
+      "cls": 0,
+      "worstShift": 0,
+      "shiftCount": 0,
+      "longTaskCount": 1,
+      "longTaskTotal": 71,
+      "longTaskMax": 71,
+      "tbtProxy": 21,
+      "domNodes": 431,
+      "transferBytes": 135692,
+      "requests": 5,
+      "byType": {
+        "link": {
+          "count": 1,
+          "bytes": 33450
+        },
+        "script": {
+          "count": 3,
+          "bytes": 102242
+        }
+      },
+      "domContentLoaded": 145,
+      "loadEvent": 149
+    },
+    {
+      "path": "/source.html",
+      "viewport": "mobile",
+      "cpuThrottle": 4,
+      "mode": "static",
+      "scrollMs": 1334,
+      "errors": [],
+      "lcp": 136,
+      "cls": 0,
+      "worstShift": 0,
+      "shiftCount": 0,
+      "longTaskCount": 1,
+      "longTaskTotal": 78,
+      "longTaskMax": 78,
+      "tbtProxy": 28,
+      "domNodes": 403,
+      "transferBytes": 135692,
+      "requests": 5,
+      "byType": {
+        "link": {
+          "count": 1,
+          "bytes": 33450
+        },
+        "script": {
+          "count": 3,
+          "bytes": 102242
+        }
+      },
+      "domContentLoaded": 152,
+      "loadEvent": 153
+    },
+    {
+      "path": "/company.html",
+      "viewport": "mobile",
+      "cpuThrottle": 4,
+      "mode": "static",
+      "scrollMs": 1339,
+      "errors": [],
+      "lcp": 192,
+      "cls": 0,
+      "worstShift": 0,
+      "shiftCount": 0,
+      "longTaskCount": 1,
+      "longTaskTotal": 95,
+      "longTaskMax": 95,
+      "tbtProxy": 45,
+      "domNodes": 314,
+      "transferBytes": 135692,
+      "requests": 5,
+      "byType": {
+        "link": {
+          "count": 1,
+          "bytes": 33450
+        },
+        "script": {
+          "count": 3,
+          "bytes": 102242
+        }
+      },
+      "domContentLoaded": 176,
+      "loadEvent": 176
+    },
+    {
+      "path": "/about.html",
+      "viewport": "mobile",
+      "cpuThrottle": 4,
+      "mode": "static",
+      "scrollMs": 1331,
+      "errors": [],
+      "lcp": 188,
+      "cls": 0,
+      "worstShift": 0,
+      "shiftCount": 0,
+      "longTaskCount": 1,
+      "longTaskTotal": 73,
+      "longTaskMax": 73,
+      "tbtProxy": 23,
+      "domNodes": 331,
+      "transferBytes": 135692,
+      "requests": 5,
+      "byType": {
+        "link": {
+          "count": 1,
+          "bytes": 33450
+        },
+        "script": {
+          "count": 3,
+          "bytes": 102242
+        }
+      },
+      "domContentLoaded": 200,
+      "loadEvent": 201
+    },
+    {
+      "path": "/lab.html",
+      "viewport": "mobile",
+      "cpuThrottle": 4,
+      "mode": "static",
+      "scrollMs": 1330,
+      "errors": [],
+      "lcp": 148,
+      "cls": 0,
+      "worstShift": 0,
+      "shiftCount": 0,
+      "longTaskCount": 1,
+      "longTaskTotal": 66,
+      "longTaskMax": 66,
+      "tbtProxy": 16,
+      "domNodes": 274,
+      "transferBytes": 135692,
+      "requests": 5,
+      "byType": {
+        "link": {
+          "count": 1,
+          "bytes": 33450
+        },
+        "script": {
+          "count": 3,
+          "bytes": 102242
+        }
+      },
+      "domContentLoaded": 147,
+      "loadEvent": 147
+    },
+    {
+      "path": "/contact.html",
+      "viewport": "mobile",
+      "cpuThrottle": 4,
+      "mode": "static",
+      "scrollMs": 1342,
+      "errors": [],
+      "lcp": 160,
+      "cls": 0,
+      "worstShift": 0,
+      "shiftCount": 0,
+      "longTaskCount": 1,
+      "longTaskTotal": 71,
+      "longTaskMax": 71,
+      "tbtProxy": 21,
+      "domNodes": 249,
+      "transferBytes": 135692,
+      "requests": 5,
+      "byType": {
+        "link": {
+          "count": 1,
+          "bytes": 33450
+        },
+        "script": {
+          "count": 3,
+          "bytes": 102242
+        }
+      },
+      "domContentLoaded": 158,
+      "loadEvent": 161
+    },
+    {
+      "path": "/privacy.html",
+      "viewport": "mobile",
+      "cpuThrottle": 4,
+      "mode": "static",
+      "scrollMs": 1339,
+      "errors": [],
+      "lcp": 156,
+      "cls": 0,
+      "worstShift": 0,
+      "shiftCount": 0,
+      "longTaskCount": 1,
+      "longTaskTotal": 64,
+      "longTaskMax": 64,
+      "tbtProxy": 14,
+      "domNodes": 224,
+      "transferBytes": 135692,
+      "requests": 5,
+      "byType": {
+        "link": {
+          "count": 1,
+          "bytes": 33450
+        },
+        "script": {
+          "count": 3,
+          "bytes": 102242
+        }
+      },
+      "domContentLoaded": 140,
+      "loadEvent": 140
+    },
+    {
+      "path": "/projects/edublaxk.html",
+      "viewport": "mobile",
+      "cpuThrottle": 4,
+      "mode": "static",
+      "scrollMs": 1330,
+      "errors": [],
+      "lcp": 168,
+      "cls": 0,
+      "worstShift": 0,
+      "shiftCount": 0,
+      "longTaskCount": 1,
+      "longTaskTotal": 86,
+      "longTaskMax": 86,
+      "tbtProxy": 36,
+      "domNodes": 382,
+      "transferBytes": 354083,
+      "requests": 8,
+      "byType": {
+        "link": {
+          "count": 1,
+          "bytes": 33450
+        },
+        "script": {
+          "count": 3,
+          "bytes": 102242
+        },
+        "img": {
+          "count": 3,
+          "bytes": 218391
+        }
+      },
+      "domContentLoaded": 159,
+      "loadEvent": 159
+    },
+    {
+      "path": "/projects/blaxk-housing.html",
+      "viewport": "mobile",
+      "cpuThrottle": 4,
+      "mode": "static",
+      "scrollMs": 1343,
+      "errors": [],
+      "lcp": 216,
+      "cls": 0,
+      "worstShift": 0,
+      "shiftCount": 0,
+      "longTaskCount": 1,
+      "longTaskTotal": 87,
+      "longTaskMax": 87,
+      "tbtProxy": 37,
+      "domNodes": 338,
+      "transferBytes": 135692,
+      "requests": 5,
+      "byType": {
+        "link": {
+          "count": 1,
+          "bytes": 33450
+        },
+        "script": {
+          "count": 3,
+          "bytes": 102242
+        }
+      },
+      "domContentLoaded": 227,
+      "loadEvent": 227
+    },
+    {
+      "path": "/projects/sabi.html",
+      "viewport": "mobile",
+      "cpuThrottle": 4,
+      "mode": "static",
+      "scrollMs": 1332,
+      "errors": [],
+      "lcp": 180,
+      "cls": 0,
+      "worstShift": 0,
+      "shiftCount": 0,
+      "longTaskCount": 1,
+      "longTaskTotal": 81,
+      "longTaskMax": 81,
+      "tbtProxy": 31,
+      "domNodes": 318,
+      "transferBytes": 135692,
+      "requests": 5,
+      "byType": {
+        "link": {
+          "count": 1,
+          "bytes": 33450
+        },
+        "script": {
+          "count": 3,
+          "bytes": 102242
+        }
+      },
+      "domContentLoaded": 172,
+      "loadEvent": 172
+    },
+    {
+      "path": "/projects/blaxk-xposer.html",
+      "viewport": "mobile",
+      "cpuThrottle": 4,
+      "mode": "static",
+      "scrollMs": 1332,
+      "errors": [],
+      "lcp": 156,
+      "cls": 0,
+      "worstShift": 0,
+      "shiftCount": 0,
+      "longTaskCount": 1,
+      "longTaskTotal": 92,
+      "longTaskMax": 92,
+      "tbtProxy": 42,
+      "domNodes": 341,
+      "transferBytes": 135692,
+      "requests": 5,
+      "byType": {
+        "link": {
+          "count": 1,
+          "bytes": 33450
+        },
+        "script": {
+          "count": 3,
+          "bytes": 102242
+        }
+      },
+      "domContentLoaded": 180,
+      "loadEvent": 180
+    },
+    {
+      "path": "/projects/forma.html",
+      "viewport": "mobile",
+      "cpuThrottle": 4,
+      "mode": "static",
+      "scrollMs": 1331,
+      "errors": [],
+      "lcp": 180,
+      "cls": 0,
+      "worstShift": 0,
+      "shiftCount": 0,
+      "longTaskCount": 1,
+      "longTaskTotal": 73,
+      "longTaskMax": 73,
+      "tbtProxy": 23,
+      "domNodes": 295,
+      "transferBytes": 580629,
+      "requests": 10,
+      "byType": {
+        "link": {
+          "count": 1,
+          "bytes": 33450
+        },
+        "script": {
+          "count": 3,
+          "bytes": 102242
+        },
+        "img": {
+          "count": 5,
+          "bytes": 444937
+        }
+      },
+      "domContentLoaded": 168,
+      "loadEvent": 168
+    },
+    {
+      "path": "/projects/blaxk-aggregator.html",
+      "viewport": "mobile",
+      "cpuThrottle": 4,
+      "mode": "static",
+      "scrollMs": 1336,
+      "errors": [],
+      "lcp": 160,
+      "cls": 0,
+      "worstShift": 0,
+      "shiftCount": 0,
+      "longTaskCount": 1,
+      "longTaskTotal": 70,
+      "longTaskMax": 70,
+      "tbtProxy": 20,
+      "domNodes": 268,
+      "transferBytes": 135692,
+      "requests": 5,
+      "byType": {
+        "link": {
+          "count": 1,
+          "bytes": 33450
+        },
+        "script": {
+          "count": 3,
+          "bytes": 102242
+        }
+      },
+      "domContentLoaded": 147,
+      "loadEvent": 147
+    },
+    {
+      "path": "/projects/the-migrator.html",
+      "viewport": "mobile",
+      "cpuThrottle": 4,
+      "mode": "static",
+      "scrollMs": 1337,
+      "errors": [],
+      "lcp": 192,
+      "cls": 0,
+      "worstShift": 0,
+      "shiftCount": 0,
+      "longTaskCount": 1,
+      "longTaskTotal": 68,
+      "longTaskMax": 68,
+      "tbtProxy": 18,
+      "domNodes": 262,
+      "transferBytes": 135692,
+      "requests": 5,
+      "byType": {
+        "link": {
+          "count": 1,
+          "bytes": 33450
+        },
+        "script": {
+          "count": 3,
+          "bytes": 102242
+        }
+      },
+      "domContentLoaded": 199,
+      "loadEvent": 199
+    },
+    {
+      "path": "/projects/gesture-controls.html",
+      "viewport": "mobile",
+      "cpuThrottle": 4,
+      "mode": "static",
+      "scrollMs": 1337,
+      "errors": [],
+      "lcp": 172,
+      "cls": 0,
+      "worstShift": 0,
+      "shiftCount": 0,
+      "longTaskCount": 1,
+      "longTaskTotal": 75,
+      "longTaskMax": 75,
+      "tbtProxy": 25,
+      "domNodes": 267,
+      "transferBytes": 135692,
+      "requests": 5,
+      "byType": {
+        "link": {
+          "count": 1,
+          "bytes": 33450
+        },
+        "script": {
+          "count": 3,
+          "bytes": 102242
+        }
+      },
+      "domContentLoaded": 160,
+      "loadEvent": 160
+    },
+    {
+      "path": "/index.html",
+      "viewport": "modest-laptop",
+      "cpuThrottle": 6,
+      "mode": "full",
+      "scrollMs": 1393,
+      "errors": [],
+      "lcp": 424,
+      "cls": 0,
+      "worstShift": 0,
+      "shiftCount": 0,
+      "longTaskCount": 1,
+      "longTaskTotal": 236,
+      "longTaskMax": 236,
+      "tbtProxy": 186,
+      "domNodes": 397,
+      "transferBytes": 135692,
+      "requests": 5,
+      "byType": {
+        "link": {
+          "count": 1,
+          "bytes": 33450
+        },
+        "script": {
+          "count": 3,
+          "bytes": 102242
+        }
+      },
+      "domContentLoaded": 431,
+      "loadEvent": 431
+    },
+    {
+      "path": "/work.html",
+      "viewport": "modest-laptop",
+      "cpuThrottle": 6,
+      "mode": "full",
+      "scrollMs": 1486,
+      "errors": [],
+      "lcp": 292,
+      "cls": 0.0064,
+      "worstShift": 0.006394720938567594,
+      "shiftCount": 1,
+      "longTaskCount": 1,
+      "longTaskTotal": 167,
+      "longTaskMax": 167,
+      "tbtProxy": 117,
+      "domNodes": 431,
+      "transferBytes": 135692,
+      "requests": 5,
+      "byType": {
+        "link": {
+          "count": 1,
+          "bytes": 33450
+        },
+        "script": {
+          "count": 3,
+          "bytes": 102242
+        }
+      },
+      "domContentLoaded": 285,
+      "loadEvent": 286
+    },
+    {
+      "path": "/source.html",
+      "viewport": "modest-laptop",
+      "cpuThrottle": 6,
+      "mode": "full",
+      "scrollMs": 1346,
+      "errors": [],
+      "lcp": 304,
+      "cls": 0,
+      "worstShift": 0,
+      "shiftCount": 0,
+      "longTaskCount": 1,
+      "longTaskTotal": 161,
+      "longTaskMax": 161,
+      "tbtProxy": 111,
+      "domNodes": 403,
+      "transferBytes": 135692,
+      "requests": 5,
+      "byType": {
+        "link": {
+          "count": 1,
+          "bytes": 33450
+        },
+        "script": {
+          "count": 3,
+          "bytes": 102242
+        }
+      },
+      "domContentLoaded": 276,
+      "loadEvent": 276
+    },
+    {
+      "path": "/company.html",
+      "viewport": "modest-laptop",
+      "cpuThrottle": 6,
+      "mode": "full",
+      "scrollMs": 1348,
+      "errors": [],
+      "lcp": 276,
+      "cls": 0,
+      "worstShift": 0,
+      "shiftCount": 0,
+      "longTaskCount": 1,
+      "longTaskTotal": 166,
+      "longTaskMax": 166,
+      "tbtProxy": 116,
+      "domNodes": 314,
+      "transferBytes": 135692,
+      "requests": 5,
+      "byType": {
+        "link": {
+          "count": 1,
+          "bytes": 33450
+        },
+        "script": {
+          "count": 3,
+          "bytes": 102242
+        }
+      },
+      "domContentLoaded": 277,
+      "loadEvent": 277
+    },
+    {
+      "path": "/about.html",
+      "viewport": "modest-laptop",
+      "cpuThrottle": 6,
+      "mode": "full",
+      "scrollMs": 1356,
+      "errors": [],
+      "lcp": 280,
+      "cls": 0,
+      "worstShift": 0,
+      "shiftCount": 0,
+      "longTaskCount": 1,
+      "longTaskTotal": 156,
+      "longTaskMax": 156,
+      "tbtProxy": 106,
+      "domNodes": 331,
+      "transferBytes": 135692,
+      "requests": 5,
+      "byType": {
+        "link": {
+          "count": 1,
+          "bytes": 33450
+        },
+        "script": {
+          "count": 3,
+          "bytes": 102242
+        }
+      },
+      "domContentLoaded": 254,
+      "loadEvent": 255
+    },
+    {
+      "path": "/lab.html",
+      "viewport": "modest-laptop",
+      "cpuThrottle": 6,
+      "mode": "full",
+      "scrollMs": 1341,
+      "errors": [],
+      "lcp": 268,
+      "cls": 0,
+      "worstShift": 0,
+      "shiftCount": 0,
+      "longTaskCount": 1,
+      "longTaskTotal": 134,
+      "longTaskMax": 134,
+      "tbtProxy": 84,
+      "domNodes": 274,
+      "transferBytes": 135692,
+      "requests": 5,
+      "byType": {
+        "link": {
+          "count": 1,
+          "bytes": 33450
+        },
+        "script": {
+          "count": 3,
+          "bytes": 102242
+        }
+      },
+      "domContentLoaded": 246,
+      "loadEvent": 246
+    },
+    {
+      "path": "/contact.html",
+      "viewport": "modest-laptop",
+      "cpuThrottle": 6,
+      "mode": "full",
+      "scrollMs": 1395,
+      "errors": [],
+      "lcp": 284,
+      "cls": 0,
+      "worstShift": 0,
+      "shiftCount": 0,
+      "longTaskCount": 1,
+      "longTaskTotal": 148,
+      "longTaskMax": 148,
+      "tbtProxy": 98,
+      "domNodes": 249,
+      "transferBytes": 135692,
+      "requests": 5,
+      "byType": {
+        "link": {
+          "count": 1,
+          "bytes": 33450
+        },
+        "script": {
+          "count": 3,
+          "bytes": 102242
+        }
+      },
+      "domContentLoaded": 260,
+      "loadEvent": 261
+    },
+    {
+      "path": "/privacy.html",
+      "viewport": "modest-laptop",
+      "cpuThrottle": 6,
+      "mode": "full",
+      "scrollMs": 1335,
+      "errors": [],
+      "lcp": 232,
+      "cls": 0,
+      "worstShift": 0,
+      "shiftCount": 0,
+      "longTaskCount": 1,
+      "longTaskTotal": 122,
+      "longTaskMax": 122,
+      "tbtProxy": 72,
+      "domNodes": 224,
+      "transferBytes": 135692,
+      "requests": 5,
+      "byType": {
+        "link": {
+          "count": 1,
+          "bytes": 33450
+        },
+        "script": {
+          "count": 3,
+          "bytes": 102242
+        }
+      },
+      "domContentLoaded": 210,
+      "loadEvent": 210
+    },
+    {
+      "path": "/projects/edublaxk.html",
+      "viewport": "modest-laptop",
+      "cpuThrottle": 6,
+      "mode": "full",
+      "scrollMs": 1342,
+      "errors": [],
+      "lcp": 388,
+      "cls": 0,
+      "worstShift": 0,
+      "shiftCount": 0,
+      "longTaskCount": 1,
+      "longTaskTotal": 204,
+      "longTaskMax": 204,
+      "tbtProxy": 154,
+      "domNodes": 382,
+      "transferBytes": 503095,
+      "requests": 11,
+      "byType": {
+        "link": {
+          "count": 1,
+          "bytes": 33450
+        },
+        "script": {
+          "count": 3,
+          "bytes": 102242
+        },
+        "img": {
+          "count": 6,
+          "bytes": 367403
+        }
+      },
+      "domContentLoaded": 346,
+      "loadEvent": 346
+    },
+    {
+      "path": "/projects/blaxk-housing.html",
+      "viewport": "modest-laptop",
+      "cpuThrottle": 6,
+      "mode": "full",
+      "scrollMs": 1347,
+      "errors": [],
+      "lcp": 304,
+      "cls": 0,
+      "worstShift": 0,
+      "shiftCount": 0,
+      "longTaskCount": 1,
+      "longTaskTotal": 197,
+      "longTaskMax": 197,
+      "tbtProxy": 147,
+      "domNodes": 338,
+      "transferBytes": 135692,
+      "requests": 5,
+      "byType": {
+        "link": {
+          "count": 1,
+          "bytes": 33450
+        },
+        "script": {
+          "count": 3,
+          "bytes": 102242
+        }
+      },
+      "domContentLoaded": 284,
+      "loadEvent": 285
+    },
+    {
+      "path": "/projects/sabi.html",
+      "viewport": "modest-laptop",
+      "cpuThrottle": 6,
+      "mode": "full",
+      "scrollMs": 1348,
+      "errors": [],
+      "lcp": 320,
+      "cls": 0,
+      "worstShift": 0,
+      "shiftCount": 0,
+      "longTaskCount": 1,
+      "longTaskTotal": 193,
+      "longTaskMax": 193,
+      "tbtProxy": 143,
+      "domNodes": 318,
+      "transferBytes": 135692,
+      "requests": 5,
+      "byType": {
+        "link": {
+          "count": 1,
+          "bytes": 33450
+        },
+        "script": {
+          "count": 3,
+          "bytes": 102242
+        }
+      },
+      "domContentLoaded": 310,
+      "loadEvent": 310
+    },
+    {
+      "path": "/projects/blaxk-xposer.html",
+      "viewport": "modest-laptop",
+      "cpuThrottle": 6,
+      "mode": "full",
+      "scrollMs": 1339,
+      "errors": [],
+      "lcp": 284,
+      "cls": 0,
+      "worstShift": 0,
+      "shiftCount": 0,
+      "longTaskCount": 1,
+      "longTaskTotal": 164,
+      "longTaskMax": 164,
+      "tbtProxy": 114,
+      "domNodes": 341,
+      "transferBytes": 135692,
+      "requests": 5,
+      "byType": {
+        "link": {
+          "count": 1,
+          "bytes": 33450
+        },
+        "script": {
+          "count": 3,
+          "bytes": 102242
+        }
+      },
+      "domContentLoaded": 277,
+      "loadEvent": 277
+    },
+    {
+      "path": "/projects/forma.html",
+      "viewport": "modest-laptop",
+      "cpuThrottle": 6,
+      "mode": "full",
+      "scrollMs": 1345,
+      "errors": [],
+      "lcp": 308,
+      "cls": 0,
+      "worstShift": 0,
+      "shiftCount": 0,
+      "longTaskCount": 1,
+      "longTaskTotal": 156,
+      "longTaskMax": 156,
+      "tbtProxy": 106,
+      "domNodes": 295,
+      "transferBytes": 580629,
+      "requests": 10,
+      "byType": {
+        "link": {
+          "count": 1,
+          "bytes": 33450
+        },
+        "script": {
+          "count": 3,
+          "bytes": 102242
+        },
+        "img": {
+          "count": 5,
+          "bytes": 444937
+        }
+      },
+      "domContentLoaded": 292,
+      "loadEvent": 292
+    },
+    {
+      "path": "/projects/blaxk-aggregator.html",
+      "viewport": "modest-laptop",
+      "cpuThrottle": 6,
+      "mode": "full",
+      "scrollMs": 1340,
+      "errors": [],
+      "lcp": 236,
+      "cls": 0,
+      "worstShift": 0,
+      "shiftCount": 0,
+      "longTaskCount": 1,
+      "longTaskTotal": 136,
+      "longTaskMax": 136,
+      "tbtProxy": 86,
+      "domNodes": 268,
+      "transferBytes": 135692,
+      "requests": 5,
+      "byType": {
+        "link": {
+          "count": 1,
+          "bytes": 33450
+        },
+        "script": {
+          "count": 3,
+          "bytes": 102242
+        }
+      },
+      "domContentLoaded": 212,
+      "loadEvent": 212
+    },
+    {
+      "path": "/projects/the-migrator.html",
+      "viewport": "modest-laptop",
+      "cpuThrottle": 6,
+      "mode": "full",
+      "scrollMs": 1339,
+      "errors": [],
+      "lcp": 280,
+      "cls": 0,
+      "worstShift": 0,
+      "shiftCount": 0,
+      "longTaskCount": 1,
+      "longTaskTotal": 145,
+      "longTaskMax": 145,
+      "tbtProxy": 95,
+      "domNodes": 262,
+      "transferBytes": 135692,
+      "requests": 5,
+      "byType": {
+        "link": {
+          "count": 1,
+          "bytes": 33450
+        },
+        "script": {
+          "count": 3,
+          "bytes": 102242
+        }
+      },
+      "domContentLoaded": 246,
+      "loadEvent": 246
+    },
+    {
+      "path": "/projects/gesture-controls.html",
+      "viewport": "modest-laptop",
+      "cpuThrottle": 6,
+      "mode": "full",
+      "scrollMs": 1336,
+      "errors": [],
+      "lcp": 220,
+      "cls": 0,
+      "worstShift": 0,
+      "shiftCount": 0,
+      "longTaskCount": 1,
+      "longTaskTotal": 128,
+      "longTaskMax": 128,
+      "tbtProxy": 78,
+      "domNodes": 267,
+      "transferBytes": 135692,
+      "requests": 5,
+      "byType": {
+        "link": {
+          "count": 1,
+          "bytes": 33450
+        },
+        "script": {
+          "count": 3,
+          "bytes": 102242
+        }
+      },
+      "domContentLoaded": 214,
+      "loadEvent": 216
+    },
+    {
+      "path": "/index.html",
+      "viewport": "modest-laptop",
+      "cpuThrottle": 6,
+      "mode": "reduced",
+      "scrollMs": 1330,
+      "errors": [],
+      "lcp": 380,
+      "cls": 0.0001,
+      "worstShift": 0.0001408355656564249,
+      "shiftCount": 0,
+      "longTaskCount": 3,
+      "longTaskTotal": 282,
+      "longTaskMax": 179,
+      "tbtProxy": 132,
+      "domNodes": 397,
+      "transferBytes": 135692,
+      "requests": 5,
+      "byType": {
+        "link": {
+          "count": 1,
+          "bytes": 33450
+        },
+        "script": {
+          "count": 3,
+          "bytes": 102242
+        }
+      },
+      "domContentLoaded": 467,
+      "loadEvent": 473
+    },
+    {
+      "path": "/work.html",
+      "viewport": "modest-laptop",
+      "cpuThrottle": 6,
+      "mode": "reduced",
+      "scrollMs": 1337,
+      "errors": [],
+      "lcp": 236,
+      "cls": 0.0064,
+      "worstShift": 0.006394720938567594,
+      "shiftCount": 1,
+      "longTaskCount": 2,
+      "longTaskTotal": 205,
+      "longTaskMax": 139,
+      "tbtProxy": 105,
+      "domNodes": 431,
+      "transferBytes": 135692,
+      "requests": 5,
+      "byType": {
+        "link": {
+          "count": 1,
+          "bytes": 33450
+        },
+        "script": {
+          "count": 3,
+          "bytes": 102242
+        }
+      },
+      "domContentLoaded": 249,
+      "loadEvent": 256
+    },
+    {
+      "path": "/source.html",
+      "viewport": "modest-laptop",
+      "cpuThrottle": 6,
+      "mode": "reduced",
+      "scrollMs": 1328,
+      "errors": [],
+      "lcp": 232,
+      "cls": 0,
+      "worstShift": 0,
+      "shiftCount": 0,
+      "longTaskCount": 1,
+      "longTaskTotal": 126,
+      "longTaskMax": 126,
+      "tbtProxy": 76,
+      "domNodes": 403,
+      "transferBytes": 135692,
+      "requests": 5,
+      "byType": {
+        "link": {
+          "count": 1,
+          "bytes": 33450
+        },
+        "script": {
+          "count": 3,
+          "bytes": 102242
+        }
+      },
+      "domContentLoaded": 228,
+      "loadEvent": 231
+    },
+    {
+      "path": "/company.html",
+      "viewport": "modest-laptop",
+      "cpuThrottle": 6,
+      "mode": "reduced",
+      "scrollMs": 1315,
+      "errors": [],
+      "lcp": 260,
+      "cls": 0,
+      "worstShift": 0,
+      "shiftCount": 0,
+      "longTaskCount": 1,
+      "longTaskTotal": 150,
+      "longTaskMax": 150,
+      "tbtProxy": 100,
+      "domNodes": 314,
+      "transferBytes": 135692,
+      "requests": 5,
+      "byType": {
+        "link": {
+          "count": 1,
+          "bytes": 33450
+        },
+        "script": {
+          "count": 3,
+          "bytes": 102242
+        }
+      },
+      "domContentLoaded": 240,
+      "loadEvent": 241
+    },
+    {
+      "path": "/about.html",
+      "viewport": "modest-laptop",
+      "cpuThrottle": 6,
+      "mode": "reduced",
+      "scrollMs": 1324,
+      "errors": [],
+      "lcp": 320,
+      "cls": 0.0001,
+      "worstShift": 0.0001408355656564249,
+      "shiftCount": 0,
+      "longTaskCount": 0,
+      "longTaskTotal": 0,
+      "longTaskMax": 0,
+      "tbtProxy": 0,
+      "domNodes": 331,
+      "transferBytes": 135692,
+      "requests": 5,
+      "byType": {
+        "link": {
+          "count": 1,
+          "bytes": 33450
+        },
+        "script": {
+          "count": 3,
+          "bytes": 102242
+        }
+      },
+      "domContentLoaded": 343,
+      "loadEvent": 343
+    },
+    {
+      "path": "/lab.html",
+      "viewport": "modest-laptop",
+      "cpuThrottle": 6,
+      "mode": "reduced",
+      "scrollMs": 1324,
+      "errors": [],
+      "lcp": 384,
+      "cls": 0.0001,
+      "worstShift": 0.0001408355656564249,
+      "shiftCount": 0,
+      "longTaskCount": 1,
+      "longTaskTotal": 199,
+      "longTaskMax": 199,
+      "tbtProxy": 149,
+      "domNodes": 274,
+      "transferBytes": 135692,
+      "requests": 5,
+      "byType": {
+        "link": {
+          "count": 1,
+          "bytes": 33450
+        },
+        "script": {
+          "count": 3,
+          "bytes": 102242
+        }
+      },
+      "domContentLoaded": 420,
+      "loadEvent": 420
+    },
+    {
+      "path": "/contact.html",
+      "viewport": "modest-laptop",
+      "cpuThrottle": 6,
+      "mode": "reduced",
+      "scrollMs": 1323,
+      "errors": [],
+      "lcp": 260,
+      "cls": 0,
+      "worstShift": 0,
+      "shiftCount": 0,
+      "longTaskCount": 1,
+      "longTaskTotal": 148,
+      "longTaskMax": 148,
+      "tbtProxy": 98,
+      "domNodes": 249,
+      "transferBytes": 135692,
+      "requests": 5,
+      "byType": {
+        "link": {
+          "count": 1,
+          "bytes": 33450
+        },
+        "script": {
+          "count": 3,
+          "bytes": 102242
+        }
+      },
+      "domContentLoaded": 244,
+      "loadEvent": 244
+    },
+    {
+      "path": "/privacy.html",
+      "viewport": "modest-laptop",
+      "cpuThrottle": 6,
+      "mode": "reduced",
+      "scrollMs": 1331,
+      "errors": [],
+      "lcp": 204,
+      "cls": 0,
+      "worstShift": 0,
+      "shiftCount": 0,
+      "longTaskCount": 1,
+      "longTaskTotal": 111,
+      "longTaskMax": 111,
+      "tbtProxy": 61,
+      "domNodes": 224,
+      "transferBytes": 135692,
+      "requests": 5,
+      "byType": {
+        "link": {
+          "count": 1,
+          "bytes": 33450
+        },
+        "script": {
+          "count": 3,
+          "bytes": 102242
+        }
+      },
+      "domContentLoaded": 186,
+      "loadEvent": 187
+    },
+    {
+      "path": "/projects/edublaxk.html",
+      "viewport": "modest-laptop",
+      "cpuThrottle": 6,
+      "mode": "reduced",
+      "scrollMs": 1339,
+      "errors": [],
+      "lcp": 308,
+      "cls": 0,
+      "worstShift": 0,
+      "shiftCount": 0,
+      "longTaskCount": 1,
+      "longTaskTotal": 159,
+      "longTaskMax": 159,
+      "tbtProxy": 109,
+      "domNodes": 382,
+      "transferBytes": 503095,
+      "requests": 11,
+      "byType": {
+        "link": {
+          "count": 1,
+          "bytes": 33450
+        },
+        "script": {
+          "count": 3,
+          "bytes": 102242
+        },
+        "img": {
+          "count": 6,
+          "bytes": 367403
+        }
+      },
+      "domContentLoaded": 276,
+      "loadEvent": 276
+    },
+    {
+      "path": "/projects/blaxk-housing.html",
+      "viewport": "modest-laptop",
+      "cpuThrottle": 6,
+      "mode": "reduced",
+      "scrollMs": 1323,
+      "errors": [],
+      "lcp": 268,
+      "cls": 0.0001,
+      "worstShift": 0.0001408355656564249,
+      "shiftCount": 0,
+      "longTaskCount": 1,
+      "longTaskTotal": 157,
+      "longTaskMax": 157,
+      "tbtProxy": 107,
+      "domNodes": 338,
+      "transferBytes": 135692,
+      "requests": 5,
+      "byType": {
+        "link": {
+          "count": 1,
+          "bytes": 33450
+        },
+        "script": {
+          "count": 3,
+          "bytes": 102242
+        }
+      },
+      "domContentLoaded": 299,
+      "loadEvent": 300
+    },
+    {
+      "path": "/projects/sabi.html",
+      "viewport": "modest-laptop",
+      "cpuThrottle": 6,
+      "mode": "reduced",
+      "scrollMs": 1334,
+      "errors": [],
+      "lcp": 304,
+      "cls": 0.0001,
+      "worstShift": 0.0001408355656564249,
+      "shiftCount": 0,
+      "longTaskCount": 2,
+      "longTaskTotal": 264,
+      "longTaskMax": 214,
+      "tbtProxy": 164,
+      "domNodes": 318,
+      "transferBytes": 135692,
+      "requests": 5,
+      "byType": {
+        "link": {
+          "count": 1,
+          "bytes": 33450
+        },
+        "script": {
+          "count": 3,
+          "bytes": 102242
+        }
+      },
+      "domContentLoaded": 350,
+      "loadEvent": 350
+    },
+    {
+      "path": "/projects/blaxk-xposer.html",
+      "viewport": "modest-laptop",
+      "cpuThrottle": 6,
+      "mode": "reduced",
+      "scrollMs": 1327,
+      "errors": [],
+      "lcp": 300,
+      "cls": 0.0001,
+      "worstShift": 0.0001408355656564249,
+      "shiftCount": 0,
+      "longTaskCount": 0,
+      "longTaskTotal": 0,
+      "longTaskMax": 0,
+      "tbtProxy": 0,
+      "domNodes": 341,
+      "transferBytes": 135692,
+      "requests": 5,
+      "byType": {
+        "link": {
+          "count": 1,
+          "bytes": 33450
+        },
+        "script": {
+          "count": 3,
+          "bytes": 102242
+        }
+      },
+      "domContentLoaded": 329,
+      "loadEvent": 329
+    },
+    {
+      "path": "/projects/forma.html",
+      "viewport": "modest-laptop",
+      "cpuThrottle": 6,
+      "mode": "reduced",
+      "scrollMs": 1329,
+      "errors": [],
+      "lcp": 236,
+      "cls": 0,
+      "worstShift": 0,
+      "shiftCount": 0,
+      "longTaskCount": 1,
+      "longTaskTotal": 135,
+      "longTaskMax": 135,
+      "tbtProxy": 85,
+      "domNodes": 295,
+      "transferBytes": 580629,
+      "requests": 10,
+      "byType": {
+        "link": {
+          "count": 1,
+          "bytes": 33450
+        },
+        "script": {
+          "count": 3,
+          "bytes": 102242
+        },
+        "img": {
+          "count": 5,
+          "bytes": 444937
+        }
+      },
+      "domContentLoaded": 211,
+      "loadEvent": 211
+    },
+    {
+      "path": "/projects/blaxk-aggregator.html",
+      "viewport": "modest-laptop",
+      "cpuThrottle": 6,
+      "mode": "reduced",
+      "scrollMs": 1337,
+      "errors": [],
+      "lcp": 264,
+      "cls": 0,
+      "worstShift": 0,
+      "shiftCount": 0,
+      "longTaskCount": 1,
+      "longTaskTotal": 149,
+      "longTaskMax": 149,
+      "tbtProxy": 99,
+      "domNodes": 268,
+      "transferBytes": 135692,
+      "requests": 5,
+      "byType": {
+        "link": {
+          "count": 1,
+          "bytes": 33450
+        },
+        "script": {
+          "count": 3,
+          "bytes": 102242
+        }
+      },
+      "domContentLoaded": 253,
+      "loadEvent": 253
+    },
+    {
+      "path": "/projects/the-migrator.html",
+      "viewport": "modest-laptop",
+      "cpuThrottle": 6,
+      "mode": "reduced",
+      "scrollMs": 1326,
+      "errors": [],
+      "lcp": 292,
+      "cls": 0,
+      "worstShift": 0,
+      "shiftCount": 0,
+      "longTaskCount": 1,
+      "longTaskTotal": 115,
+      "longTaskMax": 115,
+      "tbtProxy": 65,
+      "domNodes": 262,
+      "transferBytes": 135692,
+      "requests": 5,
+      "byType": {
+        "link": {
+          "count": 1,
+          "bytes": 33450
+        },
+        "script": {
+          "count": 3,
+          "bytes": 102242
+        }
+      },
+      "domContentLoaded": 269,
+      "loadEvent": 269
+    },
+    {
+      "path": "/projects/gesture-controls.html",
+      "viewport": "modest-laptop",
+      "cpuThrottle": 6,
+      "mode": "reduced",
+      "scrollMs": 1320,
+      "errors": [],
+      "lcp": 276,
+      "cls": 0.0001,
+      "worstShift": 0.0001408355656564249,
+      "shiftCount": 0,
+      "longTaskCount": 1,
+      "longTaskTotal": 124,
+      "longTaskMax": 124,
+      "tbtProxy": 74,
+      "domNodes": 267,
+      "transferBytes": 135692,
+      "requests": 5,
+      "byType": {
+        "link": {
+          "count": 1,
+          "bytes": 33450
+        },
+        "script": {
+          "count": 3,
+          "bytes": 102242
+        }
+      },
+      "domContentLoaded": 309,
+      "loadEvent": 309
+    },
+    {
+      "path": "/index.html",
+      "viewport": "modest-laptop",
+      "cpuThrottle": 6,
+      "mode": "static",
+      "scrollMs": 1337,
+      "errors": [],
+      "lcp": 252,
+      "cls": 0,
+      "worstShift": 0.00004283748455382925,
+      "shiftCount": 0,
+      "longTaskCount": 1,
+      "longTaskTotal": 175,
+      "longTaskMax": 175,
+      "tbtProxy": 125,
+      "domNodes": 397,
+      "transferBytes": 135692,
+      "requests": 5,
+      "byType": {
+        "link": {
+          "count": 1,
+          "bytes": 33450
+        },
+        "script": {
+          "count": 3,
+          "bytes": 102242
+        }
+      },
+      "domContentLoaded": 330,
+      "loadEvent": 337
+    },
+    {
+      "path": "/work.html",
+      "viewport": "modest-laptop",
+      "cpuThrottle": 6,
+      "mode": "static",
+      "scrollMs": 1360,
+      "errors": [],
+      "lcp": 412,
+      "cls": 0,
+      "worstShift": 0,
+      "shiftCount": 0,
+      "longTaskCount": 2,
+      "longTaskTotal": 264,
+      "longTaskMax": 139,
+      "tbtProxy": 164,
+      "domNodes": 431,
+      "transferBytes": 135692,
+      "requests": 5,
+      "byType": {
+        "link": {
+          "count": 1,
+          "bytes": 33450
+        },
+        "script": {
+          "count": 3,
+          "bytes": 102242
+        }
+      },
+      "domContentLoaded": 298,
+      "loadEvent": 307
+    },
+    {
+      "path": "/source.html",
+      "viewport": "modest-laptop",
+      "cpuThrottle": 6,
+      "mode": "static",
+      "scrollMs": 1330,
+      "errors": [],
+      "lcp": 248,
+      "cls": 0,
+      "worstShift": 0.00004283748455382925,
+      "shiftCount": 0,
+      "longTaskCount": 1,
+      "longTaskTotal": 149,
+      "longTaskMax": 149,
+      "tbtProxy": 99,
+      "domNodes": 403,
+      "transferBytes": 135692,
+      "requests": 5,
+      "byType": {
+        "link": {
+          "count": 1,
+          "bytes": 33450
+        },
+        "script": {
+          "count": 3,
+          "bytes": 102242
+        }
+      },
+      "domContentLoaded": 261,
+      "loadEvent": 264
+    },
+    {
+      "path": "/company.html",
+      "viewport": "modest-laptop",
+      "cpuThrottle": 6,
+      "mode": "static",
+      "scrollMs": 1331,
+      "errors": [],
+      "lcp": 308,
+      "cls": 0,
+      "worstShift": 0.00004283748455382925,
+      "shiftCount": 0,
+      "longTaskCount": 1,
+      "longTaskTotal": 130,
+      "longTaskMax": 130,
+      "tbtProxy": 80,
+      "domNodes": 314,
+      "transferBytes": 135692,
+      "requests": 5,
+      "byType": {
+        "link": {
+          "count": 1,
+          "bytes": 33450
+        },
+        "script": {
+          "count": 3,
+          "bytes": 102242
+        }
+      },
+      "domContentLoaded": 320,
+      "loadEvent": 322
+    },
+    {
+      "path": "/about.html",
+      "viewport": "modest-laptop",
+      "cpuThrottle": 6,
+      "mode": "static",
+      "scrollMs": 1349,
+      "errors": [],
+      "lcp": 260,
+      "cls": 0,
+      "worstShift": 0,
+      "shiftCount": 0,
+      "longTaskCount": 1,
+      "longTaskTotal": 141,
+      "longTaskMax": 141,
+      "tbtProxy": 91,
+      "domNodes": 331,
+      "transferBytes": 135692,
+      "requests": 5,
+      "byType": {
+        "link": {
+          "count": 1,
+          "bytes": 33450
+        },
+        "script": {
+          "count": 3,
+          "bytes": 102242
+        }
+      },
+      "domContentLoaded": 232,
+      "loadEvent": 233
+    },
+    {
+      "path": "/lab.html",
+      "viewport": "modest-laptop",
+      "cpuThrottle": 6,
+      "mode": "static",
+      "scrollMs": 1346,
+      "errors": [],
+      "lcp": 248,
+      "cls": 0,
+      "worstShift": 0,
+      "shiftCount": 0,
+      "longTaskCount": 1,
+      "longTaskTotal": 139,
+      "longTaskMax": 139,
+      "tbtProxy": 89,
+      "domNodes": 274,
+      "transferBytes": 135692,
+      "requests": 5,
+      "byType": {
+        "link": {
+          "count": 1,
+          "bytes": 33450
+        },
+        "script": {
+          "count": 3,
+          "bytes": 102242
+        }
+      },
+      "domContentLoaded": 240,
+      "loadEvent": 240
+    },
+    {
+      "path": "/contact.html",
+      "viewport": "modest-laptop",
+      "cpuThrottle": 6,
+      "mode": "static",
+      "scrollMs": 1336,
+      "errors": [],
+      "lcp": 276,
+      "cls": 0,
+      "worstShift": 0.00004283748455382925,
+      "shiftCount": 0,
+      "longTaskCount": 1,
+      "longTaskTotal": 136,
+      "longTaskMax": 136,
+      "tbtProxy": 86,
+      "domNodes": 249,
+      "transferBytes": 135692,
+      "requests": 5,
+      "byType": {
+        "link": {
+          "count": 1,
+          "bytes": 33450
+        },
+        "script": {
+          "count": 3,
+          "bytes": 102242
+        }
+      },
+      "domContentLoaded": 302,
+      "loadEvent": 303
+    },
+    {
+      "path": "/privacy.html",
+      "viewport": "modest-laptop",
+      "cpuThrottle": 6,
+      "mode": "static",
+      "scrollMs": 1343,
+      "errors": [],
+      "lcp": 216,
+      "cls": 0,
+      "worstShift": 0,
+      "shiftCount": 0,
+      "longTaskCount": 1,
+      "longTaskTotal": 111,
+      "longTaskMax": 111,
+      "tbtProxy": 61,
+      "domNodes": 224,
+      "transferBytes": 135692,
+      "requests": 5,
+      "byType": {
+        "link": {
+          "count": 1,
+          "bytes": 33450
+        },
+        "script": {
+          "count": 3,
+          "bytes": 102242
+        }
+      },
+      "domContentLoaded": 199,
+      "loadEvent": 199
+    },
+    {
+      "path": "/projects/edublaxk.html",
+      "viewport": "modest-laptop",
+      "cpuThrottle": 6,
+      "mode": "static",
+      "scrollMs": 1334,
+      "errors": [],
+      "lcp": 272,
+      "cls": 0,
+      "worstShift": 0,
+      "shiftCount": 0,
+      "longTaskCount": 1,
+      "longTaskTotal": 153,
+      "longTaskMax": 153,
+      "tbtProxy": 103,
+      "domNodes": 382,
+      "transferBytes": 503095,
+      "requests": 11,
+      "byType": {
+        "link": {
+          "count": 1,
+          "bytes": 33450
+        },
+        "script": {
+          "count": 3,
+          "bytes": 102242
+        },
+        "img": {
+          "count": 6,
+          "bytes": 367403
+        }
+      },
+      "domContentLoaded": 260,
+      "loadEvent": 261
+    },
+    {
+      "path": "/projects/blaxk-housing.html",
+      "viewport": "modest-laptop",
+      "cpuThrottle": 6,
+      "mode": "static",
+      "scrollMs": 1339,
+      "errors": [],
+      "lcp": 276,
+      "cls": 0,
+      "worstShift": 0.00004283748455382925,
+      "shiftCount": 0,
+      "longTaskCount": 1,
+      "longTaskTotal": 153,
+      "longTaskMax": 153,
+      "tbtProxy": 103,
+      "domNodes": 338,
+      "transferBytes": 135692,
+      "requests": 5,
+      "byType": {
+        "link": {
+          "count": 1,
+          "bytes": 33450
+        },
+        "script": {
+          "count": 3,
+          "bytes": 102242
+        }
+      },
+      "domContentLoaded": 258,
+      "loadEvent": 259
+    },
+    {
+      "path": "/projects/sabi.html",
+      "viewport": "modest-laptop",
+      "cpuThrottle": 6,
+      "mode": "static",
+      "scrollMs": 1333,
+      "errors": [],
+      "lcp": 268,
+      "cls": 0,
+      "worstShift": 0,
+      "shiftCount": 0,
+      "longTaskCount": 1,
+      "longTaskTotal": 152,
+      "longTaskMax": 152,
+      "tbtProxy": 102,
+      "domNodes": 318,
+      "transferBytes": 135692,
+      "requests": 5,
+      "byType": {
+        "link": {
+          "count": 1,
+          "bytes": 33450
+        },
+        "script": {
+          "count": 3,
+          "bytes": 102242
+        }
+      },
+      "domContentLoaded": 256,
+      "loadEvent": 257
+    },
+    {
+      "path": "/projects/blaxk-xposer.html",
+      "viewport": "modest-laptop",
+      "cpuThrottle": 6,
+      "mode": "static",
+      "scrollMs": 1332,
+      "errors": [],
+      "lcp": 316,
+      "cls": 0,
+      "worstShift": 0,
+      "shiftCount": 0,
+      "longTaskCount": 1,
+      "longTaskTotal": 210,
+      "longTaskMax": 210,
+      "tbtProxy": 160,
+      "domNodes": 341,
+      "transferBytes": 135692,
+      "requests": 5,
+      "byType": {
+        "link": {
+          "count": 1,
+          "bytes": 33450
+        },
+        "script": {
+          "count": 3,
+          "bytes": 102242
+        }
+      },
+      "domContentLoaded": 304,
+      "loadEvent": 304
+    },
+    {
+      "path": "/projects/forma.html",
+      "viewport": "modest-laptop",
+      "cpuThrottle": 6,
+      "mode": "static",
+      "scrollMs": 1355,
+      "errors": [],
+      "lcp": 244,
+      "cls": 0,
+      "worstShift": 0,
+      "shiftCount": 0,
+      "longTaskCount": 1,
+      "longTaskTotal": 129,
+      "longTaskMax": 129,
+      "tbtProxy": 79,
+      "domNodes": 295,
+      "transferBytes": 580629,
+      "requests": 10,
+      "byType": {
+        "link": {
+          "count": 1,
+          "bytes": 33450
+        },
+        "script": {
+          "count": 3,
+          "bytes": 102242
+        },
+        "img": {
+          "count": 5,
+          "bytes": 444937
+        }
+      },
+      "domContentLoaded": 221,
+      "loadEvent": 221
+    },
+    {
+      "path": "/projects/blaxk-aggregator.html",
+      "viewport": "modest-laptop",
+      "cpuThrottle": 6,
+      "mode": "static",
+      "scrollMs": 1336,
+      "errors": [],
+      "lcp": 272,
+      "cls": 0,
+      "worstShift": 0,
+      "shiftCount": 0,
+      "longTaskCount": 1,
+      "longTaskTotal": 160,
+      "longTaskMax": 160,
+      "tbtProxy": 110,
+      "domNodes": 268,
+      "transferBytes": 135692,
+      "requests": 5,
+      "byType": {
+        "link": {
+          "count": 1,
+          "bytes": 33450
+        },
+        "script": {
+          "count": 3,
+          "bytes": 102242
+        }
+      },
+      "domContentLoaded": 255,
+      "loadEvent": 255
+    },
+    {
+      "path": "/projects/the-migrator.html",
+      "viewport": "modest-laptop",
+      "cpuThrottle": 6,
+      "mode": "static",
+      "scrollMs": 1339,
+      "errors": [],
+      "lcp": 216,
+      "cls": 0,
+      "worstShift": 0.00004283748455382925,
+      "shiftCount": 0,
+      "longTaskCount": 1,
+      "longTaskTotal": 137,
+      "longTaskMax": 137,
+      "tbtProxy": 87,
+      "domNodes": 262,
+      "transferBytes": 135692,
+      "requests": 5,
+      "byType": {
+        "link": {
+          "count": 1,
+          "bytes": 33450
+        },
+        "script": {
+          "count": 3,
+          "bytes": 102242
+        }
+      },
+      "domContentLoaded": 254,
+      "loadEvent": 256
+    },
+    {
+      "path": "/projects/gesture-controls.html",
+      "viewport": "modest-laptop",
+      "cpuThrottle": 6,
+      "mode": "static",
+      "scrollMs": 1341,
+      "errors": [],
+      "lcp": 244,
+      "cls": 0,
+      "worstShift": 0,
+      "shiftCount": 0,
+      "longTaskCount": 1,
+      "longTaskTotal": 130,
+      "longTaskMax": 130,
+      "tbtProxy": 80,
+      "domNodes": 267,
+      "transferBytes": 135692,
+      "requests": 5,
+      "byType": {
+        "link": {
+          "count": 1,
+          "bytes": 33450
+        },
+        "script": {
+          "count": 3,
+          "bytes": 102242
+        }
+      },
+      "domContentLoaded": 237,
+      "loadEvent": 237
+    }
+  ]
+}

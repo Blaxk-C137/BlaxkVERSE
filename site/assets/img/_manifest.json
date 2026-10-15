@@ -1,0 +1,106 @@
+[
+  {
+    "file": "edublaxk-01-setup-wizard.jpg",
+    "caption": "EduBlaxk \u00b7 first-run setup wizard (provider + API key)",
+    "original": "01-setup-wizard.png",
+    "w": 956,
+    "h": 900,
+    "bytes": 43953
+  },
+  {
+    "file": "edublaxk-03-create-view.jpg",
+    "caption": "EduBlaxk \u00b7 building an assessment from source documents",
+    "original": "03-create-view.png",
+    "w": 960,
+    "h": 905,
+    "bytes": 72190
+  },
+  {
+    "file": "edublaxk-04-quiz-player.jpg",
+    "caption": "EduBlaxk \u00b7 exam mode, timed with per-question clock",
+    "original": "04-quiz-player.png",
+    "w": 960,
+    "h": 905,
+    "bytes": 57782
+  },
+  {
+    "file": "edublaxk-05-results.jpg",
+    "caption": "EduBlaxk \u00b7 results with MCQ accuracy and rubric marks",
+    "original": "05-results.png",
+    "w": 960,
+    "h": 905,
+    "bytes": 93221
+  },
+  {
+    "file": "edublaxk-06-history-vault.jpg",
+    "caption": "EduBlaxk \u00b7 history vault and anti-duplicate question bank",
+    "original": "06-history-vault.png",
+    "w": 960,
+    "h": 905,
+    "bytes": 49294
+  },
+  {
+    "file": "edublaxk-08-ask-tutor.jpg",
+    "caption": "EduBlaxk \u00b7 per-question AI tutor drawer",
+    "original": "08-ask-tutor.png",
+    "w": 956,
+    "h": 900,
+    "bytes": 54865
+  },
+  {
+    "file": "edublaxk-09-dark-theme.jpg",
+    "caption": "EduBlaxk \u00b7 assessment builder, dark theme",
+    "original": "09-dark-theme.png",
+    "w": 956,
+    "h": 900,
+    "bytes": 66488
+  },
+  {
+    "file": "forma-01-hero-dark.jpg",
+    "caption": "FORMA \u00b7 hero, dark theme",
+    "original": "01-hero-dark.png",
+    "w": 1280,
+    "h": 844,
+    "bytes": 83834
+  },
+  {
+    "file": "forma-02-studio.jpg",
+    "caption": "FORMA \u00b7 voice studio with a session in progress",
+    "original": "02-studio-filled.png",
+    "w": 1280,
+    "h": 2112,
+    "bytes": 219919
+  },
+  {
+    "file": "forma-05-wave-live.jpg",
+    "caption": "FORMA \u00b7 live waveform during recording",
+    "original": "05-wave-live.png",
+    "w": 533,
+    "h": 455,
+    "bytes": 31208
+  },
+  {
+    "file": "forma-07-real-ml.jpg",
+    "caption": "FORMA \u00b7 local ML inference status (Whisper + Piper)",
+    "original": "07-real-ml.png",
+    "w": 1280,
+    "h": 844,
+    "bytes": 75519
+  },
+  {
+    "file": "forma-08-desktop.jpg",
+    "caption": "FORMA \u00b7 redesigned desktop workspace",
+    "original": "08-redesign-desktop.png",
+    "w": 1280,
+    "h": 844,
+    "bytes": 76380
+  },
+  {
+    "file": "forma-09-mobile.jpg",
+    "caption": "FORMA \u00b7 redesigned mobile layout",
+    "original": "09-redesign-mobile.png",
+    "w": 390,
+    "h": 844,
+    "bytes": 40411
+  }
+]

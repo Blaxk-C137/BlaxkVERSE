@@ -1,0 +1,154 @@
+{
+  "generatedAt": "2026-10-15T17:29:38.169Z",
+  "offline": false,
+  "checks": [
+    {
+      "name": "project records internally consistent",
+      "status": "pass",
+      "detail": "8 projects, unique slugs, valid statuses"
+    },
+    {
+      "name": "no unverifiable metrics in project prose",
+      "status": "pass",
+      "detail": "scanned one-liners, problem, users, approach and lessons"
+    },
+    {
+      "name": "company registration not asserted",
+      "status": "pass",
+      "detail": "the record explicitly declines to claim registration status"
+    },
+    {
+      "name": "no prohibited claims",
+      "status": "pass",
+      "detail": "no certifications, personal contact details or corporate registration asserted"
+    },
+    {
+      "name": "published excerpts screened",
+      "status": "pass",
+      "detail": "4 excerpt(s), 116 lines — no secrets, credentials, personal data or private-network addresses"
+    },
+    {
+      "name": "canonical account resolves",
+      "status": "pass",
+      "detail": "Blaxk-C137 · 43 public repositories"
+    },
+    {
+      "name": "superseded namespace still absent",
+      "status": "pass",
+      "detail": "black999-ng → 404, as stated on the source page"
+    },
+    {
+      "name": "repositories resolve and are original work",
+      "status": "pass",
+      "detail": "8/8 verified as non-forks"
+    },
+    {
+      "name": "excerpts match their pinned source",
+      "status": "pass",
+      "detail": "4/4 excerpts verified byte-for-byte against the raw file at the pinned commit"
+    },
+    {
+      "name": "excluded repositories resolve",
+      "status": "pass",
+      "detail": "9/9 verified public"
+    },
+    {
+      "name": "all forks are accounted for",
+      "status": "pass",
+      "detail": "9/9 forks named in the exclusions list"
+    },
+    {
+      "name": "repository arithmetic reconciles",
+      "status": "pass",
+      "detail": "43 public = 8 presented + 9 excluded + 26 summarised, none of the remainder a fork"
+    }
+  ],
+  "failures": [],
+  "warnings": [],
+  "summary": {
+    "generatedAt": "2026-10-15T17:29:38.169Z",
+    "owner": "Blaxk-C137",
+    "snapshotInRecords": "2026-10-15",
+    "projects": 8,
+    "excerptsChecked": 4,
+    "excerptLines": 116,
+    "checks": 12,
+    "passed": 12,
+    "warnings": 0,
+    "failures": 0,
+    "liveRepositories": [
+      {
+        "repo": "Blaxk-C137/Blaxk-Housing",
+        "description": "Fully functional accomidation site with listings, review and the rest of all the stuff",
+        "language": "JavaScript",
+        "pushed_at": "2026-09-02T17:16:11Z",
+        "fork": false,
+        "size": 103,
+        "license": null
+      },
+      {
+        "repo": "Blaxk-C137/EduBlaxk",
+        "description": "A local Tutor that makes use of AI API keys to help students learn better and prep for exams",
+        "language": "TypeScript",
+        "pushed_at": "2026-09-22T14:00:22Z",
+        "fork": false,
+        "size": 1198,
+        "license": null
+      },
+      {
+        "repo": "Blaxk-C137/SABI",
+        "description": "Local AI tutor",
+        "language": "TypeScript",
+        "pushed_at": "2026-10-12T17:52:03Z",
+        "fork": false,
+        "size": 235,
+        "license": null
+      },
+      {
+        "repo": "Blaxk-C137/Blaxk-Xposer",
+        "description": "A tool that helps you display your projects on your local machine to persons with a single QR code scan",
+        "language": "Python",
+        "pushed_at": "2026-10-15T09:23:07Z",
+        "fork": false,
+        "size": 197,
+        "license": null
+      },
+      {
+        "repo": "Blaxk-C137/FORMA-",
+        "description": "Your Local TTS Pipeline",
+        "language": "HTML",
+        "pushed_at": "2026-10-15T11:02:25Z",
+        "fork": false,
+        "size": 4323,
+        "license": null
+      },
+      {
+        "repo": "Blaxk-C137/Blaxk_Aggregator",
+        "description": "A code Aggregator for devs",
+        "language": "TypeScript",
+        "pushed_at": "2026-10-10T18:49:23Z",
+        "fork": false,
+        "size": 77,
+        "license": "MIT"
+      },
+      {
+        "repo": "Blaxk-C137/The_Migrator",
+        "description": "For developers who dont have a list of their Installed packages, this will help you find all the packages you have then create an installer for you so you can install it on any machine you MIGRATE TO 😎 ",
+        "language": "Python",
+        "pushed_at": "2026-09-02T17:35:58Z",
+        "fork": false,
+        "size": 19,
+        "license": null
+      },
+      {
+        "repo": "Blaxk-C137/Gesture_Controls",
+        "description": "Hand gesture recognition and interactive games using MediaPipe and OpenCV\"",
+        "language": "Python",
+        "pushed_at": "2026-05-20T18:57:14Z",
+        "fork": false,
+        "size": 8,
+        "license": "MIT"
+      }
+    ]
+  }
+}

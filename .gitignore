@@ -1,0 +1,112 @@
+# =============================================================================
+#  BlaxkVERSE — .gitignore
+#
+#  Principle: commit everything a person needs to rebuild and audit this site,
+#  and nothing that a command can regenerate.
+#
+#  So `site/` IS committed even though it is generated — it is the deployment
+#  artifact, and a static host serves those files, not the generator. Same
+#  reason `evidence/*.json` is committed: it is the proof, and it is small.
+#
+#  Not committed: dependencies, caches, secrets, and the screenshot dumps
+#  (~18 MB of PNGs that come back by running `npm run audit` / `npm run shots`).
+#
+#  NOTE ON SCOPE: this file lives at the project root (blaxkverse/). Directories
+#  are matched with a leading slash where they exist only at the root, so the
+#  rules stay correct if this is ever nested deeper.
+# =============================================================================
+
+# --- Secrets -----------------------------------------------------------------
+# Never commit a real key. docs/security-threat-model.md (K2, K4) requires that
+# only placeholders are tracked, which is why .env.example is force-included.
+# A leaked GEMINI_API_KEY is a spend attack; a leaked GITHUB_TOKEN is an account
+# risk. Both are read from host environment variables in the deployed service.
+.env
+.env.*
+!.env.example
+!.env.sample
+*.pem
+*.key
+*.p12
+*.pfx
+credentials.json
+secrets.json
+service-account*.json
+
+# --- Dependencies ------------------------------------------------------------
+node_modules/
+.pnp
+.pnp.js
+.yarn/
+bower_components/
+
+# --- Build and test caches ---------------------------------------------------
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.nox/
+.tox/
+.cache/
+.parcel-cache/
+.turbo/
+coverage/
+.nyc_output/
+*.tsbuildinfo
+
+# --- Playwright --------------------------------------------------------------
+# The browser itself is downloaded per-machine by
+# `npx playwright-core install chromium` — never commit it.
+playwright-report/
+test-results/
+blob-report/
+**/.playwright-artifacts-*/
+ms-playwright/
+
+# --- Generated screenshots (regenerable) -------------------------------------
+# These are proof artifacts, not source: ~18 MB of PNGs on the last run.
+# The measurement JSON beside them IS committed — it is the actual claim and it
+# is a couple of hundred kilobytes.
+#   npm run audit  → evidence/site-shots/
+#   npm run shots  → evidence/shots/
+/evidence/site-shots/
+/evidence/shots/
+
+# Deliberately NOT a blanket `*.png` / `*.jpg` ignore. The 13 screenshots the
+# site serves live in site/assets/img/ and are content — they must be committed
+# for the deployment to work. Ignoring image extensions globally would silently
+# swallow any real asset added later, which is a far worse failure than a
+# slightly larger repository.
+
+# --- Working area ------------------------------------------------------------
+# Only relevant if this .gitignore is ever used at a parent level: the GitHub
+# evidence harvest (raw API cache, scraped HTML, throwaway scripts) is an input
+# to the build, not part of the deliverable.
+/recon/
+/uploads/
+*.tmp
+*.bak
+*.orig
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# --- OS and editor -----------------------------------------------------------
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+Thumbs.db
+ehthumbs.db
+desktop.ini
+*.swp
+*.swo
+*~
+.vscode/
+!.vscode/extensions.json
+.idea/
+*.sublime-project
+*.sublime-workspace

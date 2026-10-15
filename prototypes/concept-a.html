@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="en" data-motion="full">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>BlaxkVERSE — Concept A · Spatial Constellation</title>
+<meta name="description" content="Prototype A of the BlaxkVERSE experience competition: a navigable constellation of verified projects.">
+<link rel="stylesheet" href="shared/tokens.css">
+<style>
+  /* ---------------- Concept A: Spatial Constellation ---------------- */
+  body { background: var(--bx-void); }
+  .bx-grain { z-index: 4; }
+  /* Grain over an animating canvas: keep the texture, drop the blend mode.
+     Measured cost of mix-blend-mode here was ~4fps for a change most viewers
+     cannot see at 18% opacity. */
+  .bx-grain--cheap { mix-blend-mode: normal; opacity: .17; }
+
+  #field { position: fixed; inset: 0; width: 100vw; height: 100vh; z-index: 0; }
+
+  /* Scroll track: native scrolling, generous height so the camera has room. */
+  .track { position: relative; z-index: 2; pointer-events: none; }
+  .scene {
+    min-height: 92svh;
+    display: flex;
+    align-items: center;
+    padding: 11vh 6vw calc(11vh + 132px);
+    pointer-events: none;
+  }
+  .scene > * { pointer-events: auto; }
+
+  .plate {
+    max-width: 620px;
+    /* Solid enough to read over the field without backdrop-filter, which would
+       force the browser to re-blur the animated canvas on every frame. */
+    background: linear-gradient(180deg, rgba(9,10,14,.95), rgba(9,10,14,.88));
+    border: 1px solid var(--bx-hairline);
+    padding: clamp(20px, 3vw, 34px);
+  }
+  .plate--right { margin-left: auto; }
+  .plate--center { margin: 0 auto; text-align: center; }
+
+  h1, h2, h3 { font-family: var(--bx-font-display); letter-spacing: -0.03em; line-height: 0.98; margin: 0; }
+  h1 { font-size: clamp(38px, 8.4vw, 92px); font-weight: 700; text-transform: uppercase; }
+  h2 { font-size: clamp(26px, 4.4vw, 46px); font-weight: 700; margin-bottom: 14px; }
+  h3 { font-size: clamp(20px, 2.6vw, 28px); font-weight: 700; }
+  .lede { color: var(--bx-white-dim); font-size: clamp(15px, 1.5vw, 18px); max-width: 58ch; }
+  .sig { color: var(--bx-red); }
+  p { margin: 0 0 14px; }
+  p:last-child { margin-bottom: 0; }
+
+  .kicker { display: flex; gap: 14px; align-items: center; margin-bottom: 20px; }
+  .kicker .bar { width: 46px; height: 1px; background: var(--bx-red); box-shadow: 0 0 12px var(--bx-red-glow); }
+
+  .cta-row { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 26px; }
+  .btn {
+    display: inline-flex; align-items: center; gap: 10px;
+    padding: 13px 22px; min-height: 44px;
+    border: 1px solid var(--bx-hairline); background: rgba(20,23,29,.72);
+    color: var(--bx-white); text-decoration: none;
+    font-family: var(--bx-font-mono); font-size: 12px; letter-spacing: .12em; text-transform: uppercase;
+    transition: border-color var(--bx-t-quick) var(--bx-ease), background var(--bx-t-quick) var(--bx-ease), transform var(--bx-t-quick) var(--bx-ease);
+  }
+  .btn:hover { border-color: var(--bx-red); background: rgba(240,68,69,.1); transform: translateY(-2px); }
+  .btn--red { background: var(--bx-red); border-color: var(--bx-red); color: #fff; }
+  .btn--red:hover { background: #ff5a5b; }
+
+  .stats { display: flex; flex-wrap: wrap; gap: 26px; margin-top: 26px; }
+  .stat b { display: block; font-family: var(--bx-font-display); font-size: 26px; letter-spacing: -.02em; }
+  .stat span { font-family: var(--bx-font-mono); font-size: 10.5px; letter-spacing: .14em; text-transform: uppercase; color: var(--bx-muted); }
+
+  /* Persistent readout: a docked instrument strip. Deliberately opaque so it
+     never sits over body copy, and scoped to one line on narrow screens. */
+  .focus {
+    position: fixed; left: 0; right: 0; bottom: 29px; z-index: 30;
+    display: flex; flex-wrap: wrap; align-items: center; gap: 10px 16px;
+    padding: 11px clamp(16px, 3vw, 34px);
+    background: rgba(6,7,10,.97);
+    border-top: 1px solid var(--bx-hairline);
+  }
+  .focus h3 { font-size: 16px !important; margin: 0; }
+  .focus .lede { flex: 1 1 320px; min-width: 0; }
+  .focus[hidden] { display: none; }
+  .focus .meta { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+  .chip {
+    font-family: var(--bx-font-mono); font-size: 10.5px; letter-spacing: .1em; text-transform: uppercase;
+    padding: 4px 9px; border: 1px solid var(--bx-hairline); color: var(--bx-white-dim);
+  }
+  .chip--status { border-color: rgba(240,68,69,.5); color: var(--bx-red); }
+  .stack { display: flex; flex-wrap: wrap; gap: 6px; }
+  .stack span { font-family: var(--bx-font-mono); font-size: 11px; color: var(--bx-steel); }
+  .stack span::after { content: " ·"; }
+  .stack span:last-child::after { content: ""; }
+
+  /* ---- Command Beacon ---- */
+  .beacon {
+    position: fixed; right: clamp(16px, 3vw, 34px); bottom: clamp(30px, 5vh, 54px); z-index: 40;
+    width: 62px; height: 62px; border-radius: 50%;
+    background: rgba(20,23,29,.9); border: 1px solid var(--bx-hairline);
+    display: grid; place-items: center; cursor: pointer;
+    transition: border-color var(--bx-t-quick) var(--bx-ease), transform var(--bx-t-quick) var(--bx-ease);
+  }
+  .beacon:hover { border-color: var(--bx-red); transform: scale(1.05); }
+  .beacon i, .beacon i::before, .beacon i::after { content: ""; display: block; background: var(--bx-red); }
+  .beacon i { width: 22px; height: 2px; position: relative; box-shadow: 0 0 10px var(--bx-red-glow); }
+  .beacon i::before { position: absolute; top: -7px; width: 14px; left: 0; }
+  .beacon i::after { position: absolute; top: 7px; width: 22px; left: 0; }
+  .beacon::after {
+    content: "."; position: absolute; inset: -6px; border-radius: 50%;
+    border: 1px solid var(--bx-red); opacity: .28;
+    animation: pulse 3.4s var(--bx-ease-out) infinite;
+  }
+  @keyframes pulse { 0% { transform: scale(.86); opacity: .34 } 70% { transform: scale(1.22); opacity: 0 } 100% { opacity: 0 } }
+
+  /* ---- Nav overlay (radial on desktop / sheet on mobile) ---- */
+  .nav-scrim {
+    position: fixed; inset: 0; z-index: 50;
+    background: rgba(4,5,7,.9); backdrop-filter: blur(14px);
+    display: grid; place-items: center; padding: 24px;
+  }
+  .nav-scrim[hidden] { display: none; }
+
+  .orbit { position: relative; width: min(560px, 88vw); aspect-ratio: 1; }
+  .orbit-core {
+    position: absolute; inset: 0; margin: auto; width: 128px; height: 128px; border-radius: 50%;
+    border: 1px solid var(--bx-hairline); display: grid; place-items: center; text-align: center;
+    background: radial-gradient(circle at 50% 50%, rgba(240,68,69,.14), transparent 70%);
+  }
+  .orbit-core b { font-family: var(--bx-font-display); font-size: 15px; letter-spacing: .04em; display: block; }
+  .orbit-core span { font-family: var(--bx-font-mono); font-size: 9.5px; color: var(--bx-muted); letter-spacing: .14em; }
+  .orbit-ring { position: absolute; inset: 12%; border: 1px dashed var(--bx-hairline-soft); border-radius: 50%; }
+
+  .orbit-node {
+    position: absolute; left: 50%; top: 50%;
+    width: 116px; margin: -38px 0 0 -58px;
+    text-align: center; text-decoration: none;
+    transition: transform var(--bx-t-quick) var(--bx-ease), color var(--bx-t-quick) var(--bx-ease);
+  }
+  /* Positioned by JS into a true arc — the "orbit". */
+  .orbit-node b { display: block; font-family: var(--bx-font-display); font-size: 14px; letter-spacing: -.01em; }
+  .orbit-node span { font-family: var(--bx-font-mono); font-size: 9.5px; color: var(--bx-muted); letter-spacing: .12em; text-transform: uppercase; }
+  .orbit-node:hover b, .orbit-node:focus-visible b { color: var(--bx-red); }
+  .orbit-node .dot {
+    width: 9px; height: 9px; border-radius: 50%; margin: 0 auto 9px;
+    background: var(--bx-steel); box-shadow: 0 0 0 4px rgba(240,68,69,0);
+  }
+  .orbit-node[aria-current="true"] .dot { background: var(--bx-red); box-shadow: 0 0 12px var(--bx-red-glow); }
+  .orbit-node::before {
+    content: ""; position: absolute; left: 50%; top: 50%; width: 1px; height: 1px;
+    background: var(--bx-hairline);
+  }
+
+  .nav-panel {
+    position: absolute; right: 0; top: 0; bottom: 0; width: min(430px, 100vw);
+    border-left: 1px solid var(--bx-hairline); background: rgba(10,11,15,.96);
+    padding: 26px 24px; overflow: auto;
+  }
+  .nav-panel h2 { font-size: 20px; margin-bottom: 6px; }
+  .nav-list { list-style: none; margin: 18px 0 0; padding: 0; display: grid; gap: 2px; }
+  .nav-list a {
+    display: flex; justify-content: space-between; align-items: baseline; gap: 12px;
+    padding: 12px 10px; text-decoration: none; border-bottom: 1px solid var(--bx-hairline-soft);
+    transition: background var(--bx-t-micro) var(--bx-ease), padding-left var(--bx-t-micro) var(--bx-ease);
+  }
+  .nav-list a:hover { background: rgba(240,68,69,.07); padding-left: 16px; }
+  .nav-list .name { font-size: 15px; }
+  .nav-list .st { font-family: var(--bx-font-mono); font-size: 10px; color: var(--bx-muted); letter-spacing: .1em; text-transform: uppercase; }
+  .nav-panel .close { position: absolute; top: 18px; right: 18px; background: none; border: 1px solid var(--bx-hairline); width: 38px; height: 38px; cursor: pointer; }
+  .nav-split { display: grid; gap: 25px; grid-template-columns: 1.05fr .95fr; align-items: center; margin: 0 auto; width: min(1020px, 100%); }
+  .nav-legend { font-family: var(--bx-font-mono); font-size: 10.5px; color: var(--bx-muted); margin-top: 18px; line-height: 1.9; }
+  .nav-legend kbd { border: 1px solid var(--bx-hairline); padding: 2px 6px; font-size: 10px; }
+
+  @media (max-width: 900px) {
+    .nav-split { grid-template-columns: 1fr; }
+    .orbit { width: min(330px, 74vw); }
+    .orbit-node { width: 92px; margin-left: -46px; }
+    .nav-panel { position: fixed; inset: 0; width: 100%; border-left: 0; }
+    .plate { max-width: none; }
+    .scene { padding: 10vh 5vw calc(10vh + 150px); }
+  }
+
+  /* Readable list — the guaranteed non-visual path to the same content. */
+  .readout { margin-top: 22px; border: 1px solid var(--bx-hairline); }
+  .readout[hidden] { display: none; }
+  .readout summary { cursor: pointer; padding: 12px 14px; font-family: var(--bx-font-mono); font-size: 11.5px; letter-spacing: .1em; text-transform: uppercase; color: var(--bx-white-dim); }
+  .readout ol { margin: 0; padding: 4px 18px 18px 34px; }
+  .readout li { margin-bottom: 10px; }
+  .readout a { color: var(--bx-white); }
+  .readout .sub { display: block; color: var(--bx-muted); font-size: 13px; }
+
+  /* Static mode: the constellation becomes a labeled map, no motion. */
+  html[data-motion="static"] .beacon::after,
+  html[data-motion="reduced"] .beacon::after { animation: none; opacity: 0; }
+</style>
+</head>
+<body>
+<a class="bx-skip" href="#scene-a-main">Skip to content</a>
+<div class="bx-grain bx-grain--cheap" aria-hidden="true"></div>
+<canvas id="field" width="1600" height="1000" aria-hidden="true"></canvas>
+
+<!-- Persistent readout: the camera resolves to a project and this panel states
+     which one, in real DOM text. It never carries information the page lacks. -->
+<aside class="focus" data-focus-card aria-live="polite" aria-label="Project in view">
+  <div class="meta">
+    <span class="chip chip--status" data-f="status">–</span>
+    <span class="chip" data-f="lang">–</span>
+    <span class="chip" data-f="files">–</span>
+  </div>
+  <h3 style="font-size:19px"><a data-f="link" href="#" style="text-decoration:none"><span data-f="title">–</span></a></h3>
+  <p class="lede" data-f="oneLiner" style="font-size:14px;margin:0">–</p>
+  <div class="stack" data-f="stack"></div>
+</aside>
+
+<main id="scene-a-main" class="track" tabindex="-1">
+
+  <section class="scene" id="scene-signal" aria-labelledby="s1-h">
+    <div class="plate" data-focus-station="identity">
+      <div class="kicker"><span class="bar"></span><span class="bx-label">BlaxkVERSE · Concept A · Signal</span></div>
+      <h1><span class="sig">BLAXK BYTE</span><br>Building what&rsquo;s next.</h1>
+      <p class="lede" style="margin-top:20px">
+        Software, automation and AI systems built by <strong>Blaxk</strong>, alongside the projects and
+        source behind them. Every project on this site is linked to a public repository and a pinned commit.
+        Nothing here is claimed without evidence.
+      </p>
+      <div class="cta-row">
+        <a class="btn btn--red" href="#scene-field">Enter the constellation →</a>
+        <button class="btn" type="button" data-open-nav>Project index</button>
+        <a class="btn" href="#scene-exit">Start a project</a>
+      </div>
+      <div class="stats">
+        <div class="stat"><b data-count="8">8</b><span>verified projects</span></div>
+        <div class="stat"><b data-count="43">43</b><span>public repositories</span></div>
+        <div class="stat"><b data-count="0">0</b><span>invented metrics</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="scene" id="scene-field" aria-labelledby="s2-h">
+    <div class="plate plate--right">
+      <div class="kicker"><span class="bar"></span><span class="bx-label">Constellation · scroll to travel</span></div>
+      <h2 id="s2-h">Projects are places, not cards.</h2>
+      <p class="lede">
+        Each node is a real repository. The lines between them are not decoration — two nodes are connected
+        only when they genuinely share a theme or a technology, read from the project records themselves.
+        Keep scrolling: the camera moves through the field and the nearest project resolves.
+      </p>
+        <h3><a data-f="link" href="#"><span data-f="title">–</span></a></h3>
+        <p class="lede" data-f="oneLiner" style="font-size:15px">–</p>
+        <div class="stack" data-f="stack"></div>
+      </div>
+      <details class="readout" data-readout>
+        <summary>Read the project index as a list</summary>
+        <ol data-readout-list></ol>
+      </details>
+    </div>
+  </section>
+
+  <section class="scene" id="scene-two" aria-labelledby="s3-h">
+    <div class="plate">
+      <div class="kicker"><span class="bar"></span><span class="bx-label">Transition 01 → 02 · Education</span></div>
+      <h2 id="s3-h">Two kinds of teaching tool.</h2>
+      <p class="lede">
+        <strong>EduBlaxk</strong> turns a lecture PDF into diagnostic questions. <strong>SABI</strong> answers out
+        loud and listens back — with the speech models on the student&rsquo;s own machine, not in a cloud service.
+        They share a theme, so the field links them; they solve different halves of the same problem.
+      </p>
+      <div class="cta-row">
+        <a class="btn" href="https://github.com/Blaxk-C137/EduBlaxk" target="_blank" rel="noopener noreferrer">EduBlaxk source ↗</a>
+        <a class="btn" href="https://github.com/Blaxk-C137/SABI" target="_blank" rel="noopener noreferrer">SABI source ↗</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="scene" id="scene-three" aria-labelledby="s4-h">
+    <div class="plate plate--right">
+      <div class="kicker"><span class="bar"></span><span class="bx-label">Transition 02 → 03 · Local-first tools</span></div>
+      <h2 id="s4-h">Tools that stay on your machine.</h2>
+      <p class="lede">
+        <strong>Xposer</strong> gives a phone one QR code for a dev server already running on your laptop.
+        <strong>FORMA</strong> transcribes and speaks with local models. Both exist because the sensible
+        version of the job did not need a cloud account.
+      </p>
+      <div class="cta-row">
+        <a class="btn" href="https://github.com/Blaxk-C137/Blaxk-Xposer" target="_blank" rel="noopener noreferrer">Xposer source ↗</a>
+        <a class="btn" href="https://github.com/Blaxk-C137/FORMA-" target="_blank" rel="noopener noreferrer">FORMA source ↗</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="scene" id="scene-exit" aria-labelledby="s5-h">
+    <div class="plate plate--center" style="max-width:660px">
+      <div class="bx-label" style="margin-bottom:16px">Transmission · exit</div>
+      <h2 id="s5-h">Tell me what you&rsquo;re building.</h2>
+      <p class="lede" style="margin:0 auto 8px">
+        Software, automation, AI integration or digital infrastructure. Scope and price are agreed in
+        writing before work starts — this is a working portfolio, not a storefront with hidden numbers.
+      </p>
+      <div class="cta-row" style="justify-content:center">
+        <a class="btn btn--red" href="#">Start a project</a>
+        <a class="btn" href="#scene-signal">Back to signal ↑</a>
+      </div>
+      <p class="bx-label" style="margin-top:26px">Concept A · Spatial Constellation · prototype for evaluation</p>
+    </div>
+  </section>
+</main>
+
+<button class="beacon" type="button" data-open-nav aria-haspopup="dialog" aria-expanded="false" aria-label="Open navigation">
+  <i aria-hidden="true"></i>
+</button>
+
+<div class="nav-scrim" data-nav hidden role="dialog" aria-modal="true" aria-label="BlaxkVERSE navigation">
+  <div class="nav-split">
+    <div>
+      <div class="orbit" data-orbit>
+        <div class="orbit-ring" aria-hidden="true"></div>
+        <div class="orbit-core" aria-hidden="true"><div><b>BlaxkVERSE</b><span>Command orbit</span></div></div>
+      </div>
+      <p class="nav-legend">
+        <kbd>Esc</kbd> closes · <kbd>Tab</kbd> cycles · destinations also work as plain links.<br>
+        Both the orbit and the list below are keyboard-operable.
+      </p>
+    </div>
+    <div class="nav-panel">
+      <button class="close" type="button" data-close-nav aria-label="Close navigation">✕</button>
+      <div class="bx-label">Navigate</div>
+      <h2>Where to go</h2>
+      <ul class="nav-list">
+        <li><a href="#scene-signal" data-nav-link><span class="name">Company</span><span class="st">who builds what</span></a></li>
+        <li><a href="#scene-field" data-nav-link><span class="name">Work</span><span class="st">8 verified projects</span></a></li>
+        <li><a href="#scene-three" data-nav-link><span class="name">Lab</span><span class="st">experiments</span></a></li>
+        <li><a href="#scene-two" data-nav-link><span class="name">Source</span><span class="st">public code</span></a></li>
+        <li><a href="#scene-exit" data-nav-link><span class="name">Contact</span><span class="st">start a project</span></a></li>
+      </ul>
+      <div class="bx-label" style="margin-top:22px">Projects in the field</div>
+      <ul class="nav-list" data-nav-projects></ul>
+    </div>
+  </div>
+</div>
+
+<script src="shared/verified-projects.js"></script>
+<script>
+(function () {
+  "use strict";
+  var P = BX.data.projects;
+  var reduce = function () { return !BX.motion.enabled(); };
+
+  /* ---------------- Constellation field ---------------- */
+  var canvas = document.getElementById("field");
+  var ctx = canvas.getContext("2d", { alpha: true });
+  var nodes = [], links = [], focusIndex = 0, dpr = 1, W = 0, H = 0, running = true;
+  var pointer = { x: 0, y: 0, tx: 0, ty: 0 };
+  var scrollProgress = 0;
+
+  function build() {
+    var mobile = window.innerWidth < 820;
+    /* Reduced motion / low power keeps a smaller field so it can be drawn
+       statically without the experience becoming a different one. */
+    var list = reduce() && mobile ? P.slice(0, 4) : P;
+    nodes = list.map(function (p, i) {
+      /* Two loose rings spread wide enough to actually traverse the frame. */
+      var a = (i / list.length) * Math.PI * 2 + (i % 2 ? 0.34 : 0);
+      var radius = 330 + (i % 3) * 150;
+      return {
+        p: p,
+        x: Math.cos(a) * radius,
+        y: Math.sin(a) * radius * 0.56 + (i % 2 ? 62 : -62),
+        z: Math.sin(a * 1.6) * 150,
+        phase: a
+      };
+    });
+    /* Real relationships only: shared themes or shared stack entry. */
+    links = [];
+    var techLinks = 0;
+    for (var i = 0; i < list.length; i++) {
+      for (var j = i + 1; j < list.length; j++) {
+        var a = list[i], b = list[j];
+        var sharedTheme = a.themes.filter(function (t) { return b.themes.indexOf(t) > -1; });
+        var sharedTech = a.stack.filter(function (t) { return b.stack.indexOf(t) > -1; });
+        /* Theme links are the meaningful ones and are always drawn. Tech links
+           are capped so the field stays legible, and the cap is documented
+           rather than silent: the project pages list every relationship. */
+        if (sharedTheme.length) {
+          links.push({ a: i, b: j, kind: "theme", label: sharedTheme[0], w: 1 });
+        } else if (sharedTech.length && techLinks < 8) {
+          techLinks++;
+          links.push({ a: i, b: j, kind: "tech", label: sharedTech[0], w: 0.6 });
+        }
+      }
+    }
+  }
+
+  /* The field is an abstract depth cue, so it does not need native-resolution
+     pixels. Rendering it at a reduced internal resolution and letting CSS scale
+     it up is the difference between a 30fps and a 60fps frame here, and it costs
+     nothing a viewer can detect: nodes are dots and hairlines either way.
+     Static mode draws once, so it gets full resolution. */
+  function quality() {
+    if (!BX.motion.enabled()) return 1;
+    var area = window.innerWidth * window.innerHeight;
+    /* 0.62 on a large desktop panel, more headroom on small screens. */
+    return area > 1_000_000 ? 0.5 : area > 500_000 ? 0.62 : 1;
+  }
+
+  function resize() {
+    dpr = Math.min(window.devicePixelRatio || 1, 2) * quality();
+    W = canvas.clientWidth; H = canvas.clientHeight;
+    canvas.width = Math.max(2, Math.floor(W * dpr));
+    canvas.height = Math.max(2, Math.floor(H * dpr));
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    /* Re-declare the drawing space in CSS pixels so all maths stays unchanged. */
+    ctx.imageSmoothingEnabled = true;
+  }
+
+  function project(n, t) {
+    /* Rotate the field slowly; scroll walks the camera deeper. */
+    var rot = t * 0.16 + scrollProgress * 1.5;
+    var cos = Math.cos(rot), sin = Math.sin(rot);
+    var x = n.x * cos - n.z * sin;
+    var z = n.x * sin + n.z * cos;
+    var tiltX = pointer.y * 46, tiltY = (pointer.x - 0.5) * 70;
+    var y = n.y * Math.cos(tiltX / 900) + tiltY * 0.2;
+    var depth = 1150 + z * 1.5 + scrollProgress * 320;
+    var scale = 1000 / Math.max(240, depth);
+    return {
+      sx: W * 0.5 + (x - tiltY) * scale,
+      sy: H * 0.5 + (y - scrollProgress * 120) * scale,
+      scale: scale,
+      depth: depth
+    };
+  }
+
+  function draw(t) {
+    ctx.clearRect(0, 0, W, H);
+    var pts = nodes.map(function (n) { return project(n, t); });
+
+    /* links */
+    ctx.lineWidth = 1;
+    links.forEach(function (l) {
+      var a = pts[l.a], b = pts[l.b];
+      var mid = { x: (a.sx + b.sx) / 2, y: (a.sy + b.sy) / 2 };
+      var alpha = Math.max(0.05, 0.32 * (1 - Math.abs(a.depth - 1150) / 1150));
+      ctx.strokeStyle = "rgba(240,68,69," + alpha.toFixed(3) + ")";
+      ctx.beginPath();
+      ctx.moveTo(a.sx, a.sy);
+      ctx.quadraticCurveTo(mid.x, mid.y - 22 * a.scale, b.sx, b.sy);
+      ctx.stroke();
+      /* One bright node per link marks the midpoint: cheaper than a gradient
+         and it reads as a live signal travelling the connection. */
+      ctx.fillStyle = "rgba(240,68,69," + Math.min(1, alpha * 3).toFixed(3) + ")";
+      ctx.beginPath();
+      ctx.arc(mid.x, mid.y - 11 * a.scale, 1.5, 0, Math.PI * 2);
+      ctx.fill();
+    });
+
+    /* nodes */
+    nodes.forEach(function (n, i) {
+      var pt = pts[i];
+      var isFocus = i === focusIndex;
+      var r = Math.max(1.6, 4.4 * pt.scale * (isFocus ? 1.9 : 1));
+      if (isFocus) {
+        ctx.beginPath();
+        ctx.arc(pt.sx, pt.sy, r * 4.4, 0, Math.PI * 2);
+        ctx.strokeStyle = "rgba(240,68,69,.34)";
+        ctx.stroke();
+      }
+      ctx.beginPath();
+      ctx.arc(pt.sx, pt.sy, r, 0, Math.PI * 2);
+      ctx.fillStyle = isFocus ? "#f04445" : "rgba(244,244,242,.62)";
+      ctx.fill();
+      if (isFocus) {
+        /* The label for the focused node is real DOM text; this is only the
+           anchor line so the two never disagree. */
+        var plate = document.querySelector(".focus");
+        if (plate) {
+          var rect = plate.getBoundingClientRect();
+          var tx = rect.left < W / 2 ? rect.right + 18 : rect.left - 18;
+          var ty = rect.top + 40;
+          ctx.beginPath();
+          ctx.strokeStyle = "rgba(240,68,69,.5)";
+          ctx.moveTo(pt.sx, pt.sy);
+          ctx.lineTo(tx, ty);
+          ctx.stroke();
+        }
+      }
+    });
+  }
+
+  var lastT = 0;
+  function loop(t) {
+    if (!running) return;
+    if (BX.motion.enabled()) {
+      pointer.x += (pointer.tx - pointer.x) * 0.06;
+      pointer.y += (pointer.ty - pointer.y) * 0.06;
+      lastT = t;
+      draw(t / 1000);
+      requestAnimationFrame(loop);
+    } else {
+      pointer.x = pointer.tx; pointer.y = pointer.ty;
+      draw(0);
+    }
+  }
+
+  function redraw() { if (!BX.motion.enabled()) draw(0); else requestAnimationFrame(loop); }
+
+  /* ---------------- Scroll → camera + focus ---------------- */
+  var focusCard = document.querySelector(".focus");
+
+  function setFocus(i) {
+    if (i === focusIndex || !nodes[i]) return;
+    focusIndex = i;
+    var p = nodes[i].p;
+    if (focusCard) {
+      focusCard.querySelector('[data-f="status"]').textContent = p.status;
+      focusCard.querySelector('[data-f="lang"]').textContent = p.lang;
+      focusCard.querySelector('[data-f="files"]').textContent = BX.fmtBytes(p.bytes) + " source";
+      var link = focusCard.querySelector('[data-f="link"]');
+      link.href = p.url;
+      focusCard.querySelector('[data-f="title"]').textContent = p.title;
+      focusCard.querySelector('[data-f="oneLiner"]').textContent = p.oneLiner;
+      var st = focusCard.querySelector('[data-f="stack"]');
+      st.textContent = "";
+      p.stack.forEach(function (s) { st.appendChild(BX.el("span", { text: s })); });
+      if (BX.motion.enabled()) {
+        focusCard.animate(
+          [{ opacity: 0, transform: "translateY(8px)" }, { opacity: 1, transform: "none" }],
+          { duration: 220, easing: "cubic-bezier(.16,1,.3,1)" }
+        );
+      }
+    }
+    renderNavProjects(p.slug);
+  }
+
+  function onScroll() {
+    var max = document.documentElement.scrollHeight - window.innerHeight;
+    scrollProgress = max > 0 ? Math.min(1, Math.max(0, window.scrollY / max)) : 0;
+    /* Focus walks the field as the camera travels. */
+    var idx = Math.min(nodes.length - 1, Math.floor(scrollProgress * nodes.length));
+    setFocus(idx);
+    if (!BX.motion.enabled()) redraw();
+  }
+
+  window.addEventListener("scroll", onScroll, { passive: true });
+  window.addEventListener("resize", function () { resize(); build(); onScroll(); redraw(); }, { passive: true });
+  window.addEventListener("pointermove", function (e) {
+    pointer.tx = e.clientX / window.innerWidth;
+    pointer.ty = (e.clientY / window.innerHeight - 0.5) * 2;
+  }, { passive: true });
+
+  document.addEventListener("visibilitychange", function () {
+    running = !document.hidden;
+    if (running && BX.motion.enabled()) requestAnimationFrame(loop);
+  });
+
+  /* ---------------- Navigation overlay ---------------- */
+  var scrim = document.querySelector("[data-nav]");
+  var beacon = document.querySelector(".beacon");
+  var releaseTrap = null;
+  var lastTrigger = null;
+
+  var DEST = [
+    { n: "Company", s: "who builds what", href: "#scene-signal", k: "co" },
+    { n: "Work", s: "8 verified projects", href: "#scene-field", k: "wo" },
+    { n: "Lab", s: "experiments", href: "#scene-three", k: "la" },
+    { n: "Source", s: "public code", href: "#scene-two", k: "so" },
+    { n: "Contact", s: "start a project", href: "#scene-exit", k: "ct" }
+  ];
+
+  function layoutOrbit() {
+    var orbit = document.querySelector("[data-orbit]");
+    if (!orbit || !orbit.offsetWidth) return;
+    var radius = orbit.offsetWidth * 0.4;
+    var existing = orbit.querySelectorAll(".orbit-node");
+    Array.prototype.forEach.call(existing, function (n) { n.remove(); });
+    DEST.forEach(function (d, i) {
+      /* Start at the top and travel clockwise. */
+      var a = (i / DEST.length) * Math.PI * 2 - Math.PI / 2;
+      var x = Math.cos(a) * radius, y = Math.sin(a) * radius;
+      var a2 = BX.el("a", { class: "orbit-node", href: d.href, "data-nav-link": "" }, [
+        BX.el("span", { class: "dot" }),
+        BX.el("b", { text: d.n }),
+        BX.el("span", { text: d.s })
+      ]);
+      a2.style.transform = "translate(" + x.toFixed(1) + "px," + y.toFixed(1) + "px)";
+      orbit.appendChild(a2);
+    });
+  }
+
+  function renderNavProjects(activeSlug) {
+    var ul = document.querySelector("[data-nav-projects]");
+    if (!ul) return;
+    ul.textContent = "";
+    P.forEach(function (p) {
+      var a = BX.el("a", { href: p.url, target: "_blank", rel: "noopener noreferrer" }, [
+        BX.el("span", { class: "name", text: p.title }),
+        BX.el("span", { class: "st", text: p.status })
+      ]);
+      if (p.slug === activeSlug) a.setAttribute("aria-current", "true");
+      ul.appendChild(BX.el("li", null, [a]));
+    });
+  }
+
+  function openNav(trigger) {
+    lastTrigger = trigger || beacon;
+    scrim.hidden = false;
+    beacon.setAttribute("aria-expanded", "true");
+    layoutOrbit();
+    releaseTrap = BX.trapFocus(scrim, lastTrigger);
+    document.documentElement.style.overflow = "hidden";
+  }
+  function closeNav() {
+    scrim.hidden = true;
+    beacon.setAttribute("aria-expanded", "false");
+    document.documentElement.style.overflow = "";
+    if (releaseTrap) { releaseTrap(); releaseTrap = null; }
+    else if (lastTrigger && document.contains(lastTrigger)) lastTrigger.focus();
+  }
+
+  document.querySelectorAll("[data-open-nav]").forEach(function (b) {
+    b.addEventListener("click", function () { openNav(b); });
+  });
+  scrim.addEventListener("click", function (e) {
+    if (e.target === scrim || e.target.hasAttribute("data-close-nav")) closeNav();
+  });
+  scrim.addEventListener("click", function (e) {
+    var link = e.target.closest ? e.target.closest("[data-nav-link]") : null;
+    if (link) closeNav();
+  });
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "Escape" && !scrim.hidden) { e.preventDefault(); closeNav(); }
+    /* Command palette parity: Cmd/Ctrl+K opens the same destinations. */
+    if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === "k") {
+      e.preventDefault();
+      scrim.hidden ? openNav(beacon) : closeNav();
+    }
+  });
+
+  /* ---------------- Readable list (DOM equivalent of the canvas) ---------------- */
+  (function () {
+    var ol = document.querySelector("[data-readout-list]");
+    if (!ol) return;
+    P.forEach(function (p) {
+      var li = document.createElement("li");
+      var a = BX.el("a", { href: p.url, target: "_blank", rel: "noopener noreferrer", text: p.title + " ↗" });
+      li.appendChild(a);
+      li.appendChild(BX.el("span", { class: "sub", text: p.tagline + " · " + p.status + " · " + p.stack.join(", ") }));
+      ol.appendChild(li);
+    });
+  })();
+
+  /* ---------------- Boot ---------------- */
+  resize(); build(); setFocus(0); onScroll();
+  if (BX.motion.enabled()) requestAnimationFrame(loop); else draw(0);
+
+  BX.motion.onChange(function (m) {
+    build(); resize();
+    if (m === "full") { running = true; requestAnimationFrame(loop); } else { running = false; draw(0); }
+  });
+
+  BX.hud.mount({ title: "Concept A · Spatial Constellation", index: "index.html", alt: { href: "concept-b.html", label: "Concept B →" } });
+
+  /* Expose a measurement hook so the perf report is generated from real runs. */
+  window.__bxReport = function () { return BX.hud.report(); };
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en" data-motion="full">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Work — 8 verified projects | BLAXK BYTE TECHNOLOGIES</title>
+<meta name="description" content="Eight verified projects: campus housing, local-first AI tutoring, voice tooling, network utilities and computer vision. All linked to public repositories.">
+<meta name="color-scheme" content="dark">
+<meta name="theme-color" content="#08090c">
+<meta property="og:title" content="Work — 8 verified projects | BLAXK BYTE TECHNOLOGIES">
+<meta property="og:description" content="Eight verified projects: campus housing, local-first AI tutoring, voice tooling, network utilities and computer vision. All linked to public repositories.">
+<meta property="og:type" content="website">
+<link rel="stylesheet" href="assets/css/blaxkverse.css">
+
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="nav">
+  <a class="nav-mark" href="index.html" aria-label="BLAXK BYTE — home">
+    <i aria-hidden="true"></i><b>BLAXK</b> <span>BYTE</span>
+  </a>
+  <nav class="nav-links" aria-label="Primary">
+        <a href="index.html" data-nav-current>Journey</a>
+        <a href="company.html" data-nav-current>Company</a>
+        <a href="work.html" data-nav-current>Work</a>
+        <a href="source.html" data-nav-current>Source</a>
+        <a href="lab.html" data-nav-current>Lab</a>
+        <a href="about.html" data-nav-current>About</a>
+        <a href="contact.html" data-nav-current>Contact</a>
+  </nav>
+  <div class="nav-right">
+    <button class="kbtn kbtn--kbd" type="button" data-open-palette aria-haspopup="dialog">
+      Search <kbd>⌘K</kbd>
+    </button>
+    <button class="motion-toggle" type="button" data-motion-toggle aria-label="Change motion level">motion: full</button>
+    <button class="kbtn nav-burger" type="button" data-open-sheet aria-expanded="false" aria-controls="mobile-sheet">Menu</button>
+  </div>
+</header>
+
+<div class="sheet" id="mobile-sheet" data-sheet hidden role="dialog" aria-modal="true" aria-label="Navigation">
+  <div class="sheet-head">
+    <span class="nav-mark"><i aria-hidden="true"></i><b>BLAXK</b> <span>BYTE</span></span>
+    <button class="close" type="button" data-close-sheet aria-label="Close navigation">✕</button>
+  </div>
+  <div class="sheet-body">
+    <ul class="sheet-nav">
+        <li><a href="index.html" data-nav-current><span class="t">Journey</span><span class="s">the overview</span></a></li>
+        <li><a href="company.html" data-nav-current><span class="t">Company</span><span class="s">what we build</span></a></li>
+        <li><a href="work.html" data-nav-current><span class="t">Work</span><span class="s">verified projects</span></a></li>
+        <li><a href="source.html" data-nav-current><span class="t">Source</span><span class="s">public code</span></a></li>
+        <li><a href="lab.html" data-nav-current><span class="t">Lab</span><span class="s">experiments</span></a></li>
+        <li><a href="about.html" data-nav-current><span class="t">About</span><span class="s">Blaxk</span></a></li>
+        <li><a href="contact.html" data-nav-current><span class="t">Contact</span><span class="s">start a project</span></a></li>
+    </ul>
+    <p class="label">Every destination is also in the command palette (<kbd>Ctrl</kbd>/<kbd>⌘</kbd>+<kbd>K</kbd>) and in the footer.</p>
+  </div>
+</div>
+
+<main id="main">
+  <section class="section section--tight" style="padding-top:calc(var(--nav-h) + 2.5rem)">
+    <div class="wrap">
+      <span class="label">Work · 8 verified projects</span>
+      <h1 style="font-size:clamp(2rem,5vw,3.4rem);margin:.4rem 0 .8rem">The work</h1>
+      <p class="lede">Every project here exists as working code in a public repository. Deployment URLs
+        were checked; none of these projects has one, so none is labelled shipped. Two carry committed
+        screenshots as evidence; the rest are judged by their source and their README.</p>
+      <div class="status-key mt-2" data-status-legend></div>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:0">
+    <div class="wrap">
+      <h2 class="reveal" style="font-size:clamp(1.4rem,3vw,2rem)"><span>The field</span></h2>
+      <p class="dim" style="max-width:70ch">Projects are plotted by theme. Lines are drawn only where two
+        projects genuinely share a theme or a technology, read from these records — they are a statement
+        about the work, not decoration. The list below the field is the primary way through; the field is
+        a second view of the same eight things.</p>
+      <div class="field-wrap mt-2">
+        <canvas id="work-field" width="1200" height="600" aria-label="Constellation of projects. Use the list below for the same information." role="img"></canvas>
+        <div class="field-legend">
+          <span><i></i>shared theme</span>
+          <span><i class="dim"></i>shared technology</span>
+          <span id="field-focus" style="display:flex;gap:.6rem;align-items:center;margin-left:auto"></span>
+        </div>
+      </div>
+      <p class="label mt-1">Canvas is decorative; every project above has a text entry in the list below, and a case study page.</p>
+
+      <div class="filters" data-filters role="group" aria-label="Filter projects by theme"></div>
+      <p class="count-note" data-count-note></p>
+      <div class="project-rows" id="project-rows"></div>
+      <noscript>
+        <p class="note">Filters need JavaScript. Every project is listed below regardless.</p>
+      </noscript>
+      <noscript>
+        <div class="project-rows">
+          <a class="project-row" href="projects/blaxk-housing.html"><span class="idx">01</span><span><span class="ttl">BlaXk Housing</span><span class="sub"> — Campus housing marketplace, role-split</span></span><span class="side"><span class="chip" data-status="prototype">prototype</span></span></a><a class="project-row" href="projects/edublaxk.html"><span class="idx">02</span><span><span class="ttl">EduBlaxk</span><span class="sub"> — Local AI tutor &amp; assessment engine</span></span><span class="side"><span class="chip" data-status="prototype">prototype</span></span></a><a class="project-row" href="projects/sabi.html"><span class="idx">03</span><span><span class="ttl">SABI</span><span class="sub"> — Voice-first tutor that runs on your device</span></span><span class="side"><span class="chip" data-status="prototype">prototype</span></span></a><a class="project-row" href="projects/blaxk-xposer.html"><span class="idx">04</span><span><span class="ttl">Blaxk Xposer</span><span class="sub"> — One QR code for your local dev server</span></span><span class="side"><span class="chip" data-status="prototype">prototype</span></span></a><a class="project-row" href="projects/forma.html"><span class="idx">05</span><span><span class="ttl">FORMA</span><span class="sub"> — Local voice studio — record, transcribe, search, speak</span></span><span class="side"><span class="chip" data-status="prototype">prototype</span></span></a><a class="project-row" href="projects/blaxk-aggregator.html"><span class="idx">06</span><span><span class="ttl">BlaXk Aggregator</span><span class="sub"> — Compile a whole codebase into one document</span></span><span class="side"><span class="chip" data-status="prototype">prototype</span></span></a><a class="project-row" href="projects/the-migrator.html"><span class="idx">07</span><span><span class="ttl">The Migrator</span><span class="sub"> — Rebuild a Python environment on a new machine</span></span><span class="side"><span class="chip" data-status="prototype">prototype</span></span></a><a class="project-row" href="projects/gesture-controls.html"><span class="idx">08</span><span><span class="ttl">Gesture Controls</span><span class="sub"> — Hand tracking as an input device</span></span><span class="side"><span class="chip" data-status="prototype">prototype</span></span></a>
+        </div>
+      </noscript>
+    </div>
+  </section>
+
+  <section class="section" style="background:var(--void-2);border-top:1px solid var(--hairline)">
+    <div class="wrap">
+      <h2 style="font-size:clamp(1.4rem,3vw,2rem)">Case studies</h2>
+      <p class="dim" style="max-width:70ch">Each case study records the problem, the intended user, the
+        approach, the decisions that mattered, the honest limitations, and a pinned excerpt where one has
+        been reviewed.</p>
+      <div class="grid-2 mt-2">
+        
+    <article class="panel" style="display:grid;gap:0">
+      <div class="panel-head">
+        <span>BlaXk Housing</span>
+        <span style="margin-left:auto"><span class="chip" data-status="prototype">prototype</span></span>
+      </div>
+      <div class="panel--pad" style="display:grid;gap:.8rem">
+        <p class="lede" style="margin:0;font-size:.98rem">Campus housing marketplace, role-split</p>
+        <p class="dim" style="margin:0;font-size:.92rem">A student accommodation platform for Bayero University Kano: landlords list, students search, save and enquire — with dashboards that differ by role.</p>
+        <div class="stack-list"><span>React</span><span>Django REST Framework</span><span>SQLite</span><span>Django cache</span></div>
+        <div class="btn-row" style="margin-top:.3rem">
+          <a class="btn" href="projects/blaxk-housing.html">Case study</a>
+          <a class="btn btn--ghost" href="https://github.com/Blaxk-C137/Blaxk-Housing" target="_blank" rel="noopener noreferrer">Source ↗</a>
+        </div>
+      </div>
+    </article>
+    <article class="panel" style="display:grid;gap:0">
+      <div class="panel-head">
+        <span>EduBlaxk</span>
+        <span style="margin-left:auto"><span class="chip" data-status="prototype">prototype</span></span>
+      </div>
+      <div class="panel--pad" style="display:grid;gap:.8rem">
+        <p class="lede" style="margin:0;font-size:.98rem">Local AI tutor &amp; assessment engine</p>
+        <p class="dim" style="margin:0;font-size:.92rem">Turns lecture PDFs into diagnostic multiple-choice and rubric-graded theory questions, with a per-question AI tutor and an anti-duplicate question bank that lives on the student&#x27;s own machine.</p>
+        <div class="stack-list"><span>React</span><span>Vite</span><span>Express</span><span>Gemini</span><span>Claude</span><span>OpenAI</span></div>
+        <div class="btn-row" style="margin-top:.3rem">
+          <a class="btn" href="projects/edublaxk.html">Case study</a>
+          <a class="btn btn--ghost" href="https://github.com/Blaxk-C137/EduBlaxk" target="_blank" rel="noopener noreferrer">Source ↗</a>
+        </div>
+      </div>
+    </article>
+    <article class="panel" style="display:grid;gap:0">
+      <div class="panel-head">
+        <span>SABI</span>
+        <span style="margin-left:auto"><span class="chip" data-status="prototype">prototype</span></span>
+      </div>
+      <div class="panel--pad" style="display:grid;gap:.8rem">
+        <p class="lede" style="margin:0;font-size:.98rem">Voice-first tutor that runs on your device</p>
+        <p class="dim" style="margin:0;font-size:.92rem">You talk or type; the model writes the lesson from your own lecture PDFs; the device does the speaking and the listening.</p>
+        <div class="stack-list"><span>React</span><span>Vite</span><span>Gemini (free tier)</span><span>Whisper small (local)</span><span>Piper</span><span>Web Speech</span></div>
+        <div class="btn-row" style="margin-top:.3rem">
+          <a class="btn" href="projects/sabi.html">Case study</a>
+          <a class="btn btn--ghost" href="https://github.com/Blaxk-C137/SABI" target="_blank" rel="noopener noreferrer">Source ↗</a>
+        </div>
+      </div>
+    </article>
+    <article class="panel" style="display:grid;gap:0">
+      <div class="panel-head">
+        <span>Blaxk Xposer</span>
+        <span style="margin-left:auto"><span class="chip" data-status="prototype">prototype</span></span>
+      </div>
+      <div class="panel--pad" style="display:grid;gap:.8rem">
+        <p class="lede" style="margin:0;font-size:.98rem">One QR code for your local dev server</p>
+        <p class="dim" style="margin:0;font-size:.92rem">A tray application that publishes a running localhost dev server to your Wi-Fi and hands phones a QR code — no accounts, no tunnels.</p>
+        <div class="stack-list"><span>Python</span><span>GTK</span><span>Avahi / zeroconf</span><span>Reverse proxy</span><span>TLS</span></div>
+        <div class="btn-row" style="margin-top:.3rem">
+          <a class="btn" href="projects/blaxk-xposer.html">Case study</a>
+          <a class="btn btn--ghost" href="https://github.com/Blaxk-C137/Blaxk-Xposer" target="_blank" rel="noopener noreferrer">Source ↗</a>
+        </div>
+      </div>
+    </article>
+    <article class="panel" style="display:grid;gap:0">
+      <div class="panel-head">
+        <span>FORMA</span>
+        <span style="margin-left:auto"><span class="chip" data-status="prototype">prototype</span></span>
+      </div>
+      <div class="panel--pad" style="display:grid;gap:.8rem">
+        <p class="lede" style="margin:0;font-size:.98rem">Local voice studio — record, transcribe, search, speak</p>
+        <p class="dim" style="margin:0;font-size:.92rem">A voice workspace that records, transcribes, refines, searches and speaks text, with the speech models running on your own machine.</p>
+        <div class="stack-list"><span>React</span><span>FastAPI</span><span>Whisper Tiny</span><span>Piper VITS</span><span>PyTorch</span><span>Tavily</span></div>
+        <div class="btn-row" style="margin-top:.3rem">
+          <a class="btn" href="projects/forma.html">Case study</a>
+          <a class="btn btn--ghost" href="https://github.com/Blaxk-C137/FORMA-" target="_blank" rel="noopener noreferrer">Source ↗</a>
+        </div>
+      </div>
+    </article>
+    <article class="panel" style="display:grid;gap:0">
+      <div class="panel-head">
+        <span>BlaXk Aggregator</span>
+        <span style="margin-left:auto"><span class="chip" data-status="prototype">prototype</span></span>
+      </div>
+      <div class="panel--pad" style="display:grid;gap:.8rem">
+        <p class="lede" style="margin:0;font-size:.98rem">Compile a whole codebase into one document</p>
+        <p class="dim" style="margin:0;font-size:.92rem">A web app and a Python CLI that gather many code files and documents into a single formatted output — for documentation, review, or handing a codebase to a language model.</p>
+        <div class="stack-list"><span>React</span><span>Vite</span><span>Tailwind</span><span>Python CLI</span><span>pdf.js</span></div>
+        <div class="btn-row" style="margin-top:.3rem">
+          <a class="btn" href="projects/blaxk-aggregator.html">Case study</a>
+          <a class="btn btn--ghost" href="https://github.com/Blaxk-C137/Blaxk_Aggregator" target="_blank" rel="noopener noreferrer">Source ↗</a>
+        </div>
+      </div>
+    </article>
+    <article class="panel" style="display:grid;gap:0">
+      <div class="panel-head">
+        <span>The Migrator</span>
+        <span style="margin-left:auto"><span class="chip" data-status="prototype">prototype</span></span>
+      </div>
+      <div class="panel--pad" style="display:grid;gap:.8rem">
+        <p class="lede" style="margin:0;font-size:.98rem">Rebuild a Python environment on a new machine</p>
+        <p class="dim" style="margin:0;font-size:.92rem">Scans the packages installed on your current machine and generates an installer you can carry to the new one.</p>
+        <div class="stack-list"><span>Python</span><span>pip</span><span>packaging</span></div>
+        <div class="btn-row" style="margin-top:.3rem">
+          <a class="btn" href="projects/the-migrator.html">Case study</a>
+          <a class="btn btn--ghost" href="https://github.com/Blaxk-C137/The_Migrator" target="_blank" rel="noopener noreferrer">Source ↗</a>
+        </div>
+      </div>
+    </article>
+    <article class="panel" style="display:grid;gap:0">
+      <div class="panel-head">
+        <span>Gesture Controls</span>
+        <span style="margin-left:auto"><span class="chip" data-status="prototype">prototype</span></span>
+      </div>
+      <div class="panel--pad" style="display:grid;gap:.8rem">
+        <p class="lede" style="margin:0;font-size:.98rem">Hand tracking as an input device</p>
+        <p class="dim" style="margin:0;font-size:.92rem">Hand-gesture recognition that drives interactive games, using a webcam as the controller.</p>
+        <div class="stack-list"><span>MediaPipe</span><span>OpenCV</span><span>Python</span></div>
+        <div class="btn-row" style="margin-top:.3rem">
+          <a class="btn" href="projects/gesture-controls.html">Case study</a>
+          <a class="btn btn--ghost" href="https://github.com/Blaxk-C137/Gesture_Controls" target="_blank" rel="noopener noreferrer">Source ↗</a>
+        </div>
+      </div>
+    </article>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <h4>BLAXK BYTE TECHNOLOGIES</h4>
+        <p class="dim" style="margin:0 0 .6rem">Software, automation and AI systems — built by Blaxk, documented in public.</p>
+        <p class="label" style="margin:0">Company registration status is not asserted on this site because it has not been verified as complete.</p>
+      </div>
+      <div>
+        <h4>Navigate</h4>
+        <ul>
+          <li><a href="company.html">Company &amp; services</a></li>
+          <li><a href="work.html">Work</a></li>
+          <li><a href="source.html">Source explorer</a></li>
+          <li><a href="lab.html">Lab</a></li>
+          <li><a href="about.html">About Blaxk</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Elsewhere</h4>
+        <ul>
+          <li><a href="https://github.com/Blaxk-C137" target="_blank" rel="noopener noreferrer">GitHub — Blaxk-C137 ↗</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="privacy.html">Privacy &amp; AI disclosure</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Accessibility</h4>
+        <ul>
+          <li><a href="?motion=on">Full motion</a></li>
+          <li><a href="?motion=reduced">Reduced motion</a></li>
+          <li><a href="?motion=off">Explore normally (no motion)</a></li>
+        </ul>
+        <p class="label" style="margin:.5rem 0 0">Press <kbd>M</kbd> to cycle motion levels.</p>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© <span data-year>2026</span> BLAXK BYTE TECHNOLOGIES</span>
+      <span>Content verified against the public record on 15 Oct 2026</span>
+      <span>Keyboard: <kbd>/</kbd> or <kbd>⌘K</kbd> search · <kbd>M</kbd> motion</span>
+      <a href="privacy.html" style="color:var(--steel);text-decoration:none">This site makes no analytics or tracking requests.</a>
+    </div>
+  </div>
+</footer>
+
+<button class="guide-launcher" type="button" data-guide-open aria-expanded="false" aria-controls="bx-guide">
+  <i aria-hidden="true"></i> Ask about this work
+</button>
+
+<section class="guide" id="bx-guide" data-guide hidden role="dialog" aria-modal="true" aria-label="BLAXK BYTE assistant">
+  <div class="guide-head">
+    <i aria-hidden="true" style="width:8px;height:8px;background:var(--red);display:block"></i>
+    <h2>BLAXK BYTE — verified answers</h2>
+    <button class="close" type="button" data-guide-close aria-label="Close assistant">✕</button>
+  </div>
+  <div class="guide-body">
+    <div class="guide-log" data-guide-log></div>
+    <div class="guide-q" data-guide-suggest></div>
+  </div>
+  <form class="guide-form" data-guide-form>
+    <label class="sr" for="guide-input">Your question</label>
+    <input id="guide-input" data-guide-input type="text" placeholder="Ask about a project, service or status…" autocomplete="off">
+    <button class="btn" type="submit">Ask</button>
+  </form>
+  <p class="guide-disclaimer">
+    This build ships a deterministic retriever over the verified project records — it is not a language model and it will not
+    answer beyond what is recorded. The intended production design is a server-side Gemini endpoint with retrieval over
+    approved content, schema-validated output, rate limits and a static fallback. See the privacy page for the full disclosure.
+  </p>
+</section>
+
+<script src="assets/js/bx-data.js"></script>
+<script src="assets/js/bx-excerpts.js"></script>
+<script src="assets/js/bx-core.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en" data-motion="full">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>EduBlaxk — case study | BLAXK BYTE TECHNOLOGIES</title>
+<meta name="description" content="Turns lecture PDFs into diagnostic multiple-choice and rubric-graded theory questions, with a per-question AI tutor and an anti-duplicate question bank that lives on the student&#x27;s own machine. Prototype in a public repository: 51 files, TypeScript, last pushed 2026-09-22.">
+<meta name="color-scheme" content="dark">
+<meta name="theme-color" content="#08090c">
+<meta property="og:title" content="EduBlaxk — case study | BLAXK BYTE TECHNOLOGIES">
+<meta property="og:description" content="Turns lecture PDFs into diagnostic multiple-choice and rubric-graded theory questions, with a per-question AI tutor and an anti-duplicate question bank that lives on the student&#x27;s own machine. Prototype in a public repository: 51 files, TypeScript, last pushed 2026-09-22.">
+<meta property="og:type" content="website">
+<link rel="stylesheet" href="../assets/css/blaxkverse.css">
+
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="nav">
+  <a class="nav-mark" href="../index.html" aria-label="BLAXK BYTE — home">
+    <i aria-hidden="true"></i><b>BLAXK</b> <span>BYTE</span>
+  </a>
+  <nav class="nav-links" aria-label="Primary">
+        <a href="../index.html" data-nav-current>Journey</a>
+        <a href="../company.html" data-nav-current>Company</a>
+        <a href="../work.html" data-nav-current>Work</a>
+        <a href="../source.html" data-nav-current>Source</a>
+        <a href="../lab.html" data-nav-current>Lab</a>
+        <a href="../about.html" data-nav-current>About</a>
+        <a href="../contact.html" data-nav-current>Contact</a>
+  </nav>
+  <div class="nav-right">
+    <button class="kbtn kbtn--kbd" type="button" data-open-palette aria-haspopup="dialog">
+      Search <kbd>⌘K</kbd>
+    </button>
+    <button class="motion-toggle" type="button" data-motion-toggle aria-label="Change motion level">motion: full</button>
+    <button class="kbtn nav-burger" type="button" data-open-sheet aria-expanded="false" aria-controls="mobile-sheet">Menu</button>
+  </div>
+</header>
+
+<div class="sheet" id="mobile-sheet" data-sheet hidden role="dialog" aria-modal="true" aria-label="Navigation">
+  <div class="sheet-head">
+    <span class="nav-mark"><i aria-hidden="true"></i><b>BLAXK</b> <span>BYTE</span></span>
+    <button class="close" type="button" data-close-sheet aria-label="Close navigation">✕</button>
+  </div>
+  <div class="sheet-body">
+    <ul class="sheet-nav">
+        <li><a href="../index.html" data-nav-current><span class="t">Journey</span><span class="s">the overview</span></a></li>
+        <li><a href="../company.html" data-nav-current><span class="t">Company</span><span class="s">what we build</span></a></li>
+        <li><a href="../work.html" data-nav-current><span class="t">Work</span><span class="s">verified projects</span></a></li>
+        <li><a href="../source.html" data-nav-current><span class="t">Source</span><span class="s">public code</span></a></li>
+        <li><a href="../lab.html" data-nav-current><span class="t">Lab</span><span class="s">experiments</span></a></li>
+        <li><a href="../about.html" data-nav-current><span class="t">About</span><span class="s">Blaxk</span></a></li>
+        <li><a href="../contact.html" data-nav-current><span class="t">Contact</span><span class="s">start a project</span></a></li>
+    </ul>
+    <p class="label">Every destination is also in the command palette (<kbd>Ctrl</kbd>/<kbd>⌘</kbd>+<kbd>K</kbd>) and in the footer.</p>
+  </div>
+</div>
+
+<main id="main">
+  <article class="section" style="padding-top:calc(var(--nav-h) + 2.5rem)">
+    <div class="wrap case">
+      <div class="case-head">
+        <a class="label" href="../work.html" style="text-decoration:none">← All work</a>
+        <h1 style="font-size:clamp(2rem,5.4vw,3.6rem);margin:0">EduBlaxk</h1>
+        <p class="lede" style="font-size:1.15rem;margin:0">Local AI tutor &amp; assessment engine</p>
+        <div class="case-meta">
+          <span class="chip" data-status="prototype">prototype</span>
+          <span class="chip">TypeScript</span>
+          <span class="chip">education</span><span class="chip">ai</span><span class="chip">local-first</span>
+        </div>
+      </div>
+
+      <dl class="case-facts"><div><dt>Status</dt><dd><span class="chip" data-status="prototype">prototype</span></dd></div><div><dt>Language</dt><dd>TypeScript</dd></div><div><dt>Repository</dt><dd><a class="inline-link" href="https://github.com/Blaxk-C137/EduBlaxk" target="_blank" rel="noopener noreferrer">Blaxk-C137/EduBlaxk ↗</a></dd></div><div><dt>Last push</dt><dd>2026-09-22</dd></div><div><dt>Source size</dt><dd>51 files · 1308 KB</dd></div><div><dt>Licence</dt><dd>no licence file</dd></div></dl>
+
+      <div class="note note--plain">
+        <strong>Provenance.</strong> Every figure on this page was read from the public repository on
+        2026-10-15 — file counts and sizes from the recursive git tree, language and dates from the
+        GitHub API. No usage statistic, download count, user number or performance claim is made anywhere on
+        this page, because none of those has been measured.
+      </div>
+
+      <section id="brief">
+        <h2 style="font-size:clamp(1.4rem,3vw,2rem)">The brief</h2>
+        <div class="grid-2">
+          <div><h3 style="font-size:1.05rem">Problem</h3><p class="dim">A student revising from a ninety-slide deck has no way to find out what they do not know. Public question banks do not follow the lecturer&#x27;s notation, and repeated practice on the same document serves the same questions again — so the second attempt measures memory of the questions, not understanding of the material.</p></div>
+          <div><h3 style="font-size:1.05rem">Who it is for</h3><p class="dim">A university student revising alone on a laptop, with a lecture PDF and no internet budget to spare.</p></div>
+        </div>
+        <div class="mt-3">
+          <h3 style="font-size:1.05rem">Approach</h3>
+          <p class="dim" style="max-width:76ch">An Express server holds AI provider keys and makes schema-validated structured calls. Documents are extracted locally; every attempt, answer and generated question is stored in the browser. Regeneration is filtered against a local index of previously generated questions.</p>
+          <h3 class="mt-2" style="font-size:1.05rem">Personal contribution</h3>
+          <p class="dim" style="max-width:76ch">Sole author. The repository contains the full application: document extraction, the AI router with tier-safe fallback, the item bank, the quiz engine, the rubric grader and the tutor drawer.</p>
+        </div>
+      </section>
+
+      <section id="decisions">
+        <h2 style="font-size:clamp(1.4rem,3vw,2rem)">Decisions that mattered</h2>
+        <p class="dim" style="max-width:70ch">These are the choices that shaped the code — the ones worth
+          explaining, rather than a feature list.</p>
+        <div class="grid-2 mt-2">
+        <div class="field panel--pad" style="border:1px solid var(--hairline);background:var(--void-2)">
+          <h3 style="font-size:1.05rem;margin-bottom:.4rem">Keys never enter the browser</h3>
+          <p class="dim" style="margin:0;font-size:.94rem">The client asks the server which providers are configured; it never asks for the key. The catalogue endpoint returns model metadata and a boolean per provider, which is why the settings screen can show pricing honestly without a secret ever crossing into front-end code.</p>
+        </div>
+        <div class="field panel--pad" style="border:1px solid var(--hairline);background:var(--void-2)">
+          <h3 style="font-size:1.05rem;margin-bottom:.4rem">Structured output is validated before it can render</h3>
+          <p class="dim" style="margin:0;font-size:.94rem">Question and evaluation payloads are validated against a schema. A malformed model response fails loudly instead of silently producing an empty quiz — the failure mode a student would otherwise blame on themselves.</p>
+        </div>
+        <div class="field panel--pad" style="border:1px solid var(--hairline);background:var(--void-2)">
+          <h3 style="font-size:1.05rem;margin-bottom:.4rem">A rate-limited model falls to a cheaper one, never a dearer one</h3>
+          <p class="dim" style="margin:0;font-size:.94rem">The fallback chain only moves down in price. An overloaded free-tier model cannot quietly upgrade the student onto a paid model mid-assessment.</p>
+        </div>
+        <div class="field panel--pad" style="border:1px solid var(--hairline);background:var(--void-2)">
+          <h3 style="font-size:1.05rem;margin-bottom:.4rem">&#x27;Always fresh questions&#x27; is enforced locally, not promised</h3>
+          <p class="dim" style="margin:0;font-size:.94rem">The anti-duplicate bank is local JSON, so the student can inspect it. The claim is verifiable on their own machine rather than a server-side assertion.</p>
+        </div></div>
+      </section>
+
+      <section id="limits">
+        <h2 style="font-size:clamp(1.4rem,3vw,2rem)">Limitations, stated plainly</h2>
+        <ul class="tight" style="max-width:76ch"><li>The browser is the database. Clearing site data clears history — a deliberate local-first trade-off, not an oversight.</li><li>Multi-provider support costs interface complexity: the settings screen has to explain model pricing and free-tier limits.</li><li>No public deployment; it is designed to run on the student&#x27;s machine, holding their own key.</li></ul>
+        <p class="dim mt-2" style="max-width:76ch"><strong>What this is not:</strong> there is no public
+          deployment for this project, so it should not be described as live, available, in production, or
+          used by anyone. Claims about scale or reliability would require measurements that do not exist.</p>
+      </section>
+
+      
+      <section class="section" id="screenshots" style="padding-top:0">
+        <h2 style="font-size:clamp(1.4rem,3vw,2rem)">Screenshots from the repository</h2>
+        <p class="dim" style="max-width:70ch">These are the images committed to the public repository — not
+          marketing renders and not re-creations. Each one is captioned with what it shows and links back to
+          the source.</p>
+        <div class="shot-grid mt-2">
+        <figure class="shot">
+          <img src="../assets/img/edublaxk-09-dark-theme.jpg" width="956" height="900" loading="lazy" decoding="async"
+               alt="Assessment builder — source documents, question counts, rigor level — screenshot committed in the public repository Blaxk-C137/EduBlaxk">
+          <figcaption>
+            Assessment builder — source documents, question counts, rigor level
+            <a href="https://github.com/Blaxk-C137/EduBlaxk" target="_blank" rel="noopener noreferrer">source ↗</a>
+          </figcaption>
+        </figure>
+        <figure class="shot">
+          <img src="../assets/img/edublaxk-04-quiz-player.jpg" width="960" height="905" loading="lazy" decoding="async"
+               alt="Exam mode — timed, blind, with a per-question clock — screenshot committed in the public repository Blaxk-C137/EduBlaxk">
+          <figcaption>
+            Exam mode — timed, blind, with a per-question clock
+            <a href="https://github.com/Blaxk-C137/EduBlaxk" target="_blank" rel="noopener noreferrer">source ↗</a>
+          </figcaption>
+        </figure>
+        <figure class="shot">
+          <img src="../assets/img/edublaxk-05-results.jpg" width="960" height="905" loading="lazy" decoding="async"
+               alt="Results — mastery score, MCQ accuracy and rubric-evaluated theory marks — screenshot committed in the public repository Blaxk-C137/EduBlaxk">
+          <figcaption>
+            Results — mastery score, MCQ accuracy and rubric-evaluated theory marks
+            <a href="https://github.com/Blaxk-C137/EduBlaxk" target="_blank" rel="noopener noreferrer">source ↗</a>
+          </figcaption>
+        </figure>
+        <figure class="shot">
+          <img src="../assets/img/edublaxk-08-ask-tutor.jpg" width="956" height="900" loading="lazy" decoding="async"
+               alt="Per-question AI tutor drawer — screenshot committed in the public repository Blaxk-C137/EduBlaxk">
+          <figcaption>
+            Per-question AI tutor drawer
+            <a href="https://github.com/Blaxk-C137/EduBlaxk" target="_blank" rel="noopener noreferrer">source ↗</a>
+          </figcaption>
+        </figure>
+        <figure class="shot">
+          <img src="../assets/img/edublaxk-06-history-vault.jpg" width="960" height="905" loading="lazy" decoding="async"
+               alt="History vault and the anti-duplicate question bank — screenshot committed in the public repository Blaxk-C137/EduBlaxk">
+          <figcaption>
+            History vault and the anti-duplicate question bank
+            <a href="https://github.com/Blaxk-C137/EduBlaxk" target="_blank" rel="noopener noreferrer">source ↗</a>
+          </figcaption>
+        </figure>
+        <figure class="shot">
+          <img src="../assets/img/edublaxk-01-setup-wizard.jpg" width="956" height="900" loading="lazy" decoding="async"
+               alt="First-run wizard — provider and key — screenshot committed in the public repository Blaxk-C137/EduBlaxk">
+          <figcaption>
+            First-run wizard — provider and key
+            <a href="https://github.com/Blaxk-C137/EduBlaxk" target="_blank" rel="noopener noreferrer">source ↗</a>
+          </figcaption>
+        </figure></div>
+      </section>
+
+      <section id="source" class="section" style="padding-top:0">
+        <h2 style="font-size:clamp(1.4rem,3vw,2rem)">Source chamber</h2>
+        <p class="dim" style="max-width:70ch">An excerpt recorded by repository, commit, path and line range —
+          so this page can be checked against the code it describes at any time. Selectable text, never
+          executed.</p>
+        <div class="mt-2">
+      <div class="code" data-excerpt-source="server.ts">
+        <div class="code-head">
+          <span class="path">server.ts</span>
+          <span>typescript</span>
+          <span>lines 22–59</span>
+          <span class="spacer"></span>
+          <span>commit 5c1445d651</span>
+        </div>
+        <pre tabindex="0" aria-label="Pinned source excerpt from Blaxk-C137/EduBlaxk: The trust boundary, in full"><span class="ln"><span class="n">22</span> </span><span class="ln"><span class="n">23</span>function providerKeyStatus(): Record&lt;ProviderId, boolean&gt; {</span><span class="ln"><span class="n">24</span>  const keys = loadKeys();</span><span class="ln"><span class="n">25</span>  return {</span><span class="ln"><span class="n">26</span>    google: Boolean(keys.providers.google),</span><span class="ln"><span class="n">27</span>    anthropic: Boolean(keys.providers.anthropic),</span><span class="ln"><span class="n">28</span>    openai: Boolean(keys.providers.openai),</span><span class="ln"><span class="n">29</span>  };</span><span class="ln"><span class="n">30</span>}</span><span class="ln"><span class="n">31</span> </span><span class="ln"><span class="n">32</span>function modelFromHeader(req: express.Request): string | undefined {</span><span class="ln"><span class="n">33</span>  const raw = req.headers[&quot;x-model&quot;];</span><span class="ln"><span class="n">34</span>  return typeof raw === &quot;string&quot; &amp;&amp; raw.trim() ? raw.trim() : undefined;</span><span class="ln"><span class="n">35</span>}</span><span class="ln"><span class="n">36</span> </span><span class="ln"><span class="n">37</span>function aiErrorResponse(res: express.Response, err: unknown) {</span><span class="ln"><span class="n">38</span>  if (err instanceof AiRouterError) {</span><span class="ln"><span class="n">39</span>    const status = err.kind === &quot;auth&quot; ? 400 : err.kind === &quot;rate_limit&quot; ? 429 : err.kind === &quot;overloaded&quot; ? 503 : 500;</span><span class="ln"><span class="n">40</span>    res.status(status).json({ error: err.message, kind: err.kind, retryAfterMinutes: err.retryAfterMinutes });</span><span class="ln"><span class="n">41</span>    return;</span><span class="ln"><span class="n">42</span>  }</span><span class="ln"><span class="n">43</span>  console.error(&quot;[EduBLAXK] AI error:&quot;, err);</span><span class="ln"><span class="n">44</span>  res.status(500).json({ error: (err as any)?.message || &quot;AI request failed.&quot; });</span><span class="ln"><span class="n">45</span>}</span><span class="ln"><span class="n">46</span> </span><span class="ln"><span class="n">47</span>// API: Health check</span><span class="ln"><span class="n">48</span>app.get(&quot;/api/health&quot;, (_req, res) =&gt; {</span><span class="ln"><span class="n">49</span>  const keys = loadKeys();</span><span class="ln"><span class="n">50</span>  res.json({</span><span class="ln"><span class="n">51</span>    status: &quot;ok&quot;,</span><span class="ln"><span class="n">52</span>    activeModel: keys.activeModel,</span><span class="ln"><span class="n">53</span>    providers: providerKeyStatus(),</span><span class="ln"><span class="n">54</span>    timestamp: new Date().toISOString(),</span><span class="ln"><span class="n">55</span>  });</span><span class="ln"><span class="n">56</span>});</span><span class="ln"><span class="n">57</span> </span><span class="ln"><span class="n">58</span>// API: Model catalog (public info only — no keys)</span><span class="ln"><span class="n">59</span>app.get(&quot;/api/models&quot;, (_req, res) =&gt; {</span></pre>
+        <div class="code-foot">
+          <div class="row-between">
+            <span>Blaxk-C137/EduBlaxk · server.ts @ 5c1445d651 · rendered as inert text, never executed · excerpt published with the author&rsquo;s own permission as the repository owner</span>
+            <a class="kbtn" href="https://github.com/Blaxk-C137/EduBlaxk/blob/5c1445d651/server.ts#L22-L59" target="_blank" rel="noopener noreferrer">Open on GitHub ↗</a>
+          </div>
+        </div>
+      </div>
+      <p class="mt-1"><strong>The trust boundary, in full.</strong> <span class="dim">Fifteen lines that decide the whole security posture: the server reports which providers are usable and returns model metadata, while the key travels inward exactly once, on POST /api/keys, and is validated before it is stored.</span></p></div>
+        
+      </section>
+
+      <section id="lessons">
+        <h2 style="font-size:clamp(1.4rem,3vw,2rem)">What it taught</h2>
+        <p class="lede" style="max-width:76ch">Grading theory with a model is easy to demo and hard to trust. The work that mattered was the rubric: forcing explicit criteria into the evaluation call, and surfacing which criteria were missed rather than only a score.</p>
+      </section>
+
+      <section>
+        <h2 style="font-size:clamp(1.4rem,3vw,2rem)">Continue</h2>
+        <div class="project-rows"><a class="project-row" href="blaxk-housing.html"><span class="idx">01</span><span><span class="ttl">BlaXk Housing</span><span class="sub"> — Campus housing marketplace, role-split</span></span><span class="side"><span class="chip" data-status="prototype">prototype</span></span></a><a class="project-row" href="sabi.html"><span class="idx">03</span><span><span class="ttl">SABI</span><span class="sub"> — Voice-first tutor that runs on your device</span></span><span class="side"><span class="chip" data-status="prototype">prototype</span></span></a><a class="project-row" href="blaxk-xposer.html"><span class="idx">04</span><span><span class="ttl">Blaxk Xposer</span><span class="sub"> — One QR code for your local dev server</span></span><span class="side"><span class="chip" data-status="prototype">prototype</span></span></a></div>
+        <div class="btn-row mt-2">
+          <a class="btn" href="../work.html">All work</a>
+          <a class="btn" href="../source.html">Source explorer</a>
+          <a class="btn btn--ghost" href="../contact.html">Start a project</a>
+        </div>
+      </section>
+    </div>
+  </article>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <h4>BLAXK BYTE TECHNOLOGIES</h4>
+        <p class="dim" style="margin:0 0 .6rem">Software, automation and AI systems — built by Blaxk, documented in public.</p>
+        <p class="label" style="margin:0">Company registration status is not asserted on this site because it has not been verified as complete.</p>
+      </div>
+      <div>
+        <h4>Navigate</h4>
+        <ul>
+          <li><a href="../company.html">Company &amp; services</a></li>
+          <li><a href="../work.html">Work</a></li>
+          <li><a href="../source.html">Source explorer</a></li>
+          <li><a href="../lab.html">Lab</a></li>
+          <li><a href="../about.html">About Blaxk</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Elsewhere</h4>
+        <ul>
+          <li><a href="https://github.com/Blaxk-C137" target="_blank" rel="noopener noreferrer">GitHub — Blaxk-C137 ↗</a></li>
+          <li><a href="../contact.html">Contact</a></li>
+          <li><a href="../privacy.html">Privacy &amp; AI disclosure</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Accessibility</h4>
+        <ul>
+          <li><a href="?motion=on">Full motion</a></li>
+          <li><a href="?motion=reduced">Reduced motion</a></li>
+          <li><a href="?motion=off">Explore normally (no motion)</a></li>
+        </ul>
+        <p class="label" style="margin:.5rem 0 0">Press <kbd>M</kbd> to cycle motion levels.</p>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© <span data-year>2026</span> BLAXK BYTE TECHNOLOGIES</span>
+      <span>Content verified against the public record on 15 Oct 2026</span>
+      <span>Keyboard: <kbd>/</kbd> or <kbd>⌘K</kbd> search · <kbd>M</kbd> motion</span>
+      <a href="../privacy.html" style="color:var(--steel);text-decoration:none">This site makes no analytics or tracking requests.</a>
+    </div>
+  </div>
+</footer>
+
+<button class="guide-launcher" type="button" data-guide-open aria-expanded="false" aria-controls="bx-guide">
+  <i aria-hidden="true"></i> Ask about this work
+</button>
+
+<section class="guide" id="bx-guide" data-guide hidden role="dialog" aria-modal="true" aria-label="BLAXK BYTE assistant">
+  <div class="guide-head">
+    <i aria-hidden="true" style="width:8px;height:8px;background:var(--red);display:block"></i>
+    <h2>BLAXK BYTE — verified answers</h2>
+    <button class="close" type="button" data-guide-close aria-label="Close assistant">✕</button>
+  </div>
+  <div class="guide-body">
+    <div class="guide-log" data-guide-log></div>
+    <div class="guide-q" data-guide-suggest></div>
+  </div>
+  <form class="guide-form" data-guide-form>
+    <label class="sr" for="guide-input">Your question</label>
+    <input id="guide-input" data-guide-input type="text" placeholder="Ask about a project, service or status…" autocomplete="off">
+    <button class="btn" type="submit">Ask</button>
+  </form>
+  <p class="guide-disclaimer">
+    This build ships a deterministic retriever over the verified project records — it is not a language model and it will not
+    answer beyond what is recorded. The intended production design is a server-side Gemini endpoint with retrieval over
+    approved content, schema-validated output, rate limits and a static fallback. See the privacy page for the full disclosure.
+  </p>
+</section>
+
+<script src="../assets/js/bx-data.js"></script>
+<script src="../assets/js/bx-excerpts.js"></script>
+<script src="../assets/js/bx-core.js"></script>
+
+</body>
+</html>

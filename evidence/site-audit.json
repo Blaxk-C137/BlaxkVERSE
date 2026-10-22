@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-10-15T17:18:42.359Z",
-  "pagesAudited": 16,
+  "generatedAt": "2026-10-21T06:40:36.222Z",
+  "pagesAudited": 30,
   "httpFailures": [],
   "pagesWithErrors": [],
   "pagesWithFailedRequests": [],
@@ -12,8 +12,18 @@
       "landmarks": 4,
       "skipLink": true,
       "imgsMissingAlt": 0,
-      "focusable": 83,
+      "focusable": 84,
       "smallTargets": 45
+    },
+    {
+      "path": "/admin.html",
+      "lang": "en",
+      "h1": 1,
+      "landmarks": 0,
+      "skipLink": true,
+      "imgsMissingAlt": 0,
+      "focusable": 7,
+      "smallTargets": 0
     },
     {
       "path": "/company.html",
@@ -32,7 +42,7 @@
       "landmarks": 4,
       "skipLink": true,
       "imgsMissingAlt": 0,
-      "focusable": 54,
+      "focusable": 55,
       "smallTargets": 15
     },
     {
@@ -62,7 +72,17 @@
       "landmarks": 4,
       "skipLink": true,
       "imgsMissingAlt": 0,
-      "focusable": 44,
+      "focusable": 45,
+      "smallTargets": 13
+    },
+    {
+      "path": "/projects/aileads.html",
+      "lang": "en",
+      "h1": 1,
+      "landmarks": 4,
+      "skipLink": true,
+      "imgsMissingAlt": 0,
+      "focusable": 53,
       "smallTargets": 12
     },
     {
@@ -72,11 +92,71 @@
       "landmarks": 4,
       "skipLink": true,
       "imgsMissingAlt": 0,
-      "focusable": 52,
+      "focusable": 53,
+      "smallTargets": 12
+    },
+    {
+      "path": "/projects/blaxk-anime.html",
+      "lang": "en",
+      "h1": 1,
+      "landmarks": 4,
+      "skipLink": true,
+      "imgsMissingAlt": 0,
+      "focusable": 53,
+      "smallTargets": 12
+    },
+    {
+      "path": "/projects/blaxk-grabber.html",
+      "lang": "en",
+      "h1": 1,
+      "landmarks": 4,
+      "skipLink": true,
+      "imgsMissingAlt": 0,
+      "focusable": 53,
       "smallTargets": 12
     },
     {
       "path": "/projects/blaxk-housing.html",
+      "lang": "en",
+      "h1": 1,
+      "landmarks": 4,
+      "skipLink": true,
+      "imgsMissingAlt": 0,
+      "focusable": 54,
+      "smallTargets": 12
+    },
+    {
+      "path": "/projects/blaxk-sound.html",
+      "lang": "en",
+      "h1": 1,
+      "landmarks": 4,
+      "skipLink": true,
+      "imgsMissingAlt": 0,
+      "focusable": 53,
+      "smallTargets": 12
+    },
+    {
+      "path": "/projects/blaxk-survey.html",
+      "lang": "en",
+      "h1": 1,
+      "landmarks": 4,
+      "skipLink": true,
+      "imgsMissingAlt": 0,
+      "focusable": 53,
+      "smallTargets": 12
+    },
+    {
+      "path": "/projects/blaxk-tcf.html",
+      "lang": "en",
+      "h1": 1,
+      "landmarks": 4,
+      "skipLink": true,
+      "imgsMissingAlt": 0,
+      "focusable": 53,
+      "smallTargets": 13
+    },
+    {
+      "path": "/projects/blaxk-trader.html",
       "lang": "en",
       "h1": 1,
       "landmarks": 4,
@@ -92,6 +172,46 @@
       "landmarks": 4,
       "skipLink": true,
       "imgsMissingAlt": 0,
+      "focusable": 54,
+      "smallTargets": 12
+    },
+    {
+      "path": "/projects/blaxkbot.html",
+      "lang": "en",
+      "h1": 1,
+      "landmarks": 4,
+      "skipLink": true,
+      "imgsMissingAlt": 0,
+      "focusable": 53,
+      "smallTargets": 12
+    },
+    {
+      "path": "/projects/blaxkwave.html",
+      "lang": "en",
+      "h1": 1,
+      "landmarks": 4,
+      "skipLink": true,
+      "imgsMissingAlt": 0,
+      "focusable": 57,
+      "smallTargets": 16
+    },
+    {
+      "path": "/projects/church-programme.html",
+      "lang": "en",
+      "h1": 1,
+      "landmarks": 4,
+      "skipLink": true,
+      "imgsMissingAlt": 0,
+      "focusable": 53,
+      "smallTargets": 12
+    },
+    {
+      "path": "/projects/crushboard.html",
+      "lang": "en",
+      "h1": 1,
+      "landmarks": 4,
+      "skipLink": true,
+      "imgsMissingAlt": 0,
       "focusable": 53,
       "smallTargets": 12
     },
@@ -102,7 +222,7 @@
       "landmarks": 4,
       "skipLink": true,
       "imgsMissingAlt": 0,
-      "focusable": 59,
+      "focusable": 60,
       "smallTargets": 18
     },
     {
@@ -112,7 +232,7 @@
       "landmarks": 4,
       "skipLink": true,
       "imgsMissingAlt": 0,
-      "focusable": 58,
+      "focusable": 59,
       "smallTargets": 18
     },
     {
@@ -122,7 +242,17 @@
       "landmarks": 4,
       "skipLink": true,
       "imgsMissingAlt": 0,
-      "focusable": 52,
+      "focusable": 53,
+      "smallTargets": 12
+    },
+    {
+      "path": "/projects/luminary.html",
+      "lang": "en",
+      "h1": 1,
+      "landmarks": 4,
+      "skipLink": true,
+      "imgsMissingAlt": 0,
+      "focusable": 55,
       "smallTargets": 12
     },
     {
@@ -132,8 +262,18 @@
       "landmarks": 4,
       "skipLink": true,
       "imgsMissingAlt": 0,
-      "focusable": 53,
+      "focusable": 54,
       "smallTargets": 13
+    },
+    {
+      "path": "/projects/statusfix.html",
+      "lang": "en",
+      "h1": 1,
+      "landmarks": 4,
+      "skipLink": true,
+      "imgsMissingAlt": 0,
+      "focusable": 55,
+      "smallTargets": 12
     },
     {
       "path": "/projects/the-migrator.html",
@@ -142,7 +282,7 @@
       "landmarks": 4,
       "skipLink": true,
       "imgsMissingAlt": 0,
-      "focusable": 52,
+      "focusable": 53,
       "smallTargets": 12
     },
     {
@@ -152,8 +292,8 @@
       "landmarks": 4,
       "skipLink": true,
       "imgsMissingAlt": 0,
-      "focusable": 94,
-      "smallTargets": 62
+      "focusable": 176,
+      "smallTargets": 143
     },
     {
       "path": "/work.html",
@@ -162,7 +302,7 @@
       "landmarks": 4,
       "skipLink": true,
       "imgsMissingAlt": 0,
-      "focusable": 79,
+      "focusable": 120,
       "smallTargets": 11
     }
   ],
@@ -173,25 +313,29 @@
         {
           "query": "?motion=on",
           "mode": "full",
-          "words": 751,
+          "words": 747,
           "h1": 1,
           "canvasVisible": false
         },
         {
           "query": "?motion=reduced",
           "mode": "full",
-          "words": 751,
+          "words": 747,
           "h1": 1,
           "canvasVisible": false
         },
         {
           "query": "?motion=off",
           "mode": "static",
-          "words": 751,
+          "words": 747,
           "h1": 1,
           "canvasVisible": false
         }
       ]
+    },
+    {
+      "path": "/admin.html",
+      "modes": []
     },
     {
       "path": "/company.html",
@@ -199,21 +343,21 @@
         {
           "query": "?motion=on",
           "mode": "full",
-          "words": 944,
+          "words": 933,
           "h1": 1,
           "canvasVisible": false
         },
         {
           "query": "?motion=reduced",
           "mode": "full",
-          "words": 944,
+          "words": 933,
           "h1": 1,
           "canvasVisible": false
         },
         {
           "query": "?motion=off",
           "mode": "static",
-          "words": 944,
+          "words": 933,
           "h1": 1,
           "canvasVisible": false
         }
@@ -225,21 +369,21 @@
         {
           "query": "?motion=on",
           "mode": "full",
-          "words": 627,
+          "words": 752,
           "h1": 1,
           "canvasVisible": false
         },
         {
           "query": "?motion=reduced",
           "mode": "full",
-          "words": 627,
+          "words": 752,
           "h1": 1,
           "canvasVisible": false
         },
         {
           "query": "?motion=off",
           "mode": "static",
-          "words": 627,
+          "words": 752,
           "h1": 1,
           "canvasVisible": false
         }
@@ -251,21 +395,21 @@
         {
           "query": "?motion=on",
           "mode": "full",
-          "words": 1130,
+          "words": 1145,
           "h1": 1,
           "canvasVisible": true
         },
         {
           "query": "?motion=reduced",
           "mode": "full",
-          "words": 1130,
+          "words": 1145,
           "h1": 1,
           "canvasVisible": true
         },
         {
           "query": "?motion=off",
           "mode": "static",
-          "words": 1130,
+          "words": 1145,
           "h1": 1,
           "canvasVisible": false
         }
@@ -277,21 +421,21 @@
         {
           "query": "?motion=on",
           "mode": "full",
-          "words": 903,
+          "words": 879,
           "h1": 1,
           "canvasVisible": false
         },
         {
           "query": "?motion=reduced",
           "mode": "full",
-          "words": 903,
+          "words": 879,
           "h1": 1,
           "canvasVisible": false
         },
         {
           "query": "?motion=off",
           "mode": "static",
-          "words": 903,
+          "words": 879,
           "h1": 1,
           "canvasVisible": false
         }
@@ -303,21 +447,47 @@
         {
           "query": "?motion=on",
           "mode": "full",
-          "words": 850,
+          "words": 1733,
           "h1": 1,
           "canvasVisible": false
         },
         {
           "query": "?motion=reduced",
           "mode": "full",
-          "words": 850,
+          "words": 1733,
           "h1": 1,
           "canvasVisible": false
         },
         {
           "query": "?motion=off",
           "mode": "static",
-          "words": 850,
+          "words": 1733,
+          "h1": 1,
+          "canvasVisible": false
+        }
+      ]
+    },
+    {
+      "path": "/projects/aileads.html",
+      "modes": [
+        {
+          "query": "?motion=on",
+          "mode": "full",
+          "words": 683,
+          "h1": 1,
+          "canvasVisible": false
+        },
+        {
+          "query": "?motion=reduced",
+          "mode": "full",
+          "words": 683,
+          "h1": 1,
+          "canvasVisible": false
+        },
+        {
+          "query": "?motion=off",
+          "mode": "static",
+          "words": 683,
           "h1": 1,
           "canvasVisible": false
         }
@@ -329,21 +499,73 @@
         {
           "query": "?motion=on",
           "mode": "full",
-          "words": 676,
+          "words": 683,
           "h1": 1,
           "canvasVisible": false
         },
         {
           "query": "?motion=reduced",
           "mode": "full",
-          "words": 676,
+          "words": 683,
           "h1": 1,
           "canvasVisible": false
         },
         {
           "query": "?motion=off",
           "mode": "static",
-          "words": 676,
+          "words": 683,
+          "h1": 1,
+          "canvasVisible": false
+        }
+      ]
+    },
+    {
+      "path": "/projects/blaxk-anime.html",
+      "modes": [
+        {
+          "query": "?motion=on",
+          "mode": "full",
+          "words": 777,
+          "h1": 1,
+          "canvasVisible": false
+        },
+        {
+          "query": "?motion=reduced",
+          "mode": "full",
+          "words": 777,
+          "h1": 1,
+          "canvasVisible": false
+        },
+        {
+          "query": "?motion=off",
+          "mode": "static",
+          "words": 777,
+          "h1": 1,
+          "canvasVisible": false
+        }
+      ]
+    },
+    {
+      "path": "/projects/blaxk-grabber.html",
+      "modes": [
+        {
+          "query": "?motion=on",
+          "mode": "full",
+          "words": 748,
+          "h1": 1,
+          "canvasVisible": false
+        },
+        {
+          "query": "?motion=reduced",
+          "mode": "full",
+          "words": 748,
+          "h1": 1,
+          "canvasVisible": false
+        },
+        {
+          "query": "?motion=off",
+          "mode": "static",
+          "words": 748,
           "h1": 1,
           "canvasVisible": false
         }
@@ -355,21 +577,125 @@
         {
           "query": "?motion=on",
           "mode": "full",
-          "words": 955,
+          "words": 948,
           "h1": 1,
           "canvasVisible": false
         },
         {
           "query": "?motion=reduced",
           "mode": "full",
-          "words": 955,
+          "words": 948,
           "h1": 1,
           "canvasVisible": false
         },
         {
           "query": "?motion=off",
           "mode": "static",
-          "words": 955,
+          "words": 948,
+          "h1": 1,
+          "canvasVisible": false
+        }
+      ]
+    },
+    {
+      "path": "/projects/blaxk-sound.html",
+      "modes": [
+        {
+          "query": "?motion=on",
+          "mode": "full",
+          "words": 643,
+          "h1": 1,
+          "canvasVisible": false
+        },
+        {
+          "query": "?motion=reduced",
+          "mode": "full",
+          "words": 643,
+          "h1": 1,
+          "canvasVisible": false
+        },
+        {
+          "query": "?motion=off",
+          "mode": "static",
+          "words": 643,
+          "h1": 1,
+          "canvasVisible": false
+        }
+      ]
+    },
+    {
+      "path": "/projects/blaxk-survey.html",
+      "modes": [
+        {
+          "query": "?motion=on",
+          "mode": "full",
+          "words": 666,
+          "h1": 1,
+          "canvasVisible": false
+        },
+        {
+          "query": "?motion=reduced",
+          "mode": "full",
+          "words": 666,
+          "h1": 1,
+          "canvasVisible": false
+        },
+        {
+          "query": "?motion=off",
+          "mode": "static",
+          "words": 666,
+          "h1": 1,
+          "canvasVisible": false
+        }
+      ]
+    },
+    {
+      "path": "/projects/blaxk-tcf.html",
+      "modes": [
+        {
+          "query": "?motion=on",
+          "mode": "full",
+          "words": 722,
+          "h1": 1,
+          "canvasVisible": false
+        },
+        {
+          "query": "?motion=reduced",
+          "mode": "full",
+          "words": 722,
+          "h1": 1,
+          "canvasVisible": false
+        },
+        {
+          "query": "?motion=off",
+          "mode": "static",
+          "words": 722,
+          "h1": 1,
+          "canvasVisible": false
+        }
+      ]
+    },
+    {
+      "path": "/projects/blaxk-trader.html",
+      "modes": [
+        {
+          "query": "?motion=on",
+          "mode": "full",
+          "words": 666,
+          "h1": 1,
+          "canvasVisible": false
+        },
+        {
+          "query": "?motion=reduced",
+          "mode": "full",
+          "words": 666,
+          "h1": 1,
+          "canvasVisible": false
+        },
+        {
+          "query": "?motion=off",
+          "mode": "static",
+          "words": 666,
           "h1": 1,
           "canvasVisible": false
         }
@@ -381,21 +707,125 @@
         {
           "query": "?motion=on",
           "mode": "full",
-          "words": 1050,
+          "words": 1048,
           "h1": 1,
           "canvasVisible": false
         },
         {
           "query": "?motion=reduced",
           "mode": "full",
-          "words": 1050,
+          "words": 1048,
           "h1": 1,
           "canvasVisible": false
         },
         {
           "query": "?motion=off",
           "mode": "static",
-          "words": 1050,
+          "words": 1048,
+          "h1": 1,
+          "canvasVisible": false
+        }
+      ]
+    },
+    {
+      "path": "/projects/blaxkbot.html",
+      "modes": [
+        {
+          "query": "?motion=on",
+          "mode": "full",
+          "words": 811,
+          "h1": 1,
+          "canvasVisible": false
+        },
+        {
+          "query": "?motion=reduced",
+          "mode": "full",
+          "words": 811,
+          "h1": 1,
+          "canvasVisible": false
+        },
+        {
+          "query": "?motion=off",
+          "mode": "static",
+          "words": 811,
+          "h1": 1,
+          "canvasVisible": false
+        }
+      ]
+    },
+    {
+      "path": "/projects/blaxkwave.html",
+      "modes": [
+        {
+          "query": "?motion=on",
+          "mode": "full",
+          "words": 859,
+          "h1": 1,
+          "canvasVisible": false
+        },
+        {
+          "query": "?motion=reduced",
+          "mode": "full",
+          "words": 859,
+          "h1": 1,
+          "canvasVisible": false
+        },
+        {
+          "query": "?motion=off",
+          "mode": "static",
+          "words": 859,
+          "h1": 1,
+          "canvasVisible": false
+        }
+      ]
+    },
+    {
+      "path": "/projects/church-programme.html",
+      "modes": [
+        {
+          "query": "?motion=on",
+          "mode": "full",
+          "words": 729,
+          "h1": 1,
+          "canvasVisible": false
+        },
+        {
+          "query": "?motion=reduced",
+          "mode": "full",
+          "words": 729,
+          "h1": 1,
+          "canvasVisible": false
+        },
+        {
+          "query": "?motion=off",
+          "mode": "static",
+          "words": 729,
+          "h1": 1,
+          "canvasVisible": false
+        }
+      ]
+    },
+    {
+      "path": "/projects/crushboard.html",
+      "modes": [
+        {
+          "query": "?motion=on",
+          "mode": "full",
+          "words": 823,
+          "h1": 1,
+          "canvasVisible": false
+        },
+        {
+          "query": "?motion=reduced",
+          "mode": "full",
+          "words": 823,
+          "h1": 1,
+          "canvasVisible": false
+        },
+        {
+          "query": "?motion=off",
+          "mode": "static",
+          "words": 823,
           "h1": 1,
           "canvasVisible": false
         }
@@ -407,21 +837,21 @@
         {
           "query": "?motion=on",
           "mode": "full",
-          "words": 1073,
+          "words": 1067,
           "h1": 1,
           "canvasVisible": false
         },
         {
           "query": "?motion=reduced",
           "mode": "full",
-          "words": 1073,
+          "words": 1067,
           "h1": 1,
           "canvasVisible": false
         },
         {
           "query": "?motion=off",
           "mode": "static",
-          "words": 1073,
+          "words": 1067,
           "h1": 1,
           "canvasVisible": false
         }
@@ -433,21 +863,21 @@
         {
           "query": "?motion=on",
           "mode": "full",
-          "words": 828,
+          "words": 835,
           "h1": 1,
           "canvasVisible": false
         },
         {
           "query": "?motion=reduced",
           "mode": "full",
-          "words": 828,
+          "words": 835,
           "h1": 1,
           "canvasVisible": false
         },
         {
           "query": "?motion=off",
           "mode": "static",
-          "words": 828,
+          "words": 835,
           "h1": 1,
           "canvasVisible": false
         }
@@ -459,21 +889,47 @@
         {
           "query": "?motion=on",
           "mode": "full",
-          "words": 622,
+          "words": 625,
           "h1": 1,
           "canvasVisible": false
         },
         {
           "query": "?motion=reduced",
           "mode": "full",
-          "words": 622,
+          "words": 625,
           "h1": 1,
           "canvasVisible": false
         },
         {
           "query": "?motion=off",
           "mode": "static",
-          "words": 622,
+          "words": 625,
+          "h1": 1,
+          "canvasVisible": false
+        }
+      ]
+    },
+    {
+      "path": "/projects/luminary.html",
+      "modes": [
+        {
+          "query": "?motion=on",
+          "mode": "full",
+          "words": 736,
+          "h1": 1,
+          "canvasVisible": false
+        },
+        {
+          "query": "?motion=reduced",
+          "mode": "full",
+          "words": 736,
+          "h1": 1,
+          "canvasVisible": false
+        },
+        {
+          "query": "?motion=off",
+          "mode": "static",
+          "words": 736,
           "h1": 1,
           "canvasVisible": false
         }
@@ -485,21 +941,47 @@
         {
           "query": "?motion=on",
           "mode": "full",
-          "words": 1010,
+          "words": 1017,
           "h1": 1,
           "canvasVisible": false
         },
         {
           "query": "?motion=reduced",
           "mode": "full",
-          "words": 1010,
+          "words": 1017,
           "h1": 1,
           "canvasVisible": false
         },
         {
           "query": "?motion=off",
           "mode": "static",
-          "words": 1010,
+          "words": 1017,
+          "h1": 1,
+          "canvasVisible": false
+        }
+      ]
+    },
+    {
+      "path": "/projects/statusfix.html",
+      "modes": [
+        {
+          "query": "?motion=on",
+          "mode": "full",
+          "words": 821,
+          "h1": 1,
+          "canvasVisible": false
+        },
+        {
+          "query": "?motion=reduced",
+          "mode": "full",
+          "words": 821,
+          "h1": 1,
+          "canvasVisible": false
+        },
+        {
+          "query": "?motion=off",
+          "mode": "static",
+          "words": 821,
           "h1": 1,
           "canvasVisible": false
         }
@@ -511,21 +993,21 @@
         {
           "query": "?motion=on",
           "mode": "full",
-          "words": 577,
+          "words": 576,
           "h1": 1,
           "canvasVisible": false
         },
         {
           "query": "?motion=reduced",
           "mode": "full",
-          "words": 577,
+          "words": 576,
           "h1": 1,
           "canvasVisible": false
         },
         {
           "query": "?motion=off",
           "mode": "static",
-          "words": 577,
+          "words": 576,
           "h1": 1,
           "canvasVisible": false
         }
@@ -537,21 +1019,21 @@
         {
           "query": "?motion=on",
           "mode": "full",
-          "words": 821,
+          "words": 1935,
           "h1": 1,
           "canvasVisible": false
         },
         {
           "query": "?motion=reduced",
           "mode": "full",
-          "words": 821,
+          "words": 1935,
           "h1": 1,
           "canvasVisible": false
         },
         {
           "query": "?motion=off",
           "mode": "static",
-          "words": 821,
+          "words": 1935,
           "h1": 1,
           "canvasVisible": false
         }
@@ -563,21 +1045,21 @@
         {
           "query": "?motion=on",
           "mode": "full",
-          "words": 773,
+          "words": 1504,
           "h1": 1,
           "canvasVisible": true
         },
         {
           "query": "?motion=reduced",
           "mode": "full",
-          "words": 773,
+          "words": 1504,
           "h1": 1,
           "canvasVisible": true
         },
         {
           "query": "?motion=off",
           "mode": "static",
-          "words": 773,
+          "words": 1504,
           "h1": 1,
           "canvasVisible": true
         }
@@ -599,6 +1081,19 @@
       }
     },
     {
+      "path": "/admin.html",
+      "opened": {
+        "visible": false,
+        "focused": "BODY"
+      },
+      "searchOptions": 0,
+      "searchSample": "",
+      "closed": {
+        "hidden": false,
+        "bodyOverflow": "visible"
+      }
+    },
+    {
       "path": "/company.html",
       "opened": {
         "visible": true,
@@ -664,7 +1159,46 @@
       }
     },
     {
+      "path": "/projects/aileads.html",
+      "opened": {
+        "visible": true,
+        "focused": "INPUT"
+      },
+      "searchOptions": 9,
+      "searchSample": "GO\nESC\nPROJECT\nEduBlaxk\nprototype\nCODE\nEduBlaxk — source\nBlaxk-C137/EduBlaxk\nTECH\nReact\nus",
+      "closed": {
+        "hidden": true,
+        "bodyOverflow": "hidden auto"
+      }
+    },
+    {
       "path": "/projects/blaxk-aggregator.html",
+      "opened": {
+        "visible": true,
+        "focused": "INPUT"
+      },
+      "searchOptions": 9,
+      "searchSample": "GO\nESC\nPROJECT\nEduBlaxk\nprototype\nCODE\nEduBlaxk — source\nBlaxk-C137/EduBlaxk\nTECH\nReact\nus",
+      "closed": {
+        "hidden": true,
+        "bodyOverflow": "hidden auto"
+      }
+    },
+    {
+      "path": "/projects/blaxk-anime.html",
+      "opened": {
+        "visible": true,
+        "focused": "INPUT"
+      },
+      "searchOptions": 9,
+      "searchSample": "GO\nESC\nPROJECT\nEduBlaxk\nprototype\nCODE\nEduBlaxk — source\nBlaxk-C137/EduBlaxk\nTECH\nReact\nus",
+      "closed": {
+        "hidden": true,
+        "bodyOverflow": "hidden auto"
+      }
+    },
+    {
+      "path": "/projects/blaxk-grabber.html",
       "opened": {
         "visible": true,
         "focused": "INPUT"
@@ -690,7 +1224,111 @@
       }
     },
     {
+      "path": "/projects/blaxk-sound.html",
+      "opened": {
+        "visible": true,
+        "focused": "INPUT"
+      },
+      "searchOptions": 9,
+      "searchSample": "GO\nESC\nPROJECT\nEduBlaxk\nprototype\nCODE\nEduBlaxk — source\nBlaxk-C137/EduBlaxk\nTECH\nReact\nus",
+      "closed": {
+        "hidden": true,
+        "bodyOverflow": "hidden auto"
+      }
+    },
+    {
+      "path": "/projects/blaxk-survey.html",
+      "opened": {
+        "visible": true,
+        "focused": "INPUT"
+      },
+      "searchOptions": 9,
+      "searchSample": "GO\nESC\nPROJECT\nEduBlaxk\nprototype\nCODE\nEduBlaxk — source\nBlaxk-C137/EduBlaxk\nTECH\nReact\nus",
+      "closed": {
+        "hidden": true,
+        "bodyOverflow": "hidden auto"
+      }
+    },
+    {
+      "path": "/projects/blaxk-tcf.html",
+      "opened": {
+        "visible": true,
+        "focused": "INPUT"
+      },
+      "searchOptions": 9,
+      "searchSample": "GO\nESC\nPROJECT\nEduBlaxk\nprototype\nCODE\nEduBlaxk — source\nBlaxk-C137/EduBlaxk\nTECH\nReact\nus",
+      "closed": {
+        "hidden": true,
+        "bodyOverflow": "hidden auto"
+      }
+    },
+    {
+      "path": "/projects/blaxk-trader.html",
+      "opened": {
+        "visible": true,
+        "focused": "INPUT"
+      },
+      "searchOptions": 9,
+      "searchSample": "GO\nESC\nPROJECT\nEduBlaxk\nprototype\nCODE\nEduBlaxk — source\nBlaxk-C137/EduBlaxk\nTECH\nReact\nus",
+      "closed": {
+        "hidden": true,
+        "bodyOverflow": "hidden auto"
+      }
+    },
+    {
       "path": "/projects/blaxk-xposer.html",
+      "opened": {
+        "visible": true,
+        "focused": "INPUT"
+      },
+      "searchOptions": 9,
+      "searchSample": "GO\nESC\nPROJECT\nEduBlaxk\nprototype\nCODE\nEduBlaxk — source\nBlaxk-C137/EduBlaxk\nTECH\nReact\nus",
+      "closed": {
+        "hidden": true,
+        "bodyOverflow": "hidden auto"
+      }
+    },
+    {
+      "path": "/projects/blaxkbot.html",
+      "opened": {
+        "visible": true,
+        "focused": "INPUT"
+      },
+      "searchOptions": 9,
+      "searchSample": "GO\nESC\nPROJECT\nEduBlaxk\nprototype\nCODE\nEduBlaxk — source\nBlaxk-C137/EduBlaxk\nTECH\nReact\nus",
+      "closed": {
+        "hidden": true,
+        "bodyOverflow": "hidden auto"
+      }
+    },
+    {
+      "path": "/projects/blaxkwave.html",
+      "opened": {
+        "visible": true,
+        "focused": "INPUT"
+      },
+      "searchOptions": 9,
+      "searchSample": "GO\nESC\nPROJECT\nEduBlaxk\nprototype\nCODE\nEduBlaxk — source\nBlaxk-C137/EduBlaxk\nTECH\nReact\nus",
+      "closed": {
+        "hidden": true,
+        "bodyOverflow": "hidden auto"
+      }
+    },
+    {
+      "path": "/projects/church-programme.html",
+      "opened": {
+        "visible": true,
+        "focused": "INPUT"
+      },
+      "searchOptions": 9,
+      "searchSample": "GO\nESC\nPROJECT\nEduBlaxk\nprototype\nCODE\nEduBlaxk — source\nBlaxk-C137/EduBlaxk\nTECH\nReact\nus",
+      "closed": {
+        "hidden": true,
+        "bodyOverflow": "hidden auto"
+      }
+    },
+    {
+      "path": "/projects/crushboard.html",
       "opened": {
         "visible": true,
         "focused": "INPUT"
@@ -742,7 +1380,33 @@
       }
     },
     {
+      "path": "/projects/luminary.html",
+      "opened": {
+        "visible": true,
+        "focused": "INPUT"
+      },
+      "searchOptions": 9,
+      "searchSample": "GO\nESC\nPROJECT\nEduBlaxk\nprototype\nCODE\nEduBlaxk — source\nBlaxk-C137/EduBlaxk\nTECH\nReact\nus",
+      "closed": {
+        "hidden": true,
+        "bodyOverflow": "hidden auto"
+      }
+    },
+    {
       "path": "/projects/sabi.html",
+      "opened": {
+        "visible": true,
+        "focused": "INPUT"
+      },
+      "searchOptions": 9,
+      "searchSample": "GO\nESC\nPROJECT\nEduBlaxk\nprototype\nCODE\nEduBlaxk — source\nBlaxk-C137/EduBlaxk\nTECH\nReact\nus",
+      "closed": {
+        "hidden": true,
+        "bodyOverflow": "hidden auto"
+      }
+    },
+    {
+      "path": "/projects/statusfix.html",
       "opened": {
         "visible": true,
         "focused": "INPUT"
@@ -804,6 +1468,9 @@
       "closedByEscape": true
     },
     {
+      "path": "/admin.html"
+    },
+    {
       "path": "/company.html",
       "visible": true,
       "messages": 3,
@@ -844,7 +1511,31 @@
       "closedByEscape": true
     },
     {
+      "path": "/projects/aileads.html",
+      "visible": true,
+      "messages": 3,
+      "hasCitation": true,
+      "text": "This panel answers questions about BLAXK BYTE and the work on this site — services, projects, how each one is built and what state it is in. Every answer comes from the verified records behind these pages and cites the record it used.\n\nIt is deliberately not a",
+      "closedByEscape": true
+    },
+    {
       "path": "/projects/blaxk-aggregator.html",
+      "visible": true,
+      "messages": 3,
+      "hasCitation": true,
+      "text": "This panel answers questions about BLAXK BYTE and the work on this site — services, projects, how each one is built and what state it is in. Every answer comes from the verified records behind these pages and cites the record it used.\n\nIt is deliberately not a",
+      "closedByEscape": true
+    },
+    {
+      "path": "/projects/blaxk-anime.html",
+      "visible": true,
+      "messages": 3,
+      "hasCitation": true,
+      "text": "This panel answers questions about BLAXK BYTE and the work on this site — services, projects, how each one is built and what state it is in. Every answer comes from the verified records behind these pages and cites the record it used.\n\nIt is deliberately not a",
+      "closedByEscape": true
+    },
+    {
+      "path": "/projects/blaxk-grabber.html",
       "visible": true,
       "messages": 3,
       "hasCitation": true,
@@ -860,7 +1551,71 @@
       "closedByEscape": true
     },
     {
+      "path": "/projects/blaxk-sound.html",
+      "visible": true,
+      "messages": 3,
+      "hasCitation": true,
+      "text": "This panel answers questions about BLAXK BYTE and the work on this site — services, projects, how each one is built and what state it is in. Every answer comes from the verified records behind these pages and cites the record it used.\n\nIt is deliberately not a",
+      "closedByEscape": true
+    },
+    {
+      "path": "/projects/blaxk-survey.html",
+      "visible": true,
+      "messages": 3,
+      "hasCitation": true,
+      "text": "This panel answers questions about BLAXK BYTE and the work on this site — services, projects, how each one is built and what state it is in. Every answer comes from the verified records behind these pages and cites the record it used.\n\nIt is deliberately not a",
+      "closedByEscape": true
+    },
+    {
+      "path": "/projects/blaxk-tcf.html",
+      "visible": true,
+      "messages": 3,
+      "hasCitation": true,
+      "text": "This panel answers questions about BLAXK BYTE and the work on this site — services, projects, how each one is built and what state it is in. Every answer comes from the verified records behind these pages and cites the record it used.\n\nIt is deliberately not a",
+      "closedByEscape": true
+    },
+    {
+      "path": "/projects/blaxk-trader.html",
+      "visible": true,
+      "messages": 3,
+      "hasCitation": true,
+      "text": "This panel answers questions about BLAXK BYTE and the work on this site — services, projects, how each one is built and what state it is in. Every answer comes from the verified records behind these pages and cites the record it used.\n\nIt is deliberately not a",
+      "closedByEscape": true
+    },
+    {
       "path": "/projects/blaxk-xposer.html",
+      "visible": true,
+      "messages": 3,
+      "hasCitation": true,
+      "text": "This panel answers questions about BLAXK BYTE and the work on this site — services, projects, how each one is built and what state it is in. Every answer comes from the verified records behind these pages and cites the record it used.\n\nIt is deliberately not a",
+      "closedByEscape": true
+    },
+    {
+      "path": "/projects/blaxkbot.html",
+      "visible": true,
+      "messages": 3,
+      "hasCitation": true,
+      "text": "This panel answers questions about BLAXK BYTE and the work on this site — services, projects, how each one is built and what state it is in. Every answer comes from the verified records behind these pages and cites the record it used.\n\nIt is deliberately not a",
+      "closedByEscape": true
+    },
+    {
+      "path": "/projects/blaxkwave.html",
+      "visible": true,
+      "messages": 3,
+      "hasCitation": true,
+      "text": "This panel answers questions about BLAXK BYTE and the work on this site — services, projects, how each one is built and what state it is in. Every answer comes from the verified records behind these pages and cites the record it used.\n\nIt is deliberately not a",
+      "closedByEscape": true
+    },
+    {
+      "path": "/projects/church-programme.html",
+      "visible": true,
+      "messages": 3,
+      "hasCitation": true,
+      "text": "This panel answers questions about BLAXK BYTE and the work on this site — services, projects, how each one is built and what state it is in. Every answer comes from the verified records behind these pages and cites the record it used.\n\nIt is deliberately not a",
+      "closedByEscape": true
+    },
+    {
+      "path": "/projects/crushboard.html",
       "visible": true,
       "messages": 3,
       "hasCitation": true,
@@ -892,7 +1647,23 @@
       "closedByEscape": true
     },
     {
+      "path": "/projects/luminary.html",
+      "visible": true,
+      "messages": 3,
+      "hasCitation": true,
+      "text": "This panel answers questions about BLAXK BYTE and the work on this site — services, projects, how each one is built and what state it is in. Every answer comes from the verified records behind these pages and cites the record it used.\n\nIt is deliberately not a",
+      "closedByEscape": true
+    },
+    {
       "path": "/projects/sabi.html",
+      "visible": true,
+      "messages": 3,
+      "hasCitation": true,
+      "text": "This panel answers questions about BLAXK BYTE and the work on this site — services, projects, how each one is built and what state it is in. Every answer comes from the verified records behind these pages and cites the record it used.\n\nIt is deliberately not a",
+      "closedByEscape": true
+    },
+    {
+      "path": "/projects/statusfix.html",
       "visible": true,
       "messages": 3,
       "hasCitation": true,
@@ -933,7 +1704,7 @@
     },
     "filledSubmit": {
       "state": "ok",
-      "text": "Your details are still in this browser — this build has no server, so nothing was transmitted and nothing was stored. The production build posts this form to a validated, rate-limited endpoint. Point the form at that endpoint (or email dire"
+      "text": "Sent. Your enquiry went through EmailJS, and an acknowledgement is on its way to test@example.com. A reply will follow."
     }
   },
   "internalLinkTargets": [
@@ -942,14 +1713,28 @@
     "/contact.html",
     "/index.html",
     "/lab.html",
+    "/privacy",
     "/privacy.html",
+    "/projects/aileads.html",
     "/projects/blaxk-aggregator.html",
+    "/projects/blaxk-anime.html",
+    "/projects/blaxk-grabber.html",
     "/projects/blaxk-housing.html",
+    "/projects/blaxk-sound.html",
+    "/projects/blaxk-survey.html",
+    "/projects/blaxk-tcf.html",
+    "/projects/blaxk-trader.html",
     "/projects/blaxk-xposer.html",
+    "/projects/blaxkbot.html",
+    "/projects/blaxkwave.html",
+    "/projects/church-programme.html",
+    "/projects/crushboard.html",
     "/projects/edublaxk.html",
     "/projects/forma.html",
     "/projects/gesture-controls.html",
+    "/projects/luminary.html",
     "/projects/sabi.html",
+    "/projects/statusfix.html",
     "/projects/the-migrator.html",
     "/source.html",
     "/work.html"
@@ -990,6 +1775,7 @@
           "about.html",
           "contact.html",
           "https://github.com/Blaxk-C137",
+          "source.html#index",
           "projects/blaxk-housing.html",
           "projects/edublaxk.html",
           "projects/sabi.html",
@@ -1042,12 +1828,12 @@
           "?motion=off",
           "privacy.html"
         ],
-        "focusable": 83,
+        "focusable": 84,
         "smallTargets": 45,
-        "words": 751,
+        "words": 747,
         "motion": "full",
         "nosecript": false,
-        "aiDisclaimer": true,
+        "aiDisclaimer": false,
         "provenance": true
       },
       "keyboard": {
@@ -1074,25 +1860,69 @@
         {
           "query": "?motion=on",
           "mode": "full",
-          "words": 751,
+          "words": 747,
           "h1": 1,
           "canvasVisible": false
         },
         {
           "query": "?motion=reduced",
           "mode": "full",
-          "words": 751,
+          "words": 747,
           "h1": 1,
           "canvasVisible": false
         },
         {
           "query": "?motion=off",
           "mode": "static",
-          "words": 751,
+          "words": 747,
           "h1": 1,
           "canvasVisible": false
         }
       ]
+    },
+    {
+      "path": "/admin.html",
+      "status": 200,
+      "errors": [],
+      "failedRequests": [],
+      "struct": {
+        "title": "Visitor dashboard · BlaxkVERSE",
+        "lang": "en",
+        "h1": 1,
+        "h1Text": "Visitor dashboard",
+        "h2": 5,
+        "landmarks": 0,
+        "skipLink": true,
+        "imgsTotal": 0,
+        "imgsMissingAlt": 0,
+        "imgSrcs": [],
+        "links": [
+          "#main",
+          "/privacy"
+        ],
+        "focusable": 7,
+        "smallTargets": 0,
+        "words": 56,
+        "motion": "static",
+        "nosecript": false,
+        "aiDisclaimer": false,
+        "provenance": false
+      },
+      "keyboard": {
+        "opened": {
+          "visible": false,
+          "focused": "BODY"
+        },
+        "searchOptions": 0,
+        "searchSample": "",
+        "closed": {
+          "hidden": false,
+          "bodyOverflow": "visible"
+        }
+      },
+      "assistant": null,
+      "contact": null,
+      "modes": []
     },
     {
       "path": "/company.html",
@@ -1144,7 +1974,7 @@
         ],
         "focusable": 45,
         "smallTargets": 11,
-        "words": 944,
+        "words": 933,
         "motion": "full",
         "nosecript": false,
         "aiDisclaimer": true,
@@ -1174,21 +2004,21 @@
         {
           "query": "?motion=on",
           "mode": "full",
-          "words": 944,
+          "words": 933,
           "h1": 1,
           "canvasVisible": false
         },
         {
           "query": "?motion=reduced",
           "mode": "full",
-          "words": 944,
+          "words": 933,
           "h1": 1,
           "canvasVisible": false
         },
         {
           "query": "?motion=off",
           "mode": "static",
-          "words": 944,
+          "words": 933,
           "h1": 1,
           "canvasVisible": false
         }
@@ -1245,12 +2075,12 @@
           "?motion=off",
           "privacy.html"
         ],
-        "focusable": 54,
+        "focusable": 55,
         "smallTargets": 15,
-        "words": 627,
+        "words": 766,
         "motion": "full",
         "nosecript": false,
-        "aiDisclaimer": true,
+        "aiDisclaimer": false,
         "provenance": true
       },
       "keyboard": {
@@ -1277,21 +2107,21 @@
         {
           "query": "?motion=on",
           "mode": "full",
-          "words": 627,
+          "words": 752,
           "h1": 1,
           "canvasVisible": false
         },
         {
           "query": "?motion=reduced",
           "mode": "full",
-          "words": 627,
+          "words": 752,
           "h1": 1,
           "canvasVisible": false
         },
         {
           "query": "?motion=off",
           "mode": "static",
-          "words": 627,
+          "words": 752,
           "h1": 1,
           "canvasVisible": false
         }
@@ -1303,10 +2133,10 @@
       "errors": [],
       "failedRequests": [],
       "struct": {
-        "title": "BLAXK BYTE TECHNOLOGIES — Building what's next | BlaxkVERSE",
+        "title": "Blaxk — software, automation and AI systems | BLAXK BYTE TECHNOLOGIES",
         "lang": "en",
         "h1": 1,
-        "h1Text": "BLAXK BYTE\nBUILDING WHAT’S NEXT.",
+        "h1Text": "BLAXK BYTE\nI BUILD THINGS\nTHAT RUN.",
         "h2": 7,
         "landmarks": 4,
         "skipLink": true,
@@ -1362,7 +2192,7 @@
         ],
         "focusable": 60,
         "smallTargets": 11,
-        "words": 1130,
+        "words": 1145,
         "motion": "full",
         "nosecript": false,
         "aiDisclaimer": true,
@@ -1392,21 +2222,21 @@
         {
           "query": "?motion=on",
           "mode": "full",
-          "words": 1130,
+          "words": 1145,
           "h1": 1,
           "canvasVisible": true
         },
         {
           "query": "?motion=reduced",
           "mode": "full",
-          "words": 1130,
+          "words": 1145,
           "h1": 1,
           "canvasVisible": true
         },
         {
           "query": "?motion=off",
           "mode": "static",
-          "words": 1130,
+          "words": 1145,
           "h1": 1,
           "canvasVisible": false
         }
@@ -1462,10 +2292,10 @@
         ],
         "focusable": 45,
         "smallTargets": 11,
-        "words": 903,
+        "words": 879,
         "motion": "full",
         "nosecript": false,
-        "aiDisclaimer": true,
+        "aiDisclaimer": false,
         "provenance": true
       },
       "keyboard": {
@@ -1492,21 +2322,21 @@
         {
           "query": "?motion=on",
           "mode": "full",
-          "words": 903,
+          "words": 879,
           "h1": 1,
           "canvasVisible": false
         },
         {
           "query": "?motion=reduced",
           "mode": "full",
-          "words": 903,
+          "words": 879,
           "h1": 1,
           "canvasVisible": false
         },
         {
           "query": "?motion=off",
           "mode": "static",
-          "words": 903,
+          "words": 879,
           "h1": 1,
           "canvasVisible": false
         }
@@ -1545,6 +2375,7 @@
           "lab.html",
           "about.html",
           "contact.html",
+          "https://www.emailjs.com",
           "contact.html",
           "company.html",
           "work.html",
@@ -1559,9 +2390,9 @@
           "?motion=off",
           "privacy.html"
         ],
-        "focusable": 44,
-        "smallTargets": 12,
-        "words": 850,
+        "focusable": 45,
+        "smallTargets": 13,
+        "words": 1733,
         "motion": "full",
         "nosecript": false,
         "aiDisclaimer": true,
@@ -1591,21 +2422,128 @@
         {
           "query": "?motion=on",
           "mode": "full",
-          "words": 850,
+          "words": 1733,
           "h1": 1,
           "canvasVisible": false
         },
         {
           "query": "?motion=reduced",
           "mode": "full",
-          "words": 850,
+          "words": 1733,
           "h1": 1,
           "canvasVisible": false
         },
         {
           "query": "?motion=off",
           "mode": "static",
-          "words": 850,
+          "words": 1733,
+          "h1": 1,
+          "canvasVisible": false
+        }
+      ]
+    },
+    {
+      "path": "/projects/aileads.html",
+      "status": 200,
+      "errors": [],
+      "failedRequests": [],
+      "struct": {
+        "title": "aiLEADS — case study | BLAXK BYTE TECHNOLOGIES",
+        "lang": "en",
+        "h1": 1,
+        "h1Text": "AILEADS",
+        "h2": 8,
+        "landmarks": 4,
+        "skipLink": true,
+        "imgsTotal": 0,
+        "imgsMissingAlt": 0,
+        "imgSrcs": [],
+        "links": [
+          "#main",
+          "../index.html",
+          "../../index.html",
+          "../../company.html",
+          "../../work.html",
+          "../../source.html",
+          "../../lab.html",
+          "../../about.html",
+          "../../contact.html",
+          "../../index.html",
+          "../../company.html",
+          "../../work.html",
+          "../../source.html",
+          "../../lab.html",
+          "../../about.html",
+          "../../contact.html",
+          "../work.html",
+          "https://github.com/Blaxk-C137/Blaxk_Hand",
+          "https://github.com/Blaxk-C137/Blaxk_Hand",
+          "blaxk-housing.html",
+          "edublaxk.html",
+          "sabi.html",
+          "../work.html",
+          "../source.html",
+          "../contact.html",
+          "../company.html",
+          "../work.html",
+          "../source.html",
+          "../lab.html",
+          "../about.html",
+          "https://github.com/Blaxk-C137",
+          "../contact.html",
+          "../privacy.html",
+          "?motion=on",
+          "?motion=reduced",
+          "?motion=off",
+          "../privacy.html"
+        ],
+        "focusable": 53,
+        "smallTargets": 12,
+        "words": 683,
+        "motion": "full",
+        "nosecript": false,
+        "aiDisclaimer": false,
+        "provenance": true
+      },
+      "keyboard": {
+        "opened": {
+          "visible": true,
+          "focused": "INPUT"
+        },
+        "searchOptions": 9,
+        "searchSample": "GO\nESC\nPROJECT\nEduBlaxk\nprototype\nCODE\nEduBlaxk — source\nBlaxk-C137/EduBlaxk\nTECH\nReact\nus",
+        "closed": {
+          "hidden": true,
+          "bodyOverflow": "hidden auto"
+        }
+      },
+      "assistant": {
+        "visible": true,
+        "messages": 3,
+        "hasCitation": true,
+        "text": "This panel answers questions about BLAXK BYTE and the work on this site — services, projects, how each one is built and what state it is in. Every answer comes from the verified records behind these pages and cites the record it used.\n\nIt is deliberately not a",
+        "closedByEscape": true
+      },
+      "contact": null,
+      "modes": [
+        {
+          "query": "?motion=on",
+          "mode": "full",
+          "words": 683,
+          "h1": 1,
+          "canvasVisible": false
+        },
+        {
+          "query": "?motion=reduced",
+          "mode": "full",
+          "words": 683,
+          "h1": 1,
+          "canvasVisible": false
+        },
+        {
+          "query": "?motion=off",
+          "mode": "static",
+          "words": 683,
           "h1": 1,
           "canvasVisible": false
         }
@@ -1646,6 +2584,7 @@
           "../../contact.html",
           "../work.html",
           "https://github.com/Blaxk-C137/Blaxk_Aggregator",
+          "https://github.com/Blaxk-C137/Blaxk_Aggregator",
           "blaxk-housing.html",
           "edublaxk.html",
           "sabi.html",
@@ -1665,12 +2604,12 @@
           "?motion=off",
           "../privacy.html"
         ],
-        "focusable": 52,
+        "focusable": 53,
         "smallTargets": 12,
-        "words": 676,
+        "words": 683,
         "motion": "full",
         "nosecript": false,
-        "aiDisclaimer": true,
+        "aiDisclaimer": false,
         "provenance": true
       },
       "keyboard": {
@@ -1697,21 +2636,235 @@
         {
           "query": "?motion=on",
           "mode": "full",
-          "words": 676,
+          "words": 683,
           "h1": 1,
           "canvasVisible": false
         },
         {
           "query": "?motion=reduced",
           "mode": "full",
-          "words": 676,
+          "words": 683,
           "h1": 1,
           "canvasVisible": false
         },
         {
           "query": "?motion=off",
           "mode": "static",
-          "words": 676,
+          "words": 683,
+          "h1": 1,
+          "canvasVisible": false
+        }
+      ]
+    },
+    {
+      "path": "/projects/blaxk-anime.html",
+      "status": 200,
+      "errors": [],
+      "failedRequests": [],
+      "struct": {
+        "title": "Blaxk Anime — case study | BLAXK BYTE TECHNOLOGIES",
+        "lang": "en",
+        "h1": 1,
+        "h1Text": "BLAXK ANIME",
+        "h2": 8,
+        "landmarks": 4,
+        "skipLink": true,
+        "imgsTotal": 0,
+        "imgsMissingAlt": 0,
+        "imgSrcs": [],
+        "links": [
+          "#main",
+          "../index.html",
+          "../../index.html",
+          "../../company.html",
+          "../../work.html",
+          "../../source.html",
+          "../../lab.html",
+          "../../about.html",
+          "../../contact.html",
+          "../../index.html",
+          "../../company.html",
+          "../../work.html",
+          "../../source.html",
+          "../../lab.html",
+          "../../about.html",
+          "../../contact.html",
+          "../work.html",
+          "https://github.com/Blaxk-C137/Blaxk-Anime",
+          "https://github.com/Blaxk-C137/Blaxk-Anime",
+          "blaxk-housing.html",
+          "edublaxk.html",
+          "sabi.html",
+          "../work.html",
+          "../source.html",
+          "../contact.html",
+          "../company.html",
+          "../work.html",
+          "../source.html",
+          "../lab.html",
+          "../about.html",
+          "https://github.com/Blaxk-C137",
+          "../contact.html",
+          "../privacy.html",
+          "?motion=on",
+          "?motion=reduced",
+          "?motion=off",
+          "../privacy.html"
+        ],
+        "focusable": 53,
+        "smallTargets": 12,
+        "words": 777,
+        "motion": "full",
+        "nosecript": false,
+        "aiDisclaimer": false,
+        "provenance": true
+      },
+      "keyboard": {
+        "opened": {
+          "visible": true,
+          "focused": "INPUT"
+        },
+        "searchOptions": 9,
+        "searchSample": "GO\nESC\nPROJECT\nEduBlaxk\nprototype\nCODE\nEduBlaxk — source\nBlaxk-C137/EduBlaxk\nTECH\nReact\nus",
+        "closed": {
+          "hidden": true,
+          "bodyOverflow": "hidden auto"
+        }
+      },
+      "assistant": {
+        "visible": true,
+        "messages": 3,
+        "hasCitation": true,
+        "text": "This panel answers questions about BLAXK BYTE and the work on this site — services, projects, how each one is built and what state it is in. Every answer comes from the verified records behind these pages and cites the record it used.\n\nIt is deliberately not a",
+        "closedByEscape": true
+      },
+      "contact": null,
+      "modes": [
+        {
+          "query": "?motion=on",
+          "mode": "full",
+          "words": 777,
+          "h1": 1,
+          "canvasVisible": false
+        },
+        {
+          "query": "?motion=reduced",
+          "mode": "full",
+          "words": 777,
+          "h1": 1,
+          "canvasVisible": false
+        },
+        {
+          "query": "?motion=off",
+          "mode": "static",
+          "words": 777,
+          "h1": 1,
+          "canvasVisible": false
+        }
+      ]
+    },
+    {
+      "path": "/projects/blaxk-grabber.html",
+      "status": 200,
+      "errors": [],
+      "failedRequests": [],
+      "struct": {
+        "title": "BlaXk Grabber — case study | BLAXK BYTE TECHNOLOGIES",
+        "lang": "en",
+        "h1": 1,
+        "h1Text": "BLAXK GRABBER",
+        "h2": 8,
+        "landmarks": 4,
+        "skipLink": true,
+        "imgsTotal": 0,
+        "imgsMissingAlt": 0,
+        "imgSrcs": [],
+        "links": [
+          "#main",
+          "../index.html",
+          "../../index.html",
+          "../../company.html",
+          "../../work.html",
+          "../../source.html",
+          "../../lab.html",
+          "../../about.html",
+          "../../contact.html",
+          "../../index.html",
+          "../../company.html",
+          "../../work.html",
+          "../../source.html",
+          "../../lab.html",
+          "../../about.html",
+          "../../contact.html",
+          "../work.html",
+          "https://github.com/Blaxk-C137/Blaxk-Downloader",
+          "https://github.com/Blaxk-C137/Blaxk-Downloader",
+          "blaxk-housing.html",
+          "edublaxk.html",
+          "sabi.html",
+          "../work.html",
+          "../source.html",
+          "../contact.html",
+          "../company.html",
+          "../work.html",
+          "../source.html",
+          "../lab.html",
+          "../about.html",
+          "https://github.com/Blaxk-C137",
+          "../contact.html",
+          "../privacy.html",
+          "?motion=on",
+          "?motion=reduced",
+          "?motion=off",
+          "../privacy.html"
+        ],
+        "focusable": 53,
+        "smallTargets": 12,
+        "words": 748,
+        "motion": "full",
+        "nosecript": false,
+        "aiDisclaimer": false,
+        "provenance": true
+      },
+      "keyboard": {
+        "opened": {
+          "visible": true,
+          "focused": "INPUT"
+        },
+        "searchOptions": 9,
+        "searchSample": "GO\nESC\nPROJECT\nEduBlaxk\nprototype\nCODE\nEduBlaxk — source\nBlaxk-C137/EduBlaxk\nTECH\nReact\nus",
+        "closed": {
+          "hidden": true,
+          "bodyOverflow": "hidden auto"
+        }
+      },
+      "assistant": {
+        "visible": true,
+        "messages": 3,
+        "hasCitation": true,
+        "text": "This panel answers questions about BLAXK BYTE and the work on this site — services, projects, how each one is built and what state it is in. Every answer comes from the verified records behind these pages and cites the record it used.\n\nIt is deliberately not a",
+        "closedByEscape": true
+      },
+      "contact": null,
+      "modes": [
+        {
+          "query": "?motion=on",
+          "mode": "full",
+          "words": 748,
+          "h1": 1,
+          "canvasVisible": false
+        },
+        {
+          "query": "?motion=reduced",
+          "mode": "full",
+          "words": 748,
+          "h1": 1,
+          "canvasVisible": false
+        },
+        {
+          "query": "?motion=off",
+          "mode": "static",
+          "words": 748,
           "h1": 1,
           "canvasVisible": false
         }
@@ -1752,6 +2905,7 @@
           "../../contact.html",
           "../work.html",
           "https://github.com/Blaxk-C137/Blaxk-Housing",
+          "https://github.com/Blaxk-C137/Blaxk-Housing",
           "https://github.com/Blaxk-C137/Blaxk-Housing/blob/d83ed7f7f6/backend/listings/views.py#L112-L141",
           "edublaxk.html",
           "sabi.html",
@@ -1772,12 +2926,12 @@
           "?motion=off",
           "../privacy.html"
         ],
-        "focusable": 53,
+        "focusable": 54,
         "smallTargets": 12,
-        "words": 955,
+        "words": 948,
         "motion": "full",
         "nosecript": false,
-        "aiDisclaimer": true,
+        "aiDisclaimer": false,
         "provenance": true
       },
       "keyboard": {
@@ -1804,21 +2958,449 @@
         {
           "query": "?motion=on",
           "mode": "full",
-          "words": 955,
+          "words": 948,
           "h1": 1,
           "canvasVisible": false
         },
         {
           "query": "?motion=reduced",
           "mode": "full",
-          "words": 955,
+          "words": 948,
           "h1": 1,
           "canvasVisible": false
         },
         {
           "query": "?motion=off",
           "mode": "static",
-          "words": 955,
+          "words": 948,
+          "h1": 1,
+          "canvasVisible": false
+        }
+      ]
+    },
+    {
+      "path": "/projects/blaxk-sound.html",
+      "status": 200,
+      "errors": [],
+      "failedRequests": [],
+      "struct": {
+        "title": "blaxk-sounds — case study | BLAXK BYTE TECHNOLOGIES",
+        "lang": "en",
+        "h1": 1,
+        "h1Text": "BLAXK-SOUNDS",
+        "h2": 8,
+        "landmarks": 4,
+        "skipLink": true,
+        "imgsTotal": 0,
+        "imgsMissingAlt": 0,
+        "imgSrcs": [],
+        "links": [
+          "#main",
+          "../index.html",
+          "../../index.html",
+          "../../company.html",
+          "../../work.html",
+          "../../source.html",
+          "../../lab.html",
+          "../../about.html",
+          "../../contact.html",
+          "../../index.html",
+          "../../company.html",
+          "../../work.html",
+          "../../source.html",
+          "../../lab.html",
+          "../../about.html",
+          "../../contact.html",
+          "../work.html",
+          "https://github.com/Blaxk-C137/Blaxk_Sound",
+          "https://github.com/Blaxk-C137/Blaxk_Sound",
+          "blaxk-housing.html",
+          "edublaxk.html",
+          "sabi.html",
+          "../work.html",
+          "../source.html",
+          "../contact.html",
+          "../company.html",
+          "../work.html",
+          "../source.html",
+          "../lab.html",
+          "../about.html",
+          "https://github.com/Blaxk-C137",
+          "../contact.html",
+          "../privacy.html",
+          "?motion=on",
+          "?motion=reduced",
+          "?motion=off",
+          "../privacy.html"
+        ],
+        "focusable": 53,
+        "smallTargets": 12,
+        "words": 643,
+        "motion": "full",
+        "nosecript": false,
+        "aiDisclaimer": false,
+        "provenance": true
+      },
+      "keyboard": {
+        "opened": {
+          "visible": true,
+          "focused": "INPUT"
+        },
+        "searchOptions": 9,
+        "searchSample": "GO\nESC\nPROJECT\nEduBlaxk\nprototype\nCODE\nEduBlaxk — source\nBlaxk-C137/EduBlaxk\nTECH\nReact\nus",
+        "closed": {
+          "hidden": true,
+          "bodyOverflow": "hidden auto"
+        }
+      },
+      "assistant": {
+        "visible": true,
+        "messages": 3,
+        "hasCitation": true,
+        "text": "This panel answers questions about BLAXK BYTE and the work on this site — services, projects, how each one is built and what state it is in. Every answer comes from the verified records behind these pages and cites the record it used.\n\nIt is deliberately not a",
+        "closedByEscape": true
+      },
+      "contact": null,
+      "modes": [
+        {
+          "query": "?motion=on",
+          "mode": "full",
+          "words": 643,
+          "h1": 1,
+          "canvasVisible": false
+        },
+        {
+          "query": "?motion=reduced",
+          "mode": "full",
+          "words": 643,
+          "h1": 1,
+          "canvasVisible": false
+        },
+        {
+          "query": "?motion=off",
+          "mode": "static",
+          "words": 643,
+          "h1": 1,
+          "canvasVisible": false
+        }
+      ]
+    },
+    {
+      "path": "/projects/blaxk-survey.html",
+      "status": 200,
+      "errors": [],
+      "failedRequests": [],
+      "struct": {
+        "title": "Marketplace Survey — case study | BLAXK BYTE TECHNOLOGIES",
+        "lang": "en",
+        "h1": 1,
+        "h1Text": "MARKETPLACE SURVEY",
+        "h2": 8,
+        "landmarks": 4,
+        "skipLink": true,
+        "imgsTotal": 0,
+        "imgsMissingAlt": 0,
+        "imgSrcs": [],
+        "links": [
+          "#main",
+          "../index.html",
+          "../../index.html",
+          "../../company.html",
+          "../../work.html",
+          "../../source.html",
+          "../../lab.html",
+          "../../about.html",
+          "../../contact.html",
+          "../../index.html",
+          "../../company.html",
+          "../../work.html",
+          "../../source.html",
+          "../../lab.html",
+          "../../about.html",
+          "../../contact.html",
+          "../work.html",
+          "https://github.com/Blaxk-C137/Blaxk-Survey",
+          "https://github.com/Blaxk-C137/Blaxk-Survey",
+          "blaxk-housing.html",
+          "edublaxk.html",
+          "sabi.html",
+          "../work.html",
+          "../source.html",
+          "../contact.html",
+          "../company.html",
+          "../work.html",
+          "../source.html",
+          "../lab.html",
+          "../about.html",
+          "https://github.com/Blaxk-C137",
+          "../contact.html",
+          "../privacy.html",
+          "?motion=on",
+          "?motion=reduced",
+          "?motion=off",
+          "../privacy.html"
+        ],
+        "focusable": 53,
+        "smallTargets": 12,
+        "words": 666,
+        "motion": "full",
+        "nosecript": false,
+        "aiDisclaimer": false,
+        "provenance": true
+      },
+      "keyboard": {
+        "opened": {
+          "visible": true,
+          "focused": "INPUT"
+        },
+        "searchOptions": 9,
+        "searchSample": "GO\nESC\nPROJECT\nEduBlaxk\nprototype\nCODE\nEduBlaxk — source\nBlaxk-C137/EduBlaxk\nTECH\nReact\nus",
+        "closed": {
+          "hidden": true,
+          "bodyOverflow": "hidden auto"
+        }
+      },
+      "assistant": {
+        "visible": true,
+        "messages": 3,
+        "hasCitation": true,
+        "text": "This panel answers questions about BLAXK BYTE and the work on this site — services, projects, how each one is built and what state it is in. Every answer comes from the verified records behind these pages and cites the record it used.\n\nIt is deliberately not a",
+        "closedByEscape": true
+      },
+      "contact": null,
+      "modes": [
+        {
+          "query": "?motion=on",
+          "mode": "full",
+          "words": 666,
+          "h1": 1,
+          "canvasVisible": false
+        },
+        {
+          "query": "?motion=reduced",
+          "mode": "full",
+          "words": 666,
+          "h1": 1,
+          "canvasVisible": false
+        },
+        {
+          "query": "?motion=off",
+          "mode": "static",
+          "words": 666,
+          "h1": 1,
+          "canvasVisible": false
+        }
+      ]
+    },
+    {
+      "path": "/projects/blaxk-tcf.html",
+      "status": 200,
+      "errors": [],
+      "failedRequests": [],
+      "struct": {
+        "title": "Blaxk_TCF — case study | BLAXK BYTE TECHNOLOGIES",
+        "lang": "en",
+        "h1": 1,
+        "h1Text": "BLAXK_TCF",
+        "h2": 8,
+        "landmarks": 4,
+        "skipLink": true,
+        "imgsTotal": 0,
+        "imgsMissingAlt": 0,
+        "imgSrcs": [],
+        "links": [
+          "#main",
+          "../index.html",
+          "../../index.html",
+          "../../company.html",
+          "../../work.html",
+          "../../source.html",
+          "../../lab.html",
+          "../../about.html",
+          "../../contact.html",
+          "../../index.html",
+          "../../company.html",
+          "../../work.html",
+          "../../source.html",
+          "../../lab.html",
+          "../../about.html",
+          "../../contact.html",
+          "../work.html",
+          "https://github.com/Blaxk-C137/Blaxk",
+          "https://github.com/Blaxk-C137/Blaxk",
+          "blaxk-housing.html",
+          "edublaxk.html",
+          "sabi.html",
+          "../work.html",
+          "../source.html",
+          "../contact.html",
+          "../company.html",
+          "../work.html",
+          "../source.html",
+          "../lab.html",
+          "../about.html",
+          "https://github.com/Blaxk-C137",
+          "../contact.html",
+          "../privacy.html",
+          "?motion=on",
+          "?motion=reduced",
+          "?motion=off",
+          "../privacy.html"
+        ],
+        "focusable": 53,
+        "smallTargets": 13,
+        "words": 722,
+        "motion": "full",
+        "nosecript": false,
+        "aiDisclaimer": false,
+        "provenance": true
+      },
+      "keyboard": {
+        "opened": {
+          "visible": true,
+          "focused": "INPUT"
+        },
+        "searchOptions": 9,
+        "searchSample": "GO\nESC\nPROJECT\nEduBlaxk\nprototype\nCODE\nEduBlaxk — source\nBlaxk-C137/EduBlaxk\nTECH\nReact\nus",
+        "closed": {
+          "hidden": true,
+          "bodyOverflow": "hidden auto"
+        }
+      },
+      "assistant": {
+        "visible": true,
+        "messages": 3,
+        "hasCitation": true,
+        "text": "This panel answers questions about BLAXK BYTE and the work on this site — services, projects, how each one is built and what state it is in. Every answer comes from the verified records behind these pages and cites the record it used.\n\nIt is deliberately not a",
+        "closedByEscape": true
+      },
+      "contact": null,
+      "modes": [
+        {
+          "query": "?motion=on",
+          "mode": "full",
+          "words": 722,
+          "h1": 1,
+          "canvasVisible": false
+        },
+        {
+          "query": "?motion=reduced",
+          "mode": "full",
+          "words": 722,
+          "h1": 1,
+          "canvasVisible": false
+        },
+        {
+          "query": "?motion=off",
+          "mode": "static",
+          "words": 722,
+          "h1": 1,
+          "canvasVisible": false
+        }
+      ]
+    },
+    {
+      "path": "/projects/blaxk-trader.html",
+      "status": 200,
+      "errors": [],
+      "failedRequests": [],
+      "struct": {
+        "title": "Trading Bot — case study | BLAXK BYTE TECHNOLOGIES",
+        "lang": "en",
+        "h1": 1,
+        "h1Text": "TRADING BOT",
+        "h2": 8,
+        "landmarks": 4,
+        "skipLink": true,
+        "imgsTotal": 0,
+        "imgsMissingAlt": 0,
+        "imgSrcs": [],
+        "links": [
+          "#main",
+          "../index.html",
+          "../../index.html",
+          "../../company.html",
+          "../../work.html",
+          "../../source.html",
+          "../../lab.html",
+          "../../about.html",
+          "../../contact.html",
+          "../../index.html",
+          "../../company.html",
+          "../../work.html",
+          "../../source.html",
+          "../../lab.html",
+          "../../about.html",
+          "../../contact.html",
+          "../work.html",
+          "https://github.com/Blaxk-C137/Blaxk_Trader",
+          "https://github.com/Blaxk-C137/Blaxk_Trader",
+          "blaxk-housing.html",
+          "edublaxk.html",
+          "sabi.html",
+          "../work.html",
+          "../source.html",
+          "../contact.html",
+          "../company.html",
+          "../work.html",
+          "../source.html",
+          "../lab.html",
+          "../about.html",
+          "https://github.com/Blaxk-C137",
+          "../contact.html",
+          "../privacy.html",
+          "?motion=on",
+          "?motion=reduced",
+          "?motion=off",
+          "../privacy.html"
+        ],
+        "focusable": 53,
+        "smallTargets": 12,
+        "words": 666,
+        "motion": "full",
+        "nosecript": false,
+        "aiDisclaimer": false,
+        "provenance": true
+      },
+      "keyboard": {
+        "opened": {
+          "visible": true,
+          "focused": "INPUT"
+        },
+        "searchOptions": 9,
+        "searchSample": "GO\nESC\nPROJECT\nEduBlaxk\nprototype\nCODE\nEduBlaxk — source\nBlaxk-C137/EduBlaxk\nTECH\nReact\nus",
+        "closed": {
+          "hidden": true,
+          "bodyOverflow": "hidden auto"
+        }
+      },
+      "assistant": {
+        "visible": true,
+        "messages": 3,
+        "hasCitation": true,
+        "text": "This panel answers questions about BLAXK BYTE and the work on this site — services, projects, how each one is built and what state it is in. Every answer comes from the verified records behind these pages and cites the record it used.\n\nIt is deliberately not a",
+        "closedByEscape": true
+      },
+      "contact": null,
+      "modes": [
+        {
+          "query": "?motion=on",
+          "mode": "full",
+          "words": 666,
+          "h1": 1,
+          "canvasVisible": false
+        },
+        {
+          "query": "?motion=reduced",
+          "mode": "full",
+          "words": 666,
+          "h1": 1,
+          "canvasVisible": false
+        },
+        {
+          "query": "?motion=off",
+          "mode": "static",
+          "words": 666,
           "h1": 1,
           "canvasVisible": false
         }
@@ -1859,6 +3441,7 @@
           "../../contact.html",
           "../work.html",
           "https://github.com/Blaxk-C137/Blaxk-Xposer",
+          "https://github.com/Blaxk-C137/Blaxk-Xposer",
           "https://github.com/Blaxk-C137/Blaxk-Xposer/blob/5ccb12dc62/services/http_rewriter.py#L1-L30",
           "blaxk-housing.html",
           "edublaxk.html",
@@ -1879,12 +3462,12 @@
           "?motion=off",
           "../privacy.html"
         ],
-        "focusable": 53,
+        "focusable": 54,
         "smallTargets": 12,
-        "words": 1050,
+        "words": 1048,
         "motion": "full",
         "nosecript": false,
-        "aiDisclaimer": true,
+        "aiDisclaimer": false,
         "provenance": true
       },
       "keyboard": {
@@ -1911,21 +3494,458 @@
         {
           "query": "?motion=on",
           "mode": "full",
-          "words": 1050,
+          "words": 1048,
           "h1": 1,
           "canvasVisible": false
         },
         {
           "query": "?motion=reduced",
           "mode": "full",
-          "words": 1050,
+          "words": 1048,
           "h1": 1,
           "canvasVisible": false
         },
         {
           "query": "?motion=off",
           "mode": "static",
-          "words": 1050,
+          "words": 1048,
+          "h1": 1,
+          "canvasVisible": false
+        }
+      ]
+    },
+    {
+      "path": "/projects/blaxkbot.html",
+      "status": 200,
+      "errors": [],
+      "failedRequests": [],
+      "struct": {
+        "title": "BlaxkBot v3 — case study | BLAXK BYTE TECHNOLOGIES",
+        "lang": "en",
+        "h1": 1,
+        "h1Text": "BLAXKBOT V3",
+        "h2": 8,
+        "landmarks": 4,
+        "skipLink": true,
+        "imgsTotal": 0,
+        "imgsMissingAlt": 0,
+        "imgSrcs": [],
+        "links": [
+          "#main",
+          "../index.html",
+          "../../index.html",
+          "../../company.html",
+          "../../work.html",
+          "../../source.html",
+          "../../lab.html",
+          "../../about.html",
+          "../../contact.html",
+          "../../index.html",
+          "../../company.html",
+          "../../work.html",
+          "../../source.html",
+          "../../lab.html",
+          "../../about.html",
+          "../../contact.html",
+          "../work.html",
+          "https://github.com/Blaxk-C137/Blaxk_bot",
+          "https://github.com/Blaxk-C137/Blaxk_bot",
+          "blaxk-housing.html",
+          "edublaxk.html",
+          "sabi.html",
+          "../work.html",
+          "../source.html",
+          "../contact.html",
+          "../company.html",
+          "../work.html",
+          "../source.html",
+          "../lab.html",
+          "../about.html",
+          "https://github.com/Blaxk-C137",
+          "../contact.html",
+          "../privacy.html",
+          "?motion=on",
+          "?motion=reduced",
+          "?motion=off",
+          "../privacy.html"
+        ],
+        "focusable": 53,
+        "smallTargets": 12,
+        "words": 811,
+        "motion": "full",
+        "nosecript": false,
+        "aiDisclaimer": false,
+        "provenance": true
+      },
+      "keyboard": {
+        "opened": {
+          "visible": true,
+          "focused": "INPUT"
+        },
+        "searchOptions": 9,
+        "searchSample": "GO\nESC\nPROJECT\nEduBlaxk\nprototype\nCODE\nEduBlaxk — source\nBlaxk-C137/EduBlaxk\nTECH\nReact\nus",
+        "closed": {
+          "hidden": true,
+          "bodyOverflow": "hidden auto"
+        }
+      },
+      "assistant": {
+        "visible": true,
+        "messages": 3,
+        "hasCitation": true,
+        "text": "This panel answers questions about BLAXK BYTE and the work on this site — services, projects, how each one is built and what state it is in. Every answer comes from the verified records behind these pages and cites the record it used.\n\nIt is deliberately not a",
+        "closedByEscape": true
+      },
+      "contact": null,
+      "modes": [
+        {
+          "query": "?motion=on",
+          "mode": "full",
+          "words": 811,
+          "h1": 1,
+          "canvasVisible": false
+        },
+        {
+          "query": "?motion=reduced",
+          "mode": "full",
+          "words": 811,
+          "h1": 1,
+          "canvasVisible": false
+        },
+        {
+          "query": "?motion=off",
+          "mode": "static",
+          "words": 811,
+          "h1": 1,
+          "canvasVisible": false
+        }
+      ]
+    },
+    {
+      "path": "/projects/blaxkwave.html",
+      "status": 200,
+      "errors": [],
+      "failedRequests": [],
+      "struct": {
+        "title": "BlaXkWave Studio — case study | BLAXK BYTE TECHNOLOGIES",
+        "lang": "en",
+        "h1": 1,
+        "h1Text": "BLAXKWAVE STUDIO",
+        "h2": 8,
+        "landmarks": 4,
+        "skipLink": true,
+        "imgsTotal": 4,
+        "imgsMissingAlt": 0,
+        "imgSrcs": [
+          "../assets/img/blaxkwave-01-overview.jpg",
+          "../assets/img/blaxkwave-02-host.jpg",
+          "../assets/img/blaxkwave-03-listener.jpg",
+          "../assets/img/blaxkwave-04-mobile.jpg"
+        ],
+        "links": [
+          "#main",
+          "../index.html",
+          "../../index.html",
+          "../../company.html",
+          "../../work.html",
+          "../../source.html",
+          "../../lab.html",
+          "../../about.html",
+          "../../contact.html",
+          "../../index.html",
+          "../../company.html",
+          "../../work.html",
+          "../../source.html",
+          "../../lab.html",
+          "../../about.html",
+          "../../contact.html",
+          "../work.html",
+          "https://github.com/Blaxk-C137/BlaxkWave",
+          "https://github.com/Blaxk-C137/BlaxkWave",
+          "https://github.com/Blaxk-C137/BlaxkWave",
+          "https://github.com/Blaxk-C137/BlaxkWave",
+          "https://github.com/Blaxk-C137/BlaxkWave",
+          "https://github.com/Blaxk-C137/BlaxkWave",
+          "blaxk-housing.html",
+          "edublaxk.html",
+          "sabi.html",
+          "../work.html",
+          "../source.html",
+          "../contact.html",
+          "../company.html",
+          "../work.html",
+          "../source.html",
+          "../lab.html",
+          "../about.html",
+          "https://github.com/Blaxk-C137",
+          "../contact.html",
+          "../privacy.html",
+          "?motion=on",
+          "?motion=reduced",
+          "?motion=off",
+          "../privacy.html"
+        ],
+        "focusable": 57,
+        "smallTargets": 16,
+        "words": 859,
+        "motion": "full",
+        "nosecript": false,
+        "aiDisclaimer": false,
+        "provenance": true
+      },
+      "keyboard": {
+        "opened": {
+          "visible": true,
+          "focused": "INPUT"
+        },
+        "searchOptions": 9,
+        "searchSample": "GO\nESC\nPROJECT\nEduBlaxk\nprototype\nCODE\nEduBlaxk — source\nBlaxk-C137/EduBlaxk\nTECH\nReact\nus",
+        "closed": {
+          "hidden": true,
+          "bodyOverflow": "hidden auto"
+        }
+      },
+      "assistant": {
+        "visible": true,
+        "messages": 3,
+        "hasCitation": true,
+        "text": "This panel answers questions about BLAXK BYTE and the work on this site — services, projects, how each one is built and what state it is in. Every answer comes from the verified records behind these pages and cites the record it used.\n\nIt is deliberately not a",
+        "closedByEscape": true
+      },
+      "contact": null,
+      "modes": [
+        {
+          "query": "?motion=on",
+          "mode": "full",
+          "words": 859,
+          "h1": 1,
+          "canvasVisible": false
+        },
+        {
+          "query": "?motion=reduced",
+          "mode": "full",
+          "words": 859,
+          "h1": 1,
+          "canvasVisible": false
+        },
+        {
+          "query": "?motion=off",
+          "mode": "static",
+          "words": 859,
+          "h1": 1,
+          "canvasVisible": false
+        }
+      ]
+    },
+    {
+      "path": "/projects/church-programme.html",
+      "status": 200,
+      "errors": [],
+      "failedRequests": [],
+      "struct": {
+        "title": "Church Program Viewer — case study | BLAXK BYTE TECHNOLOGIES",
+        "lang": "en",
+        "h1": 1,
+        "h1Text": "CHURCH PROGRAM VIEWER",
+        "h2": 8,
+        "landmarks": 4,
+        "skipLink": true,
+        "imgsTotal": 0,
+        "imgsMissingAlt": 0,
+        "imgSrcs": [],
+        "links": [
+          "#main",
+          "../index.html",
+          "../../index.html",
+          "../../company.html",
+          "../../work.html",
+          "../../source.html",
+          "../../lab.html",
+          "../../about.html",
+          "../../contact.html",
+          "../../index.html",
+          "../../company.html",
+          "../../work.html",
+          "../../source.html",
+          "../../lab.html",
+          "../../about.html",
+          "../../contact.html",
+          "../work.html",
+          "https://github.com/Blaxk-C137/Church_programme_demo",
+          "https://github.com/Blaxk-C137/Church_programme_demo",
+          "blaxk-housing.html",
+          "edublaxk.html",
+          "sabi.html",
+          "../work.html",
+          "../source.html",
+          "../contact.html",
+          "../company.html",
+          "../work.html",
+          "../source.html",
+          "../lab.html",
+          "../about.html",
+          "https://github.com/Blaxk-C137",
+          "../contact.html",
+          "../privacy.html",
+          "?motion=on",
+          "?motion=reduced",
+          "?motion=off",
+          "../privacy.html"
+        ],
+        "focusable": 53,
+        "smallTargets": 12,
+        "words": 729,
+        "motion": "full",
+        "nosecript": false,
+        "aiDisclaimer": false,
+        "provenance": true
+      },
+      "keyboard": {
+        "opened": {
+          "visible": true,
+          "focused": "INPUT"
+        },
+        "searchOptions": 9,
+        "searchSample": "GO\nESC\nPROJECT\nEduBlaxk\nprototype\nCODE\nEduBlaxk — source\nBlaxk-C137/EduBlaxk\nTECH\nReact\nus",
+        "closed": {
+          "hidden": true,
+          "bodyOverflow": "hidden auto"
+        }
+      },
+      "assistant": {
+        "visible": true,
+        "messages": 3,
+        "hasCitation": true,
+        "text": "This panel answers questions about BLAXK BYTE and the work on this site — services, projects, how each one is built and what state it is in. Every answer comes from the verified records behind these pages and cites the record it used.\n\nIt is deliberately not a",
+        "closedByEscape": true
+      },
+      "contact": null,
+      "modes": [
+        {
+          "query": "?motion=on",
+          "mode": "full",
+          "words": 729,
+          "h1": 1,
+          "canvasVisible": false
+        },
+        {
+          "query": "?motion=reduced",
+          "mode": "full",
+          "words": 729,
+          "h1": 1,
+          "canvasVisible": false
+        },
+        {
+          "query": "?motion=off",
+          "mode": "static",
+          "words": 729,
+          "h1": 1,
+          "canvasVisible": false
+        }
+      ]
+    },
+    {
+      "path": "/projects/crushboard.html",
+      "status": 200,
+      "errors": [],
+      "failedRequests": [],
+      "struct": {
+        "title": "CrushBoard — case study | BLAXK BYTE TECHNOLOGIES",
+        "lang": "en",
+        "h1": 1,
+        "h1Text": "CRUSHBOARD",
+        "h2": 8,
+        "landmarks": 4,
+        "skipLink": true,
+        "imgsTotal": 0,
+        "imgsMissingAlt": 0,
+        "imgSrcs": [],
+        "links": [
+          "#main",
+          "../index.html",
+          "../../index.html",
+          "../../company.html",
+          "../../work.html",
+          "../../source.html",
+          "../../lab.html",
+          "../../about.html",
+          "../../contact.html",
+          "../../index.html",
+          "../../company.html",
+          "../../work.html",
+          "../../source.html",
+          "../../lab.html",
+          "../../about.html",
+          "../../contact.html",
+          "../work.html",
+          "https://github.com/Blaxk-C137/Blaxk_Crush",
+          "https://github.com/Blaxk-C137/Blaxk_Crush",
+          "blaxk-housing.html",
+          "edublaxk.html",
+          "sabi.html",
+          "../work.html",
+          "../source.html",
+          "../contact.html",
+          "../company.html",
+          "../work.html",
+          "../source.html",
+          "../lab.html",
+          "../about.html",
+          "https://github.com/Blaxk-C137",
+          "../contact.html",
+          "../privacy.html",
+          "?motion=on",
+          "?motion=reduced",
+          "?motion=off",
+          "../privacy.html"
+        ],
+        "focusable": 53,
+        "smallTargets": 12,
+        "words": 823,
+        "motion": "full",
+        "nosecript": false,
+        "aiDisclaimer": false,
+        "provenance": true
+      },
+      "keyboard": {
+        "opened": {
+          "visible": true,
+          "focused": "INPUT"
+        },
+        "searchOptions": 9,
+        "searchSample": "GO\nESC\nPROJECT\nEduBlaxk\nprototype\nCODE\nEduBlaxk — source\nBlaxk-C137/EduBlaxk\nTECH\nReact\nus",
+        "closed": {
+          "hidden": true,
+          "bodyOverflow": "hidden auto"
+        }
+      },
+      "assistant": {
+        "visible": true,
+        "messages": 3,
+        "hasCitation": true,
+        "text": "This panel answers questions about BLAXK BYTE and the work on this site — services, projects, how each one is built and what state it is in. Every answer comes from the verified records behind these pages and cites the record it used.\n\nIt is deliberately not a",
+        "closedByEscape": true
+      },
+      "contact": null,
+      "modes": [
+        {
+          "query": "?motion=on",
+          "mode": "full",
+          "words": 823,
+          "h1": 1,
+          "canvasVisible": false
+        },
+        {
+          "query": "?motion=reduced",
+          "mode": "full",
+          "words": 823,
+          "h1": 1,
+          "canvasVisible": false
+        },
+        {
+          "query": "?motion=off",
+          "mode": "static",
+          "words": 823,
           "h1": 1,
           "canvasVisible": false
         }
@@ -1979,6 +3999,7 @@
           "https://github.com/Blaxk-C137/EduBlaxk",
           "https://github.com/Blaxk-C137/EduBlaxk",
           "https://github.com/Blaxk-C137/EduBlaxk",
+          "https://github.com/Blaxk-C137/EduBlaxk",
           "https://github.com/Blaxk-C137/EduBlaxk/blob/5c1445d651/server.ts#L22-L59",
           "blaxk-housing.html",
           "sabi.html",
@@ -1999,12 +4020,12 @@
           "?motion=off",
           "../privacy.html"
         ],
-        "focusable": 59,
+        "focusable": 60,
         "smallTargets": 18,
-        "words": 1073,
+        "words": 1067,
         "motion": "full",
         "nosecript": false,
-        "aiDisclaimer": true,
+        "aiDisclaimer": false,
         "provenance": true
       },
       "keyboard": {
@@ -2031,21 +4052,21 @@
         {
           "query": "?motion=on",
           "mode": "full",
-          "words": 1073,
+          "words": 1067,
           "h1": 1,
           "canvasVisible": false
         },
         {
           "query": "?motion=reduced",
           "mode": "full",
-          "words": 1073,
+          "words": 1067,
           "h1": 1,
           "canvasVisible": false
         },
         {
           "query": "?motion=off",
           "mode": "static",
-          "words": 1073,
+          "words": 1067,
           "h1": 1,
           "canvasVisible": false
         }
@@ -2097,6 +4118,7 @@
           "https://github.com/Blaxk-C137/FORMA-",
           "https://github.com/Blaxk-C137/FORMA-",
           "https://github.com/Blaxk-C137/FORMA-",
+          "https://github.com/Blaxk-C137/FORMA-",
           "https://github.com/Blaxk-C137/FORMA-/blob/2dc3f6d129/backend/gemini.py",
           "blaxk-housing.html",
           "edublaxk.html",
@@ -2117,12 +4139,12 @@
           "?motion=off",
           "../privacy.html"
         ],
-        "focusable": 58,
+        "focusable": 59,
         "smallTargets": 18,
-        "words": 828,
+        "words": 835,
         "motion": "full",
         "nosecript": false,
-        "aiDisclaimer": true,
+        "aiDisclaimer": false,
         "provenance": true
       },
       "keyboard": {
@@ -2149,21 +4171,21 @@
         {
           "query": "?motion=on",
           "mode": "full",
-          "words": 828,
+          "words": 835,
           "h1": 1,
           "canvasVisible": false
         },
         {
           "query": "?motion=reduced",
           "mode": "full",
-          "words": 828,
+          "words": 835,
           "h1": 1,
           "canvasVisible": false
         },
         {
           "query": "?motion=off",
           "mode": "static",
-          "words": 828,
+          "words": 835,
           "h1": 1,
           "canvasVisible": false
         }
@@ -2204,6 +4226,7 @@
           "../../contact.html",
           "../work.html",
           "https://github.com/Blaxk-C137/Gesture_Controls",
+          "https://github.com/Blaxk-C137/Gesture_Controls",
           "blaxk-housing.html",
           "edublaxk.html",
           "sabi.html",
@@ -2223,12 +4246,12 @@
           "?motion=off",
           "../privacy.html"
         ],
-        "focusable": 52,
+        "focusable": 53,
         "smallTargets": 12,
-        "words": 622,
+        "words": 625,
         "motion": "full",
         "nosecript": false,
-        "aiDisclaimer": true,
+        "aiDisclaimer": false,
         "provenance": true
       },
       "keyboard": {
@@ -2255,21 +4278,130 @@
         {
           "query": "?motion=on",
           "mode": "full",
-          "words": 622,
+          "words": 625,
           "h1": 1,
           "canvasVisible": false
         },
         {
           "query": "?motion=reduced",
           "mode": "full",
-          "words": 622,
+          "words": 625,
           "h1": 1,
           "canvasVisible": false
         },
         {
           "query": "?motion=off",
           "mode": "static",
-          "words": 622,
+          "words": 625,
+          "h1": 1,
+          "canvasVisible": false
+        }
+      ]
+    },
+    {
+      "path": "/projects/luminary.html",
+      "status": 200,
+      "errors": [],
+      "failedRequests": [],
+      "struct": {
+        "title": "Luminary — case study | BLAXK BYTE TECHNOLOGIES",
+        "lang": "en",
+        "h1": 1,
+        "h1Text": "LUMINARY",
+        "h2": 8,
+        "landmarks": 4,
+        "skipLink": true,
+        "imgsTotal": 0,
+        "imgsMissingAlt": 0,
+        "imgSrcs": [],
+        "links": [
+          "#main",
+          "../index.html",
+          "../../index.html",
+          "../../company.html",
+          "../../work.html",
+          "../../source.html",
+          "../../lab.html",
+          "../../about.html",
+          "../../contact.html",
+          "../../index.html",
+          "../../company.html",
+          "../../work.html",
+          "../../source.html",
+          "../../lab.html",
+          "../../about.html",
+          "../../contact.html",
+          "../work.html",
+          "https://black-recommender.vercel.app",
+          "https://github.com/Blaxk-C137/Black-Recommender",
+          "https://black-recommender.vercel.app",
+          "https://github.com/Blaxk-C137/Black-Recommender",
+          "blaxk-housing.html",
+          "edublaxk.html",
+          "sabi.html",
+          "../work.html",
+          "../source.html",
+          "../contact.html",
+          "../company.html",
+          "../work.html",
+          "../source.html",
+          "../lab.html",
+          "../about.html",
+          "https://github.com/Blaxk-C137",
+          "../contact.html",
+          "../privacy.html",
+          "?motion=on",
+          "?motion=reduced",
+          "?motion=off",
+          "../privacy.html"
+        ],
+        "focusable": 55,
+        "smallTargets": 12,
+        "words": 736,
+        "motion": "full",
+        "nosecript": false,
+        "aiDisclaimer": false,
+        "provenance": true
+      },
+      "keyboard": {
+        "opened": {
+          "visible": true,
+          "focused": "INPUT"
+        },
+        "searchOptions": 9,
+        "searchSample": "GO\nESC\nPROJECT\nEduBlaxk\nprototype\nCODE\nEduBlaxk — source\nBlaxk-C137/EduBlaxk\nTECH\nReact\nus",
+        "closed": {
+          "hidden": true,
+          "bodyOverflow": "hidden auto"
+        }
+      },
+      "assistant": {
+        "visible": true,
+        "messages": 3,
+        "hasCitation": true,
+        "text": "This panel answers questions about BLAXK BYTE and the work on this site — services, projects, how each one is built and what state it is in. Every answer comes from the verified records behind these pages and cites the record it used.\n\nIt is deliberately not a",
+        "closedByEscape": true
+      },
+      "contact": null,
+      "modes": [
+        {
+          "query": "?motion=on",
+          "mode": "full",
+          "words": 736,
+          "h1": 1,
+          "canvasVisible": false
+        },
+        {
+          "query": "?motion=reduced",
+          "mode": "full",
+          "words": 736,
+          "h1": 1,
+          "canvasVisible": false
+        },
+        {
+          "query": "?motion=off",
+          "mode": "static",
+          "words": 736,
           "h1": 1,
           "canvasVisible": false
         }
@@ -2310,6 +4442,7 @@
           "../../contact.html",
           "../work.html",
           "https://github.com/Blaxk-C137/SABI",
+          "https://github.com/Blaxk-C137/SABI",
           "https://github.com/Blaxk-C137/SABI/blob/9ff8827f93/src/lib/voice/tutor-speak.ts#L5-L22",
           "blaxk-housing.html",
           "edublaxk.html",
@@ -2330,12 +4463,12 @@
           "?motion=off",
           "../privacy.html"
         ],
-        "focusable": 53,
+        "focusable": 54,
         "smallTargets": 13,
-        "words": 1010,
+        "words": 1017,
         "motion": "full",
         "nosecript": false,
-        "aiDisclaimer": true,
+        "aiDisclaimer": false,
         "provenance": true
       },
       "keyboard": {
@@ -2362,21 +4495,130 @@
         {
           "query": "?motion=on",
           "mode": "full",
-          "words": 1010,
+          "words": 1017,
           "h1": 1,
           "canvasVisible": false
         },
         {
           "query": "?motion=reduced",
           "mode": "full",
-          "words": 1010,
+          "words": 1017,
           "h1": 1,
           "canvasVisible": false
         },
         {
           "query": "?motion=off",
           "mode": "static",
-          "words": 1010,
+          "words": 1017,
+          "h1": 1,
+          "canvasVisible": false
+        }
+      ]
+    },
+    {
+      "path": "/projects/statusfix.html",
+      "status": 200,
+      "errors": [],
+      "failedRequests": [],
+      "struct": {
+        "title": "StatusFix — case study | BLAXK BYTE TECHNOLOGIES",
+        "lang": "en",
+        "h1": 1,
+        "h1Text": "STATUSFIX",
+        "h2": 8,
+        "landmarks": 4,
+        "skipLink": true,
+        "imgsTotal": 0,
+        "imgsMissingAlt": 0,
+        "imgSrcs": [],
+        "links": [
+          "#main",
+          "../index.html",
+          "../../index.html",
+          "../../company.html",
+          "../../work.html",
+          "../../source.html",
+          "../../lab.html",
+          "../../about.html",
+          "../../contact.html",
+          "../../index.html",
+          "../../company.html",
+          "../../work.html",
+          "../../source.html",
+          "../../lab.html",
+          "../../about.html",
+          "../../contact.html",
+          "../work.html",
+          "https://status-fix-client.vercel.app",
+          "https://github.com/Blaxk-C137/statusFix-server",
+          "https://status-fix-client.vercel.app",
+          "https://github.com/Blaxk-C137/statusFix-server",
+          "blaxk-housing.html",
+          "edublaxk.html",
+          "sabi.html",
+          "../work.html",
+          "../source.html",
+          "../contact.html",
+          "../company.html",
+          "../work.html",
+          "../source.html",
+          "../lab.html",
+          "../about.html",
+          "https://github.com/Blaxk-C137",
+          "../contact.html",
+          "../privacy.html",
+          "?motion=on",
+          "?motion=reduced",
+          "?motion=off",
+          "../privacy.html"
+        ],
+        "focusable": 55,
+        "smallTargets": 12,
+        "words": 821,
+        "motion": "full",
+        "nosecript": false,
+        "aiDisclaimer": false,
+        "provenance": true
+      },
+      "keyboard": {
+        "opened": {
+          "visible": true,
+          "focused": "INPUT"
+        },
+        "searchOptions": 9,
+        "searchSample": "GO\nESC\nPROJECT\nEduBlaxk\nprototype\nCODE\nEduBlaxk — source\nBlaxk-C137/EduBlaxk\nTECH\nReact\nus",
+        "closed": {
+          "hidden": true,
+          "bodyOverflow": "hidden auto"
+        }
+      },
+      "assistant": {
+        "visible": true,
+        "messages": 3,
+        "hasCitation": true,
+        "text": "This panel answers questions about BLAXK BYTE and the work on this site — services, projects, how each one is built and what state it is in. Every answer comes from the verified records behind these pages and cites the record it used.\n\nIt is deliberately not a",
+        "closedByEscape": true
+      },
+      "contact": null,
+      "modes": [
+        {
+          "query": "?motion=on",
+          "mode": "full",
+          "words": 821,
+          "h1": 1,
+          "canvasVisible": false
+        },
+        {
+          "query": "?motion=reduced",
+          "mode": "full",
+          "words": 821,
+          "h1": 1,
+          "canvasVisible": false
+        },
+        {
+          "query": "?motion=off",
+          "mode": "static",
+          "words": 821,
           "h1": 1,
           "canvasVisible": false
         }
@@ -2417,6 +4659,7 @@
           "../../contact.html",
           "../work.html",
           "https://github.com/Blaxk-C137/The_Migrator",
+          "https://github.com/Blaxk-C137/The_Migrator",
           "blaxk-housing.html",
           "edublaxk.html",
           "sabi.html",
@@ -2436,12 +4679,12 @@
           "?motion=off",
           "../privacy.html"
         ],
-        "focusable": 52,
+        "focusable": 53,
         "smallTargets": 12,
-        "words": 577,
+        "words": 576,
         "motion": "full",
         "nosecript": false,
-        "aiDisclaimer": true,
+        "aiDisclaimer": false,
         "provenance": true
       },
       "keyboard": {
@@ -2468,21 +4711,21 @@
         {
           "query": "?motion=on",
           "mode": "full",
-          "words": 577,
+          "words": 576,
           "h1": 1,
           "canvasVisible": false
         },
         {
           "query": "?motion=reduced",
           "mode": "full",
-          "words": 577,
+          "words": 576,
           "h1": 1,
           "canvasVisible": false
         },
         {
           "query": "?motion=off",
           "mode": "static",
-          "words": 577,
+          "words": 576,
           "h1": 1,
           "canvasVisible": false
         }
@@ -2498,7 +4741,7 @@
         "lang": "en",
         "h1": 1,
         "h1Text": "THE SOURCE EXPLORER",
-        "h2": 5,
+        "h2": 6,
         "landmarks": 4,
         "skipLink": true,
         "imgsTotal": 0,
@@ -2530,6 +4773,19 @@
           "https://github.com/Blaxk-C137/Blaxk_Aggregator",
           "https://github.com/Blaxk-C137/The_Migrator",
           "https://github.com/Blaxk-C137/Gesture_Controls",
+          "https://github.com/Blaxk-C137/statusFix-server",
+          "https://github.com/Blaxk-C137/BlaxkWave",
+          "https://github.com/Blaxk-C137/Blaxk_Crush",
+          "https://github.com/Blaxk-C137/Blaxk_bot",
+          "https://github.com/Blaxk-C137/Blaxk-Anime",
+          "https://github.com/Blaxk-C137/Black-Recommender",
+          "https://github.com/Blaxk-C137/Blaxk-Downloader",
+          "https://github.com/Blaxk-C137/Blaxk",
+          "https://github.com/Blaxk-C137/Blaxk_Hand",
+          "https://github.com/Blaxk-C137/Blaxk_Sound",
+          "https://github.com/Blaxk-C137/Church_programme_demo",
+          "https://github.com/Blaxk-C137/Blaxk_Trader",
+          "https://github.com/Blaxk-C137/Blaxk-Survey",
           "projects/blaxk-housing.html",
           "projects/edublaxk.html",
           "projects/sabi.html",
@@ -2572,6 +4828,75 @@
           "https://github.com/Blaxk-C137/moltbot",
           "https://github.com/Blaxk-C137/Call-of-Duty-Sol-Ultra",
           "https://github.com/Blaxk-C137/public-apis",
+          "https://github.com/Blaxk-C137/Blaxk-Housing",
+          "projects/blaxk-housing.html",
+          "https://github.com/Blaxk-C137/EduBlaxk",
+          "projects/edublaxk.html",
+          "https://github.com/Blaxk-C137/SABI",
+          "projects/sabi.html",
+          "https://github.com/Blaxk-C137/Blaxk-Xposer",
+          "projects/blaxk-xposer.html",
+          "https://github.com/Blaxk-C137/FORMA-",
+          "projects/forma.html",
+          "https://github.com/Blaxk-C137/Blaxk_Aggregator",
+          "projects/blaxk-aggregator.html",
+          "https://github.com/Blaxk-C137/The_Migrator",
+          "projects/the-migrator.html",
+          "https://github.com/Blaxk-C137/Gesture_Controls",
+          "projects/gesture-controls.html",
+          "https://github.com/Blaxk-C137/statusFix-server",
+          "https://status-fix-client.vercel.app",
+          "projects/statusfix.html",
+          "https://github.com/Blaxk-C137/Blaxk-Status",
+          "https://github.com/Blaxk-C137/statusFix-Client",
+          "https://github.com/Blaxk-C137/BlaxkWave",
+          "projects/blaxkwave.html",
+          "https://github.com/Blaxk-C137/Blaxk_Crush",
+          "projects/crushboard.html",
+          "https://github.com/Blaxk-C137/Blaxk_bot",
+          "projects/blaxkbot.html",
+          "https://github.com/Blaxk-C137/Blaxk-Anime",
+          "projects/blaxk-anime.html",
+          "https://github.com/Blaxk-C137/Black-Recommender",
+          "https://black-recommender.vercel.app",
+          "projects/luminary.html",
+          "https://github.com/Blaxk-C137/Blaxk-Downloader",
+          "projects/blaxk-grabber.html",
+          "https://github.com/Blaxk-C137/Blaxk",
+          "projects/blaxk-tcf.html",
+          "https://github.com/Blaxk-C137/Blaxk_Hand",
+          "projects/aileads.html",
+          "https://github.com/Blaxk-C137/Blaxk_Sound",
+          "projects/blaxk-sound.html",
+          "https://github.com/Blaxk-C137/Church_programme_demo",
+          "projects/church-programme.html",
+          "https://github.com/Blaxk-C137/Blaxk_Trader",
+          "projects/blaxk-trader.html",
+          "https://github.com/Blaxk-C137/Blaxk-Survey",
+          "projects/blaxk-survey.html",
+          "https://github.com/Blaxk-C137/AsyncRAT-C-Sharp",
+          "https://github.com/Blaxk-C137/Forked",
+          "https://github.com/Blaxk-C137/rea-bx",
+          "https://github.com/Blaxk-C137/Recordly",
+          "https://github.com/Blaxk-C137/Signova-",
+          "https://github.com/Blaxk-C137/Blaxk3dsvg",
+          "https://github.com/Blaxk-C137/moltbot",
+          "https://github.com/Blaxk-C137/Call-of-Duty-Sol-Ultra",
+          "https://github.com/Blaxk-C137/public-apis",
+          "https://github.com/Blaxk-C137/Blaxk-C137",
+          "https://github.com/Blaxk-C137/Aunteee-D",
+          "https://demo-rust-seven-66.vercel.app",
+          "https://github.com/Blaxk-C137/TOAST",
+          "https://github.com/Blaxk-C137/chrome_sol",
+          "https://github.com/Blaxk-C137/Blaxk-Encryptor",
+          "https://github.com/Blaxk-C137/Blaxk-X-Bot",
+          "https://github.com/Blaxk-C137/sniffle",
+          "https://github.com/Blaxk-C137/Blaxk_SuperFolio",
+          "https://github.com/Blaxk-C137/BlaxkVERSE",
+          "https://github.com/Blaxk-C137/super-carnival",
+          "https://blaxk.vercel.app",
+          "https://github.com/Blaxk-C137/reimagined-dollop",
+          "https://github.com/Blaxk-C137/classified_APP",
           "company.html",
           "work.html",
           "source.html",
@@ -2585,12 +4910,12 @@
           "?motion=off",
           "privacy.html"
         ],
-        "focusable": 94,
-        "smallTargets": 62,
-        "words": 821,
+        "focusable": 176,
+        "smallTargets": 143,
+        "words": 1935,
         "motion": "full",
         "nosecript": false,
-        "aiDisclaimer": true,
+        "aiDisclaimer": false,
         "provenance": true
       },
       "keyboard": {
@@ -2617,21 +4942,21 @@
         {
           "query": "?motion=on",
           "mode": "full",
-          "words": 821,
+          "words": 1935,
           "h1": 1,
           "canvasVisible": false
         },
         {
           "query": "?motion=reduced",
           "mode": "full",
-          "words": 821,
+          "words": 1935,
           "h1": 1,
           "canvasVisible": false
         },
         {
           "query": "?motion=off",
           "mode": "static",
-          "words": 821,
+          "words": 1935,
           "h1": 1,
           "canvasVisible": false
         }
@@ -2643,7 +4968,7 @@
       "errors": [],
       "failedRequests": [],
       "struct": {
-        "title": "Work — 8 verified projects | BLAXK BYTE TECHNOLOGIES",
+        "title": "Work — 21 verified projects | BLAXK BYTE TECHNOLOGIES",
         "lang": "en",
         "h1": 1,
         "h1Text": "THE WORK",
@@ -2678,6 +5003,19 @@
           "projects/blaxk-aggregator.html",
           "projects/the-migrator.html",
           "projects/gesture-controls.html",
+          "projects/statusfix.html",
+          "projects/blaxkwave.html",
+          "projects/crushboard.html",
+          "projects/blaxkbot.html",
+          "projects/blaxk-anime.html",
+          "projects/luminary.html",
+          "projects/blaxk-grabber.html",
+          "projects/blaxk-tcf.html",
+          "projects/aileads.html",
+          "projects/blaxk-sound.html",
+          "projects/church-programme.html",
+          "projects/blaxk-trader.html",
+          "projects/blaxk-survey.html",
           "projects/blaxk-housing.html",
           "https://github.com/Blaxk-C137/Blaxk-Housing",
           "projects/edublaxk.html",
@@ -2694,6 +5032,32 @@
           "https://github.com/Blaxk-C137/The_Migrator",
           "projects/gesture-controls.html",
           "https://github.com/Blaxk-C137/Gesture_Controls",
+          "projects/statusfix.html",
+          "https://github.com/Blaxk-C137/statusFix-server",
+          "projects/blaxkwave.html",
+          "https://github.com/Blaxk-C137/BlaxkWave",
+          "projects/crushboard.html",
+          "https://github.com/Blaxk-C137/Blaxk_Crush",
+          "projects/blaxkbot.html",
+          "https://github.com/Blaxk-C137/Blaxk_bot",
+          "projects/blaxk-anime.html",
+          "https://github.com/Blaxk-C137/Blaxk-Anime",
+          "projects/luminary.html",
+          "https://github.com/Blaxk-C137/Black-Recommender",
+          "projects/blaxk-grabber.html",
+          "https://github.com/Blaxk-C137/Blaxk-Downloader",
+          "projects/blaxk-tcf.html",
+          "https://github.com/Blaxk-C137/Blaxk",
+          "projects/aileads.html",
+          "https://github.com/Blaxk-C137/Blaxk_Hand",
+          "projects/blaxk-sound.html",
+          "https://github.com/Blaxk-C137/Blaxk_Sound",
+          "projects/church-programme.html",
+          "https://github.com/Blaxk-C137/Church_programme_demo",
+          "projects/blaxk-trader.html",
+          "https://github.com/Blaxk-C137/Blaxk_Trader",
+          "projects/blaxk-survey.html",
+          "https://github.com/Blaxk-C137/Blaxk-Survey",
           "company.html",
           "work.html",
           "source.html",
@@ -2707,12 +5071,12 @@
           "?motion=off",
           "privacy.html"
         ],
-        "focusable": 79,
+        "focusable": 120,
         "smallTargets": 11,
-        "words": 773,
+        "words": 1504,
         "motion": "full",
         "nosecript": true,
-        "aiDisclaimer": true,
+        "aiDisclaimer": false,
         "provenance": true
       },
       "keyboard": {
@@ -2739,21 +5103,21 @@
         {
           "query": "?motion=on",
           "mode": "full",
-          "words": 773,
+          "words": 1504,
           "h1": 1,
           "canvasVisible": true
         },
         {
           "query": "?motion=reduced",
           "mode": "full",
-          "words": 773,
+          "words": 1504,
           "h1": 1,
           "canvasVisible": true
         },
         {
           "query": "?motion=off",
           "mode": "static",
-          "words": 773,
+          "words": 1504,
           "h1": 1,
           "canvasVisible": true
         }

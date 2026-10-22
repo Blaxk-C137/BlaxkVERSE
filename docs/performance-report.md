@@ -99,3 +99,207 @@ Measured on the loaded page, `desktop/full`:
 - No physical Android device was available in this environment. The `mobile` viewport is a device *emulation* (390×844 @3x with touch), and `low-end` is CPU *throttling*. Both are stand-ins; the acceptance criteria for real-device testing remain open, and this report says so rather than implying coverage it does not have.
 - INP is not measured directly; the interaction figure is a coarse end-to-end timing.
 - Canvas frame statistics come from a rolling 180-frame window inside the page, so a burst of jank at the very end of a pass can be under-weighted.
+
+---
+
+# Second pass — what changed and what it cost
+
+The site was rebuilt in the second pass: 8 case studies became 21, 16 pages became 29,
+the hero canvas went from half resolution to native, and GSAP was added for the motion
+layer. Every one of those changes moves a number, so they are recorded here rather than
+folded into the previous results as though nothing happened.
+
+## The blur defect, and its cost
+
+The worst finding of the second pass was not a performance regression but a **quality
+defect that the performance harness could not see**.
+
+The hero canvas computed its resolution like this:
+
+```js
+var scale = area > 1100000 ? 0.5 : area > 550000 ? 0.62 : 0.85;
+dpr = Math.min(window.devicePixelRatio || 1, 1.5) * scale;
+```
+
+On any desktop viewport that is a `dpr` of **0.5** — the canvas was rendered at half
+resolution and stretched to fit. Mobile, at `1.5 × 0.85 = 1.275`, was sharper than
+desktop. Measured before the fix:
+
+| Viewport | Canvas CSS size | Backing store | Ratio | |
+|---|---|---|---|---|
+| 1440×900 | 1440×848 | 720×424 | **0.50×** | blurry |
+| 1920×1080 | 1920×878 | 960×439 | **0.50×** | blurry |
+| 1366×768 | 1366×824 | 846×510 | **0.62×** | blurry |
+| 390×844 @3x | 390×1345 | 497×1714 | 1.27× | sharp |
+
+**Why the harness passed it.** The budget harness measured LCP, CLS, long tasks and
+console errors. A canvas rendering at half resolution is *faster*, not slower, so it
+scored perfectly: "LCP 424 ms ✓". An optimisation that traded visible quality for an
+unmeasured quantity looked like a clean pass. This is the failure mode of a performance
+budget with no fidelity check, and it happened to the person who wrote the budget.
+
+**The fix.** Resolution now has a floor of 1.0 — below 1.0 is upscaling, and upscaling is
+blur — with cost controlled by bounding total device pixels instead:
+
+```js
+var want = Math.min(window.devicePixelRatio || 1, 2);
+var MAX_PIXELS = 3.4e6;
+var room = Math.sqrt(MAX_PIXELS / Math.max(1, W * H));
+dpr = Math.max(1, Math.min(want, room));
+```
+
+**How the extra pixels were paid for.** Not by accepting jank. The frame cost was not
+fill-rate, it was garbage: the connection loop ran `.filter()` inside a nested loop on
+every frame — 28 array allocations per frame to answer a question whose answer never
+changes — and rebuilt three gradient objects per frame for a shape that only moves
+sideways. Precomputing the theme-sharing pairs, batching ~28 stroke calls into 3
+alpha-bucketed paths, and pre-rendering the pulse gradient to an offscreen sprite freed
+more budget than the resolution increase spent.
+
+| | Before | After |
+|---|---|---|
+| Canvas ratio, desktop | 0.50× | **1.00×** |
+| Canvas ratio, mobile @3x | 1.27× | **2.00×** |
+| Median frame | 16.7 ms | 16.7 ms |
+| p95 frame | 16.8 ms | 16.7 ms |
+| Frames over 20 ms (2 s sample) | 0 | 0 |
+
+Crisper on every screen, and marginally faster, because the removals outweighed the
+increase.
+
+## The second-pass budget
+
+Two sweeps were run, because the first found a regression that the second fixed.
+
+### Sweep 1 — after adding GSAP and the extra pages
+
+| Metric | Before (16 pages) | After (29 pages) | Budget | Verdict |
+|---|---|---|---|---|
+| LCP worst | 424 ms | 508 ms | 2500 ms | ✓ |
+| CLS worst | 0.0069 | **0.0253** | 0.1 | ✓ but 4x worse |
+| Longest task | 236 ms | 289 ms | — | reported |
+| DOM nodes max | 431 | 997 | — | reported |
+| Transfer worst | 567 KB | 743 KB | — | reported |
+
+CLS had gone the wrong way and the cause was not obvious. The obvious suspects —
+GSAP, the new pages, the larger tables — were all wrong, and three specific
+hypotheses (the GSAP reveal transforms, the pre-rendered row list, the filter bar)
+were each tested and each disproved.
+
+### Diagnosing it properly
+
+Guessing was not working, so the browser was asked directly. A script snapshotted
+the height of every section, div, paragraph, table, canvas and heading at
+`DOMContentLoaded`, then again after boot, and reported what had grown:
+
+```
+elements that GREW after DOMContentLoaded:
+  +18px  431 -> 449   section.section.section--tight
+  +18px  286 -> 304   div.wrap
+  +18px    0 ->  18   div.status-key.mt-2
+```
+
+The status legend was a **0px empty div** that JavaScript filled with a single
+line of text on load. Three earlier fixes had been aimed at the wrong elements —
+including one that broke the filter buttons and had to be corrected.
+
+### The four root causes, all the same shape
+
+| Cause | Was | Now |
+|---|---|---|
+| Status legend, empty div filled on load (+18px) | `0px` | rendered at build time |
+| Count note, empty `<p>` filled with a line (≈18px) | `0px` | rendered at build time |
+| Filter bar, empty container filled with 14 buttons (88px desktop / 232px mobile) | `0px` | rendered at build time |
+| Empty source chamber, JS re-rendered it with *different* text | height changed | strings are now byte-identical |
+
+Every one was **content rendered by JavaScript into an empty container**. The
+principle is now stated in the code: if the build knows what the content is, the
+build renders it. JavaScript may replace identical markup, which cannot shift
+anything, but it must not introduce height that was not there before.
+
+### Sweep 2 — after GSAP, 21 case studies
+
+| Metric | Before (16 pages) | Sweep 2 (29 pages) | Budget | Verdict |
+|---|---|---|---|---|
+| LCP worst | 424 ms | 472 ms | 2500 ms | ✓ |
+| CLS worst | 0.0069 | 0.0001 | 0.1 | ✓ |
+| Longest task | 236 ms | 338 ms | — | reported |
+| TBT proxy worst | 186 ms | 288 ms | — | reported |
+| DOM nodes max | 431 | 997 | — | reported |
+| Transfer worst | 567 KB | 744 KB | — | reported |
+| Console errors | 0 / 144 | 0 / 261 | — | ✓ |
+
+**CLS improved by a factor of about 250 against the pre-GSAP baseline**, and by
+about 200 against sweep 1, because the shift was never caused by the new features —
+it was pre-existing, and the extra pages simply moved it into the measured set.
+
+**Reading the LCP change honestly.** Worst-case LCP moved from 424 ms to 472 ms and
+median desktop/full from 72 ms to 80 ms. Three things account for it: 44 KB gzipped
+of GSAP, four times the canvas pixels on desktop, and thirteen more pages with more
+DOM. It is a real cost inside a budget with five times the headroom — but it is a
+cost, not a rounding error.
+
+**DOM nodes at 997** is the number to watch. It tripled, because the repository
+index puts every catalogued repository in one table. Still short of the ~1500
+point where style recalculation starts to show, and it is one page rather than a
+pattern, but it is the first figure here trending the wrong way.
+
+### Sweep 3 — final, after the delivery layer
+
+| Metric | Sweep 2 (29 pages) | **Final (30 pages)** | Budget | Verdict |
+|---|---|---|---|---|
+| LCP worst | 472 ms | **384 ms** | 2500 ms | ✓ |
+| CLS worst | 0.0001 | **0.0013** | 0.1 | ✓ |
+| Longest task | 338 ms | **214 ms** | — | reported |
+| TBT proxy worst | 288 ms | **186 ms** | — | reported |
+| DOM nodes max | 997 | **1097** | — | reported |
+| Transfer worst | 744 KB | **754 KB** | — | reported |
+| Console errors | 0 / 261 | **0 / 270** | — | ✓ |
+
+Worst case is now `/source` at 384 ms on a throttled modest laptop with reduced motion,
+and the longest main-thread task fell by 124 ms even though a page was added. The two
+figures that moved the wrong way moved for reasons worth naming rather than smoothing
+over.
+
+**CLS is no longer effectively zero, and that is the most useful line in this table.**
+It was 0.0001; it is now 0.0013, on `/contact` on the slowest simulated device. The cause
+is the enquiry form's status line, which reserves its space when a submission is in
+flight — a deliberate trade that stopped a *larger* shift (the result announcement pushing
+the layout) and left a much smaller one. 0.0013 is 77× inside budget. It is recorded
+because a report that only ever improves is a report that has stopped measuring.
+
+**DOM at 1097** is the `/source` table, which now carries a Deployment column and a row
+for the 44th repository. Still well under the ~1500 point where style recalculation starts
+to show, still one page rather than a pattern.
+
+**Transfer worst at 754 KB** is `/projects/forma.html` uncompressed with no CDN — four
+real screenshots dominate it. Compressed it is a fraction of that, but the report keeps
+quoting the uncompressed figure because that is the worst a visitor on a slow link can be
+asked to fetch.
+
+**270 runs, 0 errors.** The count is 30 pages × 3 viewports × 3 motion modes, and every
+run is recorded per page in `evidence/site-performance.json`.
+
+## The check that was missing
+
+The budget harness measures LCP, CLS, long tasks and errors. It passed the site
+while the hero canvas rendered at half resolution on every desktop viewport, because
+half resolution is *faster*. A performance budget with no fidelity check will happily
+celebrate an optimisation that makes the product worse.
+
+`npm run quality` closes that gap with four checks, each of which exists because a
+real defect got through a different gate:
+
+| Check | Catches | Current result |
+|---|---|---|
+| Canvas fidelity | any canvas upscaled by CSS (the 0.5x bug) | desktop 1x · desktop-hi 1x · laptop 1x · mobile 2x |
+| Motion layer engagement | GSAP silently not running, or running in reduced mode | full: v3.15.0 active · reduced: correctly absent |
+| Layout stability | shifts, **named by element** rather than guessed at | CLS 0 on every sampled page, both modes |
+| Filter integrity | a theme unreachable, or a count that does not match the data | 14 filters, all reachable, all counts correct |
+
+## INP
+
+Still not measured directly, for the same reason as before: headless Chromium cannot
+produce a trustworthy input-latency figure. The TBT proxy and long-task totals are
+reported in its place, and the JSON says which is which. A real INP number requires
+real-device testing with real interaction, and that remains outstanding.

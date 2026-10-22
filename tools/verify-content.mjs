@@ -52,7 +52,27 @@ for (const p of D.projects) {
   if (!["shipped", "prototype", "in-progress", "concept"].includes(p.status)) fail(`valid status: ${p.slug}`, p.status);
   /* The publication rule: "shipped" requires a verified deployment URL. */
   if (p.status === "shipped" && !p.demo) fail(`deployment evidence: ${p.slug}`, 'status is "shipped" but no demo URL is recorded');
-  if (p.demo) warn(`deployment URL unverified: ${p.slug}`, `${p.demo} — deployment URLs must be checked by hand before publication`);
+  if (p.demo) {
+    /* A deployment URL cannot be verified from here: this script must not
+       become a machine that blesses a link it cannot see, and an automated
+       200 is not the same as a working service. So the rule is that a human
+       checked it and recorded the date. A recorded check that is recent is
+       accepted as evidence; a missing or stale one is a warning, not a pass.
+       Anything older than 120 days has to be looked at again, because a
+       Vercel deployment can be deleted without anything here changing — two
+       of this account's URLs are already gone that way. */
+    const STALE_DAYS = 120;
+    const age = p.demoChecked
+      ? Math.floor((Date.now() - Date.parse(p.demoChecked)) / 86400000)
+      : null;
+    if (age === null) {
+      warn(`deployment URL unverified: ${p.slug}`, `${p.demo} — no recorded manual check; confirm the URL resolves before publishing`);
+    } else if (age > STALE_DAYS) {
+      warn(`deployment check stale: ${p.slug}`, `${p.demo} last confirmed ${p.demoChecked} (${age} days ago) — check it again`);
+    } else {
+      ok(`deployment URL confirmed by hand: ${p.slug}`, `${p.demo} — HTTP 200 recorded ${p.demoChecked}, ${age} day(s) ago`);
+    }
+  }
   if (!p.oneLiner || p.oneLiner.length < 30) fail(`one-liner: ${p.slug}`, "too short to be informative");
   if (!p.limitations || !p.limitations.length) fail(`limitations: ${p.slug}`, "every project must state its limits");
 }
@@ -67,24 +87,34 @@ for (const p of D.projects) {
 }
 ok("no unverifiable metrics in project prose", "scanned one-liners, problem, users, approach and lessons");
 
-/* Contact and legal claims. */
+/* Contact and legal claims.
+ *
+ * These are scanned against every string in the record — with one precise
+ * exception, stated here rather than hidden.
+ *
+ * The assistant's `match` arrays are a routing table, not prose. An entry like
+ * match:["registered","incorporat"] exists so that a question about company
+ * registration is ROUTED somewhere instead of falling through; the reader never
+ * sees those strings, and they assert nothing. Scanning them would make it
+ * impossible to route the very question the rule is about. So the registration
+ * pattern is tested against published prose only.
+ *
+ * Every other pattern still scans the entire record, because an email address,
+ * a phone number or a certification claim is a claim wherever it appears. */
 const allText = JSON.stringify(D);
-for (const [pattern, why] of [
-  [/\b(registered|incorporation complete|RC\s?\d+)\b/i, "company registration must not be asserted"],
-  [/\b(certified|ISO\s?\d+|PCI[- ]DSS|SOC\s?2)\b/i, "certifications must not be claimed"],
-  [/@(gmail|yahoo|outlook|hotmail)\.com/i, "no personal email address may be published"],
-  [/\b\+?234\d{10}\b/, "no personal phone number may be published"],
-]) {
-  if (pattern.test(allText)) {
-    /* The knowledge base is allowed to *deny* registration — check for that. */
-    if (/registered/i.test(pattern.source) && /not something this site asserts|deliberately not claimed|has not been verified/i.test(allText)) {
-      ok("company registration not asserted", "the record explicitly declines to claim registration status");
-    } else {
-      fail("prohibited claim", `matched ${pattern} (${why})`);
-    }
-  }
+const proseOnly = JSON.stringify(D, (k, v) => (k === "match" ? undefined : v));
+
+const LEGAL = [
+  [/\b(registered|incorporation complete|RC\s?\d+)\b/i, "company registration must not be asserted", proseOnly],
+  [/\b(certified|ISO\s?\d+|PCI[- ]DSS|SOC\s?2)\b/i, "certifications must not be claimed", allText],
+  [/@(gmail|yahoo|outlook|hotmail)\.com/i, "no personal email address may be published", allText],
+  [/\b\+?234\d{10}\b/, "no personal phone number may be published", allText],
+];
+for (const [pattern, why, haystack] of LEGAL) {
+  if (pattern.test(haystack)) fail("prohibited claim", `matched ${pattern} (${why})`);
 }
-ok("no prohibited claims", "no certifications, personal contact details or corporate registration asserted");
+ok("no prohibited claim asserted", "registration, certification, personal email and phone number all absent from published prose");
+ok("routing keywords excluded from that scan", "assistant `match` arrays only — they route a question and are never rendered");
 
 /* --------------------------------------------------- 2. excerpt screening */
 const SECRETS = [
@@ -201,6 +231,26 @@ if (!OFFLINE) {
       if (e.kind === "fork" && !r.fork) warn(`exclusion marked fork but is not: ${e.repo}`, "re-check the reason given on the source page");
     }
     ok("excluded repositories resolve", `${exOk}/${D.exclusions.length} verified public`);
+
+    /* The account count is a moving target. Compare what GitHub reports now with
+       what the records were reconciled to, and NAME the difference rather than
+       letting the prose claim a complete account while it is not. */
+    const cov = { present: new Set(), excl: new Set(D.exclusions.map((e) => e.repo)), other: new Set((D.others || []).map((o) => o.repo)) };
+    for (const p of D.projects) for (const r of (p.repos || [p.repo])) cov.present.add(r);
+    const catalogued = cov.present.size + cov.excl.size + cov.other.size;
+    live.catalogue = { presented: cov.present.size, excluded: cov.excl.size, indexedOnly: cov.other.size, total: catalogued };
+
+    const reported = D.facts.accountReported;
+    if (reported && reported !== catalogued) {
+      warn("account count exceeds the catalogue",
+        `GitHub reported ${reported} public repositories; these records catalogue ${catalogued}. ${D.facts.accountDriftNote || ""}`);
+    }
+    if (user.public_repos !== D.facts.accountReported) {
+      warn("account count moved since the snapshot",
+        `records were reconciled against ${D.facts.accountReported} on ${D.facts.accountChecked}; GitHub now reports ${user.public_repos}`);
+    } else {
+      ok("account count matches the snapshot", `${user.public_repos} public repositories, as recorded`);
+    }
 
     /* ---------------------------------------------------------------------
        Fork accounting.

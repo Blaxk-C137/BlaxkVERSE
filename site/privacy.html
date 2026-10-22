@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Privacy &amp; AI disclosure | BLAXK BYTE TECHNOLOGIES</title>
-<meta name="description" content="Exactly what this site does with your data: no analytics, no cookies, no third-party requests. The assistant is a deterministic retriever with no model connected, and says so.">
+<meta name="description" content="Exactly what this site does with your data: first-party page-view counting with no cookies, no stored IP addresses and no third-party requests. Do Not Track is honoured. The assistant is a deterministic retriever with no model connected, and says so.">
 <meta name="color-scheme" content="dark">
 <meta name="theme-color" content="#08090c">
 <meta property="og:title" content="Privacy &amp; AI disclosure | BLAXK BYTE TECHNOLOGIES">
-<meta property="og:description" content="Exactly what this site does with your data: no analytics, no cookies, no third-party requests. The assistant is a deterministic retriever with no model connected, and says so.">
+<meta property="og:description" content="Exactly what this site does with your data: first-party page-view counting with no cookies, no stored IP addresses and no third-party requests. Do Not Track is honoured. The assistant is a deterministic retriever with no model connected, and says so.">
 <meta property="og:type" content="website">
 <link rel="stylesheet" href="assets/css/blaxkverse.css">
 
@@ -62,8 +62,10 @@
     <div class="wrap">
       <span class="label">Privacy &amp; AI disclosure</span>
       <h1 style="font-size:clamp(2rem,5vw,3.4rem);margin:.4rem 0 .8rem">What this site does with your data</h1>
-      <p class="lede">The short version: almost nothing, because it asks for almost nothing. This page
-        documents that precisely rather than reassuringly.</p>
+      <p class="lede">The short version: a page view is counted in a way that cannot identify you, an
+        enquiry you send is delivered by email through EmailJS, and nothing else leaves your browser. This page documents
+        that precisely rather than reassuringly, and it is updated whenever the code changes — a disclosure
+        that has quietly stopped being true is worse than no disclosure at all.</p>
     </div>
   </section>
 
@@ -71,11 +73,42 @@
     <div class="wrap" style="display:grid;gap:2rem">
       <div class="panel panel--pad">
         <h2 style="font-size:1.3rem">1 · Data this site collects</h2>
-        <p class="dim">None that identifies you.</p>
+        <p class="dim">One thing, and nothing that identifies you: a page view is counted.</p>
         <ul class="tight">
-          <li><strong>No analytics.</strong> No Google Analytics, Plausible, Umami, Fathom or similar. No counting script of any kind.</li>
-          <li><strong>No cookies.</strong> None are set, which is why there is no cookie banner — a banner for cookies that do not exist would be theatre.</li>
-          <li><strong>No third-party requests.</strong> No CDN, no webfonts, no embedded video, no social widgets, no tracking pixels. Every asset is served from this site.</li>
+          <li><strong>Page views are counted, by this site itself.</strong> When a page loads, a small script
+            tells our own server that a page was viewed. It sends four things: the path, the referring
+            address, a coarse screen-width bucket, and the browser's language. There is no third-party
+            analytics product, no Google Analytics, no Plausible, no Umami, no Fathom — the counting is
+            first-party code you can read at <code class="inline-code">api/track.js</code> and
+            <code class="inline-code">assets/js/bx-analytics.js</code>. The exact list below is what is
+            stored, which is less than what is sent:</li>
+          <li><strong>No cookies.</strong> None are set, which is why there is no cookie banner — a banner for
+            cookies that do not exist would be theatre. The analytics deliberately uses no cookie, no
+            <code class="inline-code">localStorage</code> and no device identifier, so there is nothing on
+            your device to consent to.</li>
+          <li><strong>What is stored:</strong> a count for the page; a bucket for the screen size; the
+            country the request arrived from, as a two-letter code; the <em>hostname</em> of the referrer, so
+            this site knows a link came from one; and a daily visitor hash. That is the whole list.</li>
+          <li><strong>Your IP address is not stored.</strong> To count unique visitors without tracking
+            anyone, the address is combined with a random value that is destroyed at the end of each day,
+            reduced to a short hash, and only the hash is kept. It counts one visitor for one day: it cannot
+            be reversed, and it cannot be linked to the same person on any other day, because the value that
+            produced it no longer exists by then. The address itself is never written anywhere. The
+            browser's user-agent string goes into that same one-way hash and is likewise never stored —
+            it is used as an input, not kept as a record.</li>
+          <li><strong>What is sent and then thrown away:</strong> the browser's language tag arrives with the
+            request and is not written to the store. Neither is the full referring URL, and neither is the
+            query string — a link to
+            <code class="inline-code">/work.html?theme=ai</code> is counted as
+            <code class="inline-code">/work.html</code>. Paths are normalised before they are stored, so a
+            made-up address cannot be written into the dashboard.</li>
+          <li><strong>Nothing that identifies anyone is stored.</strong> No names, no email addresses, no
+            cross-site identifiers, no profiles. The dashboard shows totals, not people.</li>
+          <li><strong>Counts expire after 90 days</strong> automatically.</li>
+          <li><strong>You can refuse, and it is honoured.</strong> If your browser sends Do Not Track or
+            Global Privacy Control, nothing is counted at all. This is checked in the browser and again on the
+            server, so it holds either way.</li>
+          <li><strong>No third-party requests.</strong> No CDN, no webfonts, no embedded video, no social widgets, no tracking pixels. The page-view request goes to this site's own domain. Every asset is served from this site — including the one third-party library the site ships, GSAP, which is vendored into <code class="inline-code">assets/js/vendor/</code>. Your browser makes no request to anyone but us, which you can confirm in your network panel.</li>
           <li><strong>No fingerprinting.</strong> Nothing reads your canvas signature, device list or fonts for identification.</li>
           <li><strong>No persistent storage of your activity.</strong> Motion preference is carried in the URL, not written to your device.</li>
         </ul>
@@ -114,12 +147,43 @@
 
       <div class="panel panel--pad">
         <h2 style="font-size:1.3rem">3 · The contact form</h2>
-        <p class="dim">This build has no server, so the form validates your input in the browser and then
-          tells you plainly that nothing was transmitted. It does not silently drop your message and it does
-          not pretend to have sent it.</p>
-        <p class="dim">In production the form posts to a server-side handler that validates and rate-limits
-          the input, sends the message, and stores nothing beyond what is needed to reply. Retention would be
-          stated here before that endpoint is switched on.</p>
+        <p class="dim">This is the only place on the site where you send something, so here is the whole
+          path it takes.</p>
+        <ul class="tight">
+          <li><strong>It is delivered, not stored.</strong> The message goes from your browser to
+            <a class="inline-link" href="https://www.emailjs.com" target="_blank" rel="noopener noreferrer">EmailJS</a>,
+            a transactional email service, which relays it to an inbox as an email. If you gave an
+            address, EmailJS also sends you an acknowledgement quoting what you submitted; that is the
+            only second recipient, and it is the address you typed. The message does not pass through
+            a server belonging to this site, and there is no database, CRM or marketing list for it to land
+            in — there is none here. EmailJS processes both messages in order to send them and keeps its own
+            delivery logs under its policy; it is the one third party the form involves, named rather than
+            hidden behind a "service providers" clause.</li>
+          <li><strong>Five fields and one trap.</strong> Name, email, project type, the enquiry itself and
+            an optional deadline. There is also a hidden field a person cannot see and a browser will not
+            fill; anything that fills it is a bot, and its submission is answered with a success message
+            that goes nowhere. If you use a password manager that fills hidden fields, and your message
+            appears to send but never gets a reply, that is the likely cause — send again from a different
+            device or email directly.</li>
+          <li><strong>The reply-to is the address you type.</strong> The template sets it from your field,
+            so answering in your mail client reaches me. Nothing is added to any list; the address exists as
+            an email in one inbox and nowhere else.</li>
+          <li><strong>What client-side delivery gives up, said plainly.</strong> There is no server here to
+            rate-limit one address at five messages an hour the way the previous endpoint did. The controls
+            that exist are: the honeypot above, EmailJS's own account limits on the sending side, and a
+            reCAPTCHA check on the template — a message Google marks as automated is refused before it
+            counts against anything. That is a different trade, not an absence of one.</li>
+          <li><strong>If it is not wired, it says so.</strong> Rather than accept a message and drop it, an
+            unwired form refuses at the button and names the file that needs the keys. A form that pretends
+            to send is worse than one that admits it cannot — that rule survived the change of provider,
+            which is why this section was rewritten instead of quietly left as it was.</li>
+        </ul>
+        <p class="dim">The credentials that make a send possible are one public key and three ids — a
+          service, a notification template and an auto-reply template — and the
+          public key is deliberately visible — that is how EmailJS is designed. Which means the account's
+          monthly limit and the template's reCAPTCHA are not optional polish: they are the difference
+          between a contact form and an open mailbox. The trade-off against the previous server-side
+          design is recorded in the project's threat model, in the repository.</p>
       </div>
 
       <div class="panel panel--pad">
@@ -160,7 +224,7 @@
       <div>
         <h4>BLAXK BYTE TECHNOLOGIES</h4>
         <p class="dim" style="margin:0 0 .6rem">Software, automation and AI systems — built by Blaxk, documented in public.</p>
-        <p class="label" style="margin:0">Company registration status is not asserted on this site because it has not been verified as complete.</p>
+        <p class="label" style="margin:0">Built in public. Every project here links to the repo it came out of.</p>
       </div>
       <div>
         <h4>Navigate</h4>
@@ -194,7 +258,7 @@
       <span>© <span data-year>2026</span> BLAXK BYTE TECHNOLOGIES</span>
       <span>Content verified against the public record on 15 Oct 2026</span>
       <span>Keyboard: <kbd>/</kbd> or <kbd>⌘K</kbd> search · <kbd>M</kbd> motion</span>
-      <a href="privacy.html" style="color:var(--steel);text-decoration:none">This site makes no analytics or tracking requests.</a>
+      <a href="privacy.html" style="color:var(--steel);text-decoration:none">Page views are counted without cookies or stored IP addresses. Details &rarr;</a>
     </div>
   </div>
 </footer>
@@ -219,14 +283,19 @@
     <button class="btn" type="submit">Ask</button>
   </form>
   <p class="guide-disclaimer">
-    This build ships a deterministic retriever over the verified project records — it is not a language model and it will not
-    answer beyond what is recorded. The intended production design is a server-side Gemini endpoint with retrieval over
-    approved content, schema-validated output, rate limits and a static fallback. See the privacy page for the full disclosure.
+    Not a chatbot. It looks things up in the records already on this site and quotes them back with a link.
+    Ask something I haven&rsquo;t written down and it tells you so instead of inventing an answer. A Gemini-backed
+    version is designed but not switched on — the privacy page says where that stands.
   </p>
 </section>
 
 <script src="assets/js/bx-data.js"></script>
 <script src="assets/js/bx-excerpts.js"></script>
+<script src="assets/js/vendor/gsap.min.js"></script>
+<script src="assets/js/vendor/ScrollTrigger.min.js"></script>
+<script src="assets/js/bx-motion.js"></script>
+<script src="assets/js/bx-analytics.js" defer></script>
+<script src="assets/js/emailjs-config.js"></script>
 <script src="assets/js/bx-core.js"></script>
 
 </body>

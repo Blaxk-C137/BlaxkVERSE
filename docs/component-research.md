@@ -4,7 +4,7 @@
 
 ## The governing decision, stated first
 
-**BlaxkVERSE ships with zero third-party runtime dependencies.** The production site is plain HTML, CSS and dependency-free JavaScript: no framework, no animation library, no component library, no WebFont, no CDN, no analytics.
+**BlaxkVERSE ships with one third-party runtime dependency and no third-party services.** The production site is plain HTML, CSS and dependency-free JavaScript — no framework, no component library, no WebFont, no CDN, no analytics product. GSAP is vendored locally for the motion layer, which is a library rather than a service: it is served from this origin, so a visitor's browser still contacts nobody but this site.
 
 That was not a stylistic preference. It came out of the prototype competition and it is defensible on measurement:
 
@@ -77,7 +77,7 @@ Each entry records the real URL, the real licence as published at the time of wr
 ### Next.js App Router — `https://nextjs.org/`
 
 - **Decision:** ✗ not used for this deliverable; ✗ recommended against for the *published* build, ✗ recommended **for** the GitHub/Gemini server work.
-- **Why the split:** the marketing and portfolio pages need no server. Rendering them to static HTML at build time — which is what `tools/build-content.py` does — produces faster pages than SSR, with nothing to keep running, nothing to break, and no hosting bill. That is not a compromise for this content type; it is the better answer.
+- **Why the split:** the public pages need no rendering server. Rendering them to static HTML at build time — which is what `tools/build-content.py` does — produces faster pages than SSR, with nothing to keep running, nothing to break, and no hosting bill. That is not a compromise for this content type; it is the better answer.
 - **Where a server *is* genuinely required, and therefore where Next.js earns its place:** GitHub API ingestion with a cache, the Gemini endpoints, rate limiting, and the admin curation interface. Those cannot be static. `docs/architecture.md` specifies that service.
 
 ### JetBrains Mono — `https://www.jetbrains.com/lp/mono/`
@@ -163,3 +163,48 @@ Nothing in this build is a dead end. Each upgrade is a bounded, testable step:
 4. **Add JetBrains Mono, self-hosted and subset** → one `@font-face`, `font-display: swap`, and a re-measure.
 
 Each step is reversible, and each is gated on measurement rather than enthusiasm.
+
+---
+
+## Addendum — GSAP adopted (2026-10-15, second pass)
+
+**Decision reversed on explicit direction.** GSAP is now a shipped dependency:
+`gsap.min.js` and `ScrollTrigger.min.js` v3.15.0, vendored locally at
+`site/assets/js/vendor/`, loaded from the same origin. The original evaluation
+deferred it on weight grounds; the owner's instruction was to use it, and the
+weight argument turned out to be answerable.
+
+**Why the reversal is safe, and what it cost:**
+
+| | Before | After |
+|---|---|---|
+| Runtime dependencies | 0 | 1 (GSAP, self-hosted) |
+| External requests | 0 | 0 (vendored, same origin) |
+| Transfer added | — | 44 KB gzipped (71 KB + 43 KB raw) |
+| Frame timing | p95 16.8 ms | p95 16.7 ms |
+| Licence | — | Standard "no charge" licence, free incl. commercial since 2025 |
+
+The licence position was the thing that made this viable rather than merely
+permissible: GSAP's Club plugins, including ScrollTrigger, became free for
+commercial use in April 2025, so nothing here depends on a paid tier.
+
+**What it is used for, and what it is not.** `bx-motion.js` drives the hero
+entrance, scroll reveals, a reading-progress rail, counters and magnetic
+primary actions. It does **not** take over the canvas fields — the existing rAF
+`director` still owns those, because two frame loops doing the same work is a
+regression rather than an upgrade.
+
+**The three rules it obeys** (unchanged from the rest of the codebase, and
+verified rather than asserted):
+
+1. Transform and opacity only — nothing in the motion layer can cause layout shift.
+2. Motion mode is absolute. In `reduced` and `static` the module returns before
+   it does anything, and the CSS fallbacks stand. Verified: `data-gsap` is
+   `off` under `prefers-reduced-motion: reduce`.
+3. Enhancement, never dependency. If GSAP fails to load the guard returns and
+   every page remains fully readable and navigable.
+
+**Supply-chain note.** Vendoring means the site still contacts no third-party
+host at runtime, so the privacy guarantee on `/privacy` is unaffected. The
+library is pinned at 3.15.0 and its licence header is preserved in the file.
+Updating it is a deliberate act, not an automatic one.

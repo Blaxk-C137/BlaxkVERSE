@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en" data-motion="full">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Church Program Viewer — case study | BLAXK BYTE TECHNOLOGIES</title>
+<meta name="description" content="Reads a church event schedule from a spreadsheet and displays it as a live board, with notifications before each event starts. Prototype in a public repository: 3036 files, Python, last pushed 2026-03-21.">
+<meta name="color-scheme" content="dark">
+<meta name="theme-color" content="#08090c">
+<meta property="og:title" content="Church Program Viewer — case study | BLAXK BYTE TECHNOLOGIES">
+<meta property="og:description" content="Reads a church event schedule from a spreadsheet and displays it as a live board, with notifications before each event starts. Prototype in a public repository: 3036 files, Python, last pushed 2026-03-21.">
+<meta property="og:type" content="website">
+<link rel="stylesheet" href="../assets/css/blaxkverse.css">
+
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="nav">
+  <a class="nav-mark" href="../index.html" aria-label="BLAXK BYTE — home">
+    <i aria-hidden="true"></i><b>BLAXK</b> <span>BYTE</span>
+  </a>
+  <nav class="nav-links" aria-label="Primary">
+        <a href="../index.html" data-nav-current>Journey</a>
+        <a href="../company.html" data-nav-current>Company</a>
+        <a href="../work.html" data-nav-current>Work</a>
+        <a href="../source.html" data-nav-current>Source</a>
+        <a href="../lab.html" data-nav-current>Lab</a>
+        <a href="../about.html" data-nav-current>About</a>
+        <a href="../contact.html" data-nav-current>Contact</a>
+  </nav>
+  <div class="nav-right">
+    <button class="kbtn kbtn--kbd" type="button" data-open-palette aria-haspopup="dialog">
+      Search <kbd>⌘K</kbd>
+    </button>
+    <button class="motion-toggle" type="button" data-motion-toggle aria-label="Change motion level">motion: full</button>
+    <button class="kbtn nav-burger" type="button" data-open-sheet aria-expanded="false" aria-controls="mobile-sheet">Menu</button>
+  </div>
+</header>
+
+<div class="sheet" id="mobile-sheet" data-sheet hidden role="dialog" aria-modal="true" aria-label="Navigation">
+  <div class="sheet-head">
+    <span class="nav-mark"><i aria-hidden="true"></i><b>BLAXK</b> <span>BYTE</span></span>
+    <button class="close" type="button" data-close-sheet aria-label="Close navigation">✕</button>
+  </div>
+  <div class="sheet-body">
+    <ul class="sheet-nav">
+        <li><a href="../index.html" data-nav-current><span class="t">Journey</span><span class="s">the overview</span></a></li>
+        <li><a href="../company.html" data-nav-current><span class="t">Company</span><span class="s">what we build</span></a></li>
+        <li><a href="../work.html" data-nav-current><span class="t">Work</span><span class="s">verified projects</span></a></li>
+        <li><a href="../source.html" data-nav-current><span class="t">Source</span><span class="s">public code</span></a></li>
+        <li><a href="../lab.html" data-nav-current><span class="t">Lab</span><span class="s">experiments</span></a></li>
+        <li><a href="../about.html" data-nav-current><span class="t">About</span><span class="s">Blaxk</span></a></li>
+        <li><a href="../contact.html" data-nav-current><span class="t">Contact</span><span class="s">start a project</span></a></li>
+    </ul>
+    <p class="label">Every destination is also in the command palette (<kbd>Ctrl</kbd>/<kbd>⌘</kbd>+<kbd>K</kbd>) and in the footer.</p>
+  </div>
+</div>
+
+<main id="main">
+  <article class="section" style="padding-top:calc(var(--nav-h) + 2.5rem)">
+    <div class="wrap case">
+      <div class="case-head">
+        <a class="label" href="../work.html" style="text-decoration:none">← All work</a>
+        <h1 style="font-size:clamp(2rem,5.4vw,3.6rem);margin:0">Church Program Viewer</h1>
+        <p class="lede" style="font-size:1.15rem;margin:0">A live programme display driven by a spreadsheet</p>
+        <div class="case-meta">
+          <span class="chip" data-status="prototype">prototype</span>
+          <span class="chip">Python</span>
+          <span class="chip">tooling</span><span class="chip">web</span><span class="chip">automation</span>
+        </div>
+        <div style="display:flex;gap:.6rem;flex-wrap:wrap;margin-top:1.1rem">
+          
+          <a class="btn btn--ghost" href="https://github.com/Blaxk-C137/Church_programme_demo" target="_blank" rel="noopener noreferrer">Read the source ↗</a>
+        </div>
+      </div>
+
+      <dl class="case-facts"><div><dt>Status</dt><dd><span class="chip" data-status="prototype">prototype</span></dd></div><div><dt>Language</dt><dd>Python</dd></div><div><dt>Repository</dt><dd><a class="inline-link" href="https://github.com/Blaxk-C137/Church_programme_demo" target="_blank" rel="noopener noreferrer">Blaxk-C137/Church_programme_demo ↗</a></dd></div><div><dt>Last push</dt><dd>2026-03-21</dd></div><div><dt>Source size</dt><dd>3036 files · 1068 KB</dd></div><div><dt>Licence</dt><dd>no licence file</dd></div></dl>
+
+      <div class="note note--plain">
+        <strong>Where these numbers come from.</strong> Everything on this page was read off the public
+        repo on 2026-10-15: file counts and sizes from the git tree, language and dates from the GitHub
+        API. No download counts, no user numbers, no speed claims — I never measured any of those.
+      </div>
+
+      <section id="brief">
+        <h2 style="font-size:clamp(1.4rem,3vw,2rem)">The brief</h2>
+        <div class="grid-2">
+          <div><h3 style="font-size:1.05rem">Problem</h3><p class="dim">The people running an event know the schedule is in a spreadsheet. The people attending cannot see it, and updating a printed programme means reprinting it.</p></div>
+          <div><h3 style="font-size:1.05rem">Who it is for</h3><p class="dim">An event organiser and the audience in the room, who need to know what is happening now and what is next.</p></div>
+        </div>
+        <div class="mt-3">
+          <h3 style="font-size:1.05rem">Approach</h3>
+          <p class="dim" style="max-width:76ch">Flask serves a responsive card grid read from an Excel file with pandas. A file watcher reloads the display when the spreadsheet changes, so the organiser edits a file they already use. Notifications fire about five minutes before an event, event detail opens in an accessible modal, and a PDF export produces a printable copy with the organisation&#x27;s logo.</p>
+          <h3 class="mt-2" style="font-size:1.05rem">Personal contribution</h3>
+          <p class="dim" style="max-width:76ch">Sole author. Written for a real event rather than as a demonstration.</p>
+        </div>
+      </section>
+
+      <section id="decisions">
+        <h2 style="font-size:clamp(1.4rem,3vw,2rem)">Decisions that mattered</h2>
+        <p class="dim" style="max-width:70ch">These are the choices that shaped the code — the ones worth
+          explaining, rather than a feature list.</p>
+        <div class="grid-2 mt-2">
+        <div class="field panel--pad" style="border:1px solid var(--hairline);background:var(--void-2)">
+          <h3 style="font-size:1.05rem;margin-bottom:.4rem">The spreadsheet is the interface</h3>
+          <p class="dim" style="margin:0;font-size:.94rem">The organiser already maintains a spreadsheet. Making the application read that file removes an entire content-management layer and every reason not to update it.</p>
+        </div>
+        <div class="field panel--pad" style="border:1px solid var(--hairline);background:var(--void-2)">
+          <h3 style="font-size:1.05rem;margin-bottom:.4rem">Watch the file, do not re-import it</h3>
+          <p class="dim" style="margin:0;font-size:.94rem">Automatic reloading means the display follows the schedule without anyone remembering to press refresh mid-event.</p>
+        </div>
+        <div class="field panel--pad" style="border:1px solid var(--hairline);background:var(--void-2)">
+          <h3 style="font-size:1.05rem;margin-bottom:.4rem">Sanitise uploads and log failures</h3>
+          <p class="dim" style="margin:0;font-size:.94rem">The upload route accepts files and is protected by a password, so uploaded content is sanitised and errors are written to a log rather than swallowed.</p>
+        </div></div>
+      </section>
+
+      <section id="limits">
+        <h2 style="font-size:clamp(1.4rem,3vw,2rem)">Limitations, stated plainly</h2>
+        <ul class="tight" style="max-width:76ch"><li>The README states this is intended for local use; serving it publicly would need a proper WSGI server and secret management first.</li><li>Stylesheets are loaded from a CDN, so the display degrades without network access.</li><li>The upload password lives in an environment file and is only as strong as what is put in it.</li></ul>
+        <p class="dim mt-2" style="max-width:76ch"><strong>What this is not:</strong> there is no public
+          deployment for this project, so it should not be described as live, available, in production, or
+          used by anyone. Claims about scale or reliability would require measurements that do not exist.</p>
+      </section>
+
+      
+      <section class="section" id="screenshots" style="padding-top:0">
+        <h2 style="font-size:clamp(1.4rem,3vw,2rem)">Screenshots</h2>
+        <p class="note note--plain" style="max-width:76ch">The repository has no committed interface
+          screenshot, so none is shown. Re-creating one, or illustrating this page with unrelated imagery,
+          would misrepresent what exists — the source, the README and the file tree below are the evidence
+          available for this project.</p>
+      </section>
+
+      <section id="source" class="section" style="padding-top:0">
+        <h2 style="font-size:clamp(1.4rem,3vw,2rem)">Source chamber</h2>
+        <p class="dim" style="max-width:70ch">An excerpt recorded by repository, commit, path and line range —
+          so this page can be checked against the code it describes at any time. Selectable text, never
+          executed.</p>
+        <div class="mt-2">
+      <div class="code">
+        <div class="code-head"><span class="path">no excerpt reviewed</span><span class="spacer"></span><span>—</span></div>
+        <pre tabindex="0" aria-label="No excerpt available">// No pinned excerpt has been reviewed for this project yet.
+// The chamber shows an empty state rather than filling the space with
+// unrelated code or a mock-up. The repository is linked above.</pre>
+        <div class="code-foot">An empty chamber is the honest state. Nothing here is illustrative or invented.</div>
+      </div></div>
+        
+      </section>
+
+      <section id="lessons">
+        <h2 style="font-size:clamp(1.4rem,3vw,2rem)">What it taught</h2>
+        <p class="lede" style="max-width:76ch">Meeting users in the tool they already use beats teaching them a new one. The spreadsheet stayed the source of truth and adoption cost nothing.</p>
+      </section>
+
+      <section>
+        <h2 style="font-size:clamp(1.4rem,3vw,2rem)">Continue</h2>
+        <div class="project-rows"><a class="project-row" href="blaxk-housing.html"><span class="idx">01</span><span><span class="ttl">BlaXk Housing</span><span class="sub"> — Campus housing marketplace, role-split</span></span><span class="side"><span class="chip" data-status="prototype">prototype</span></span></a><a class="project-row" href="edublaxk.html"><span class="idx">02</span><span><span class="ttl">EduBlaxk</span><span class="sub"> — Local AI tutor &amp; assessment engine</span></span><span class="side"><span class="chip" data-status="prototype">prototype</span></span></a><a class="project-row" href="sabi.html"><span class="idx">03</span><span><span class="ttl">SABI</span><span class="sub"> — Voice-first tutor that runs on your device</span></span><span class="side"><span class="chip" data-status="prototype">prototype</span></span></a></div>
+        <div class="btn-row mt-2">
+          <a class="btn" href="../work.html">All work</a>
+          <a class="btn" href="../source.html">Source explorer</a>
+          <a class="btn btn--ghost" href="../contact.html">Start a project</a>
+        </div>
+      </section>
+    </div>
+  </article>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <h4>BLAXK BYTE TECHNOLOGIES</h4>
+        <p class="dim" style="margin:0 0 .6rem">Software, automation and AI systems — built by Blaxk, documented in public.</p>
+        <p class="label" style="margin:0">Built in public. Every project here links to the repo it came out of.</p>
+      </div>
+      <div>
+        <h4>Navigate</h4>
+        <ul>
+          <li><a href="../company.html">Company &amp; services</a></li>
+          <li><a href="../work.html">Work</a></li>
+          <li><a href="../source.html">Source explorer</a></li>
+          <li><a href="../lab.html">Lab</a></li>
+          <li><a href="../about.html">About Blaxk</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Elsewhere</h4>
+        <ul>
+          <li><a href="https://github.com/Blaxk-C137" target="_blank" rel="noopener noreferrer">GitHub — Blaxk-C137 ↗</a></li>
+          <li><a href="../contact.html">Contact</a></li>
+          <li><a href="../privacy.html">Privacy &amp; AI disclosure</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Accessibility</h4>
+        <ul>
+          <li><a href="?motion=on">Full motion</a></li>
+          <li><a href="?motion=reduced">Reduced motion</a></li>
+          <li><a href="?motion=off">Explore normally (no motion)</a></li>
+        </ul>
+        <p class="label" style="margin:.5rem 0 0">Press <kbd>M</kbd> to cycle motion levels.</p>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© <span data-year>2026</span> BLAXK BYTE TECHNOLOGIES</span>
+      <span>Content verified against the public record on 15 Oct 2026</span>
+      <span>Keyboard: <kbd>/</kbd> or <kbd>⌘K</kbd> search · <kbd>M</kbd> motion</span>
+      <a href="../privacy.html" style="color:var(--steel);text-decoration:none">Page views are counted without cookies or stored IP addresses. Details &rarr;</a>
+    </div>
+  </div>
+</footer>
+
+<button class="guide-launcher" type="button" data-guide-open aria-expanded="false" aria-controls="bx-guide">
+  <i aria-hidden="true"></i> Ask about this work
+</button>
+
+<section class="guide" id="bx-guide" data-guide hidden role="dialog" aria-modal="true" aria-label="BLAXK BYTE assistant">
+  <div class="guide-head">
+    <i aria-hidden="true" style="width:8px;height:8px;background:var(--red);display:block"></i>
+    <h2>BLAXK BYTE — verified answers</h2>
+    <button class="close" type="button" data-guide-close aria-label="Close assistant">✕</button>
+  </div>
+  <div class="guide-body">
+    <div class="guide-log" data-guide-log></div>
+    <div class="guide-q" data-guide-suggest></div>
+  </div>
+  <form class="guide-form" data-guide-form>
+    <label class="sr" for="guide-input">Your question</label>
+    <input id="guide-input" data-guide-input type="text" placeholder="Ask about a project, service or status…" autocomplete="off">
+    <button class="btn" type="submit">Ask</button>
+  </form>
+  <p class="guide-disclaimer">
+    Not a chatbot. It looks things up in the records already on this site and quotes them back with a link.
+    Ask something I haven&rsquo;t written down and it tells you so instead of inventing an answer. A Gemini-backed
+    version is designed but not switched on — the privacy page says where that stands.
+  </p>
+</section>
+
+<script src="../assets/js/bx-data.js"></script>
+<script src="../assets/js/bx-excerpts.js"></script>
+<script src="../assets/js/vendor/gsap.min.js"></script>
+<script src="../assets/js/vendor/ScrollTrigger.min.js"></script>
+<script src="../assets/js/bx-motion.js"></script>
+<script src="../assets/js/bx-analytics.js" defer></script>
+<script src="../assets/js/emailjs-config.js"></script>
+<script src="../assets/js/bx-core.js"></script>
+
+</body>
+</html>

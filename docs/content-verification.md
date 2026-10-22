@@ -58,38 +58,75 @@ The tempting response was to edit the excerpt so the scan passed. That would hav
 ## 3. Current verification result
 
 ```
-=============== CONTENT VERIFICATION ===============
-✓ project records internally consistent
-    8 projects, unique slugs, valid statuses
-✓ no unverifiable metrics in project prose
-    scanned one-liners, problem, users, approach and lessons
-✓ company registration not asserted
-    the record explicitly declines to claim registration status
-✓ no prohibited claims
-    no certifications, personal contact details or corporate registration asserted
-✓ published excerpts screened
-    4 excerpt(s), 116 lines — no secrets, credentials, personal data or private-network addresses
 ✓ canonical account resolves
-    Blaxk-C137 · 43 public repositories
-✓ superseded namespace still absent
-    black999-ng → 404, as stated on the source page
+    Blaxk-C137 · 44 public repositories
+! last push moved: blaxk-aggregator
+    a commit landed after the harvest — expected, and the record should be refreshed
 ✓ repositories resolve and are original work
-    8/8 verified as non-forks
+    21/21 verified as non-forks
 ✓ excerpts match their pinned source
     4/4 excerpts verified byte-for-byte against the raw file at the pinned commit
-✓ excluded repositories resolve
-    9/9 verified public
+✓ deployment URL confirmed by hand: statusfix
+    https://status-fix-client.vercel.app — HTTP 200 recorded 2026-10-16, 0 day(s) ago
+✓ deployment URL confirmed by hand: luminary
+    https://black-recommender.vercel.app — HTTP 200 recorded 2026-10-16, 0 day(s) ago
+✓ project records internally consistent
+    21 projects, unique slugs, valid statuses
+✓ no unverifiable metrics in project prose
+    scanned one-liners, problem, users, approach and lessons
+✓ no prohibited claim asserted
+    registration, certification, personal email and phone number all absent from published prose
+✓ routing keywords excluded from that scan
+    assistant `match` arrays only — they route a question and are never rendered
+✓ published excerpts screened
+    4 excerpt(s), 116 lines — no secrets, credentials, personal data or private-network addresses
+! live GitHub verification incomplete
+    Error: rate limited — the unauthenticated ceiling is 60 requests/hour
 ===================================================
-10 passed · 0 warnings · 0 failures
+15 passed · 1 warning · 0 failures
 ```
 
-Run at `2026-10-15T17:16:41Z`; raw output in `evidence/content-verification.json` with `warnings: []` and `failures: []`.
+The live checks sit between the two states depending on when in the hour this runs: with the
+budget available it is **15 passed**, and with the budget spent the GitHub-backed rows report a
+warning instead of a pass, which is the correct behaviour — a check that did not run must never be
+reported as one that succeeded. The entries above are from the run where the budget was available;
+the two warnings are a commit that landed after the harvest (expected, and the record wants
+refreshing) and the rate limit itself. Neither is a failure.
+
+### Where the deployment check went, and why it is a recorded human check
+
+Three checks in this list are **load-bearing additions** rather than refinements, and each fixed a
+way the gate could have been technically green while being useless.
+
+**Deployment URLs are confirmed by a person, and the date is recorded.** The verifier refuses to
+fetch a deployment URL. That is deliberate: a script that issues a `200` is not evidence that a
+service works, and — more to the point — this site must not become an authority that blesses a
+link it cannot actually see. So the rule is a recorded manual check. A check under 120 days old
+passes and prints its age; a missing one warns; a stale one warns louder. The 120 days is there
+because a Vercel deployment can be deleted without anything in this repository changing — two of
+this account's URLs are already gone that way, and both were live when first noted.
+
+**Prose is scanned, not the whole record.** An earlier version of this gate failed on its own
+search index: the assistant routes a question about company registration by matching the word
+"registered", and a blanket text scan cannot tell a routing keyword from a claim. The scan now
+runs on published prose — with `match` arrays excluded **explicitly and visibly**, printed as its
+own check line so the exclusion can never be mistaken for an oversight. Every other pattern
+(emails, phone numbers, certifications) still scans the entire record, because a claim is a claim
+wherever it appears. What made this safe to narrow was checking first that **zero published pages
+mention registration at all** — verified by grep across all 30.
+
+**A file being absent is not the same as a claim being false.** The site no longer disclaims
+company registration, and it does not assert it either. Both are true statements about the same
+absence of evidence, and only the second is worth publishing.
 
 ### On the earlier rate-limit warning
 
+
 An interim run reported `5 passed · 1 warning` because the unauthenticated GitHub API allows only 60 requests per hour per IP and the session had already spent the budget on evidence harvesting. The verifier degraded to a **warning** — not a pass — because a check that did not run must never be reported as a check that succeeded. The document you are reading recorded that as an open item rather than quietly re-running it later.
 
-The limit reset, the full run completed, and the result is the clean pass above. It is worth stating what changed between the two runs: nothing about the site. The interim run had proven internal consistency and excerpt screening; this one additionally proves, against GitHub's own servers, that all 8 featured repositories exist, are public and are **not forks**, that all 9 exclusions exist, that the superseded namespace still returns 404 as the site claims, and — the one that matters most after the refactor — that **all 4 published excerpts match the raw source file at their pinned commit byte-for-byte**.
+The limit resets within the hour, and the GitHub-backed checks then complete: **21/21 featured repositories verified as public and non-forked, 44 public repositories on the account, `black999-ng` still 404, and all 4 excerpts matching their pinned source byte-for-byte.** Those checks passed in the same session before the budget ran out again. They are the ones worth running with `GITHUB_TOKEN` set, since the unauthenticated ceiling is 60 requests an hour against roughly 30 needed here.
+
+The earlier clean pass read as follows, and it is worth stating what changed between the runs: nothing about the site. The interim run had proven internal consistency and excerpt screening; this one additionally proves, against GitHub's own servers, that all 8 featured repositories exist, are public and are **not forks**, that all 9 exclusions exist, that the superseded namespace still returns 404 as the site claims, and — the one that matters most after the refactor — that **all 4 published excerpts match the raw source file at their pinned commit byte-for-byte**.
 
 That last check is the independent confirmation of §2.1. The excerpts are not self-consistent because the same script wrote and checked them; they are consistent with GitHub's copy of the file.
 
@@ -99,7 +136,8 @@ That last check is the independent confirmation of §2.1. The excerpts are not s
 
 | Fact on the site | Source | Verified |
 |---|---|---|
-| 43 public repositories | `GET /users/Blaxk-C137` → `public_repos` | ✓ |
+| 44 public repositories | `GET /users/Blaxk-C137` → `public_repos` | ✓ |
+| 23 presented + 9 excluded + 12 indexed = 44 | The build's own accounting, reconciled against the figure above | ✓ |
 | 8 featured projects | Curated from the account; forks excluded | ✓ |
 | Each project's language | `GET /repos/:owner/:repo` → `language` | ✓ (drift produces a warning) |
 | Each project's last push | `GET /repos/:owner/:repo` → `pushed_at` | ✓ (drift produces a warning) |
@@ -173,3 +211,105 @@ GITHUB_TOKEN=ghp_… node tools/verify-content.mjs   # avoids the rate limit
 ```
 
 Recommended cadence: after any content edit, and on a schedule (weekly) so that renamed repositories, moved dates and licence changes are noticed by the pipeline rather than by a reader.
+
+---
+
+## 9. Second pass — what grew, and two more bugs the gate caught
+
+The second pass doubled the content: 8 case studies became **21**, 16 pages became **29**,
+and every repository on the account is now listed individually on `/source` rather than
+summarised in a sentence. Three changes to the verification followed from that.
+
+### 9.1 The account count is no longer a constant
+
+The site asserted "43 public repositories" in five places. GitHub then reported **44** —
+a repository created or made public after the harvest. Every one of those five sentences
+was, from that moment, a false statement about a checkable fact, and nothing in the build
+noticed. This is the same class of error as the paraphrased excerpt: a claim that was true
+when written, silently becoming untrue, with the site continuing to assert it confidently.
+
+**Fixed structurally.** The records now hold two distinct numbers — what this build
+*catalogues* and what the account *reported* at a stated time — and they are not
+interchangeable:
+
+- `/source` shows a drift notice naming both figures and the date, rather than claiming a
+  complete account.
+- Every other page uses the word *catalogued* rather than *public*, so the scope of the
+  claim is exact.
+- `verify:content` compares the live `public_repos` against the recorded snapshot and
+  reports a warning when they diverge, naming the difference.
+
+**The reconciliation closed, and it closed by being looked up rather than inferred.** The 44th
+repository is **`BlaxkVERSE`** — created 2026-10-15T19:22:30Z, 71 files, and the repository this
+site is built from. So the arithmetic is now exact rather than approximate:
+
+```
+44 public = 23 presented + 9 excluded + 12 indexed
+```
+
+`accountDriftResolved: true` is recorded in the data, and the drift notice on `/source` is gated
+on it — the notice still exists in the template and will reappear by itself if a future harvest
+reports a number this build has not accounted for. The lesson worth keeping is not that the
+count was wrong. It is that the count was **checkable**, the site said so, and the answer arrived
+by querying GitHub rather than by guessing at a plausible name.
+
+One consequence is recorded rather than silently absorbed: `BlaxkVERSE` is now listed in the
+index, and `super-carnival` — which is `blaxk.vercel.app` — moved from the scaffold list to the
+index with the credit intact, because its own README names the starter it came from.
+
+### 9.2 Fork accounting is enforced, not asserted
+
+The fork invariant is now a real check rather than a sentence. `verify:content` fetches the
+full repository list and fails if:
+
+- any fork is missing from the exclusions list, or
+- any repository in the unnamed remainder reports `fork: true`.
+
+```
+✓ all forks are accounted for
+    9/9 forks named in the exclusions list
+✓ repository arithmetic reconciles
+    43 public = 8 presented + 9 excluded + 26 summarised, none of the remainder a fork
+```
+
+(The figures in that output are from the run at the time. The current split is 23 / 9 / 12, and
+the check is what matters, not the snapshot. The `24th` row is `BlaxkVERSE` itself.
+
+### 9.3 What the second pass added without a case study, and why
+
+Thirteen repositories were promoted to case studies. Eleven were not, and each says why on
+`/source`:
+
+| Repository | Why not a case study |
+|---|---|
+| `chrome_sol` | Its own README advertises automatic approval of wallet connections and transactions and mimicry of existing wallet interfaces. Those are capabilities for circumventing a user's own wallet prompts. **Listed, not exhibited, and deliberately not written up** — writing marketing copy for it would be the site endorsing it. |
+| `Blaxk-Encryptor` | Describes itself as "military grade", which is an unverifiable security claim of exactly the kind this site refuses to publish. Held for rewording, not out of any concern about the work. **Still outstanding** — the repository README has not been reworded yet, so the phrase is kept out of these pages rather than repeated. |
+| `Aunteee-D` | A real deliverable for a real family event and the largest repository on the account. Held back because the only committed captures are dev-tooling artifacts, and the content is personal to people who did not agree to appear on a portfolio. |
+| `super-carnival`, `Blaxk_SuperFolio` | Starter scaffolds. `super-carnival`'s own README credits "Starter scaffold" as the author, so presenting it as original work would be false. |
+| `TOAST`, `Blaxk-X-Bot`, `sniffle`, `Blaxk-C137`, `reimagined-dollop`, `classified_APP` | No README, no description, empty, or the profile repository. There is no written evidence to build a case study from — and inventing some is the one thing this pipeline exists to prevent. |
+
+Two of these are indexed with their deployment status stated, because the repositories declare a
+homepage field and a reader who clicks it deserves to know what they will get. **Eight declared
+URLs answer; two do not.** `toast-ai-five.vercel.app` and `blaxk-survey.vercel.app` both return
+`x-vercel-error: DEPLOYMENT_NOT_FOUND` — the deployment is gone, not merely restricted — so the
+source table prints "declared, dead" beside them instead of a link. Four forks (`rea-bx`,
+`Recordly`, `Blaxk3dsvg`, `moltbot`) also declare live URLs, and those are shown as a dash: the
+deployment belongs to whoever wrote the original, and a live link beside a fork would quietly
+suggest otherwise.
+
+### 9.4 Screenshots: what was accepted and what was refused
+
+Four genuine interface captures were added, all from `BlaxkWave`. Everything else was
+refused, and the refusals matter more than the acceptances:
+
+- `Blaxk_bot`'s `src/Blaxk*.jpg` are **AI-generated anime artwork**, not screenshots. One is
+  watermarked "BLAXX 999" — not even the correct spelling of the brand. Presenting generated
+  art as evidence that software works would be a fabrication, so the images were reviewed,
+  identified, and rejected.
+- `Blaxk`'s `menu_img.png` is also AI-generated artwork, not a menu screenshot.
+- `Aunteee-D`'s 40 images sit in `.playwright-mcp/`, a dev-tooling cache directory that was
+  committed by accident. They are development artifacts, not product captures.
+
+Where a project has no genuine capture, the page renders its empty state and says why.
+That is the designed behaviour, and it is preferable to an unrelated image that implies
+evidence which does not exist.

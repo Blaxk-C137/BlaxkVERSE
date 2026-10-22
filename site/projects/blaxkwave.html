@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en" data-motion="full">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>BlaXkWave Studio — case study | BLAXK BYTE TECHNOLOGIES</title>
+<meta name="description" content="A host shares audio once and every listener hears it in their own headphones, from a room code or a QR link, with no client to install. Prototype in a public repository: 97 files, TypeScript, last pushed 2026-10-15.">
+<meta name="color-scheme" content="dark">
+<meta name="theme-color" content="#08090c">
+<meta property="og:title" content="BlaXkWave Studio — case study | BLAXK BYTE TECHNOLOGIES">
+<meta property="og:description" content="A host shares audio once and every listener hears it in their own headphones, from a room code or a QR link, with no client to install. Prototype in a public repository: 97 files, TypeScript, last pushed 2026-10-15.">
+<meta property="og:type" content="website">
+<link rel="stylesheet" href="../assets/css/blaxkverse.css">
+
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="nav">
+  <a class="nav-mark" href="../index.html" aria-label="BLAXK BYTE — home">
+    <i aria-hidden="true"></i><b>BLAXK</b> <span>BYTE</span>
+  </a>
+  <nav class="nav-links" aria-label="Primary">
+        <a href="../index.html" data-nav-current>Journey</a>
+        <a href="../company.html" data-nav-current>Company</a>
+        <a href="../work.html" data-nav-current>Work</a>
+        <a href="../source.html" data-nav-current>Source</a>
+        <a href="../lab.html" data-nav-current>Lab</a>
+        <a href="../about.html" data-nav-current>About</a>
+        <a href="../contact.html" data-nav-current>Contact</a>
+  </nav>
+  <div class="nav-right">
+    <button class="kbtn kbtn--kbd" type="button" data-open-palette aria-haspopup="dialog">
+      Search <kbd>⌘K</kbd>
+    </button>
+    <button class="motion-toggle" type="button" data-motion-toggle aria-label="Change motion level">motion: full</button>
+    <button class="kbtn nav-burger" type="button" data-open-sheet aria-expanded="false" aria-controls="mobile-sheet">Menu</button>
+  </div>
+</header>
+
+<div class="sheet" id="mobile-sheet" data-sheet hidden role="dialog" aria-modal="true" aria-label="Navigation">
+  <div class="sheet-head">
+    <span class="nav-mark"><i aria-hidden="true"></i><b>BLAXK</b> <span>BYTE</span></span>
+    <button class="close" type="button" data-close-sheet aria-label="Close navigation">✕</button>
+  </div>
+  <div class="sheet-body">
+    <ul class="sheet-nav">
+        <li><a href="../index.html" data-nav-current><span class="t">Journey</span><span class="s">the overview</span></a></li>
+        <li><a href="../company.html" data-nav-current><span class="t">Company</span><span class="s">what we build</span></a></li>
+        <li><a href="../work.html" data-nav-current><span class="t">Work</span><span class="s">verified projects</span></a></li>
+        <li><a href="../source.html" data-nav-current><span class="t">Source</span><span class="s">public code</span></a></li>
+        <li><a href="../lab.html" data-nav-current><span class="t">Lab</span><span class="s">experiments</span></a></li>
+        <li><a href="../about.html" data-nav-current><span class="t">About</span><span class="s">Blaxk</span></a></li>
+        <li><a href="../contact.html" data-nav-current><span class="t">Contact</span><span class="s">start a project</span></a></li>
+    </ul>
+    <p class="label">Every destination is also in the command palette (<kbd>Ctrl</kbd>/<kbd>⌘</kbd>+<kbd>K</kbd>) and in the footer.</p>
+  </div>
+</div>
+
+<main id="main">
+  <article class="section" style="padding-top:calc(var(--nav-h) + 2.5rem)">
+    <div class="wrap case">
+      <div class="case-head">
+        <a class="label" href="../work.html" style="text-decoration:none">← All work</a>
+        <h1 style="font-size:clamp(2rem,5.4vw,3.6rem);margin:0">BlaXkWave Studio</h1>
+        <p class="lede" style="font-size:1.15rem;margin:0">One sound, every device, no app to install</p>
+        <div class="case-meta">
+          <span class="chip" data-status="prototype">prototype</span>
+          <span class="chip">TypeScript</span>
+          <span class="chip">web</span><span class="chip">voice</span><span class="chip">networking</span>
+        </div>
+        <div style="display:flex;gap:.6rem;flex-wrap:wrap;margin-top:1.1rem">
+          
+          <a class="btn btn--ghost" href="https://github.com/Blaxk-C137/BlaxkWave" target="_blank" rel="noopener noreferrer">Read the source ↗</a>
+        </div>
+      </div>
+
+      <dl class="case-facts"><div><dt>Status</dt><dd><span class="chip" data-status="prototype">prototype</span></dd></div><div><dt>Language</dt><dd>TypeScript</dd></div><div><dt>Repository</dt><dd><a class="inline-link" href="https://github.com/Blaxk-C137/BlaxkWave" target="_blank" rel="noopener noreferrer">Blaxk-C137/BlaxkWave ↗</a></dd></div><div><dt>Last push</dt><dd>2026-10-15</dd></div><div><dt>Source size</dt><dd>97 files · 2532 KB</dd></div><div><dt>Licence</dt><dd>no licence file</dd></div></dl>
+
+      <div class="note note--plain">
+        <strong>Where these numbers come from.</strong> Everything on this page was read off the public
+        repo on 2026-10-15: file counts and sizes from the git tree, language and dates from the GitHub
+        API. No download counts, no user numbers, no speed claims — I never measured any of those.
+      </div>
+
+      <section id="brief">
+        <h2 style="font-size:clamp(1.4rem,3vw,2rem)">The brief</h2>
+        <div class="grid-2">
+          <div><h3 style="font-size:1.05rem">Problem</h3><p class="dim">Sharing audio in a room usually means either everyone hears the laptop speaker, or everyone installs something. Both are worse than they need to be: browser audio sharing is possible today, and a room code built on it needs no installation at all.</p></div>
+          <div><h3 style="font-size:1.05rem">Who it is for</h3><p class="dim">Groups in one place who want to listen to the same thing together, from a host&#x27;s phone or laptop, each on their own headphones.</p></div>
+        </div>
+        <div class="mt-3">
+          <h3 style="font-size:1.05rem">Approach</h3>
+          <p class="dim" style="max-width:76ch">One real WebRTC peer connection per listener, signalled over a WebSocket with heartbeat and reconnection backoff. The host can broadcast a built-in generated loop, a microphone, a browser tab, or a local file, and keeps master gain, pause and per-listener volume control. Rooms use six-character invitation codes with clipboard links and real QR URLs.</p>
+          <h3 class="mt-2" style="font-size:1.05rem">Personal contribution</h3>
+          <p class="dim" style="max-width:76ch">Sole author. This is a TypeScript rebuild of an earlier host/join prototype, restructured into directly addressable pages rather than one oversized dashboard.</p>
+        </div>
+      </section>
+
+      <section id="decisions">
+        <h2 style="font-size:clamp(1.4rem,3vw,2rem)">Decisions that mattered</h2>
+        <p class="dim" style="max-width:70ch">These are the choices that shaped the code — the ones worth
+          explaining, rather than a feature list.</p>
+        <div class="grid-2 mt-2">
+        <div class="field panel--pad" style="border:1px solid var(--hairline);background:var(--void-2)">
+          <h3 style="font-size:1.05rem;margin-bottom:.4rem">The honest audio scope is stated on the front page</h3>
+          <p class="dim" style="margin:0;font-size:.94rem">The README says plainly that browser sharing uses low-latency WebRTC and is not sample-accurately synchronised across devices. Writing that down removes the expectation that a listener will hear a sample-perfect copy, which is the expectation that makes this kind of project look broken when it is not.</p>
+        </div>
+        <div class="field panel--pad" style="border:1px solid var(--hairline);background:var(--void-2)">
+          <h3 style="font-size:1.05rem;margin-bottom:.4rem">Every page is a real route</h3>
+          <p class="dim" style="margin:0;font-size:.94rem">Overview, studio, sessions, sources, guide, preferences and /join/CODE12 all resolve on refresh and direct link, with browser history. A single-page app that loses its state on reload would be unacceptable for something you hand someone a link to.</p>
+        </div>
+        <div class="field panel--pad" style="border:1px solid var(--hairline);background:var(--void-2)">
+          <h3 style="font-size:1.05rem;margin-bottom:.4rem">A locally generated soundcheck instead of a streaming service</h3>
+          <p class="dim" style="margin:0;font-size:.94rem">The bundled test loop is original and generated locally, so demonstrating the product does not depend on a third party&#x27;s licence or availability.</p>
+        </div></div>
+      </section>
+
+      <section id="limits">
+        <h2 style="font-size:clamp(1.4rem,3vw,2rem)">Limitations, stated plainly</h2>
+        <ul class="tight" style="max-width:76ch"><li>Not sample-accurately synchronised across devices; it is designed for a shared room, not for distributed latency-critical playback.</li><li>Microphone and screen capture require HTTPS, so a plain-IP local network test will not offer every source.</li><li>Sessions and recent-room history are stored locally on the device, not in an account.</li><li>It runs from the repository rather than from a hosted URL.</li></ul>
+        <p class="dim mt-2" style="max-width:76ch"><strong>What this is not:</strong> there is no public
+          deployment for this project, so it should not be described as live, available, in production, or
+          used by anyone. Claims about scale or reliability would require measurements that do not exist.</p>
+      </section>
+
+      
+      <section class="section" id="screenshots" style="padding-top:0">
+        <h2 style="font-size:clamp(1.4rem,3vw,2rem)">Screenshots from the repository</h2>
+        <p class="dim" style="max-width:70ch">These are the images committed to the public repository — not
+          marketing renders and not re-creations. Each one is captioned with what it shows and links back to
+          the source.</p>
+        <div class="shot-grid mt-2">
+        <figure class="shot">
+          <img src="../assets/img/blaxkwave-01-overview.jpg" width="1400" height="972" loading="lazy" decoding="async"
+               alt="The workspace overview: session entry points and the audio-source cards. — screenshot committed in the public repository Blaxk-C137/BlaxkWave">
+          <figcaption>
+            The workspace overview: session entry points and the audio-source cards.
+            <a href="https://github.com/Blaxk-C137/BlaxkWave" target="_blank" rel="noopener noreferrer">source ↗</a>
+          </figcaption>
+        </figure>
+        <figure class="shot">
+          <img src="../assets/img/blaxkwave-02-host.jpg" width="1400" height="1115" loading="lazy" decoding="async"
+               alt="The active host room, with master gain and the live listener list. — screenshot committed in the public repository Blaxk-C137/BlaxkWave">
+          <figcaption>
+            The active host room, with master gain and the live listener list.
+            <a href="https://github.com/Blaxk-C137/BlaxkWave" target="_blank" rel="noopener noreferrer">source ↗</a>
+          </figcaption>
+        </figure>
+        <figure class="shot">
+          <img src="../assets/img/blaxkwave-03-listener.jpg" width="1400" height="972" loading="lazy" decoding="async"
+               alt="The listener view: personal volume, mute and local monitoring. — screenshot committed in the public repository Blaxk-C137/BlaxkWave">
+          <figcaption>
+            The listener view: personal volume, mute and local monitoring.
+            <a href="https://github.com/Blaxk-C137/BlaxkWave" target="_blank" rel="noopener noreferrer">source ↗</a>
+          </figcaption>
+        </figure>
+        <figure class="shot shot--tall">
+          <img src="../assets/img/blaxkwave-04-mobile.jpg" width="410" height="1491" loading="lazy" decoding="async"
+               alt="The narrow layout, where the join flow matters most: a phone scanning a room. — screenshot committed in the public repository Blaxk-C137/BlaxkWave">
+          <figcaption>
+            The narrow layout, where the join flow matters most: a phone scanning a room.
+            <a href="https://github.com/Blaxk-C137/BlaxkWave" target="_blank" rel="noopener noreferrer">source ↗</a>
+          </figcaption>
+        </figure></div>
+      </section>
+
+      <section id="source" class="section" style="padding-top:0">
+        <h2 style="font-size:clamp(1.4rem,3vw,2rem)">Source chamber</h2>
+        <p class="dim" style="max-width:70ch">An excerpt recorded by repository, commit, path and line range —
+          so this page can be checked against the code it describes at any time. Selectable text, never
+          executed.</p>
+        <div class="mt-2">
+      <div class="code">
+        <div class="code-head"><span class="path">no excerpt reviewed</span><span class="spacer"></span><span>—</span></div>
+        <pre tabindex="0" aria-label="No excerpt available">// No pinned excerpt has been reviewed for this project yet.
+// The chamber shows an empty state rather than filling the space with
+// unrelated code or a mock-up. The repository is linked above.</pre>
+        <div class="code-foot">An empty chamber is the honest state. Nothing here is illustrative or invented.</div>
+      </div></div>
+        
+      </section>
+
+      <section id="lessons">
+        <h2 style="font-size:clamp(1.4rem,3vw,2rem)">What it taught</h2>
+        <p class="lede" style="max-width:76ch">The most valuable line in the whole README is the one admitting what the audio does not do. A precise limitation is what makes the rest of the claims believable.</p>
+      </section>
+
+      <section>
+        <h2 style="font-size:clamp(1.4rem,3vw,2rem)">Continue</h2>
+        <div class="project-rows"><a class="project-row" href="blaxk-housing.html"><span class="idx">01</span><span><span class="ttl">BlaXk Housing</span><span class="sub"> — Campus housing marketplace, role-split</span></span><span class="side"><span class="chip" data-status="prototype">prototype</span></span></a><a class="project-row" href="edublaxk.html"><span class="idx">02</span><span><span class="ttl">EduBlaxk</span><span class="sub"> — Local AI tutor &amp; assessment engine</span></span><span class="side"><span class="chip" data-status="prototype">prototype</span></span></a><a class="project-row" href="sabi.html"><span class="idx">03</span><span><span class="ttl">SABI</span><span class="sub"> — Voice-first tutor that runs on your device</span></span><span class="side"><span class="chip" data-status="prototype">prototype</span></span></a></div>
+        <div class="btn-row mt-2">
+          <a class="btn" href="../work.html">All work</a>
+          <a class="btn" href="../source.html">Source explorer</a>
+          <a class="btn btn--ghost" href="../contact.html">Start a project</a>
+        </div>
+      </section>
+    </div>
+  </article>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <h4>BLAXK BYTE TECHNOLOGIES</h4>
+        <p class="dim" style="margin:0 0 .6rem">Software, automation and AI systems — built by Blaxk, documented in public.</p>
+        <p class="label" style="margin:0">Built in public. Every project here links to the repo it came out of.</p>
+      </div>
+      <div>
+        <h4>Navigate</h4>
+        <ul>
+          <li><a href="../company.html">Company &amp; services</a></li>
+          <li><a href="../work.html">Work</a></li>
+          <li><a href="../source.html">Source explorer</a></li>
+          <li><a href="../lab.html">Lab</a></li>
+          <li><a href="../about.html">About Blaxk</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Elsewhere</h4>
+        <ul>
+          <li><a href="https://github.com/Blaxk-C137" target="_blank" rel="noopener noreferrer">GitHub — Blaxk-C137 ↗</a></li>
+          <li><a href="../contact.html">Contact</a></li>
+          <li><a href="../privacy.html">Privacy &amp; AI disclosure</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Accessibility</h4>
+        <ul>
+          <li><a href="?motion=on">Full motion</a></li>
+          <li><a href="?motion=reduced">Reduced motion</a></li>
+          <li><a href="?motion=off">Explore normally (no motion)</a></li>
+        </ul>
+        <p class="label" style="margin:.5rem 0 0">Press <kbd>M</kbd> to cycle motion levels.</p>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© <span data-year>2026</span> BLAXK BYTE TECHNOLOGIES</span>
+      <span>Content verified against the public record on 15 Oct 2026</span>
+      <span>Keyboard: <kbd>/</kbd> or <kbd>⌘K</kbd> search · <kbd>M</kbd> motion</span>
+      <a href="../privacy.html" style="color:var(--steel);text-decoration:none">Page views are counted without cookies or stored IP addresses. Details &rarr;</a>
+    </div>
+  </div>
+</footer>
+
+<button class="guide-launcher" type="button" data-guide-open aria-expanded="false" aria-controls="bx-guide">
+  <i aria-hidden="true"></i> Ask about this work
+</button>
+
+<section class="guide" id="bx-guide" data-guide hidden role="dialog" aria-modal="true" aria-label="BLAXK BYTE assistant">
+  <div class="guide-head">
+    <i aria-hidden="true" style="width:8px;height:8px;background:var(--red);display:block"></i>
+    <h2>BLAXK BYTE — verified answers</h2>
+    <button class="close" type="button" data-guide-close aria-label="Close assistant">✕</button>
+  </div>
+  <div class="guide-body">
+    <div class="guide-log" data-guide-log></div>
+    <div class="guide-q" data-guide-suggest></div>
+  </div>
+  <form class="guide-form" data-guide-form>
+    <label class="sr" for="guide-input">Your question</label>
+    <input id="guide-input" data-guide-input type="text" placeholder="Ask about a project, service or status…" autocomplete="off">
+    <button class="btn" type="submit">Ask</button>
+  </form>
+  <p class="guide-disclaimer">
+    Not a chatbot. It looks things up in the records already on this site and quotes them back with a link.
+    Ask something I haven&rsquo;t written down and it tells you so instead of inventing an answer. A Gemini-backed
+    version is designed but not switched on — the privacy page says where that stands.
+  </p>
+</section>
+
+<script src="../assets/js/bx-data.js"></script>
+<script src="../assets/js/bx-excerpts.js"></script>
+<script src="../assets/js/vendor/gsap.min.js"></script>
+<script src="../assets/js/vendor/ScrollTrigger.min.js"></script>
+<script src="../assets/js/bx-motion.js"></script>
+<script src="../assets/js/bx-analytics.js" defer></script>
+<script src="../assets/js/emailjs-config.js"></script>
+<script src="../assets/js/bx-core.js"></script>
+
+</body>
+</html>

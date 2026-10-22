@@ -1,8 +1,8 @@
 # Security & Threat Model
 
-**BlaxkVERSE** · BLAXK BYTE TECHNOLOGIES · review date 2026-10-15
+**BlaxkVERSE** · BLAXK BYTE TECHNOLOGIES · review date 2026-10-16 · revision 2
 
-> Scope: the static site (shipped), the GitHub ingestion service (specified), the Gemini service (specified), and the inquiry endpoint (specified). Each threat is rated by **impact × likelihood**, with the mitigation that is actually implemented or specified. Where a mitigation is not yet implemented, it says so.
+> Scope: the static site, the inquiry endpoint, the visitor-count endpoint, the aggregate statistics endpoint, and the GitHub/Gemini services specified for a later phase. Each threat is rated by **impact × likelihood**, with the mitigation that is actually implemented. Revision 2 reconciles this document with the delivery layer that has since been written: the inquiry endpoint and the analytics endpoints now exist and are exercised by tests, so rows that described them as future work have been re-rated against the code rather than the plan.
 
 ---
 
@@ -15,13 +15,16 @@ Being precise about this determines everything below.
 | Published project records | `bx-data.js`, in the browser | Public | Facts about public repositories |
 | Pinned code excerpts | `bx-excerpts.js`, in the browser | Public | Screened before publication |
 | Repository screenshots | `site/assets/img/` | Public | Committed publicly |
-| Site visitor data | **nowhere** | — | No analytics, no cookies, no storage |
-| `GEMINI_API_KEY` | host secrets (not yet provisioned) | **Critical** | Would allow spend on the owner's account |
-| `GITHUB_TOKEN` | host secrets (not yet provisioned) | High | Read-only scope only; raises rate limit |
-| Visitor inquiries | nowhere yet (no server) | Personal | Names, emails, project details |
-| Admin session | not yet implemented | High | Would authorise publishing |
+| Site visitor counts | Upstash/Vercel Redis via `api/track.js` | **Anonymous** | Path, referrer hostname, width bucket, language, day-rotating hashed IP. No cookie, no stored IP, no user agent, no cross-day identifier. 90-day expiry. |
+| `GEMINI_API_KEY` | host secrets (not provisioned) | **Critical** | Would allow spend on the owner's account. No endpoint reads it yet. |
+| `GITHUB_TOKEN` | host secrets (not provisioned) | High | Read-only scope only; raises the rate limit for `verify:content`. Build-time use only. |
+| Visitor inquiries | browser → EmailJS, no server in between | **Personal** | Name, email, project details. Honeypot-filtered in the browser, capped by EmailJS account limits, never persisted to anything this project controls. |
+| EmailJS public key | `site/assets/js/emailjs-config.js`, shipped to every visitor | **Public by design** | EmailJS's model: the public key is meant to live in browser code; the service id and both template ids are not secrets either. The abuse boundary is the account's monthly cap and reCAPTCHA v3 on the template, set in the provider dashboard — not obscurity. |
+| `ADMIN_TOKEN` | host secrets (not provisioned) | High | Unlocks aggregate visitor counts. Compared with `timingSafeEqual`; absent means the endpoint refuses. |
 
-**The most important sentence in this document:** the shipped build has no secrets, no accounts, no database, no server and no user input that leaves the browser. Its attack surface is a static file server. Everything from §4 onward describes what must be built *before* the service is switched on, and is written now so that the switch-on is a review rather than a scramble.
+**The most important sentence in this document:** the browser-facing surface is still static HTML, CSS and JavaScript with no session, no cookie and no stored credential — the attack surface a visitor can reach is two small serverless functions that accept a page view and an authenticated statistics read, and nothing else; the enquiry path has no server half at all, it posts from the browser to EmailJS. There is no database, no user account, no file upload, no template rendering and no server-side code path that executes anything derived from a request body — the body the form composes is parsed by nobody but EmailJS, which expects exactly that shape. Everything from §4 onward is written against that reality: where a control is implemented it says so and points at the file, and where it is still a plan it is labelled a plan.
+
+**What changed in revision 2, and why it is recorded rather than quietly edited:** the earlier revision stated that the shipped build had "no server" and that inquiries reached "nowhere". Both were true when written and are false now. A threat model that overstates its own isolation is worse than no threat model, because it retires controls that are still needed — so the rows below have been re-rated against the delivered code.
 
 ---
 
@@ -29,16 +32,20 @@ Being precise about this determines everything below.
 
 | # | Threat | Rating | Mitigation |
 |---|---|---|---|
-| S1 | Supply-chain compromise via a third-party script | **Eliminated** | Zero external requests, zero third-party JS. There is no CDN to compromise. |
+| S1 | Compromise via a third-party script | Low | One third-party runtime library (GSAP 3.15.0) is **vendored at the same origin** — added deliberately, pinned, licence header preserved, and loaded from `assets/js/vendor/` so the site still contacts no external host. The remaining attack path is a compromised package at install/build time rather than a hijacked remote script. Re-evaluated in the second pass: the earlier "Eliminated" rating is no longer accurate and has been corrected rather than left standing. |
 | S2 | Malicious code in a code excerpt | **Eliminated** | Excerpts render as inert text. Nothing from a repository is parsed, evaluated or executed. Excerpts are sliced from a hash-verified cache at build time, so the published bytes are the source bytes. |
 | S3 | Secret or credential published inside an excerpt | Low | Automated scan on every verification run for AWS/Google/OpenAI/Anthropic/GitHub/Slack token shapes, private-key blocks, JWTs, hardcoded credentials, `.env` usage patterns, personal email addresses and private-network addresses. One documented exception is allow-listed (the RFC 1918 example literal in a docstring) with the reasoning recorded. Treated as defence in depth, not a guarantee. |
-| S4 | Visitor tracking without consent | **Eliminated** | No analytics, no cookies, no fingerprinting, no storage. Motion preference is carried in the URL rather than written to the device. |
+| S4 | Visitor tracking without consent | **Low** | Page views are counted by first-party code, not a third-party product. No cookie, no `localStorage`, no device identifier, no stored IP and no stored user agent. The IP is combined with a salt that is destroyed daily, so the resulting hash counts one visit for one day and cannot be joined to another day. Do Not Track and Global Privacy Control are honoured in the browser **and** re-checked on the server, so a client that lies about its own preference is still refused. `/admin` is excluded from counting. Retention is 90 days and stated publicly on `/privacy`. This is deliberately not rated *eliminated*: a server does learn a visitor arrived, and pretending otherwise would be the exact overstatement this project exists to avoid. |
 | S5 | XSS via content injection | Low | No `innerHTML` on any dynamic string. All dynamic content is built with `createElement`/`textContent` (`BX.el` explicitly refuses an `html` attribute). Content is authored, not user-supplied. |
 | S6 | Denial of service / resource exhaustion in the browser | Low | Canvas work is capped by viewport area and pauses offscreen and on tab hide; the render loop is a single rAF; nothing animates when `reduced` or `static`. |
-| S7 | Clickjacking of the site | Low | `frame-ancestors 'none'` in the recommended CSP (§7). Note that the *preview* environment used for review legitimately frames the build, which is why CSP is specified for the deployment rather than baked into the source. |
+| S7 | Clickjacking of the site | Low | `frame-ancestors 'none'` is now set as a real response header in `vercel.json`, not merely recommended. It is applied by the host rather than baked into the markup, because the local preview used during review legitimately frames the build. |
 | S8 | Misleading content published as fact | **High impact, low likelihood** | This is the project's central risk and it is treated as a security property, not an editorial one. `verify:content` re-checks every claim against the live GitHub API, fails on `shipped` without a deployment URL, fails on numeric claims with no recorded field, and fails if an excerpt's length does not match its line range. |
 | S9 | Overstated capability by the assistant | Medium | The shipped assistant is deterministic. It cannot hallucinate: if a question is not covered by a record, it says so. |
-| S10 | Contact form that silently discards inquiries | Low | The form validates, then states plainly that no server is attached and nothing was transmitted. A form that pretends to send is worse than one that admits it cannot. |
+| S10 | Contact form that silently discards inquiries | **Eliminated** | The form posts from the browser to EmailJS's REST endpoint and every outcome is stated in words on the page: sent, refused by the provider (its own sentence quoted back), or not wired yet (naming the file that needs the keys). The submit button is disabled while the request is in flight, so a double submission is not silently dropped, and a failure is announced rather than swallowed. Where mail is genuinely unwired the page says so — at load, before a visitor has written anything, not only at submit. |
+| S11 | The public EmailJS key abused as a quota burner or spam amplifier | **Medium — accepted, bounded** | Client-side delivery gave up the old server endpoint's hashed-IP rate limit (5/hour) and its 20 KB body ceiling; that is the honest cost of removing the function, so the boundary moved to the provider: the honeypot now runs in the browser and discards bot submissions before they spend anything, the account carries a monthly cap, reCAPTCHA v3 on the template lets Google refuse automated sends, and EmailJS's own rate limits absorb bursts. Field length caps are enforced client-side before the fetch. A leaked *private* key is not possible — none ships; a visible public key is the design, bounded by the cap. The cap itself is an operator setting outside this repository, so CI cannot prove it is on: that is recorded in §9.3 rather than ticked. |
+| S12 | `/admin` counts read by anyone who guesses the URL | Medium | The page carries `X-Robots-Tag: noindex` and `no-store` and is disallowed in `robots.txt`, but those are hygiene, not access control. The real control is `api/stats.js`: it refuses to answer without a bearer token, compares with `timingSafeEqual` so a wrong token leaks nothing by timing, and returns aggregates only — no paths, no hashes, no per-visitor rows. If `ADMIN_TOKEN` is unset the endpoint answers `store_missing` rather than defaulting open. |
+| S13 | Analytics store as a privacy liability | Low | Nothing stored is identifying by design, so a breach of the store yields counts. Keys are namespaced by day and expire at 90 days, which bounds both the blast radius and the retention promise. |
+| S14 | A page is silently dead because a policy blocks its own script | **Found and fixed** | The dashboard shipped its JavaScript inline while `vercel.json` set `script-src 'self'` with no `'unsafe-inline'` — so in production the token gate would have rendered and nothing would have responded to it, with the browser console as the only clue. Caught by a browser test against the real policy, not by review. The script is now `assets/js/bx-admin.js` and **zero inline scripts exist in the build**; the shared harness sends the production CSP so the class of bug fails a check in future. |
 
 ---
 
@@ -46,14 +53,15 @@ Being precise about this determines everything below.
 
 | Question | Answer |
 |---|---|
-| What personal data is collected? | None. |
+| What personal data is collected? | None that identifies anyone. Page views are counted against a hash that is valid for one day and cannot be reversed. |
 | Cookies? | None. No banner because there is nothing to consent to. |
-| Third-party requests? | None. No fonts, no CDN, no embed, no pixel. |
-| Does the assistant send my question anywhere? | No. It is a local matcher over records that shipped with the page. Open the network tab and confirm. |
+| Third-party requests? | The contact form's sends to `api.emailjs.com` — the notification, then an acknowledgement to the address you typed — and only if you press Transmit. No fonts, no CDN, no embed, no pixel. The page-view beacon goes to this site's own origin. |
+| Does the assistant send my question anywhere? | No. It is a local matcher over records that shipped with the page — the Gemini endpoint in §5 is specified and not built. Open the network tab and confirm. |
 | Is anything written to my device? | No. Motion preference lives in the URL. |
-| What about the contact form? | It validates locally and then tells you nothing was sent, because nothing was. |
+| What about the contact form? | Your name, email and message go from your browser directly to EmailJS, which relays the enquiry to an inbox and — if you gave an address — sends you an acknowledgement quoting what you sent. Nothing is stored here. No request passes through this site's server, and nothing is written to your device. |
+| Can I opt out of being counted? | Yes. Do Not Track or Global Privacy Control stops it, and the server refuses independently of what the browser claims. |
 
-This is documented publicly on `/privacy`, in language that describes what the code does — and that page must be updated whenever the code changes, or it becomes the same kind of unverified claim the site is built to avoid.
+This is documented publicly on `/privacy`, in language that describes what the code does — and that page **has been** rewritten alongside this revision, because the previous text promised "no analytics" and that promise stopped being true the moment `api/track.js` was written. The rule that produced that correction is the one worth keeping: a disclosure page is a factual claim like any other, and it is verified against the code or it is removed.
 
 ---
 
@@ -127,11 +135,11 @@ Cross-Origin-Opener-Policy: same-origin
 
 | # | Threat | Mitigation |
 |---|---|---|
-| P1 | TLS interception / downgrade | HTTPS only, HSTS, no mixed content (the site makes no external requests at all). |
+| P1 | TLS interception / downgrade | HTTPS only, HSTS, no mixed content; the external requests (the form's EmailJS sends) are HTTPS by construction, and the origin is pinned by both the CSP and a client-side check that refuses any other endpoint. |
 | P2 | Dependency compromise | The static site has **zero** runtime dependencies. The build tooling uses `playwright-core` only, and it is not shipped. |
 | P3 | Build pipeline tampering | Pinned dependency versions; generators are deterministic and idempotent; the verification run fails loudly on any fact it cannot confirm. |
 | P4 | Admin interface exposed | `/admin` lives in the service, is authenticated, sends `noindex`, and is never linked from the public site. |
-| P5 | Contact form abuse (spam, injection, email-header injection) | Server-side validation and length caps; header-injection characters rejected in the email field; a honeypot field plus rate limiting; delivery through a transactional provider rather than raw SMTP; the recipient address never taken from user input. |
+| P5 | Contact form abuse (spam, injection, email-header injection) | Client-side validation and length caps before anything is sent; a honeypot that discards bot submissions in the browser; delivery through a transactional provider rather than raw SMTP; parameters passed as JSON template fields, never assembled into headers by anyone but EmailJS; the recipient address fixed in the config file rather than taken from user input; reCAPTCHA v3 and an account monthly cap as the quota boundary. |
 | P6 | Log leakage | Personal data redacted; no request bodies logged in full; secrets never logged. |
 
 ---
@@ -147,13 +155,14 @@ These were run against the built output on 2026-10-15. The observed results are 
 | 3 | No inline event handlers | `grep -rn 'onclick=\|onload=\|onerror=' site` | **0** |
 | 4 | No visitor storage | `grep -rn 'localStorage\|sessionStorage\|document.cookie\|indexedDB' site/assets/js/` | **0** |
 | 5 | No secret-shaped string in the build | AWS / Google / OpenAI / Anthropic / GitHub / Slack / private-key / JWT patterns over every built file | **0 hits** |
-| 6 | External origins referenced | `grep -rEoh 'https?://[a-z0-9.-]+' site` | **`github.com` ×73** (repository links) — plus four string literals: `localhost` ×2, `192.168.1.5` ×2, `myapp.local` ×2 |
+| 6 | External origins referenced | `grep -rEoh 'https?://[a-z0-9.-]+' site` | **`github.com` ×73** (repository links) — plus four string literals: `localhost` ×2, `192.168.1.5` ×2, `myapp.local` ×2. *(Recorded before the EmailJS switch; on the current build `api.emailjs.com` joins the list — one intentional outbound origin, referenced only from `emailjs-config.js` and the CSP, never from page markup. Re-run to refresh this row.)* |
 
 **Caveats, stated rather than glossed:**
 
-- **Item 6.** The `localhost` / `192.168.1.5` / `myapp.local` occurrences are **not** requests. They are text inside the Xposer code excerpt — a docstring describing the LAN address a phone would use. They render inside a `<pre>` as inert, selectable characters. The audit independently confirms **0 external requests** were made on any of the 16 pages; a string in a code sample cannot initiate one. This is also the exact literal that `verify:content` allow-lists with recorded reasoning (§2/S3).
+- **Item 6.** The `localhost` / `192.168.1.5` / `myapp.local` occurrences are **not** requests. They are text inside the Xposer code excerpt — a docstring describing the LAN address a phone would use. They render inside a `<pre>` as inert, selectable characters. The audit independently confirms **0 external requests** were made on any of the 16 pages; a string in a code sample cannot initiate one. This still holds since the EmailJS switch — the outbound requests are fired only by the form's submit handler (the notification, then the acknowledgement), and the audit exercises them against a same-origin stub, never the live provider. This is also the exact literal that `verify:content` allow-lists with recorded reasoning (§2/S3).
 - **Item 5** is a pattern scan, not a proof. Its real strength is architectural: excerpts are sliced from a SHA-256-verified cache at a pinned commit, so the published bytes are the source bytes and a human reviewed them.
-- **`frame-ancestors 'none'` is specified, not applied** in the source, because the review preview environment legitimately frames the build. It belongs in the deployment's headers (§7).
+- **`frame-ancestors 'none'` is applied by the host, not by the source.** It is a real response header in `vercel.json`, because the local review preview legitimately frames the build and a `<meta>` policy cannot express `frame-ancestors` anyway.
+- **`script-src 'self'` is enforced in the harness as well as the host, and that is what found S14.** Every verification tool now serves the site with the same `Content-Security-Policy` Vercel sends. Before that, they sent none — and the dashboard's JavaScript was inline, which the real policy blocks silently. The dashboard would have been dead in production while every local check reported it healthy. See S14 in §2.
 
 Reproduce:
 
@@ -174,7 +183,7 @@ Stated rather than assumed:
 
 1. **`GEMINI_API_KEY` and `GITHUB_TOKEN` are not provisioned.** Until they are, the AI endpoints do not exist and the assistant is the deterministic retriever described in §2/S9. This is the safe state, not a missing feature.
 2. **No penetration test has been performed.** Nothing in this document should be read as a security certification, and no such claim is made anywhere on the site.
-3. **Rate limiting needs a real deployment to tune.** The values in §5 are reasoned starting points; they must be adjusted against observed traffic rather than trusted as configured.
-4. **CI secret scanning is recommended** in addition to the content verifier, so a credential cannot reach a commit at all.
-5. **The CSP must be tested against the real deployment** — particularly `connect-src` for the API origin — since the review preview environment legitimately frames the site.
-6. **A data-retention statement is required** before the inquiry endpoint or any chat history is enabled, and it must be published on `/privacy` at the same time.
+3. **Rate limiting needs a real deployment to tune.** The values in §5 are reasoned starting points; they must be adjusted against observed traffic rather than trusted as configured. For the contact form that now means the EmailJS dashboard: the monthly cap and the reCAPTCHA toggle are operator settings that live outside this repository, so nothing in CI can prove they are set.
+4. **CI secret scanning is recommended** in addition to the content verifier, so a credential cannot reach a commit at all. The public EmailJS key is deliberately not a secret, but the scan still guards the line: a *private* key pasted into `emailjs-config.js` by mistake would be caught like any other credential.
+5. **The CSP must be tested against the real deployment** — particularly `connect-src`, which must list `https://api.emailjs.com` or the contact form is silently dead in production while working in every preview — since the review preview environment legitimately frames the site.
+6. **A data-retention statement is required** before any chat history is enabled, and it must be published on `/privacy` at the same time. The inquiry path has no retention by construction — there is no store on this side of the send — and `/privacy` §3 states exactly that as of the switch to client-side delivery.

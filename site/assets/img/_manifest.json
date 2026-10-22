@@ -1,7 +1,7 @@
 [
   {
     "file": "edublaxk-01-setup-wizard.jpg",
-    "caption": "EduBlaxk \u00b7 first-run setup wizard (provider + API key)",
+    "caption": "EduBlaxk · first-run setup wizard (provider + API key)",
     "original": "01-setup-wizard.png",
     "w": 956,
     "h": 900,
@@ -9,7 +9,7 @@
   },
   {
     "file": "edublaxk-03-create-view.jpg",
-    "caption": "EduBlaxk \u00b7 building an assessment from source documents",
+    "caption": "EduBlaxk · building an assessment from source documents",
     "original": "03-create-view.png",
     "w": 960,
     "h": 905,
@@ -17,7 +17,7 @@
   },
   {
     "file": "edublaxk-04-quiz-player.jpg",
-    "caption": "EduBlaxk \u00b7 exam mode, timed with per-question clock",
+    "caption": "EduBlaxk · exam mode, timed with per-question clock",
     "original": "04-quiz-player.png",
     "w": 960,
     "h": 905,
@@ -25,7 +25,7 @@
   },
   {
     "file": "edublaxk-05-results.jpg",
-    "caption": "EduBlaxk \u00b7 results with MCQ accuracy and rubric marks",
+    "caption": "EduBlaxk · results with MCQ accuracy and rubric marks",
     "original": "05-results.png",
     "w": 960,
     "h": 905,
@@ -33,7 +33,7 @@
   },
   {
     "file": "edublaxk-06-history-vault.jpg",
-    "caption": "EduBlaxk \u00b7 history vault and anti-duplicate question bank",
+    "caption": "EduBlaxk · history vault and anti-duplicate question bank",
     "original": "06-history-vault.png",
     "w": 960,
     "h": 905,
@@ -41,7 +41,7 @@
   },
   {
     "file": "edublaxk-08-ask-tutor.jpg",
-    "caption": "EduBlaxk \u00b7 per-question AI tutor drawer",
+    "caption": "EduBlaxk · per-question AI tutor drawer",
     "original": "08-ask-tutor.png",
     "w": 956,
     "h": 900,
@@ -49,7 +49,7 @@
   },
   {
     "file": "edublaxk-09-dark-theme.jpg",
-    "caption": "EduBlaxk \u00b7 assessment builder, dark theme",
+    "caption": "EduBlaxk · assessment builder, dark theme",
     "original": "09-dark-theme.png",
     "w": 956,
     "h": 900,
@@ -57,7 +57,7 @@
   },
   {
     "file": "forma-01-hero-dark.jpg",
-    "caption": "FORMA \u00b7 hero, dark theme",
+    "caption": "FORMA · hero, dark theme",
     "original": "01-hero-dark.png",
     "w": 1280,
     "h": 844,
@@ -65,7 +65,7 @@
   },
   {
     "file": "forma-02-studio.jpg",
-    "caption": "FORMA \u00b7 voice studio with a session in progress",
+    "caption": "FORMA · voice studio with a session in progress",
     "original": "02-studio-filled.png",
     "w": 1280,
     "h": 2112,
@@ -73,7 +73,7 @@
   },
   {
     "file": "forma-05-wave-live.jpg",
-    "caption": "FORMA \u00b7 live waveform during recording",
+    "caption": "FORMA · live waveform during recording",
     "original": "05-wave-live.png",
     "w": 533,
     "h": 455,
@@ -81,7 +81,7 @@
   },
   {
     "file": "forma-07-real-ml.jpg",
-    "caption": "FORMA \u00b7 local ML inference status (Whisper + Piper)",
+    "caption": "FORMA · local ML inference status (Whisper + Piper)",
     "original": "07-real-ml.png",
     "w": 1280,
     "h": 844,
@@ -89,7 +89,7 @@
   },
   {
     "file": "forma-08-desktop.jpg",
-    "caption": "FORMA \u00b7 redesigned desktop workspace",
+    "caption": "FORMA · redesigned desktop workspace",
     "original": "08-redesign-desktop.png",
     "w": 1280,
     "h": 844,
@@ -97,10 +97,42 @@
   },
   {
     "file": "forma-09-mobile.jpg",
-    "caption": "FORMA \u00b7 redesigned mobile layout",
+    "caption": "FORMA · redesigned mobile layout",
     "original": "09-redesign-mobile.png",
     "w": 390,
     "h": 844,
     "bytes": 40411
+  },
+  {
+    "file": "blaxkwave-01-overview.jpg",
+    "caption": "BlaXkWave Studio · workspace overview and session entry points",
+    "original": "docs/screenshots/desktop-overview.png",
+    "w": 1400,
+    "h": 972,
+    "bytes": 107758
+  },
+  {
+    "file": "blaxkwave-02-host.jpg",
+    "caption": "BlaXkWave Studio · the active host room with master gain and the listener list",
+    "original": "docs/screenshots/desktop-host.png",
+    "w": 1400,
+    "h": 1115,
+    "bytes": 95605
+  },
+  {
+    "file": "blaxkwave-03-listener.jpg",
+    "caption": "BlaXkWave Studio · listener view with personal volume and local monitoring",
+    "original": "docs/screenshots/desktop-listener.png",
+    "w": 1400,
+    "h": 972,
+    "bytes": 90706
+  },
+  {
+    "file": "blaxkwave-04-mobile.jpg",
+    "caption": "BlaXkWave Studio · the narrow layout, where most joins actually happen",
+    "original": "docs/screenshots/mobile-overview.png",
+    "w": 410,
+    "h": 1491,
+    "bytes": 67720
   }
 ]

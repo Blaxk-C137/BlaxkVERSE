@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Contact — start a project | BLAXK BYTE TECHNOLOGIES</title>
-<meta name="description" content="Send the shape of the problem and get a written scope back. Services, the process, good fits and honest mismatches. No tracking, no analytics.">
+<meta name="description" content="Send the shape of the problem and get a written scope back. Services, the process, good fits and honest mismatches. Email goes straight to inbox; no CRM, no marketing platform.">
 <meta name="color-scheme" content="dark">
 <meta name="theme-color" content="#08090c">
 <meta property="og:title" content="Contact — start a project | BLAXK BYTE TECHNOLOGIES">
-<meta property="og:description" content="Send the shape of the problem and get a written scope back. Services, the process, good fits and honest mismatches. No tracking, no analytics.">
+<meta property="og:description" content="Send the shape of the problem and get a written scope back. Services, the process, good fits and honest mismatches. Email goes straight to inbox; no CRM, no marketing platform.">
 <meta property="og:type" content="website">
 <link rel="stylesheet" href="assets/css/blaxkverse.css">
 
@@ -62,9 +62,9 @@
     <div class="wrap">
       <span class="label">Contact · transmission</span>
       <h1 style="font-size:clamp(2rem,5vw,3.4rem);margin:.4rem 0 .8rem">Start a project</h1>
-      <p class="lede">Send the shape of the problem and a written scope comes back: what gets built, what it
-        costs, and what is explicitly out of range. A useful reply needs three things — what you are trying
-        to do, what exists today, and any real deadline.</p>
+      <p class="lede">Tell me what you&rsquo;re trying to do and I&rsquo;ll write back with what I&rsquo;d
+        build, what it costs, and what I won&rsquo;t touch. Three things make that reply possible: the goal,
+        what exists today, and a real deadline if there is one.</p>
     </div>
   </section>
 
@@ -75,6 +75,15 @@
           <h2 style="font-size:1.3rem;margin-bottom:.3rem">Project inquiry</h2>
           <p class="label" style="margin-bottom:1rem">Fields marked required are the ones that make a real reply possible.</p>
 
+          <!-- Honeypot. No human sees or tabs to this; bots fill it; the server
+               silently accepts-and-discards anything that arrives with it filled.
+               aria-hidden plus tabindex="-1" keeps it out of the accessibility tree
+               and out of keyboard order, so it is invisible to everyone legitimate. -->
+          <div class="hp-field" aria-hidden="true">
+            <label for="cf-company">Company (leave blank)</label>
+            <input id="cf-company" name="company" type="text" tabindex="-1" autocomplete="off">
+          </div>
+
           <div class="field-row">
             <label for="cf-name">Your name <span aria-hidden="true">*</span></label>
             <input id="cf-name" name="name" type="text" autocomplete="name" required aria-required="true">
@@ -82,7 +91,7 @@
           <div class="field-row">
             <label for="cf-email">Email <span aria-hidden="true">*</span></label>
             <input id="cf-email" name="email" type="email" autocomplete="email" required aria-required="true" aria-describedby="cf-email-hint">
-            <span class="field-hint" id="cf-email-hint">Used only to reply. Nothing is stored, sold or subscribed.</span>
+            <span class="field-hint" id="cf-email-hint">Used to reply, and to set the reply-to on the message. Not added to any list, not stored in a database, not sold.</span>
           </div>
           <div class="field-row">
             <label for="cf-kind">What kind of work</label>
@@ -114,9 +123,10 @@
             Ready. Required fields are validated in the browser before anything is sent.
           </p>
           <p class="label" style="margin:0">
-            This build has no server, so submitting will tell you plainly that nothing was transmitted — see
-            the note opposite. That is deliberate: a form that pretends to send is worse than one that admits
-            it cannot.
+            Required fields are checked here, in the browser, then the message is handed to EmailJS and
+            delivered to my inbox as an email — not to a database, not to a CRM, not to anything that keeps
+            copies. If the form is not wired yet, it says so instead of pretending to send. A hidden field
+            catches bots; a submission that fills it is accepted on screen and quietly thrown away.
           </p>
         </form>
 
@@ -124,6 +134,7 @@
           <div class="panel panel--pad">
             <h2 style="font-size:1.2rem;margin-bottom:.6rem">What happens after you send this</h2>
             <dl class="dl">
+              <div><dt>Immediately · An acknowledgement</dt><dd>EmailJS sends a copy of what you submitted to the address you give, so the enquiry is confirmed without waiting for a human.</dd></div>
               <div><dt>1 · A reply with questions</dt><dd>Usually the same day. If the brief is clear, the reply is a scope rather than a questionnaire.</dd></div>
               <div><dt>2 · A written scope</dt><dd>Deliverables, timeline, price, and — importantly — what is not included.</dd></div>
               <div><dt>3 · Work in your repository</dt><dd>Readable commits, not a reveal at the end.</dd></div>
@@ -139,16 +150,20 @@
               <li><a class="inline-link" href="work.html">Read a case study</a> if you want to see how decisions get made.</li>
             </ul>
             <p class="label mt-2" style="margin-bottom:0">
-              No public telephone number or postal address is published, and the company registration
-              position is not asserted on this site. Both are available directly on request when a contract
-              requires them.
+              Email is the fastest route and lands in an inbox that is read daily. A telephone number and a
+              postal address for contracts and invoices are supplied directly on request.
             </p>
           </div>
 
           <div class="provenance">
-            <b>No tracking on this page.</b> There is no analytics script, no pixel, no cookie and no
-            third-party embed anywhere on this site. The assistant panel answers from local records and makes
-            no network request. Full details on the <a class="inline-link" href="privacy.html">privacy page</a>.
+            <b>Everything you type here goes to my inbox as an email.</b> If you give an address,
+            EmailJS also sends you a copy as an acknowledgement, and nothing else leaves the browser.
+            No pixel, no cookie, no
+            marketing platform and no CRM — EmailJS relays both messages and keeps only its own
+            delivery logs. Page views are counted by this site's own
+            code without cookies, without storing your address and without storing a user agent, and your
+            browser can refuse that entirely with Do Not Track. Full details on the
+            <a class="inline-link" href="privacy.html">privacy page</a>.
           </div>
         </div>
       </div>
@@ -191,7 +206,7 @@
       <div>
         <h4>BLAXK BYTE TECHNOLOGIES</h4>
         <p class="dim" style="margin:0 0 .6rem">Software, automation and AI systems — built by Blaxk, documented in public.</p>
-        <p class="label" style="margin:0">Company registration status is not asserted on this site because it has not been verified as complete.</p>
+        <p class="label" style="margin:0">Built in public. Every project here links to the repo it came out of.</p>
       </div>
       <div>
         <h4>Navigate</h4>
@@ -225,7 +240,7 @@
       <span>© <span data-year>2026</span> BLAXK BYTE TECHNOLOGIES</span>
       <span>Content verified against the public record on 15 Oct 2026</span>
       <span>Keyboard: <kbd>/</kbd> or <kbd>⌘K</kbd> search · <kbd>M</kbd> motion</span>
-      <a href="privacy.html" style="color:var(--steel);text-decoration:none">This site makes no analytics or tracking requests.</a>
+      <a href="privacy.html" style="color:var(--steel);text-decoration:none">Page views are counted without cookies or stored IP addresses. Details &rarr;</a>
     </div>
   </div>
 </footer>
@@ -250,14 +265,19 @@
     <button class="btn" type="submit">Ask</button>
   </form>
   <p class="guide-disclaimer">
-    This build ships a deterministic retriever over the verified project records — it is not a language model and it will not
-    answer beyond what is recorded. The intended production design is a server-side Gemini endpoint with retrieval over
-    approved content, schema-validated output, rate limits and a static fallback. See the privacy page for the full disclosure.
+    Not a chatbot. It looks things up in the records already on this site and quotes them back with a link.
+    Ask something I haven&rsquo;t written down and it tells you so instead of inventing an answer. A Gemini-backed
+    version is designed but not switched on — the privacy page says where that stands.
   </p>
 </section>
 
 <script src="assets/js/bx-data.js"></script>
 <script src="assets/js/bx-excerpts.js"></script>
+<script src="assets/js/vendor/gsap.min.js"></script>
+<script src="assets/js/vendor/ScrollTrigger.min.js"></script>
+<script src="assets/js/bx-motion.js"></script>
+<script src="assets/js/bx-analytics.js" defer></script>
+<script src="assets/js/emailjs-config.js"></script>
 <script src="assets/js/bx-core.js"></script>
 
 </body>

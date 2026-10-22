@@ -98,7 +98,7 @@ def footer(depth=0):
       <div>
         <h4>BLAXK BYTE TECHNOLOGIES</h4>
         <p class="dim" style="margin:0 0 .6rem">Software, automation and AI systems — built by Blaxk, documented in public.</p>
-        <p class="label" style="margin:0">Company registration status is not asserted on this site because it has not been verified as complete.</p>
+        <p class="label" style="margin:0">Built in public. Every project here links to the repo it came out of.</p>
       </div>
       <div>
         <h4>Navigate</h4>
@@ -132,7 +132,7 @@ def footer(depth=0):
       <span>© <span data-year>2026</span> BLAXK BYTE TECHNOLOGIES</span>
       <span>Content verified against the public record on 15 Oct 2026</span>
       <span>Keyboard: <kbd>/</kbd> or <kbd>⌘K</kbd> search · <kbd>M</kbd> motion</span>
-      <a href="{pre}privacy.html" style="color:var(--steel);text-decoration:none">This site makes no analytics or tracking requests.</a>
+      <a href="{pre}privacy.html" style="color:var(--steel);text-decoration:none">Page views are counted without cookies or stored IP addresses. Details &rarr;</a>
     </div>
   </div>
 </footer>
@@ -157,9 +157,9 @@ def footer(depth=0):
     <button class="btn" type="submit">Ask</button>
   </form>
   <p class="guide-disclaimer">
-    This build ships a deterministic retriever over the verified project records — it is not a language model and it will not
-    answer beyond what is recorded. The intended production design is a server-side Gemini endpoint with retrieval over
-    approved content, schema-validated output, rate limits and a static fallback. See the privacy page for the full disclosure.
+    Not a chatbot. It looks things up in the records already on this site and quotes them back with a link.
+    Ask something I haven&rsquo;t written down and it tells you so instead of inventing an answer. A Gemini-backed
+    version is designed but not switched on — the privacy page says where that stands.
   </p>
 </section>
 """
@@ -170,6 +170,11 @@ def scripts(depth=0, extra=""):
     return f"""
 <script src="{pre}assets/js/bx-data.js"></script>
 <script src="{pre}assets/js/bx-excerpts.js"></script>
+<script src="{pre}assets/js/vendor/gsap.min.js"></script>
+<script src="{pre}assets/js/vendor/ScrollTrigger.min.js"></script>
+<script src="{pre}assets/js/bx-motion.js"></script>
+<script src="{pre}assets/js/bx-analytics.js" defer></script>
+<script src="{pre}assets/js/emailjs-config.js"></script>
 <script src="{pre}assets/js/bx-core.js"></script>
 {extra}
 </body>

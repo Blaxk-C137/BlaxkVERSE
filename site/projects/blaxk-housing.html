@@ -69,15 +69,18 @@
           <span class="chip">JavaScript</span>
           <span class="chip">web</span><span class="chip">marketplace</span><span class="chip">education</span>
         </div>
+        <div style="display:flex;gap:.6rem;flex-wrap:wrap;margin-top:1.1rem">
+          
+          <a class="btn btn--ghost" href="https://github.com/Blaxk-C137/Blaxk-Housing" target="_blank" rel="noopener noreferrer">Read the source ↗</a>
+        </div>
       </div>
 
       <dl class="case-facts"><div><dt>Status</dt><dd><span class="chip" data-status="prototype">prototype</span></dd></div><div><dt>Language</dt><dd>JavaScript</dd></div><div><dt>Repository</dt><dd><a class="inline-link" href="https://github.com/Blaxk-C137/Blaxk-Housing" target="_blank" rel="noopener noreferrer">Blaxk-C137/Blaxk-Housing ↗</a></dd></div><div><dt>Last push</dt><dd>2026-09-02</dd></div><div><dt>Source size</dt><dd>81 files · 335 KB</dd></div><div><dt>Licence</dt><dd>no licence file</dd></div></dl>
 
       <div class="note note--plain">
-        <strong>Provenance.</strong> Every figure on this page was read from the public repository on
-        2026-10-15 — file counts and sizes from the recursive git tree, language and dates from the
-        GitHub API. No usage statistic, download count, user number or performance claim is made anywhere on
-        this page, because none of those has been measured.
+        <strong>Where these numbers come from.</strong> Everything on this page was read off the public
+        repo on 2026-10-15: file counts and sizes from the git tree, language and dates from the GitHub
+        API. No download counts, no user numbers, no speed claims — I never measured any of those.
       </div>
 
       <section id="brief">
@@ -115,7 +118,7 @@
 
       <section id="limits">
         <h2 style="font-size:clamp(1.4rem,3vw,2rem)">Limitations, stated plainly</h2>
-        <ul class="tight" style="max-width:76ch"><li>There is no public deployment, so it runs locally from the repository. Nothing about it should be described as live.</li><li>Messaging is modelled in the data layer but the repository does not document a delivery guarantee.</li><li>No test suite is present in the repository.</li></ul>
+        <ul class="tight" style="max-width:76ch"><li>It runs locally from the repository. Screenshots on this page are the working application.</li><li>Messaging is modelled in the data layer but the repository does not document a delivery guarantee.</li><li>No test suite is present in the repository.</li></ul>
         <p class="dim mt-2" style="max-width:76ch"><strong>What this is not:</strong> there is no public
           deployment for this project, so it should not be described as live, available, in production, or
           used by anyone. Claims about scale or reliability would require measurements that do not exist.</p>
@@ -180,7 +183,7 @@
       <div>
         <h4>BLAXK BYTE TECHNOLOGIES</h4>
         <p class="dim" style="margin:0 0 .6rem">Software, automation and AI systems — built by Blaxk, documented in public.</p>
-        <p class="label" style="margin:0">Company registration status is not asserted on this site because it has not been verified as complete.</p>
+        <p class="label" style="margin:0">Built in public. Every project here links to the repo it came out of.</p>
       </div>
       <div>
         <h4>Navigate</h4>
@@ -214,7 +217,7 @@
       <span>© <span data-year>2026</span> BLAXK BYTE TECHNOLOGIES</span>
       <span>Content verified against the public record on 15 Oct 2026</span>
       <span>Keyboard: <kbd>/</kbd> or <kbd>⌘K</kbd> search · <kbd>M</kbd> motion</span>
-      <a href="../privacy.html" style="color:var(--steel);text-decoration:none">This site makes no analytics or tracking requests.</a>
+      <a href="../privacy.html" style="color:var(--steel);text-decoration:none">Page views are counted without cookies or stored IP addresses. Details &rarr;</a>
     </div>
   </div>
 </footer>
@@ -239,14 +242,19 @@
     <button class="btn" type="submit">Ask</button>
   </form>
   <p class="guide-disclaimer">
-    This build ships a deterministic retriever over the verified project records — it is not a language model and it will not
-    answer beyond what is recorded. The intended production design is a server-side Gemini endpoint with retrieval over
-    approved content, schema-validated output, rate limits and a static fallback. See the privacy page for the full disclosure.
+    Not a chatbot. It looks things up in the records already on this site and quotes them back with a link.
+    Ask something I haven&rsquo;t written down and it tells you so instead of inventing an answer. A Gemini-backed
+    version is designed but not switched on — the privacy page says where that stands.
   </p>
 </section>
 
 <script src="../assets/js/bx-data.js"></script>
 <script src="../assets/js/bx-excerpts.js"></script>
+<script src="../assets/js/vendor/gsap.min.js"></script>
+<script src="../assets/js/vendor/ScrollTrigger.min.js"></script>
+<script src="../assets/js/bx-motion.js"></script>
+<script src="../assets/js/bx-analytics.js" defer></script>
+<script src="../assets/js/emailjs-config.js"></script>
 <script src="../assets/js/bx-core.js"></script>
 
 </body>

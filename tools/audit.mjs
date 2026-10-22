@@ -13,7 +13,7 @@
  * Usage: node tools/audit.mjs
  */
 import { chromium } from "playwright-core";
-import { createServer } from "node:http";
+import { serve } from "./lib/site-server.mjs";
 import { readFile, writeFile, mkdir, readdir, stat } from "node:fs/promises";
 import { extname, join, normalize, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
@@ -29,22 +29,19 @@ const MIME = {
   ".svg": "image/svg+xml", ".webp": "image/webp"
 };
 
-const server = createServer(async (req, res) => {
-  try {
-    const url = new URL(req.url, "http://localhost");
-    let p = normalize(decodeURIComponent(url.pathname));
-    if (p.endsWith("/")) p += "index.html";
-    const file = join(root, p);
-    const body = await readFile(file);
-    res.writeHead(200, { "Content-Type": MIME[extname(file)] || "application/octet-stream", "Cache-Control": "no-store" });
-    res.end(body);
-  } catch {
-    res.writeHead(404, { "Content-Type": "text/plain" });
-    res.end("not found");
-  }
-});
-await new Promise((r) => server.listen(PORT, "127.0.0.1", r));
-const BASE = `http://127.0.0.1:${PORT}`;
+const server = await serve({ port: PORT });
+const BASE = server.base;
+const rewrites = server.rewrites;
+
+/* /admin is a private operations page, not content. It is held to the
+   accessibility basics — it is still read by a human — but it is exempt from
+   the three assertions that assume a content page: the command palette, the
+   assistant panel, and a word count in three motion modes. Requiring a
+   dashboard to carry a search palette would be theatre, and asserting a word
+   count on a token gate that is deliberately empty would be a false failure. */
+const PRIVATE = new Set(["/admin.html"]);
+const isPrivate = (p) => PRIVATE.has(p);
+
 
 /* ---- discover every page by walking the site directory ---- */
 async function walk(dir, acc = []) {
@@ -171,6 +168,29 @@ for (const path of pages) {
   /* ---- contact form validation (contact page only) ---- */
   let contact = null;
   if (path.includes("contact")) {
+    /* Send the form at the harness stub, not at the live provider. Production
+       posts browser→api.emailjs.com; a test run must exercise the same code
+       without firing a real email and without depending on the network. The
+       rewrite happens on the config FILE itself — patching the response, not
+       the live window — because the page assigns window.BX_MAIL from that file
+       and would overwrite any init-script that ran earlier. Same-origin
+       endpoint, so the CSP under test stays exactly as shipped. */
+    await page.route(/\/assets\/js\/emailjs-config\.js/, async (route) => {
+      const res = await route.fetch();
+      let body = await res.text();
+      body = body
+        .replace(/user_id:\s*"[^"]*"/, 'user_id: "audit-test-key"')
+        .replace(/service_id:\s*"[^"]*"/, 'service_id: "audit-test-service"')
+        .replace(/\bauto_reply_template_id:\s*"[^"]*"/, 'auto_reply_template_id: "audit-test-auto-reply"')
+        .replace(/\btemplate_id:\s*"[^"]*"/, 'template_id: "audit-test-template"')
+        .replace(/endpoint:\s*"[^"]*"/, 'endpoint: "/api/emailjs"');
+      await route.fulfill({ response: res, body });
+    });
+    /* The page already loaded once, before this route existed, so its scripts
+       ran against the shipped placeholders. Reload now: this is the first
+       request the interception sees, and it rewrites the config on the wire. */
+    await page.goto(BASE + path, { waitUntil: "load" });
+    await page.waitForTimeout(350);
     try {
       await page.click("[data-contact-form] button[type=submit]");
       await page.waitForTimeout(250);
@@ -194,7 +214,8 @@ for (const path of pages) {
 
   /* ---- the three motion modes must all render content ---- */
   const modes = [];
-  for (const q of ["?motion=on", "?motion=reduced", "?motion=off"]) {
+  const modeQueries = isPrivate(path) ? [] : ["?motion=on", "?motion=reduced", "?motion=off"];
+  for (const q of modeQueries) {
     await page.goto(BASE + path + q, { waitUntil: "load" });
     await page.waitForTimeout(280);
     modes.push(await page.evaluate(() => ({
@@ -234,7 +255,14 @@ for (const r of results) {
   }
 }
 const pageSet = new Set(pages);
-const brokenLinks = [...linkTargets].filter((t) => !pageSet.has(t) && !MIME[extname(t)]);
+/* A target is fine if a file exists at it, if it carries a file extension, or
+   if the host's rewrites resolve it — /privacy is a valid link even though the
+   file on disk is /privacy.html, because vercel.json says so and the local
+   harness applies the same table. Without this the admin page's link to
+   /privacy was reported broken on every run. */
+const brokenLinks = [...linkTargets].filter(
+  (t) => !pageSet.has(t) && !MIME[extname(t)] && !rewrites.some((r) => r.re.test(t))
+);
 
 await browser.close();
 server.close();
@@ -266,9 +294,10 @@ const noErrors = summary.pagesWithErrors.length === 0;
 const noHttp = summary.httpFailures.length === 0;
 const noBroken = brokenLinks.length === 0;
 const a11yOk = summary.accessibility.every((a) => a.lang && a.h1 === 1 && a.skipLink && a.imgsMissingAlt === 0);
-const modesOk = summary.motionModes.every((m) => m.modes.length === 3 && m.modes.every((x) => x.words > 60 && x.h1 === 1));
-const keyboardOk = summary.keyboardPalette.every((k) => k.opened?.visible && k.searchOptions > 0 && k.closed?.hidden);
-const assistantOk = summary.assistant.every((a) => !a.error ? (a.messages >= 1 && a.hasCitation) : true);
+const contentPages = results.filter((r) => !isPrivate(r.path));
+const modesOk = contentPages.every((r) => r.modes.length === 3 && r.modes.every((x) => x.words > 60 && x.h1 === 1));
+const keyboardOk = contentPages.every((r) => r.keyboard.opened?.visible && r.keyboard.searchOptions > 0 && r.keyboard.closed?.hidden);
+const assistantOk = contentPages.every((r) => (r.assistant.error ? false : r.assistant.messages >= 1 && r.assistant.hasCitation));
 
 console.log("\n================ AUDIT SUMMARY ================");
 console.log(`pages audited            ${pages.length}`);

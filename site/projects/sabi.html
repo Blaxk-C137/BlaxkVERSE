@@ -69,15 +69,18 @@
           <span class="chip">TypeScript</span>
           <span class="chip">education</span><span class="chip">ai</span><span class="chip">local-first</span>
         </div>
+        <div style="display:flex;gap:.6rem;flex-wrap:wrap;margin-top:1.1rem">
+          
+          <a class="btn btn--ghost" href="https://github.com/Blaxk-C137/SABI" target="_blank" rel="noopener noreferrer">Read the source ↗</a>
+        </div>
       </div>
 
       <dl class="case-facts"><div><dt>Status</dt><dd><span class="chip" data-status="prototype">prototype</span></dd></div><div><dt>Language</dt><dd>TypeScript</dd></div><div><dt>Repository</dt><dd><a class="inline-link" href="https://github.com/Blaxk-C137/SABI" target="_blank" rel="noopener noreferrer">Blaxk-C137/SABI ↗</a></dd></div><div><dt>Last push</dt><dd>2026-10-12</dd></div><div><dt>Source size</dt><dd>119 files · 716 KB</dd></div><div><dt>Licence</dt><dd>no licence file</dd></div></dl>
 
       <div class="note note--plain">
-        <strong>Provenance.</strong> Every figure on this page was read from the public repository on
-        2026-10-15 — file counts and sizes from the recursive git tree, language and dates from the
-        GitHub API. No usage statistic, download count, user number or performance claim is made anywhere on
-        this page, because none of those has been measured.
+        <strong>Where these numbers come from.</strong> Everything on this page was read off the public
+        repo on 2026-10-15: file counts and sizes from the git tree, language and dates from the GitHub
+        API. No download counts, no user numbers, no speed claims — I never measured any of those.
       </div>
 
       <section id="brief">
@@ -119,7 +122,7 @@
 
       <section id="limits">
         <h2 style="font-size:clamp(1.4rem,3vw,2rem)">Limitations, stated plainly</h2>
-        <ul class="tight" style="max-width:76ch"><li>First run downloads a local speech model (about 250 MB) — documented up front as a one-time cost.</li><li>Desktop Chrome or Edge is strongly recommended; the README states that Firefox speech support is weaker.</li><li>Barge-in is deliberately narrow: one reply is one session, which keeps cancellation predictable but means overlapping speech is not supported.</li><li>No public deployment.</li></ul>
+        <ul class="tight" style="max-width:76ch"><li>First run downloads a local speech model (about 250 MB) — documented up front as a one-time cost.</li><li>Desktop Chrome or Edge is strongly recommended; the README states that Firefox speech support is weaker.</li><li>Barge-in is deliberately narrow: one reply is one session, which keeps cancellation predictable but means overlapping speech is not supported.</li><li>It runs from the repository rather than from a hosted URL.</li></ul>
         <p class="dim mt-2" style="max-width:76ch"><strong>What this is not:</strong> there is no public
           deployment for this project, so it should not be described as live, available, in production, or
           used by anyone. Claims about scale or reliability would require measurements that do not exist.</p>
@@ -184,7 +187,7 @@
       <div>
         <h4>BLAXK BYTE TECHNOLOGIES</h4>
         <p class="dim" style="margin:0 0 .6rem">Software, automation and AI systems — built by Blaxk, documented in public.</p>
-        <p class="label" style="margin:0">Company registration status is not asserted on this site because it has not been verified as complete.</p>
+        <p class="label" style="margin:0">Built in public. Every project here links to the repo it came out of.</p>
       </div>
       <div>
         <h4>Navigate</h4>
@@ -218,7 +221,7 @@
       <span>© <span data-year>2026</span> BLAXK BYTE TECHNOLOGIES</span>
       <span>Content verified against the public record on 15 Oct 2026</span>
       <span>Keyboard: <kbd>/</kbd> or <kbd>⌘K</kbd> search · <kbd>M</kbd> motion</span>
-      <a href="../privacy.html" style="color:var(--steel);text-decoration:none">This site makes no analytics or tracking requests.</a>
+      <a href="../privacy.html" style="color:var(--steel);text-decoration:none">Page views are counted without cookies or stored IP addresses. Details &rarr;</a>
     </div>
   </div>
 </footer>
@@ -243,14 +246,19 @@
     <button class="btn" type="submit">Ask</button>
   </form>
   <p class="guide-disclaimer">
-    This build ships a deterministic retriever over the verified project records — it is not a language model and it will not
-    answer beyond what is recorded. The intended production design is a server-side Gemini endpoint with retrieval over
-    approved content, schema-validated output, rate limits and a static fallback. See the privacy page for the full disclosure.
+    Not a chatbot. It looks things up in the records already on this site and quotes them back with a link.
+    Ask something I haven&rsquo;t written down and it tells you so instead of inventing an answer. A Gemini-backed
+    version is designed but not switched on — the privacy page says where that stands.
   </p>
 </section>
 
 <script src="../assets/js/bx-data.js"></script>
 <script src="../assets/js/bx-excerpts.js"></script>
+<script src="../assets/js/vendor/gsap.min.js"></script>
+<script src="../assets/js/vendor/ScrollTrigger.min.js"></script>
+<script src="../assets/js/bx-motion.js"></script>
+<script src="../assets/js/bx-analytics.js" defer></script>
+<script src="../assets/js/emailjs-config.js"></script>
 <script src="../assets/js/bx-core.js"></script>
 
 </body>

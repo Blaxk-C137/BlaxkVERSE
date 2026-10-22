@@ -13,7 +13,8 @@
  * Usage: node tools/perf-site.mjs
  */
 import { chromium } from "playwright-core";
-import { createServer } from "node:http";
+import { readdirSync, existsSync } from "node:fs";
+import { serve } from "./lib/site-server.mjs";
 import { readFile, writeFile, readdir } from "node:fs/promises";
 import { extname, join, normalize } from "node:path";
 import { fileURLToPath } from "node:url";
@@ -26,27 +27,21 @@ const MIME = {
   ".js": "text/javascript; charset=utf-8", ".png": "image/png", ".jpg": "image/jpeg",
   ".svg": "image/svg+xml"
 };
-const server = createServer(async (req, res) => {
-  try {
-    const url = new URL(req.url, "http://localhost");
-    let p = normalize(decodeURIComponent(url.pathname));
-    if (p.endsWith("/")) p += "index.html";
-    const body = await readFile(join(root, p));
-    res.writeHead(200, { "Content-Type": MIME[extname(p)] || "application/octet-stream", "Cache-Control": "no-store" });
-    res.end(body);
-  } catch { res.writeHead(404); res.end("not found"); }
-});
-await new Promise((r) => server.listen(PORT, "127.0.0.1", r));
+const server = await serve({ port: PORT });
 
-const PAGES = [
-  "/index.html", "/work.html", "/source.html", "/company.html",
-  "/about.html", "/lab.html", "/contact.html", "/privacy.html",
-  "/projects/edublaxk.html", "/projects/blaxk-housing.html",
-  "/projects/sabi.html", "/projects/blaxk-xposer.html",
-  "/projects/forma.html", "/projects/blaxk-aggregator.html",
-  "/projects/the-migrator.html", "/projects/gesture-controls.html"
-];
-const VIEWPORTS = [
+/* Discovered from the built site rather than hard-coded. The earlier version
+   listed 16 paths by hand, which quietly stopped covering the 13 case studies
+   added in the second pass — a budget harness that skips a third of the site is
+   worse than no harness, because it reports a pass. */
+function discoverPages() {
+  const dir = fileURLToPath(new URL("../site", import.meta.url));
+  const out = [];
+  for (const f of readdirSync(dir)) if (f.endsWith(".html")) out.push("/" + f);
+  const proj = join(dir, "projects");
+  if (existsSync(proj)) for (const f of readdirSync(proj)) if (f.endsWith(".html")) out.push("/projects/" + f);
+  return out.sort((a, b) => (a.includes("index") ? -1 : b.includes("index") ? 1 : a.localeCompare(b)));
+}
+const PAGES = discoverPages();const VIEWPORTS = [
   { name: "desktop", width: 1440, height: 900, dpr: 1, mobile: false, cpu: 1 },
   { name: "mobile", width: 390, height: 844, dpr: 3, mobile: true, cpu: 4 },
   { name: "modest-laptop", width: 1366, height: 768, dpr: 1, mobile: false, cpu: 6 }
@@ -197,7 +192,7 @@ const out = {
 };
 await writeFile(join(outRoot, "site-performance.json"), JSON.stringify(out, null, 2));
 
-console.log("\n=============== BUDGET CHECK (worst case across 16 pages × 3 viewports × 3 modes) ===============");
+console.log(`\n=============== BUDGET CHECK (worst case across ${PAGES.length} pages × 3 viewports × 3 modes) ===============`);
 console.log(`LCP      worst ${worst.lcp}ms   budget ${budgets.lcp}ms   ${worst.lcp <= budgets.lcp ? "✓ within budget" : "✗ over budget"}`);
 console.log(`CLS      worst ${worst.cls.toFixed(4)}    budget ${budgets.cls}        ${worst.cls <= budgets.cls ? "✓ within budget" : "✗ over budget"}`);
 console.log(`Longest task ${worst.longTaskMax}ms · TBT proxy worst ${worst.tbtProxy}ms · DOM max ${worst.domNodes} nodes`);

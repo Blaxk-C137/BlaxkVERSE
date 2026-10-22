@@ -25,15 +25,20 @@ Two systems, deliberately separated.
                                     │ build-time read only.
                                     │ Never a runtime dependency.
 ┌──────────────────────────────────────────────────────────────────────────┐
-│  SYSTEM 2 — THE SERVICE  (specified, not yet deployed)                   │
+│  SYSTEM 2 — THE DELIVERY LAYER  (built)                                  │
+│                                                                          │
+│   Inquiry     →  honeypot → validate → EmailJS (browser → provider)      │
+│   Page view   →  DNT/GPC  → hash+day-salt → counters       → /api/track  │
+│   Dashboard   →  bearer token → aggregates                 → /api/stats  │
+│                                                                          │
+│  SYSTEM 3 — THE INTELLIGENCE LAYER  (specified, not yet built)           │
 │                                                                          │
 │   GitHub API  →  fetcher → allowlist → normalise → cache → /api/github/* │
 │   Gemini API  →  retrieval → validation → budget  →       /api/ai/*      │
-│   Inquiry     →  validation → rate limit → deliver →      /api/contact   │
 └──────────────────────────────────────────────────────────────────────────┘
 ```
 
-**Why split.** The public pages are content. They need no server, no database and no runtime API key. Rendering them to static HTML at build time makes them faster than server-rendered pages, impossible to break at runtime, and free to host — and it means a GitHub outage cannot take the site down, because the site reads GitHub at *build* time and not while a visitor is waiting.
+**Why split.** The public pages are content, and content does not need to be assembled per request. Each page is rendered to static HTML at build time, so reading a page involves no database, no template engine and no API key — the only code that runs per request is three small endpoints for an enquiry, a page view and a statistics read. That split is why a page cannot be taken down by an upstream failure, why hosting is free at any traffic this site will see, and why the CSP can be strict: there is no server-side rendering surface for an attacker to reach through a query string.
 
 The service exists for the three things that genuinely require a server: caching live repository data, holding a Gemini key, and accepting an inquiry. Those are specified in §6 and §7.
 
@@ -85,16 +90,18 @@ It is a JavaScript module because the **same records drive both the static HTML 
 | `/contact` | `contact.html` | static + runtime validation | Inquiry form, process, honest fit/mismatch lists |
 | `/privacy` | `privacy.html` | static | Data, AI and code-display disclosures |
 
-The master specification's original sitemap also listed `/admin`. **That route is intentionally absent from the static site** — an authenticated curation interface belongs in the service, not in a page you can reach without a session. It is specified in §7.4.
+The master specification's original sitemap also listed `/admin`. It now exists, but not as a curation interface for publishing: it is a private **read-only operations view** for visitor counts, gated by `ADMIN_TOKEN` and served `noindex, no-store`. The publishing/curation interface the spec described belongs in the service and is still specified rather than built (§6.5). The distinction matters — a page that can only read aggregates is a different risk from one that can publish.
 
 ### 2.4 Runtime modules
 
-Four files, no dependencies, loaded in order:
+Six files, loaded in order. Only one is third-party, and it is self-hosted:
 
 | File | Size | Responsibility |
 |---|---|---|
 | `bx-data.js` | ~48 KB | Content records. No logic. |
 | `bx-excerpts.js` | generated | Verbatim excerpt bodies, keyed by `repo::path`. |
+| `vendor/gsap.min.js` + `vendor/ScrollTrigger.min.js` | 71 + 43 KB (44 KB gzipped) | GSAP 3.15.0, vendored. The only third-party runtime code. |
+| `bx-motion.js` | ~7 KB | The GSAP layer: hero timeline, scroll reveals, progress rail, counters, magnetic CTAs. Returns immediately in reduced/static modes. |
 | `bx-core.js` | ~34 KB | All behaviour: motion modes, navigation, palette, canvas fields, source chamber, assistant, form validation, filters. |
 | (inline) | — | Nothing. No inline scripts, so the site runs under a strict CSP without `unsafe-inline`. |
 
@@ -116,7 +123,7 @@ The `director` is the only code that reads scroll position. Everything animated 
 
 | Generated | Authored |
 |---|---|
-| `site/**/*.html` | `bx-data.js` |
+| `site/**/*.html` (30 pages) | `bx-data.js` |
 | `site/assets/js/bx-excerpts.js` | `bx-core.js`, `blaxkverse.css` |
 | `evidence/*.json`, `docs/performance-report.md` | `docs/*.md` (other than performance) |
 | `sources/MANIFEST.json` | `prototypes/*` |
@@ -134,7 +141,7 @@ python3 tools/extract-excerpts.py    # verbatim excerpts, hash-verified
 python3 tools/build-content.py       # 16 pages, refuses a stale pin
 node tools/verify-content.mjs        # facts vs live GitHub API
 node tools/audit.mjs                 # 16 pages × a11y, keyboard, links, 3 modes
-node tools/perf-site.mjs             # LCP / CLS / long tasks, 144 runs
+node tools/perf-site.mjs             # LCP / CLS / long tasks, 270 runs
 node tools/measure.mjs && node tools/report.mjs   # prototypes → performance report
 ```
 
@@ -152,7 +159,9 @@ Each tool writes machine-readable evidence into `evidence/`, and each fails loud
 | Reduced motion requested | Camera parks, canvas disappears, content identical. |
 | Low-power device | Canvas resolution drops by area; rendering pauses offscreen. |
 | Assistant asked something unrecorded | It says so and offers the contact route. It does not improvise. |
-| Form submitted with no server | It validates, then states plainly that nothing was transmitted. |
+| Form submitted and mail is unconfigured | It validates, posts, and reports `not_configured` in words. It never reports a delivery that did not happen. |
+| Mail provider rejects the send | The caller receives a generic `provider` error; the status, key and upstream text are logged server-side only. |
+| The visitor blocks tracking | DNT/GPC, checked in the browser and again in `api/track.js`, stops the request. |
 | Font unavailable | Stacks fall back through system fonts; JetBrains Mono is requested, never loaded. |
 | Images blocked | `width`/`height` are set, so layout does not shift; captions still describe what the image showed. |
 
@@ -320,9 +329,40 @@ Case studies are static HTML with real titles, descriptions and copy, so they in
 
 ## 9. Deployment
 
-**Current:** any static host. No build step is required to serve `site/` — the generators run in the repository, and the output is plain files. A CDN in front is a one-line improvement, not a requirement.
+**Current: Vercel, one project, no build step.** `vercel.json` declares `site/` as the output
+directory, maps clean URLs to the generated files, sets the security headers below, and gives each
+function a timeout. The generators run in the repository, not on the host, so the deploy uploads
+plain files and three small functions. `docs/deployment.md` is the operational walkthrough.
 
-**With the service:** a Node-compatible host (Vercel or equivalent) running the API routes, with secrets in host-managed environment variables. Suggested headers:
+```bash
+npm run dev        # localhost:4173 — serves site/ and executes the real handlers
+vercel deploy      # or connect the repository; vercel.json is already correct
+```
+
+**The delivered endpoints — two, and only two. The enquiry path is not one of them.**
+
+| Route | Method | Auth | What it does | When its secret is missing |
+|---|---|---|---|---|
+| `/api/track` | POST | none; DNT/GPC honoured | Counts one page view, cookie-lessly | Answers `200 {counted:false}` — a broken store never breaks a page |
+| `/api/stats` | GET | bearer `ADMIN_TOKEN`, `timingSafeEqual` | Aggregates for `/admin` | Answers `503` — an unconfigured deployment does not open its dashboard |
+
+Three properties are architectural rather than incidental. **`store.js` is a Redis-over-HTTP client
+written against `fetch`**, so there is no SDK to install and no dependency to keep current, and the
+`KV_REST_API_*` and `UPSTASH_REDIS_REST_*` pairs are interchangeable. **Every secret is server-side
+only**, read inside the function at request time and never inlined into a browser bundle — the build
+does not read the environment at all. And **no handler echoes an upstream error**: the caller gets a
+fixed `{ok, kind, error}` shape, while the status, key and provider text are logged server-side,
+which is the split that makes this debuggable without being leaky.
+
+**One harness, shared by every tool.** `tools/lib/site-server.mjs` serves `site/` for the audit,
+the performance sweep and the quality checks, applying the rewrites and headers from `vercel.json`
+rather than restating them. That is a fix, not a nicety: the three tools each had their own file
+server, and when the dashboard's JavaScript turned out to be inline — silently blocked by the real
+`script-src 'self'` — every tool reported the site healthy, because none of them sent a CSP header.
+A harness that does not emulate the host produces results that mean nothing, whichever colour they
+are. It now sends exactly what Vercel sends, and the audit fails on a CSP violation as a result.
+
+**Suggested headers** (these are set as real response headers by `vercel.json`, not recommendations):
 
 ```
 Content-Security-Policy: default-src 'self'; img-src 'self' data:;
@@ -334,11 +374,23 @@ Referrer-Policy: strict-origin-when-cross-origin
 Permissions-Policy: geolocation=(), microphone=(), camera=(), payment=()
 ```
 
-The static build already satisfies this without `unsafe-inline`: no inline scripts, no inline styles beyond a handful of layout attributes, no external origins, images either local or `data:`.
+Two deliberate departures from the version of this paragraph that stood before the delivery layer
+existed, both recorded rather than quietly edited.
+
+**`style-src` carries `'unsafe-inline'` and `script-src` does not.** The build emits 1,259 inline
+`style` attributes, so a strict style policy is not available; a nonce would not help them and
+converting them all is a rewrite of every generated page for no security gain worth the churn.
+`script-src 'self'` is the directive that actually prevents cross-site scripting, and it is
+unweakened: **zero inline scripts exist anywhere in the build** — the dashboard's own logic is
+emitted as `assets/js/bx-admin.js` precisely so this can be true.
+
+**`connect-src 'self'`, with no third-party origin.** There is no external analytics, font or API
+call from the browser, so the policy needs no exception. The page-view beacon posts to this site's
+own `/api/track`.
 
 ### Monitoring
 
-Error reporting and uptime monitoring are appropriate for the service. For the static site, the honest position is that **no analytics are installed and none are proposed** — the privacy page commits to that, and installing a tracker would break a stated promise on the same site that promises not to make promises it cannot keep.
+Error reporting and uptime monitoring are appropriate for the service. For the public site, visitor counting is **first-party and minimal by construction**: `api/track.js` stores a per-page count, a width bucket, a two-letter country, a referrer hostname and a hash that is only valid for one day, because it is salted with a value that is destroyed daily. That shape was chosen so the privacy page would not have to be vague — every field the dashboard can display is a field the disclosure names. Monitoring stays deliberately thin: the failure mode to notice is an endpoint returning errors, and `/admin` shows the one number that would reveal it (zero page views on a day with traffic).
 
 ---
 
@@ -349,7 +401,7 @@ Recorded rather than hidden:
 1. **Company registration status and public legal details** — not asserted anywhere until verified (spec §16.3).
 2. **Official logo and approved brand red** — current tokens are the exploratory direction (spec §16.4).
 3. **TasteSkill / ThreeUI / "reactdev" URLs** — unresolved (spec §16.5).
-4. **Preferred contact channel and support workflow** — the form is built and honest about having no server; the delivery channel (email, WhatsApp, booking) is unconfirmed (spec §16.6).
+4. **Delivery credentials** — the visitor tracker is wired into every page but needs the KV URL, and the contact form posts from the browser to EmailJS but needs the public key, service id and the notification and auto-reply template ids pasted into `site/assets/js/emailjs-config.js`. Until each is set, the piece that lacks its credentials states that plainly rather than pretending otherwise (`docs/deployment.md`).
 5. **Repository licences** — most of Blaxk's repositories have no licence file, which technically means all rights reserved. Adding one per project is recommended and is stated on the source page.
 6. **Live re-verification** — `verify:content` now completes cleanly (10 passed, 0 warnings, 0 failures, `evidence/content-verification.json`). Keep the habit of running it after any content edit; supply `GITHUB_TOKEN` when re-running inside the same hour as other GitHub usage, since the unauthenticated ceiling is 60 req/h against ~19 needed by the verifier.
 7. **Manual screen-reader pass** on the scroll-heavy journey page — automated checks pass; human testing with NVDA/VoiceOver is still outstanding.

@@ -457,7 +457,10 @@ main { padding-bottom: 4.5rem; }
 .case { display: grid; gap: clamp(1.5rem, 4vw, 3rem); }
 .case-head { display: grid; gap: .9rem; }
 .case-meta { display: flex; flex-wrap: wrap; gap: .5rem 1rem; align-items: center; }
-.case-facts { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); border: 1px solid var(--hairline); }
+/* 190px minimum rather than 150px: the Live cell holds a real hostname, and at
+   150px it broke across three lines with the ↗ stranded on its own. The wider
+   floor drops the row to six columns at 1440 and lets the URL wrap tidily. */
+.case-facts { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); border: 1px solid var(--hairline); }
 .case-facts div { padding: .9rem 1rem; border-right: 1px solid var(--hairline); }
 .case-facts div:last-child { border-right: 0; }
 .case-facts dt { font-family: var(--font-mono); font-size: .62rem; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); margin-bottom: .25rem; }
@@ -584,3 +587,169 @@ html[data-motion="static"] .hero, html[data-motion="reduced"] .hero {
   .nav, .guide, .guide-launcher, .skip, .motion-toggle { display: none !important; }
   body { background: #fff; color: #000; }
 }
+
+/* ===========================================================================
+   Repository index — the complete account table on /source.
+   Added in the second pass so all 43 public repositories are visible rather
+   than summarised. Scrolls horizontally on narrow screens rather than
+   wrapping into an unreadable grid; the min-width:auto trap is avoided by
+   letting the wrapper scroll and keeping cell text out of <pre>.
+   =========================================================================== */
+.ix-legend { display: flex; flex-wrap: wrap; gap: .4rem .5rem; margin-top: 1.1rem; }
+.ix-legend span {
+  font-family: var(--font-mono); font-size: .6rem; letter-spacing: .1em; text-transform: uppercase;
+  color: var(--muted); border: 1px solid var(--hairline); border-radius: 999px; padding: .28rem .6rem;
+  background: var(--panel);
+}
+.ix-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+.ix-table { width: 100%; min-width: 860px; border-collapse: collapse; font-size: .86rem; }
+.ix-table th {
+  font-family: var(--font-mono); font-size: .6rem; letter-spacing: .12em; text-transform: uppercase;
+  color: var(--muted); font-weight: 400; text-align: left; padding: .7rem .7rem;
+  border-bottom: 1px solid var(--line); position: sticky; top: 0; background: var(--panel); z-index: 1;
+}
+.ix-table td { padding: .62rem .7rem; border-bottom: 1px solid var(--hairline); vertical-align: top; }
+.ix-table tbody tr:last-child td { border-bottom: 0; }
+.ix-table tbody tr:hover td { background: var(--panel-2); }
+.ix-note { font-size: .8rem; line-height: 1.5; max-width: 46ch; }
+.ix-tag {
+  display: inline-block; font-family: var(--font-mono); font-size: .56rem; letter-spacing: .1em;
+  text-transform: uppercase; padding: .22rem .48rem; border-radius: 3px;
+  border: 1px solid var(--hairline); color: var(--muted); white-space: nowrap;
+}
+.ix-tag--case { border-color: rgba(240,68,69,.5); color: var(--red-soft); background: var(--red-wash); }
+.ix-tag--hold { border-color: rgba(214,158,76,.45); color: var(--amber, #d69e4c); }
+.inline-code {
+  font-family: var(--font-mono); font-size: .84em; color: var(--white-dim);
+  background: var(--panel-2); border: 1px solid var(--hairline); border-radius: 3px; padding: .1em .38em;
+}
+
+/* Drift notice: shown when the catalogue and the live account count disagree. */
+.drift-box {
+  margin-top: 1.1rem; padding: .9rem 1.05rem; border-radius: 6px;
+  border: 1px solid rgba(214,158,76,.4); background: rgba(214,158,76,.07);
+}
+.drift-box p { margin: 0; font-size: .88rem; line-height: 1.65; color: var(--white-dim); }
+
+/* ===========================================================================
+   MOTION-LAYER HANDOFF
+   GSAP is authoritative when it loads in full-motion mode. The CSS reveal
+   transitions stand down so two systems never animate the same element, and
+   they remain the fallback for reduced, static, or a failed script load.
+   =========================================================================== */
+html[data-gsap="on"] .reveal > * { transition: none; }
+html[data-gsap="on"] .reveal { overflow: visible; }
+
+/* Reading-progress rail, present on long pages only. */
+.progress-rail {
+  position: fixed; top: 0; left: 0; right: 0; height: 2px; z-index: 60;
+  background: transparent; pointer-events: none;
+}
+.progress-rail > i { display: block; height: 100%; background: var(--red); transform: scaleX(0); }
+
+/* ===========================================================================
+   SURFACE TREATMENTS
+   Implemented from the descriptions of the effects on 21st.dev and ThreeUI
+   rather than copied from them: a travelling border highlight, a light sweep
+   across primary actions, and a fine dot lattice. All are compositor-only
+   (transform / opacity / background-position) so none of them costs layout,
+   and none uses backdrop-filter — that measurement is still binding.
+   =========================================================================== */
+
+/* Border beam: a highlight that travels the edge of a featured surface. */
+.beam { position: relative; }
+.beam::before {
+  content: ""; position: absolute; inset: -1px; border-radius: inherit; padding: 1px;
+  background: linear-gradient(115deg,
+    transparent 0%, transparent 35%, rgba(240,68,69,.85) 50%, transparent 65%, transparent 100%);
+  background-size: 280% 100%;
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor; mask-composite: exclude;
+  animation: beam-travel 5.5s linear infinite;
+  pointer-events: none;
+}
+@keyframes beam-travel { from { background-position: 200% 0; } to { background-position: -80% 0; } }
+
+/* Shimmer sweep across the primary action, on hover only. */
+.btn--primary { position: relative; overflow: hidden; }
+.btn--primary::after {
+  content: ""; position: absolute; top: 0; bottom: 0; width: 40%;
+  left: -60%; transform: skewX(-18deg);
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,.22), transparent);
+  transition: left 620ms var(--ease-out); pointer-events: none;
+}
+.btn--primary:hover::after, .btn--primary:focus-visible::after { left: 130%; }
+
+/* Fine dot lattice, used behind sparse sections. */
+.dots {
+  background-image: radial-gradient(currentColor 1px, transparent 1px);
+  background-size: 22px 22px; opacity: .07; pointer-events: none;
+}
+
+/* Elevated card, used for the project grid. */
+.card-lift {
+  transition: transform var(--t-micro) var(--ease),
+              border-color var(--t-micro) var(--ease),
+              box-shadow var(--t-micro) var(--ease);
+  will-change: transform;
+}
+.card-lift:hover, .card-lift:focus-within {
+  transform: translateY(-3px);
+  border-color: rgba(240,68,69,.42);
+  box-shadow: 0 12px 34px -18px rgba(240,68,69,.55);
+}
+
+/* Reveal blocks driven by GSAP; the CSS keeps them visible if it never runs. */
+[data-reveal-block] > *, [data-reveal-group] [data-reveal] { opacity: 1; }
+html[data-gsap="on"] [data-parallax] { will-change: transform; }
+
+@media (prefers-reduced-motion: reduce) {
+  .beam::before { animation: none; }
+  .btn--primary::after { transition: none; }
+  .card-lift { transition: none; }
+  .card-lift:hover, .card-lift:focus-within { transform: none; }
+}
+
+/* Honeypot: present in the DOM, absent from every human's perception.
+   Positioned off-screen rather than display:none, because some bots skip fields
+   they cannot see, and the whole point is that they fill this one. */
+.hp-field {
+  position: absolute; left: -9999px; width: 1px; height: 1px;
+  overflow: hidden; pointer-events: none; opacity: 0;
+}
+
+/* Submit states, so a visitor can see the difference between working and stuck. */
+[data-contact-form] [aria-busy="true"] { opacity: .6; cursor: progress; }
+[data-contact-form] button[type="submit"][aria-busy="true"]::after {
+  content: ""; display: inline-block; width: .55em; height: .55em; margin-left: .5em;
+  border-radius: 50%; background: currentColor; animation: send-pulse 900ms ease-in-out infinite;
+  vertical-align: middle;
+}
+@keyframes send-pulse { 0%, 100% { opacity: .25; } 50% { opacity: 1; } }
+
+/* The status line has to hold its own height in all four states, or announcing
+   a result moves everything below it — the same class of defect as the empty
+   containers found in the layout audit. */
+[data-contact-form] [role="status"] { min-height: 3.2em; }
+[data-contact-form] [role="status"][data-state="ok"] { color: var(--white); }
+[data-contact-form] [role="status"][data-state="err"] { color: var(--red-soft); }
+[data-contact-form] [role="status"][data-state="sending"] { color: var(--muted); }
+
+@media (prefers-reduced-motion: reduce) {
+  [data-contact-form] button[type="submit"][aria-busy="true"]::after { animation: none; }
+}
+
+/* A `live` marker for projects with a verified deployment. Deliberately the
+   only chip with a border glow: it is the one piece of metadata on a row that
+   points at something a visitor can open right now, so it should read as a
+   signal rather than another label. */
+.chip--live {
+  border-color: color-mix(in srgb, var(--red) 55%, transparent);
+  color: var(--red-soft, #ff7a7b);
+  box-shadow: 0 0 0 1px color-mix(in srgb, var(--red) 18%, transparent);
+}
+
+/* The outbound arrow is glued to the preceding word with a non-breaking space
+   in the markup; this makes a long URL break at its dots rather than overflow. */
+.case-facts dd a { overflow-wrap: anywhere; }

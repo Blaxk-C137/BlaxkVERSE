@@ -3,12 +3,12 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Work — 8 verified projects | BLAXK BYTE TECHNOLOGIES</title>
-<meta name="description" content="Eight verified projects: campus housing, local-first AI tutoring, voice tooling, network utilities and computer vision. All linked to public repositories.">
+<title>Work — 21 verified projects | BLAXK BYTE TECHNOLOGIES</title>
+<meta name="description" content="Twenty-one verified projects: WebRTC audio sharing, a WhatsApp status optimiser, local-first AI tutoring, voice tooling, network utilities, computer vision and more. Every repository on the account is indexed and classified.">
 <meta name="color-scheme" content="dark">
 <meta name="theme-color" content="#08090c">
-<meta property="og:title" content="Work — 8 verified projects | BLAXK BYTE TECHNOLOGIES">
-<meta property="og:description" content="Eight verified projects: campus housing, local-first AI tutoring, voice tooling, network utilities and computer vision. All linked to public repositories.">
+<meta property="og:title" content="Work — 21 verified projects | BLAXK BYTE TECHNOLOGIES">
+<meta property="og:description" content="Twenty-one verified projects: WebRTC audio sharing, a WhatsApp status optimiser, local-first AI tutoring, voice tooling, network utilities, computer vision and more. Every repository on the account is indexed and classified.">
 <meta property="og:type" content="website">
 <link rel="stylesheet" href="assets/css/blaxkverse.css">
 
@@ -60,22 +60,22 @@
 <main id="main">
   <section class="section section--tight" style="padding-top:calc(var(--nav-h) + 2.5rem)">
     <div class="wrap">
-      <span class="label">Work · 8 verified projects</span>
+      <span class="label">Work · 21 case studies · every repository indexed</span>
       <h1 style="font-size:clamp(2rem,5vw,3.4rem);margin:.4rem 0 .8rem">The work</h1>
-      <p class="lede">Every project here exists as working code in a public repository. Deployment URLs
-        were checked; none of these projects has one, so none is labelled shipped. Two carry committed
-        screenshots as evidence; the rest are judged by their source and their README.</p>
-      <div class="status-key mt-2" data-status-legend></div>
+      <p class="lede">Twenty-one projects. All of it real code in public repos. Two are live right now —
+        open them and click around. The rest you can pull down and run. Where I had real screenshots
+        I&rsquo;ve used them; where I didn&rsquo;t, you get the source instead of a stock image standing
+        in for work.</p>
+      <div class="status-key mt-2" data-status-legend><span data-status="shipped"><i></i><b>verified public deployment</b></span><span data-status="prototype"><i></i><b>working code, README evidence</b></span><span data-status="in-progress"><i></i><b>actively being built</b></span><span data-status="concept"><i></i><b>documented idea only</b></span></div>
     </div>
   </section>
 
   <section class="section" style="padding-top:0">
     <div class="wrap">
       <h2 class="reveal" style="font-size:clamp(1.4rem,3vw,2rem)"><span>The field</span></h2>
-      <p class="dim" style="max-width:70ch">Projects are plotted by theme. Lines are drawn only where two
-        projects genuinely share a theme or a technology, read from these records — they are a statement
-        about the work, not decoration. The list below the field is the primary way through; the field is
-        a second view of the same eight things.</p>
+      <p class="dim" style="max-width:70ch">The same 21 projects, laid out by what they have
+        in common. A line only shows up where two of them really do share a theme or a stack. It&rsquo;s a
+        second way in — the list underneath is still the main one.</p>
       <div class="field-wrap mt-2">
         <canvas id="work-field" width="1200" height="600" aria-label="Constellation of projects. Use the list below for the same information." role="img"></canvas>
         <div class="field-legend">
@@ -86,15 +86,15 @@
       </div>
       <p class="label mt-1">Canvas is decorative; every project above has a text entry in the list below, and a case study page.</p>
 
-      <div class="filters" data-filters role="group" aria-label="Filter projects by theme"></div>
-      <p class="count-note" data-count-note></p>
-      <div class="project-rows" id="project-rows"></div>
+      <div class="filters" data-filters role="group" aria-label="Filter projects by theme"><button class="filter" type="button" data-theme="all" aria-pressed="true"><span>All work</span><span class="count">21</span></button><button class="filter" type="button" data-theme="tooling" aria-pressed="false"><span>tooling</span><span class="count">10</span></button><button class="filter" type="button" data-theme="web" aria-pressed="false"><span>web</span><span class="count">8</span></button><button class="filter" type="button" data-theme="automation" aria-pressed="false"><span>automation</span><span class="count">7</span></button><button class="filter" type="button" data-theme="ai" aria-pressed="false"><span>ai</span><span class="count">5</span></button><button class="filter" type="button" data-theme="developer-tools" aria-pressed="false"><span>developer-tools</span><span class="count">4</span></button><button class="filter" type="button" data-theme="education" aria-pressed="false"><span>education</span><span class="count">4</span></button><button class="filter" type="button" data-theme="local-first" aria-pressed="false"><span>local-first</span><span class="count">4</span></button><button class="filter" type="button" data-theme="media" aria-pressed="false"><span>media</span><span class="count">4</span></button><button class="filter" type="button" data-theme="networking" aria-pressed="false"><span>networking</span><span class="count">4</span></button><button class="filter" type="button" data-theme="experimental" aria-pressed="false"><span>experimental</span><span class="count">3</span></button><button class="filter" type="button" data-theme="marketplace" aria-pressed="false"><span>marketplace</span><span class="count">3</span></button><button class="filter" type="button" data-theme="voice" aria-pressed="false"><span>voice</span><span class="count">3</span></button><button class="filter" type="button" data-theme="vision" aria-pressed="false"><span>vision</span><span class="count">1</span></button></div>
+      <p class="count-note" data-count-note>21 of 21 projects — every featured repository. Filters update the URL, so a filtered view can be linked and shared.</p>
+      <div class="project-rows" id="project-rows"><a class="project-row" href="projects/blaxk-housing.html"><span class="idx">01</span><span><span class="ttl">BlaXk Housing</span><span class="sub"> — Campus housing marketplace, role-split</span></span><span class="side"><span class="chip" data-status="prototype">prototype</span><span class="chip">JavaScript</span></span></a><a class="project-row" href="projects/edublaxk.html"><span class="idx">02</span><span><span class="ttl">EduBlaxk</span><span class="sub"> — Local AI tutor &amp; assessment engine</span></span><span class="side"><span class="chip" data-status="prototype">prototype</span><span class="chip">TypeScript</span></span></a><a class="project-row" href="projects/sabi.html"><span class="idx">03</span><span><span class="ttl">SABI</span><span class="sub"> — Voice-first tutor that runs on your device</span></span><span class="side"><span class="chip" data-status="prototype">prototype</span><span class="chip">TypeScript</span></span></a><a class="project-row" href="projects/blaxk-xposer.html"><span class="idx">04</span><span><span class="ttl">Blaxk Xposer</span><span class="sub"> — One QR code for your local dev server</span></span><span class="side"><span class="chip" data-status="prototype">prototype</span><span class="chip">Python</span></span></a><a class="project-row" href="projects/forma.html"><span class="idx">05</span><span><span class="ttl">FORMA</span><span class="sub"> — Local voice studio — record, transcribe, search, speak</span></span><span class="side"><span class="chip" data-status="prototype">prototype</span><span class="chip">HTML / TypeScript / Python</span></span></a><a class="project-row" href="projects/blaxk-aggregator.html"><span class="idx">06</span><span><span class="ttl">BlaXk Aggregator</span><span class="sub"> — Compile a whole codebase into one document</span></span><span class="side"><span class="chip" data-status="prototype">prototype</span><span class="chip">TypeScript</span></span></a><a class="project-row" href="projects/the-migrator.html"><span class="idx">07</span><span><span class="ttl">The Migrator</span><span class="sub"> — Rebuild a Python environment on a new machine</span></span><span class="side"><span class="chip" data-status="prototype">prototype</span><span class="chip">Python</span></span></a><a class="project-row" href="projects/gesture-controls.html"><span class="idx">08</span><span><span class="ttl">Gesture Controls</span><span class="sub"> — Hand tracking as an input device</span></span><span class="side"><span class="chip" data-status="prototype">prototype</span><span class="chip">Python</span></span></a><a class="project-row" href="projects/statusfix.html"><span class="idx">09</span><span><span class="ttl">StatusFix</span><span class="sub"> — Compress media so WhatsApp stops destroying it</span></span><span class="side"><span class="chip chip--live" title="A verified deployment is running">live</span><span class="chip" data-status="shipped">shipped</span><span class="chip">JavaScript</span></span></a><a class="project-row" href="projects/blaxkwave.html"><span class="idx">10</span><span><span class="ttl">BlaXkWave Studio</span><span class="sub"> — One sound, every device, no app to install</span></span><span class="side"><span class="chip" data-status="prototype">prototype</span><span class="chip">TypeScript</span></span></a><a class="project-row" href="projects/crushboard.html"><span class="idx">11</span><span><span class="ttl">CrushBoard</span><span class="sub"> — Partner acquisition, played completely straight</span></span><span class="side"><span class="chip" data-status="prototype">prototype</span><span class="chip">TypeScript</span></span></a><a class="project-row" href="projects/blaxkbot.html"><span class="idx">12</span><span><span class="ttl">BlaxkBot v3</span><span class="sub"> — A WhatsApp bot with a real command architecture</span></span><span class="side"><span class="chip" data-status="prototype">prototype</span><span class="chip">JavaScript</span></span></a><a class="project-row" href="projects/blaxk-anime.html"><span class="idx">13</span><span><span class="ttl">Blaxk Anime</span><span class="sub"> — Match releases by precision, then download and watch them</span></span><span class="side"><span class="chip" data-status="prototype">prototype</span><span class="chip">JavaScript</span></span></a><a class="project-row" href="projects/luminary.html"><span class="idx">14</span><span><span class="ttl">Luminary</span><span class="sub"> — One recommendation engine across four kinds of media</span></span><span class="side"><span class="chip chip--live" title="A verified deployment is running">live</span><span class="chip" data-status="shipped">shipped</span><span class="chip">TypeScript</span></span></a><a class="project-row" href="projects/blaxk-grabber.html"><span class="idx">15</span><span><span class="ttl">BlaXk Grabber</span><span class="sub"> — A desktop downloader with a queue that survives failure</span></span><span class="side"><span class="chip" data-status="prototype">prototype</span><span class="chip">Python</span></span></a><a class="project-row" href="projects/blaxk-tcf.html"><span class="idx">16</span><span><span class="ttl">Blaxk_TCF</span><span class="sub"> — Several WhatsApp accounts, one bot process</span></span><span class="side"><span class="chip" data-status="prototype">prototype</span><span class="chip">JavaScript</span></span></a><a class="project-row" href="projects/aileads.html"><span class="idx">17</span><span><span class="ttl">aiLEADS</span><span class="sub"> — Find the work, then do the outreach</span></span><span class="side"><span class="chip" data-status="prototype">prototype</span><span class="chip">Python</span></span></a><a class="project-row" href="projects/blaxk-sound.html"><span class="idx">18</span><span><span class="ttl">blaxk-sounds</span><span class="sub"> — Audible feedback for the moment a push succeeds</span></span><span class="side"><span class="chip" data-status="prototype">prototype</span><span class="chip">Python</span></span></a><a class="project-row" href="projects/church-programme.html"><span class="idx">19</span><span><span class="ttl">Church Program Viewer</span><span class="sub"> — A live programme display driven by a spreadsheet</span></span><span class="side"><span class="chip" data-status="prototype">prototype</span><span class="chip">Python</span></span></a><a class="project-row" href="projects/blaxk-trader.html"><span class="idx">20</span><span><span class="ttl">Trading Bot</span><span class="sub"> — Strategy scaffolding for automated trading experiments</span></span><span class="side"><span class="chip" data-status="prototype">prototype</span><span class="chip">Python</span></span></a><a class="project-row" href="projects/blaxk-survey.html"><span class="idx">21</span><span><span class="ttl">Marketplace Survey</span><span class="sub"> — A short survey built to answer one product question</span></span><span class="side"><span class="chip" data-status="prototype">prototype</span><span class="chip">TypeScript</span></span></a></div>
       <noscript>
         <p class="note">Filters need JavaScript. Every project is listed below regardless.</p>
       </noscript>
       <noscript>
         <div class="project-rows">
-          <a class="project-row" href="projects/blaxk-housing.html"><span class="idx">01</span><span><span class="ttl">BlaXk Housing</span><span class="sub"> — Campus housing marketplace, role-split</span></span><span class="side"><span class="chip" data-status="prototype">prototype</span></span></a><a class="project-row" href="projects/edublaxk.html"><span class="idx">02</span><span><span class="ttl">EduBlaxk</span><span class="sub"> — Local AI tutor &amp; assessment engine</span></span><span class="side"><span class="chip" data-status="prototype">prototype</span></span></a><a class="project-row" href="projects/sabi.html"><span class="idx">03</span><span><span class="ttl">SABI</span><span class="sub"> — Voice-first tutor that runs on your device</span></span><span class="side"><span class="chip" data-status="prototype">prototype</span></span></a><a class="project-row" href="projects/blaxk-xposer.html"><span class="idx">04</span><span><span class="ttl">Blaxk Xposer</span><span class="sub"> — One QR code for your local dev server</span></span><span class="side"><span class="chip" data-status="prototype">prototype</span></span></a><a class="project-row" href="projects/forma.html"><span class="idx">05</span><span><span class="ttl">FORMA</span><span class="sub"> — Local voice studio — record, transcribe, search, speak</span></span><span class="side"><span class="chip" data-status="prototype">prototype</span></span></a><a class="project-row" href="projects/blaxk-aggregator.html"><span class="idx">06</span><span><span class="ttl">BlaXk Aggregator</span><span class="sub"> — Compile a whole codebase into one document</span></span><span class="side"><span class="chip" data-status="prototype">prototype</span></span></a><a class="project-row" href="projects/the-migrator.html"><span class="idx">07</span><span><span class="ttl">The Migrator</span><span class="sub"> — Rebuild a Python environment on a new machine</span></span><span class="side"><span class="chip" data-status="prototype">prototype</span></span></a><a class="project-row" href="projects/gesture-controls.html"><span class="idx">08</span><span><span class="ttl">Gesture Controls</span><span class="sub"> — Hand tracking as an input device</span></span><span class="side"><span class="chip" data-status="prototype">prototype</span></span></a>
+          <a class="project-row" href="projects/blaxk-housing.html"><span class="idx">01</span><span><span class="ttl">BlaXk Housing</span><span class="sub"> — Campus housing marketplace, role-split</span></span><span class="side"><span class="chip" data-status="prototype">prototype</span></span></a><a class="project-row" href="projects/edublaxk.html"><span class="idx">02</span><span><span class="ttl">EduBlaxk</span><span class="sub"> — Local AI tutor &amp; assessment engine</span></span><span class="side"><span class="chip" data-status="prototype">prototype</span></span></a><a class="project-row" href="projects/sabi.html"><span class="idx">03</span><span><span class="ttl">SABI</span><span class="sub"> — Voice-first tutor that runs on your device</span></span><span class="side"><span class="chip" data-status="prototype">prototype</span></span></a><a class="project-row" href="projects/blaxk-xposer.html"><span class="idx">04</span><span><span class="ttl">Blaxk Xposer</span><span class="sub"> — One QR code for your local dev server</span></span><span class="side"><span class="chip" data-status="prototype">prototype</span></span></a><a class="project-row" href="projects/forma.html"><span class="idx">05</span><span><span class="ttl">FORMA</span><span class="sub"> — Local voice studio — record, transcribe, search, speak</span></span><span class="side"><span class="chip" data-status="prototype">prototype</span></span></a><a class="project-row" href="projects/blaxk-aggregator.html"><span class="idx">06</span><span><span class="ttl">BlaXk Aggregator</span><span class="sub"> — Compile a whole codebase into one document</span></span><span class="side"><span class="chip" data-status="prototype">prototype</span></span></a><a class="project-row" href="projects/the-migrator.html"><span class="idx">07</span><span><span class="ttl">The Migrator</span><span class="sub"> — Rebuild a Python environment on a new machine</span></span><span class="side"><span class="chip" data-status="prototype">prototype</span></span></a><a class="project-row" href="projects/gesture-controls.html"><span class="idx">08</span><span><span class="ttl">Gesture Controls</span><span class="sub"> — Hand tracking as an input device</span></span><span class="side"><span class="chip" data-status="prototype">prototype</span></span></a><a class="project-row" href="projects/statusfix.html"><span class="idx">09</span><span><span class="ttl">StatusFix</span><span class="sub"> — Compress media so WhatsApp stops destroying it</span></span><span class="side"><span class="chip" data-status="shipped">shipped</span></span></a><a class="project-row" href="projects/blaxkwave.html"><span class="idx">10</span><span><span class="ttl">BlaXkWave Studio</span><span class="sub"> — One sound, every device, no app to install</span></span><span class="side"><span class="chip" data-status="prototype">prototype</span></span></a><a class="project-row" href="projects/crushboard.html"><span class="idx">11</span><span><span class="ttl">CrushBoard</span><span class="sub"> — Partner acquisition, played completely straight</span></span><span class="side"><span class="chip" data-status="prototype">prototype</span></span></a><a class="project-row" href="projects/blaxkbot.html"><span class="idx">12</span><span><span class="ttl">BlaxkBot v3</span><span class="sub"> — A WhatsApp bot with a real command architecture</span></span><span class="side"><span class="chip" data-status="prototype">prototype</span></span></a><a class="project-row" href="projects/blaxk-anime.html"><span class="idx">13</span><span><span class="ttl">Blaxk Anime</span><span class="sub"> — Match releases by precision, then download and watch them</span></span><span class="side"><span class="chip" data-status="prototype">prototype</span></span></a><a class="project-row" href="projects/luminary.html"><span class="idx">14</span><span><span class="ttl">Luminary</span><span class="sub"> — One recommendation engine across four kinds of media</span></span><span class="side"><span class="chip" data-status="shipped">shipped</span></span></a><a class="project-row" href="projects/blaxk-grabber.html"><span class="idx">15</span><span><span class="ttl">BlaXk Grabber</span><span class="sub"> — A desktop downloader with a queue that survives failure</span></span><span class="side"><span class="chip" data-status="prototype">prototype</span></span></a><a class="project-row" href="projects/blaxk-tcf.html"><span class="idx">16</span><span><span class="ttl">Blaxk_TCF</span><span class="sub"> — Several WhatsApp accounts, one bot process</span></span><span class="side"><span class="chip" data-status="prototype">prototype</span></span></a><a class="project-row" href="projects/aileads.html"><span class="idx">17</span><span><span class="ttl">aiLEADS</span><span class="sub"> — Find the work, then do the outreach</span></span><span class="side"><span class="chip" data-status="prototype">prototype</span></span></a><a class="project-row" href="projects/blaxk-sound.html"><span class="idx">18</span><span><span class="ttl">blaxk-sounds</span><span class="sub"> — Audible feedback for the moment a push succeeds</span></span><span class="side"><span class="chip" data-status="prototype">prototype</span></span></a><a class="project-row" href="projects/church-programme.html"><span class="idx">19</span><span><span class="ttl">Church Program Viewer</span><span class="sub"> — A live programme display driven by a spreadsheet</span></span><span class="side"><span class="chip" data-status="prototype">prototype</span></span></a><a class="project-row" href="projects/blaxk-trader.html"><span class="idx">20</span><span><span class="ttl">Trading Bot</span><span class="sub"> — Strategy scaffolding for automated trading experiments</span></span><span class="side"><span class="chip" data-status="prototype">prototype</span></span></a><a class="project-row" href="projects/blaxk-survey.html"><span class="idx">21</span><span><span class="ttl">Marketplace Survey</span><span class="sub"> — A short survey built to answer one product question</span></span><span class="side"><span class="chip" data-status="prototype">prototype</span></span></a>
         </div>
       </noscript>
     </div>
@@ -108,7 +108,7 @@
         been reviewed.</p>
       <div class="grid-2 mt-2">
         
-    <article class="panel" style="display:grid;gap:0">
+    <article class="panel card-lift beam" data-reveal style="display:grid;gap:0">
       <div class="panel-head">
         <span>BlaXk Housing</span>
         <span style="margin-left:auto"><span class="chip" data-status="prototype">prototype</span></span>
@@ -123,7 +123,7 @@
         </div>
       </div>
     </article>
-    <article class="panel" style="display:grid;gap:0">
+    <article class="panel card-lift beam" data-reveal style="display:grid;gap:0">
       <div class="panel-head">
         <span>EduBlaxk</span>
         <span style="margin-left:auto"><span class="chip" data-status="prototype">prototype</span></span>
@@ -138,7 +138,7 @@
         </div>
       </div>
     </article>
-    <article class="panel" style="display:grid;gap:0">
+    <article class="panel card-lift beam" data-reveal style="display:grid;gap:0">
       <div class="panel-head">
         <span>SABI</span>
         <span style="margin-left:auto"><span class="chip" data-status="prototype">prototype</span></span>
@@ -153,7 +153,7 @@
         </div>
       </div>
     </article>
-    <article class="panel" style="display:grid;gap:0">
+    <article class="panel card-lift beam" data-reveal style="display:grid;gap:0">
       <div class="panel-head">
         <span>Blaxk Xposer</span>
         <span style="margin-left:auto"><span class="chip" data-status="prototype">prototype</span></span>
@@ -168,7 +168,7 @@
         </div>
       </div>
     </article>
-    <article class="panel" style="display:grid;gap:0">
+    <article class="panel card-lift beam" data-reveal style="display:grid;gap:0">
       <div class="panel-head">
         <span>FORMA</span>
         <span style="margin-left:auto"><span class="chip" data-status="prototype">prototype</span></span>
@@ -183,7 +183,7 @@
         </div>
       </div>
     </article>
-    <article class="panel" style="display:grid;gap:0">
+    <article class="panel card-lift" data-reveal style="display:grid;gap:0">
       <div class="panel-head">
         <span>BlaXk Aggregator</span>
         <span style="margin-left:auto"><span class="chip" data-status="prototype">prototype</span></span>
@@ -198,7 +198,7 @@
         </div>
       </div>
     </article>
-    <article class="panel" style="display:grid;gap:0">
+    <article class="panel card-lift" data-reveal style="display:grid;gap:0">
       <div class="panel-head">
         <span>The Migrator</span>
         <span style="margin-left:auto"><span class="chip" data-status="prototype">prototype</span></span>
@@ -213,7 +213,7 @@
         </div>
       </div>
     </article>
-    <article class="panel" style="display:grid;gap:0">
+    <article class="panel card-lift" data-reveal style="display:grid;gap:0">
       <div class="panel-head">
         <span>Gesture Controls</span>
         <span style="margin-left:auto"><span class="chip" data-status="prototype">prototype</span></span>
@@ -228,6 +228,201 @@
         </div>
       </div>
     </article>
+    <article class="panel card-lift beam" data-reveal style="display:grid;gap:0">
+      <div class="panel-head">
+        <span>StatusFix</span>
+        <span style="margin-left:auto"><span class="chip" data-status="shipped">shipped</span></span>
+      </div>
+      <div class="panel--pad" style="display:grid;gap:.8rem">
+        <p class="lede" style="margin:0;font-size:.98rem">Compress media so WhatsApp stops destroying it</p>
+        <p class="dim" style="margin:0;font-size:.92rem">Drop in a photo or a clip and get back a file already under WhatsApp&#x27;s status limits, so its compressor never has a reason to touch it.</p>
+        <div class="stack-list"><span>React 18</span><span>Vite</span><span>Express</span><span>FFmpeg</span><span>Tailwind</span><span>shadcn/ui</span></div>
+        <div class="btn-row" style="margin-top:.3rem">
+          <a class="btn" href="projects/statusfix.html">Case study</a>
+          <a class="btn btn--ghost" href="https://github.com/Blaxk-C137/statusFix-server" target="_blank" rel="noopener noreferrer">Source ↗</a>
+        </div>
+      </div>
+    </article>
+    <article class="panel card-lift beam" data-reveal style="display:grid;gap:0">
+      <div class="panel-head">
+        <span>BlaXkWave Studio</span>
+        <span style="margin-left:auto"><span class="chip" data-status="prototype">prototype</span></span>
+      </div>
+      <div class="panel--pad" style="display:grid;gap:.8rem">
+        <p class="lede" style="margin:0;font-size:.98rem">One sound, every device, no app to install</p>
+        <p class="dim" style="margin:0;font-size:.92rem">A host shares audio once and every listener hears it in their own headphones, from a room code or a QR link, with no client to install.</p>
+        <div class="stack-list"><span>React</span><span>Vite</span><span>Express</span><span>WebSocket</span><span>WebRTC</span><span>TypeScript</span></div>
+        <div class="btn-row" style="margin-top:.3rem">
+          <a class="btn" href="projects/blaxkwave.html">Case study</a>
+          <a class="btn btn--ghost" href="https://github.com/Blaxk-C137/BlaxkWave" target="_blank" rel="noopener noreferrer">Source ↗</a>
+        </div>
+      </div>
+    </article>
+    <article class="panel card-lift beam" data-reveal style="display:grid;gap:0">
+      <div class="panel-head">
+        <span>CrushBoard</span>
+        <span style="margin-left:auto"><span class="chip" data-status="prototype">prototype</span></span>
+      </div>
+      <div class="panel--pad" style="display:grid;gap:.8rem">
+        <p class="lede" style="margin:0;font-size:.98rem">Partner acquisition, played completely straight</p>
+        <p class="dim" style="margin:0;font-size:.92rem">A dating app disguised as a recruitment platform: people post job listings describing the partner they want, and candidates apply anonymously.</p>
+        <div class="stack-list"><span>Next.js</span><span>React</span><span>TypeScript</span><span>Tailwind</span><span>Supabase</span><span>Vercel</span></div>
+        <div class="btn-row" style="margin-top:.3rem">
+          <a class="btn" href="projects/crushboard.html">Case study</a>
+          <a class="btn btn--ghost" href="https://github.com/Blaxk-C137/Blaxk_Crush" target="_blank" rel="noopener noreferrer">Source ↗</a>
+        </div>
+      </div>
+    </article>
+    <article class="panel card-lift beam" data-reveal style="display:grid;gap:0">
+      <div class="panel-head">
+        <span>BlaxkBot v3</span>
+        <span style="margin-left:auto"><span class="chip" data-status="prototype">prototype</span></span>
+      </div>
+      <div class="panel--pad" style="display:grid;gap:.8rem">
+        <p class="lede" style="margin:0;font-size:.98rem">A WhatsApp bot with a real command architecture</p>
+        <p class="dim" style="margin:0;font-size:.92rem">Group management, moderation and media tooling delivered as over a hundred WhatsApp commands, with a permission model and a plugin layout built to keep growing.</p>
+        <div class="stack-list"><span>Node.js</span><span>Baileys</span><span>WebSocket</span><span>Node.js</span></div>
+        <div class="btn-row" style="margin-top:.3rem">
+          <a class="btn" href="projects/blaxkbot.html">Case study</a>
+          <a class="btn btn--ghost" href="https://github.com/Blaxk-C137/Blaxk_bot" target="_blank" rel="noopener noreferrer">Source ↗</a>
+        </div>
+      </div>
+    </article>
+    <article class="panel card-lift beam" data-reveal style="display:grid;gap:0">
+      <div class="panel-head">
+        <span>Blaxk Anime</span>
+        <span style="margin-left:auto"><span class="chip" data-status="prototype">prototype</span></span>
+      </div>
+      <div class="panel--pad" style="display:grid;gap:.8rem">
+        <p class="lede" style="margin:0;font-size:.98rem">Match releases by precision, then download and watch them</p>
+        <p class="dim" style="margin:0;font-size:.92rem">Search a title, score every release against your own preferences, then queue, download and stream it from one library screen with live progress.</p>
+        <div class="stack-list"><span>React 19</span><span>Express</span><span>Node.js</span><span>Tailwind</span><span>Three.js</span><span>GSAP</span></div>
+        <div class="btn-row" style="margin-top:.3rem">
+          <a class="btn" href="projects/blaxk-anime.html">Case study</a>
+          <a class="btn btn--ghost" href="https://github.com/Blaxk-C137/Blaxk-Anime" target="_blank" rel="noopener noreferrer">Source ↗</a>
+        </div>
+      </div>
+    </article>
+    <article class="panel card-lift beam" data-reveal style="display:grid;gap:0">
+      <div class="panel-head">
+        <span>Luminary</span>
+        <span style="margin-left:auto"><span class="chip" data-status="shipped">shipped</span></span>
+      </div>
+      <div class="panel--pad" style="display:grid;gap:.8rem">
+        <p class="lede" style="margin:0;font-size:.98rem">One recommendation engine across four kinds of media</p>
+        <p class="dim" style="margin:0;font-size:.92rem">Ask for something to watch or read and get a recommendation drawn from films, series, anime, manga and books in one place.</p>
+        <div class="stack-list"><span>Next.js</span><span>React</span><span>TypeScript</span><span>TanStack Query</span><span>Zustand</span><span>TMDB</span></div>
+        <div class="btn-row" style="margin-top:.3rem">
+          <a class="btn" href="projects/luminary.html">Case study</a>
+          <a class="btn btn--ghost" href="https://github.com/Blaxk-C137/Black-Recommender" target="_blank" rel="noopener noreferrer">Source ↗</a>
+        </div>
+      </div>
+    </article>
+    <article class="panel card-lift beam" data-reveal style="display:grid;gap:0">
+      <div class="panel-head">
+        <span>BlaXk Grabber</span>
+        <span style="margin-left:auto"><span class="chip" data-status="prototype">prototype</span></span>
+      </div>
+      <div class="panel--pad" style="display:grid;gap:.8rem">
+        <p class="lede" style="margin:0;font-size:.98rem">A desktop downloader with a queue that survives failure</p>
+        <p class="dim" style="margin:0;font-size:.92rem">A local desktop application that takes a link or a playlist from YouTube, Spotify or Audiomack and downloads it to your machine with progress you can watch.</p>
+        <div class="stack-list"><span>Python</span><span>Tkinter</span><span>yt-dlp</span><span>pytest</span></div>
+        <div class="btn-row" style="margin-top:.3rem">
+          <a class="btn" href="projects/blaxk-grabber.html">Case study</a>
+          <a class="btn btn--ghost" href="https://github.com/Blaxk-C137/Blaxk-Downloader" target="_blank" rel="noopener noreferrer">Source ↗</a>
+        </div>
+      </div>
+    </article>
+    <article class="panel card-lift beam" data-reveal style="display:grid;gap:0">
+      <div class="panel-head">
+        <span>Blaxk_TCF</span>
+        <span style="margin-left:auto"><span class="chip" data-status="prototype">prototype</span></span>
+      </div>
+      <div class="panel--pad" style="display:grid;gap:.8rem">
+        <p class="lede" style="margin:0;font-size:.98rem">Several WhatsApp accounts, one bot process</p>
+        <p class="dim" style="margin:0;font-size:.92rem">A WhatsApp bot that manages multiple accounts as named sessions, with a choice of QR or pairing-code login on every one of them.</p>
+        <div class="stack-list"><span>Node.js</span><span>Baileys</span><span>pnpm</span><span>Node.js</span></div>
+        <div class="btn-row" style="margin-top:.3rem">
+          <a class="btn" href="projects/blaxk-tcf.html">Case study</a>
+          <a class="btn btn--ghost" href="https://github.com/Blaxk-C137/Blaxk" target="_blank" rel="noopener noreferrer">Source ↗</a>
+        </div>
+      </div>
+    </article>
+    <article class="panel card-lift beam" data-reveal style="display:grid;gap:0">
+      <div class="panel-head">
+        <span>aiLEADS</span>
+        <span style="margin-left:auto"><span class="chip" data-status="prototype">prototype</span></span>
+      </div>
+      <div class="panel--pad" style="display:grid;gap:.8rem">
+        <p class="lede" style="margin:0;font-size:.98rem">Find the work, then do the outreach</p>
+        <p class="dim" style="margin:0;font-size:.92rem">A scraper that collects freelance listings into a local database, paired with a WhatsApp bot that helps work through them.</p>
+        <div class="stack-list"><span>Python</span><span>Node.js</span><span>SQLite</span><span>Baileys</span><span>pandas</span></div>
+        <div class="btn-row" style="margin-top:.3rem">
+          <a class="btn" href="projects/aileads.html">Case study</a>
+          <a class="btn btn--ghost" href="https://github.com/Blaxk-C137/Blaxk_Hand" target="_blank" rel="noopener noreferrer">Source ↗</a>
+        </div>
+      </div>
+    </article>
+    <article class="panel card-lift" data-reveal style="display:grid;gap:0">
+      <div class="panel-head">
+        <span>blaxk-sounds</span>
+        <span style="margin-left:auto"><span class="chip" data-status="prototype">prototype</span></span>
+      </div>
+      <div class="panel--pad" style="display:grid;gap:.8rem">
+        <p class="lede" style="margin:0;font-size:.98rem">Audible feedback for the moment a push succeeds</p>
+        <p class="dim" style="margin:0;font-size:.92rem">Plays a short sound when a push, a test run or a build finishes, so you stop watching a terminal for the one moment it matters.</p>
+        <div class="stack-list"><span>Python</span><span>Git hooks</span><span>PCM audio</span></div>
+        <div class="btn-row" style="margin-top:.3rem">
+          <a class="btn" href="projects/blaxk-sound.html">Case study</a>
+          <a class="btn btn--ghost" href="https://github.com/Blaxk-C137/Blaxk_Sound" target="_blank" rel="noopener noreferrer">Source ↗</a>
+        </div>
+      </div>
+    </article>
+    <article class="panel card-lift" data-reveal style="display:grid;gap:0">
+      <div class="panel-head">
+        <span>Church Program Viewer</span>
+        <span style="margin-left:auto"><span class="chip" data-status="prototype">prototype</span></span>
+      </div>
+      <div class="panel--pad" style="display:grid;gap:.8rem">
+        <p class="lede" style="margin:0;font-size:.98rem">A live programme display driven by a spreadsheet</p>
+        <p class="dim" style="margin:0;font-size:.92rem">Reads a church event schedule from a spreadsheet and displays it as a live board, with notifications before each event starts.</p>
+        <div class="stack-list"><span>Flask</span><span>pandas</span><span>Tailwind</span><span>reportlab</span><span>bleach</span></div>
+        <div class="btn-row" style="margin-top:.3rem">
+          <a class="btn" href="projects/church-programme.html">Case study</a>
+          <a class="btn btn--ghost" href="https://github.com/Blaxk-C137/Church_programme_demo" target="_blank" rel="noopener noreferrer">Source ↗</a>
+        </div>
+      </div>
+    </article>
+    <article class="panel card-lift" data-reveal style="display:grid;gap:0">
+      <div class="panel-head">
+        <span>Trading Bot</span>
+        <span style="margin-left:auto"><span class="chip" data-status="prototype">prototype</span></span>
+      </div>
+      <div class="panel--pad" style="display:grid;gap:.8rem">
+        <p class="lede" style="margin:0;font-size:.98rem">Strategy scaffolding for automated trading experiments</p>
+        <p class="dim" style="margin:0;font-size:.92rem">A repository layout for automated trading strategies, with the strategy, data, utility and configuration concerns separated from the start.</p>
+        <div class="stack-list"><span>Python</span><span>pytest</span></div>
+        <div class="btn-row" style="margin-top:.3rem">
+          <a class="btn" href="projects/blaxk-trader.html">Case study</a>
+          <a class="btn btn--ghost" href="https://github.com/Blaxk-C137/Blaxk_Trader" target="_blank" rel="noopener noreferrer">Source ↗</a>
+        </div>
+      </div>
+    </article>
+    <article class="panel card-lift" data-reveal style="display:grid;gap:0">
+      <div class="panel-head">
+        <span>Marketplace Survey</span>
+        <span style="margin-left:auto"><span class="chip" data-status="prototype">prototype</span></span>
+      </div>
+      <div class="panel--pad" style="display:grid;gap:.8rem">
+        <p class="lede" style="margin:0;font-size:.98rem">A short survey built to answer one product question</p>
+        <p class="dim" style="margin:0;font-size:.92rem">A deployable questionnaire about what a student marketplace should actually do, with four answer types and a results route.</p>
+        <div class="stack-list"><span>Next.js</span><span>React</span><span>TypeScript</span><span>Tailwind</span><span>Vercel</span></div>
+        <div class="btn-row" style="margin-top:.3rem">
+          <a class="btn" href="projects/blaxk-survey.html">Case study</a>
+          <a class="btn btn--ghost" href="https://github.com/Blaxk-C137/Blaxk-Survey" target="_blank" rel="noopener noreferrer">Source ↗</a>
+        </div>
+      </div>
+    </article>
       </div>
     </div>
   </section>
@@ -239,7 +434,7 @@
       <div>
         <h4>BLAXK BYTE TECHNOLOGIES</h4>
         <p class="dim" style="margin:0 0 .6rem">Software, automation and AI systems — built by Blaxk, documented in public.</p>
-        <p class="label" style="margin:0">Company registration status is not asserted on this site because it has not been verified as complete.</p>
+        <p class="label" style="margin:0">Built in public. Every project here links to the repo it came out of.</p>
       </div>
       <div>
         <h4>Navigate</h4>
@@ -273,7 +468,7 @@
       <span>© <span data-year>2026</span> BLAXK BYTE TECHNOLOGIES</span>
       <span>Content verified against the public record on 15 Oct 2026</span>
       <span>Keyboard: <kbd>/</kbd> or <kbd>⌘K</kbd> search · <kbd>M</kbd> motion</span>
-      <a href="privacy.html" style="color:var(--steel);text-decoration:none">This site makes no analytics or tracking requests.</a>
+      <a href="privacy.html" style="color:var(--steel);text-decoration:none">Page views are counted without cookies or stored IP addresses. Details &rarr;</a>
     </div>
   </div>
 </footer>
@@ -298,14 +493,19 @@
     <button class="btn" type="submit">Ask</button>
   </form>
   <p class="guide-disclaimer">
-    This build ships a deterministic retriever over the verified project records — it is not a language model and it will not
-    answer beyond what is recorded. The intended production design is a server-side Gemini endpoint with retrieval over
-    approved content, schema-validated output, rate limits and a static fallback. See the privacy page for the full disclosure.
+    Not a chatbot. It looks things up in the records already on this site and quotes them back with a link.
+    Ask something I haven&rsquo;t written down and it tells you so instead of inventing an answer. A Gemini-backed
+    version is designed but not switched on — the privacy page says where that stands.
   </p>
 </section>
 
 <script src="assets/js/bx-data.js"></script>
 <script src="assets/js/bx-excerpts.js"></script>
+<script src="assets/js/vendor/gsap.min.js"></script>
+<script src="assets/js/vendor/ScrollTrigger.min.js"></script>
+<script src="assets/js/bx-motion.js"></script>
+<script src="assets/js/bx-analytics.js" defer></script>
+<script src="assets/js/emailjs-config.js"></script>
 <script src="assets/js/bx-core.js"></script>
 
 </body>

@@ -218,3 +218,66 @@ Recorded so these are decisions rather than omissions:
 - No testimonials, client logos, awards or statistics. None exist to publish.
 - No gold, no gradients-as-decoration, no glassmorphism, no neon glow beyond the single red signal accent.
 - No dark/light theme toggle. The brand direction is dark; a light theme is a separate design exercise, and a half-considered one would be worse than none. Print styles are provided for the pages people actually print (case studies).
+
+---
+
+## Addendum — the motion layer (second pass)
+
+The original motion system was hand-rolled CSS transitions plus an
+IntersectionObserver. It worked, but every effect was authored in isolation, so
+stagger, easing and scroll position were each solved slightly differently in each
+place. GSAP 3.15.0 is now vendored at `site/assets/js/vendor/` and drives one
+coherent timeline model through `bx-motion.js`.
+
+### What GSAP owns, and what it does not
+
+| Owns | Does not own |
+|---|---|
+| Hero entrance timeline (staggered, one beat) | The canvas fields — the existing rAF `director` still drives those |
+| Scroll reveals on `[data-reveal-group]` / `[data-reveal-block]` | Layout of any kind |
+| Reading-progress rail (`[data-progress]`) | Colour, type or spacing tokens |
+| Counters (`[data-count]`), magnetic primary actions (`[data-magnetic]`) | Reduced and static modes, which it never enters |
+
+**Why the canvas stays hand-rolled:** two frame loops doing the same work is a
+regression, not an upgrade. The director already centralises scroll reads, so
+adding ScrollTrigger on top of the same elements would mean measuring twice.
+
+### The three inherited rules, and how they are enforced
+
+1. **Transform and opacity only.** Nothing in the motion layer can cause layout
+   shift, which is why CLS stayed at 0.0000 after it was added.
+2. **Motion mode is absolute.** `bx-motion.js` returns before doing anything
+   unless `data-motion="full"`. It does not animate less in `reduced` and
+   `static` — it does not run. Verified: `data-gsap` is `off` and `BX_MOTION` is
+   `false` under `prefers-reduced-motion: reduce`.
+3. **Enhancement, never dependency.** If GSAP fails to load, the guard returns
+   and the CSS fallbacks stand. The page is fully readable and navigable without
+   the motion layer, which is the same standard the canvas fields are held to.
+
+### Surface treatments added in the same pass
+
+Implemented from descriptions of the effects rather than copied from any
+library, and all compositor-only:
+
+| Treatment | Mechanism | Cost |
+|---|---|---|
+| `.beam` — travelling border highlight | animated `background-position` on a masked gradient | compositor |
+| `.btn--primary` shimmer sweep | skewed gradient, `left` transition on hover/focus only | compositor |
+| `.dots` — fine dot lattice | repeating `radial-gradient` | paint once |
+| `.card-lift` — elevated hover state | `transform` + `box-shadow` | compositor |
+| `.ix-table` — repository index | sticky header, horizontal scroll on narrow screens | none |
+
+Deliberately **not** added, and this is a recorded measurement rather than a
+preference: no `backdrop-filter` and no `mix-blend-mode` over any animating
+layer. That pairing cost 36 fps when it was measured during the prototype phase,
+and the rule has not been relaxed for the new treatments.
+
+### Token additions
+
+```
+--amber  #d69e4c   /* held / attention notices — the drift box, "held" tags */
+```
+
+The `.drift-box` notice and `.ix-tag--hold` label use it. It is the one place a
+third hue enters the palette, and it is scoped to warnings rather than
+decoration, so the red/black direction is intact.

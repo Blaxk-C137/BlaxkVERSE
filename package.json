@@ -1,7 +1,7 @@
 {
   "name": "blaxkverse",
   "version": "1.0.0",
-  "description": "BlaxkVERSE — the immersive red/black portfolio and company site for BLAXK BYTE TECHNOLOGIES. Static build with zero runtime dependencies.",
+  "description": "BlaxkVERSE \u2014 the immersive red/black portfolio and company site for BLAXK BYTE TECHNOLOGIES. Static build with zero runtime dependencies.",
   "private": true,
   "license": "UNLICENSED",
   "type": "module",
@@ -9,11 +9,17 @@
     "build": "python3 tools/extract-excerpts.py && python3 tools/build-content.py",
     "build:excerpts": "python3 tools/extract-excerpts.py",
     "build:pages": "python3 tools/build-content.py",
+    "dev": "node tools/dev-server.mjs",
+    "start": "node tools/dev-server.mjs",
     "serve": "python3 -m http.server 4321 --bind 0.0.0.0 --directory site",
     "verify:content": "node tools/verify-content.mjs",
     "verify:content:offline": "node tools/verify-content.mjs --offline",
     "audit": "node tools/audit.mjs",
     "perf": "node tools/perf-site.mjs",
+    "quality": "node tools/emit-quality-data.mjs && node tools/check-quality.mjs",
+    "quality:data": "node tools/emit-quality-data.mjs",
+    "test:live": "node tools/test-live.mjs",
+    "check:links": "node tools/check-links.mjs",
     "shots": "node shots.mjs",
     "overflow": "node overflow.mjs",
     "prototypes:measure": "node tools/measure.mjs",
@@ -25,5 +31,8 @@
   },
   "engines": {
     "node": ">=18"
+  },
+  "dependencies": {
+    "gsap": "^3.15.0"
   }
 }

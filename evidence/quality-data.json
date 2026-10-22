@@ -1,0 +1,20 @@
+{
+  "generatedAt": "2026-10-21T13:35:10.508Z",
+  "projects": 21,
+  "themeCounts": {
+    "web": 8,
+    "marketplace": 3,
+    "education": 4,
+    "ai": 5,
+    "local-first": 4,
+    "voice": 3,
+    "developer-tools": 4,
+    "networking": 4,
+    "tooling": 10,
+    "vision": 1,
+    "experimental": 3,
+    "media": 4,
+    "automation": 7,
+    "all": 21
+  }
+}

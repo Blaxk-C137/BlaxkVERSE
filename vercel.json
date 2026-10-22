@@ -1,0 +1,139 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "buildCommand": "node -e \"console.log('BlaxkVERSE is prebuilt: serving the committed site/ directory. Run npm run build locally to regenerate.')\"",
+  "outputDirectory": "site",
+  "installCommand": "npm install --omit=dev --no-audit --no-fund",
+  "functions": {
+    "api/track.js": {
+      "maxDuration": 10
+    },
+    "api/stats.js": {
+      "maxDuration": 15
+    }
+  },
+  "rewrites": [
+    {
+      "source": "/work/:slug",
+      "destination": "/projects/:slug.html"
+    },
+    {
+      "source": "/work",
+      "destination": "/work.html"
+    },
+    {
+      "source": "/source",
+      "destination": "/source.html"
+    },
+    {
+      "source": "/company",
+      "destination": "/company.html"
+    },
+    {
+      "source": "/lab",
+      "destination": "/lab.html"
+    },
+    {
+      "source": "/about",
+      "destination": "/about.html"
+    },
+    {
+      "source": "/contact",
+      "destination": "/contact.html"
+    },
+    {
+      "source": "/privacy",
+      "destination": "/privacy.html"
+    },
+    {
+      "source": "/admin",
+      "destination": "/admin.html"
+    }
+  ],
+  "headers": [
+    {
+      "comment": "Applied to every response. script-src is strict and has no unsafe-inline or unsafe-eval, which is the directive that actually prevents XSS. style-src needs unsafe-inline because the generated markup carries 1,259 inline style attributes for layout; removing that would mean refactoring the whole build, so it is a recorded compromise rather than an oversight. connect-src allows exactly one outside origin, api.emailjs.com, because the contact form sends through EmailJS directly from the browser; the analytics beacon stays first-party.",
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "Content-Security-Policy",
+          "value": "default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self' https://api.emailjs.com; media-src 'self'; form-action 'self'; frame-ancestors 'none'; base-uri 'none'; object-src 'none'; upgrade-insecure-requests"
+        },
+        {
+          "key": "Strict-Transport-Security",
+          "value": "max-age=63072000; includeSubDomains; preload"
+        },
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "Referrer-Policy",
+          "value": "strict-origin-when-cross-origin"
+        },
+        {
+          "key": "Permissions-Policy",
+          "value": "geolocation=(), microphone=(), camera=(), payment=(), usb=(), interest-cohort=()"
+        },
+        {
+          "key": "Cross-Origin-Opener-Policy",
+          "value": "same-origin"
+        },
+        {
+          "key": "X-DNS-Prefetch-Control",
+          "value": "off"
+        }
+      ]
+    },
+    {
+      "comment": "The dashboard is authenticated, must never be indexed, and must never be cached by anything in the middle.",
+      "source": "/admin(.*)",
+      "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex, nofollow, noarchive"
+        },
+        {
+          "key": "Cache-Control",
+          "value": "no-store, max-age=0"
+        }
+      ]
+    },
+    {
+      "comment": "API responses are never cached. The endpoints set their own headers too, belt and braces.",
+      "source": "/api/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "no-store, max-age=0"
+        },
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex, nofollow"
+        }
+      ]
+    },
+    {
+      "comment": "Pages revalidate. Content changes with every deploy and the HTML is small, so staleness costs more than the request does.",
+      "source": "/(.*).html",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=0, must-revalidate"
+        }
+      ]
+    },
+    {
+      "comment": "Filenames are not content-hashed, so assets get a moderate window with stale-while-revalidate rather than an immutable year. A one-day window means a deploy is picked up the same day without a purge.",
+      "source": "/assets/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=86400, stale-while-revalidate=604800"
+        }
+      ]
+    }
+  ],
+  "github": {
+    "silent": true
+  }
+}

@@ -197,6 +197,8 @@ window.BX = (function () {
 
     var W = 0, H = 0, dpr = 1, running = true, t0 = performance.now();
     var nodes = [];
+    var pairs = [];        /* theme-sharing pairs, computed once in build() */
+    var pulseSprite = null; /* pre-rendered pulse gradient */
     var pulses = [];
     var pointer = { x: .5, y: .5, tx: .5, ty: .5 };
     var progress = 0;
@@ -213,19 +215,58 @@ window.BX = (function () {
           seed: (i * 2654435761) % 1000 / 1000
         };
       });
+
+      /* Precompute which pairs actually share a theme, ONCE.
+         The previous version ran .filter() inside a nested loop on every frame —
+         28 array allocations per frame purely to answer a question whose answer
+         never changes. That garbage was most of the frame cost; removing it is
+         what pays for rendering at full resolution below. */
+      pairs = [];
+      for (var i = 0; i < nodes.length; i++) {
+        for (var j = i + 1; j < nodes.length; j++) {
+          var shared = false;
+          for (var s = 0; s < nodes[i].p.themes.length; s++) {
+            if (nodes[j].p.themes.indexOf(nodes[i].p.themes[s]) > -1) { shared = true; break; }
+          }
+          if (shared) pairs.push([i, j]);
+        }
+      }
+
+      /* Pre-render the travelling pulse as a sprite. It used to build a fresh
+         linear gradient every frame (3 allocations/frame) for a shape that only
+         ever moves horizontally — so draw it once and translate it. */
+      pulseSprite = document.createElement("canvas");
+      var pw = 64, ph = 8;
+      pulseSprite.width = pw; pulseSprite.height = ph;
+      var pctx = pulseSprite.getContext("2d");
+      var pg = pctx.createLinearGradient(0, 0, pw, 0);
+      pg.addColorStop(0, "rgba(240,68,69,0)");
+      pg.addColorStop(1, "rgba(240,68,69,.85)");
+      pctx.fillStyle = pg;
+      pctx.fillRect(0, ph / 2 - 1, pw, 2);
+
       pulses = [];
       for (var k = 0; k < 3; k++) pulses.push({ t: k / 3, speed: 0.00013 + k * 0.00004 });
     }
 
     function resize() {
-      /* Cap the backing store. This is an atmospheric layer; on a 1440p panel the
-         difference is invisible and the fill-rate difference is large. */
-      var area = window.innerWidth * window.innerHeight;
-      var scale = area > 1100000 ? 0.5 : area > 550000 ? 0.62 : 0.85;
-      dpr = Math.min(window.devicePixelRatio || 1, 1.5) * scale;
       W = canvas.clientWidth; H = canvas.clientHeight;
-      canvas.width = Math.max(2, Math.floor(W * dpr));
-      canvas.height = Math.max(2, Math.floor(H * dpr));
+
+      /* RESOLUTION RULE — do not reintroduce the 0.5x upscale bug.
+         The earlier version multiplied the ratio by a fixed 0.5–0.85 "scale",
+         which rendered this canvas at HALF resolution on any desktop viewport
+         and stretched it back to size: visibly blurry, and worse than mobile.
+         Any ratio below 1.0 means upscaling, and upscaling means blur. So the
+         floor is 1.0 — always crisp, on every screen — and cost is controlled
+         by bounding total device pixels instead, reducing only on genuinely
+         enormous viewports where 1.0 is no longer the constraint. */
+      var want = Math.min(window.devicePixelRatio || 1, 2);
+      var MAX_PIXELS = 3.4e6;                    /* ~2560x1330 @1x, or 1440p @1.6x */
+      var room = Math.sqrt(MAX_PIXELS / Math.max(1, W * H));
+      dpr = Math.max(1, Math.min(want, room));
+
+      canvas.width = Math.max(2, Math.round(W * dpr));
+      canvas.height = Math.max(2, Math.round(H * dpr));
       ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
       build();
     }
@@ -240,26 +281,36 @@ window.BX = (function () {
       var cy = H * 0.46 - (pointer.y - .5) * 34;
       var drift = t * 0.05 + progress * 0.9;
 
-      /* connections: real shared themes only */
-      for (var i = 0; i < nodes.length; i++) {
-        for (var j = i + 1; j < nodes.length; j++) {
-          var shared = nodes[i].p.themes.filter(function (th) { return nodes[j].p.themes.indexOf(th) > -1; });
-          if (!shared.length) continue;
-          var a = project(nodes[i], cx, cy, drift, t);
-          var b = project(nodes[j], cx, cy, drift, t);
-          var depth = (a.s + b.s) / 2;
-          ctx.strokeStyle = "rgba(240,68,69," + (0.20 * depth).toFixed(3) + ")";
-          ctx.lineWidth = 1;
-          ctx.beginPath();
-          ctx.moveTo(a.x, a.y);
-          ctx.quadraticCurveTo((a.x + b.x) / 2, (a.y + b.y) / 2 - 26 * depth, b.x, b.y);
-          ctx.stroke();
+      /* connections: real shared themes only.
+         Drawn in three alpha buckets rather than one stroke per line, so ~28
+         draw calls collapse to 3. Same picture, a fraction of the compositing. */
+      var projected = [], i, j;
+      for (i = 0; i < nodes.length; i++) projected.push(project(nodes[i], cx, cy, drift, t));
+
+      var buckets = [[], [], []];
+      for (var pi = 0; pi < pairs.length; pi++) {
+        var pa = projected[pairs[pi][0]], pb = projected[pairs[pi][1]];
+        var depth = (pa.s + pb.s) / 2;
+        var bucket = depth < 0.34 ? 0 : depth < 0.67 ? 1 : 2;
+        buckets[bucket].push(pa, pb);
+      }
+      var alphas = [0.07, 0.14, 0.21];
+      for (var b = 0; b < buckets.length; b++) {
+        if (!buckets[b].length) continue;
+        ctx.strokeStyle = "rgba(240,68,69," + alphas[b] + ")";
+        ctx.lineWidth = 1;
+        ctx.beginPath();
+        for (var q2 = 0; q2 < buckets[b].length; q2 += 2) {
+          var a2 = buckets[b][q2], b2 = buckets[b][q2 + 1];
+          ctx.moveTo(a2.x, a2.y);
+          ctx.quadraticCurveTo((a2.x + b2.x) / 2, (a2.y + b2.y) / 2 - 26 * ((a2.s + b2.s) / 2), b2.x, b2.y);
         }
+        ctx.stroke();
       }
 
       /* nodes */
       for (var n = 0; n < nodes.length; n++) {
-        var q = project(nodes[n], cx, cy, drift, t);
+        var q = projected[n];
         var r = 1.3 + 3.1 * q.s;
         ctx.beginPath();
         ctx.arc(q.x, q.y, r, 0, Math.PI * 2);
@@ -286,15 +337,8 @@ window.BX = (function () {
         var pu = pulses[p];
         pu.t = (pu.t + pu.speed * 16) % 1;
         var px = pu.t * W;
-        var grad = ctx.createLinearGradient(px - 60, railY, px + 6, railY);
-        grad.addColorStop(0, "rgba(240,68,69,0)");
-        grad.addColorStop(1, "rgba(240,68,69,.85)");
-        ctx.strokeStyle = grad;
-        ctx.lineWidth = 1.4;
-        ctx.beginPath();
-        ctx.moveTo(px - 60, railY);
-        ctx.lineTo(px, railY);
-        ctx.stroke();
+        /* sprite blit instead of a fresh gradient object per frame */
+        if (pulseSprite) ctx.drawImage(pulseSprite, px - 64, railY - 4, 64, 8);
         ctx.beginPath();
         ctx.arc(px, railY, 2.1, 0, Math.PI * 2);
         ctx.fillStyle = "rgba(240,68,69,.95)";
@@ -586,12 +630,16 @@ window.BX = (function () {
     }
 
     function resize() {
-      var area = window.innerWidth * window.innerHeight;
-      var scale = motion.isFull() ? (area > 1100000 ? 0.55 : area > 550000 ? 0.7 : 0.9) : 1;
-      dpr = Math.min(window.devicePixelRatio || 1, 1.6) * scale;
       W = canvas.clientWidth; H = canvas.clientHeight;
-      canvas.width = Math.max(2, Math.floor(W * dpr));
-      canvas.height = Math.max(2, Math.floor(H * dpr));
+      /* Same resolution rule as the hero field: never below 1.0, because below
+         1.0 is upscaling and upscaling is blur. This canvas carries project
+         LABELS, which were rendering soft on desktop for exactly this reason. */
+      var want = Math.min(window.devicePixelRatio || 1, 2);
+      var MAX_PIXELS = 3.4e6;
+      var room = Math.sqrt(MAX_PIXELS / Math.max(1, W * H));
+      dpr = Math.max(1, Math.min(want, room));
+      canvas.width = Math.max(2, Math.round(W * dpr));
+      canvas.height = Math.max(2, Math.round(H * dpr));
       ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
       build();
     }
@@ -741,10 +789,15 @@ window.BX = (function () {
       ]);
       host.appendChild(head);
       var pre0 = el("pre");
+      /* This text MUST match the static HTML that tools/build-content.py emits for an
+         empty chamber, character for character. An earlier version said something
+         different and slightly shorter, so the client re-render changed the block's
+         height after load and produced a measurable layout shift (0.0253 on the
+         slowest viewport). Identical strings cannot shift. */
       pre0.appendChild(doc.createTextNode(
         "// No pinned excerpt has been reviewed for this project yet.\n" +
-        "// The chamber shows an empty state rather than filling the space.\n" +
-        "// " + repoUrl(project) + "\n"
+        "// The chamber shows an empty state rather than filling the space with\n" +
+        "// unrelated code or a mock-up. The repository is linked above.\n"
       ));
       host.appendChild(pre0);
       host.appendChild(el("div", { cls: "code-foot", text: "Nothing here is illustrative or invented. An empty chamber is the honest state." }));
@@ -912,11 +965,59 @@ window.BX = (function () {
   }
 
   /* ==================================================== contact transmission */
+  /* Delivery is EmailJS, called straight from this browser: no function, no
+     server, no database. The credentials and the recipient live in
+     assets/js/emailjs-config.js (window.BX_MAIL) — paste the public key, the
+     service id and the two template ids there and this path lights up. The
+     notification is required; the auto-reply is optional, so a half-configured
+     file still delivers the enquiry rather than blocking it. Until either is
+     configured the form says so instead of pretending to send. */
+  function mailConfig() {
+    var c = window.BX_MAIL || {};
+    var missing = ["user_id", "service_id", "template_id"].filter(function (k) {
+      return !c[k] || /REPLACE_WITH/.test(c[k]);
+    });
+    var autoReply = !!c.auto_reply_template_id && !/REPLACE_WITH/.test(c.auto_reply_template_id);
+    return { ready: missing.length === 0, missing: missing, autoReply: autoReply };
+  }
+
+  /* One POST to EmailJS. `withToken` is true for the notification only: a
+     reCAPTCHA access token is single-use, so reusing it on the acknowledgement
+     would be refused by the provider and make a healthy send look broken. */
+  function sendTemplate(endpoint, mail, templateId, params, withToken) {
+    var body = {
+      service_id: mail.service_id,
+      template_id: templateId,
+      user_id: mail.user_id,
+      template_params: params
+    };
+    if (withToken && mail.recaptcha) body.accessToken = mail.recaptcha;
+    return fetch(endpoint, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(body)
+    }).then(function (r) {
+      return r.text().catch(function () { return ""; }).then(function (t) {
+        if (r.ok) return { sent: true };
+        return { sent: false, status: r.status, text: String(t || "").slice(0, 240) };
+      });
+    });
+  }
+
   function initContact() {
     var form = $("[data-contact-form]");
     if (!form) return;
     var status = $("[data-contact-status]", form);
     var trace = $("[data-contact-trace]", form);
+
+    /* Say up front, before anyone types a word, whether this form can actually
+       deliver. A visitor who is told at submit time has already written the
+       message; a visitor who is told at load time has not. */
+    if (status && !mailConfig().ready) {
+      status.dataset.state = "unwired";
+      status.textContent =
+        "This form is not wired to EmailJS yet. The keys go in site/assets/js/emailjs-config.js — until then, email me directly through the GitHub link in the footer.";
+    }
 
     form.addEventListener("submit", function (e) {
       e.preventDefault();
@@ -941,13 +1042,130 @@ window.BX = (function () {
         return;
       }
 
-      /* There is no server in this build. Saying so is the only honest option. */
-      if (trace) { trace.dataset.run = "true"; setTimeout(function () { delete trace.dataset.run; }, 1700); }
-      status.dataset.state = "ok";
-      status.textContent =
-        "Your details are still in this browser — this build has no server, so nothing was transmitted and nothing was stored. " +
-        "The production build posts this form to a validated, rate-limited endpoint. Point the form at that endpoint (or email directly) and it will work as described.";
-      form.querySelector("button[type=submit]").disabled = false;
+      /* Honeypot first, locally: a filled hidden field is a bot, and a bot is
+         answered the way the old server answered one — a success-shaped reply
+         that goes nowhere. The check stays on the client because that is where
+         the send happens now. */
+      var hp = form.querySelector("[name=company]");
+      if (hp && hp.value) {
+        status.dataset.state = "ok";
+        status.textContent = "Sent.";
+        form.reset();
+        return;
+      }
+
+      var cfg = mailConfig();
+      if (!cfg.ready) {
+        status.dataset.state = "unwired";
+        status.textContent =
+          "Mail is not wired up yet — " + cfg.missing.join(", ") +
+          " still need real values in assets/js/emailjs-config.js. Nothing was sent, and this form will not pretend otherwise.";
+        return;
+      }
+
+      var mail = window.BX_MAIL;
+      /* Same-origin endpoint, or the documented EmailJS host. Anything else in
+         the config file is ignored — the CSP only allows these two anyway, and
+         a typo that silently posts a name and an email address to a stranger's
+         server is the kind of mistake worth making impossible. */
+      var endpoint = mail.endpoint || "https://api.emailjs.com/api/v1.0/email/send";
+      try {
+        var u = new URL(endpoint, location.href);
+        var allowed = u.origin === location.origin || u.hostname === "api.emailjs.com";
+        if (!allowed) {
+          status.dataset.state = "err";
+          status.textContent = "The configured mail endpoint is not one this site is allowed to post to — check assets/js/emailjs-config.js.";
+          return;
+        }
+      } catch (err0) {
+        status.dataset.state = "err";
+        status.textContent = "The mail endpoint in assets/js/emailjs-config.js is not a valid URL.";
+        return;
+      }
+
+      var kindEl = form.querySelector("#cf-kind") || form.querySelector("[name=kind]");
+      var deadlineEl = form.querySelector("#cf-deadline") || form.querySelector("[name=deadline]");
+      var deadline = deadlineEl ? deadlineEl.value.trim() : "";
+      var message = what.value.trim();
+      if (deadline) message += "\n\nDeadline: " + deadline;
+
+      /* Variable names come from the two templates that already exist: both
+         read name · email/reply_to · subject · message · time. The aliases
+         (from_name, title) are cheap and let a template that used a different
+         placeholder still render. */
+      var subject = (kindEl && kindEl.value) || "Contact form enquiry";
+      var params = {
+        to_name: mail.to_name || "Blaxk",
+        name: name.value.trim(),
+        from_name: name.value.trim(),
+        email: email.value.trim(),
+        from_email: email.value.trim(),
+        reply_to: email.value.trim(),
+        subject: subject,
+        title: subject,
+        message: message,
+        time: new Date().toLocaleString("en-GB", { dateStyle: "medium", timeStyle: "short" })
+      };
+      if (mail.to_email) params.to_email = mail.to_email;
+
+      var submit = form.querySelector("button[type=submit]");
+      submit.disabled = true;
+      submit.setAttribute("aria-busy", "true");
+      status.dataset.state = "sending";
+      status.textContent = cfg.autoReply ? "Sending your enquiry and acknowledgement…" : "Sending…";
+      if (trace) { trace.dataset.run = "true"; }
+
+      /* The notification is the one that must arrive; if it fails the visitor
+         is told and nothing is claimed. The acknowledgement is best effort: a
+         broken auto-reply must never discard an enquiry that already reached
+         the inbox. */
+      sendTemplate(endpoint, mail, mail.template_id, params, true)
+        .then(function (out) {
+          if (!out.sent) return { notify: out, reply: "skipped" };
+          if (!cfg.autoReply) return { notify: out, reply: "off" };
+          return sendTemplate(endpoint, mail, mail.auto_reply_template_id, params, false)
+            .then(function (reply) {
+              return { notify: out, reply: reply.sent ? "sent" : "failed" };
+            })
+            .catch(function () { return { notify: out, reply: "failed" }; });
+        })
+        .then(function (res) {
+          if (!res.notify.sent) {
+            var why = res.notify.text || "";
+            var mapped;
+            if (res.notify.status === 429) mapped = "That form has been used too many times from here — EmailJS is rate limiting it. Try again later or use the GitHub link in the footer.";
+            else if (res.notify.status === 402) mapped = "The mail quota for this site is spent. Email me through the GitHub link in the footer and I will still answer.";
+            else mapped = "EmailJS refused the message (HTTP " + res.notify.status + "). Nothing was sent." + (why ? " Its words: " + why : "");
+            status.dataset.state = "err";
+            status.textContent = mapped;
+            return;
+          }
+          status.dataset.state = "ok";
+          if (res.reply === "sent") {
+            status.textContent =
+              "Sent. Your enquiry went through EmailJS, and an acknowledgement is on its way to " +
+              params.reply_to + ". A reply will follow.";
+          } else if (res.reply === "failed") {
+            status.textContent =
+              "Sent. Your enquiry reached the inbox, but the acknowledgement could not be sent. " +
+              "A reply will still come to " + params.reply_to + ".";
+          } else {
+            status.textContent =
+              "Sent. Your enquiry went through EmailJS and a reply will come to " + params.reply_to +
+              ". If nothing arrives within a few days, check the spam folder before assuming it did not send.";
+          }
+          form.reset();
+        })
+        .catch(function () {
+          status.dataset.state = "err";
+          status.textContent =
+            "Could not reach the mail service. Your message was not sent — please try again, or use the GitHub link in the footer.";
+        })
+        .then(function () {
+          submit.disabled = false;
+          submit.removeAttribute("aria-busy");
+          if (trace) { setTimeout(function () { delete trace.dataset.run; }, 1100); }
+        });
     });
   }
 
@@ -968,6 +1186,12 @@ window.BX = (function () {
   function initWorkFilters() {
     var host = $("[data-filters]");
     if (!host) return;
+    /* The buttons are now rendered at build time so the block has its full height
+       before first paint. They are replaced here rather than appended to, because
+       appending would leave the static copies in place without click handlers —
+       which is exactly the bug this comment exists to prevent recurring. Replacing
+       identical markup produces identical geometry, so no shift is reintroduced. */
+    host.textContent = "";
     var rowHost = $("#project-rows");
     var note = $("[data-count-note]");
     var params = new URLSearchParams(location.search);
@@ -977,7 +1201,20 @@ window.BX = (function () {
     D.projects.forEach(function (p) {
       p.themes.forEach(function (t) { counts[t] = (counts[t] || 0) + 1; });
     });
-    var order = ["all", "education", "ai", "local-first", "developer-tools", "web", "voice", "vision", "experimental", "tooling", "networking", "marketplace"];
+    /* Derived from the project records rather than hand-listed. The hand-written
+       version silently omitted two themes the moment new projects introduced them
+       (automation and media), which made eleven projects unreachable by filter —
+       visible only by comparing the filter count against the card count. Any theme
+       actually in use now gets a button, ordered by how many projects carry it. */
+    var counts_all = {};
+    D.projects.forEach(function (p) {
+      (p.themes || []).forEach(function (t) { counts_all[t] = (counts_all[t] || 0) + 1; });
+    });
+    var order = ["all"].concat(
+      Object.keys(counts_all).sort(function (a, b) {
+        return counts_all[b] - counts_all[a] || a.localeCompare(b);
+      })
+    );
 
     function apply(theme, push) {
       current = theme;

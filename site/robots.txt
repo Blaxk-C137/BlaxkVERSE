@@ -1,0 +1,12 @@
+# BlaxkVERSE — BLAXK BYTE TECHNOLOGIES
+#
+# The dashboard and the API are not content. They are excluded here and also
+# carry X-Robots-Tag headers, because a crawler that ignores one will usually
+# honour the other.
+
+User-agent: *
+Allow: /
+Disallow: /admin
+Disallow: /api/
+
+Sitemap: /sitemap.xml
